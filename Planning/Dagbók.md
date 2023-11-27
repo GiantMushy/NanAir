@@ -8,5 +8,7 @@ Edda Eik_98: Tölvunarfræði
 Eydís Sunna: Mætti ekki
 
 Byrjuðum á því að gera ToDo lista. Klárðumum kröfulistann og User Group Analysis 
-Oliver: User group analysis 
-Benjamín: Requirements
+Oliver & Þorvarður: User group analysis 
+Benjamín: Requirements list
+Matthías: Class Diagram
+Edda Eik: Use Case Diagram
