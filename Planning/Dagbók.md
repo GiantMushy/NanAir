@@ -7,5 +7,6 @@ Edda Eik_98: Tölvunarfræði
 Þorvarður_99: Tölvunarfræði
 Eydís Sunna: Mætti ekki
 
-Byrjuðum á því að gera ToDo lista. Klárðumum kröfulistann og User Group Analysis
-Oliver vann í að gera spunringalista/ notendahópagreiningu
+Byrjuðum á því að gera ToDo lista. Klárðumum kröfulistann og User Group Analysis 
+Oliver: User group analysis 
+Benjamín: Requirements
