@@ -3,7 +3,7 @@
                                     |
                                   .-'-.
                                  ' ___ '
-                      \---------'  .-.  '---------/
+                       ---------'  .-.  '---------
       \_________________________'  '-'  '_________________________/
         ''''''-|---|--/    \==[]^',_m_,'^[]==/    \--|---|-''''''
                       \    /  ||/   H   \||  \    /
@@ -34,9 +34,8 @@
 ║   2 : Destination Managment Menu                              ║
 ║   3 : Trip Schedules (TripManagmentMenu)                      ║
 ║   4 : Edit Trip Schedules (TripSchedulingMenu)                ║
-║   5 : Reports Menu                                            ║
-║   6 : Employee Schedules                                      ║
-║   7 : Airplane Database                                       ║
+║   5 : Work Reports Menu                                       ║
+║   6 : Airplane Database                                       ║
 ║				                                                ║
 ║   9 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
@@ -55,7 +54,7 @@
 
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > (Edit Flight Schedules)                        █
+█ Trip Manager > (Edit Trip Schedules)                          █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║				                                                ║
 ║	1 : Create new Flight                                       ║
@@ -111,13 +110,13 @@
 ║		Pilots:         Jón Gunnar Helgason / Bjarni Jónsson    ║
 ║		Stewerdess:     Katrín Björnsdóttir                     ║
 ║				                                                ║
-║	1 : Reykjavik > Nuuk                                        ║
+║	2 : Reykjavik > Nuuk                                        ║
 ║		Departure:      05.01.24 / 09:10                        ║
 ║		Plane:          NaNair_1                                ║
 ║		Flight Nmbr:    NA020                                   ║
 ║		Pilots:         Jón Gunnar Helgason / Bjarni Jónsson    ║
 ║		Stewerdess:     Katrín Björnsdóttir                     ║
-║	1 : Nuuk > Reykjavík                                        ║
+║	2 : Nuuk > Reykjavík                                        ║
 ║		Departure:      13.01.24 / 19:50                        ║
 ║		Plane:          NaNair_1                                ║
 ║		Flight Nmbr:    NA021                                   ║
