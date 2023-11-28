@@ -33,20 +33,43 @@
 ║   1 : Employee Managment Menu                                 ║
 ║   2 : Destination Managment Menu                              ║
 ║   3 : Trip Schedules (TripManagmentMenu)                      ║
-║   4 : Edit Trip Schedules (TripSchedulingMenu)                ║
-║   5 : Work Reports Menu                                       ║
-║   6 : Airplane Database                                       ║
+║   4 : Work Reports Menu                                       ║
+║   5 : Airplane Database                                       ║
 ║                                                               ║
 ║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
 
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Managment > Trip Schedules                                                                                           █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                                                                                           ║
+║   Select Trip to Staff                                                                                                    ║
+║   Week of: 08.01.24 - 14.01.24                                                                                            ║
+║                                                                                                                           ║
+║   Nr.    Departing      Destination     Dagsetning      Tími        Plane          Flight Number       Staff Status       ║
+║                                                                                                                           ║
+║   1      Reykjavik    > Longyearbuen    06.01.24        06:10       NaNair_1       NA040               Staffed            ║
+║          Longyearbuen > Reykjavik       06.01.24        18:10       NaNair_1       NA041               Staffed            ║
+║   2      Reykjavik    > Nuuk            06.01.24        09:30       NaNair_3       NA020               Staffed            ║
+║          Nuuk         > Reykjavik       06.01.24        19:30       NaNair_3       NA021               Staffed            ║
+║   3      Reykjavik    > Toshavn         07.01.24        11:00       NaNair_2       NA010               Not Staffed        ║
+║          Torshavn     > Reykjavik       08.01.24        09:30       NaNair_2       NA010               Not Staffed        ║
+║   4      Reykjavik    > Longyearbuen    08.01.24        06:10       NaNair_1       NA040               Not Staffed        ║
+║          Longyearbuen > Reykjavik       08.01.24        18:10       NaNair_1       NA041               Not Staffed        ║
+║   5      ...            ...             ...             ...         ...            ...                 ...                ║
+║                                                                                                                           ║
+║   C : Create New Trip                                                                                                     ║
+║   V : Re-create Existing Trip                                                                                             ║
+║                                                                                                                           ║
+║   0 : Back              00 : Change Week Display                                                                          ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > Edit Trip Schedules                            █
+█                          Change Week                          █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║   1 : Re-create Existing Trip                                 ║
-║   2 : Create New Trip                                         ║
-║   3 : Edit already existing Flight                            ║
+║                 Enter the week you want to see                ║
+║                      (DD.MM.YY - DD.MM.YY)                    ║
 ║                                                               ║
 ║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
@@ -55,7 +78,10 @@
 █ Trip Manager > Edit Flight Schedules > Create new             █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║               Input Day of Departure (DD:MM:YYYY)             ║
+║    --> Input Day of Departure (DD.MM.YY)                      ║
+║        Departure Time                                         ║
+║        Day of Return                                          ║
+║        Return Time                                            ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
 
@@ -63,7 +89,32 @@
 █ Trip Manager > Edit Flight Schedules > Create new             █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║                Input Departure Time (00:00 - 23:59)           ║
+║        01.06.24                                               ║
+║    --> Input Departure Time (00:00 - 23:59)                   ║
+║        Day of Return                                          ║
+║        Return Time                                            ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > Edit Flight Schedules > Create new             █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║        01.06.24                                               ║
+║        06:10                                                  ║
+║    --> Input Day of Return (DD.MM.YY)                         ║
+║        Return Time                                            ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > Edit Flight Schedules > Create new             █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║        01.06.24                                               ║
+║        06:10                                                  ║
+║        01.06.24                                               ║
+║    --> Input Return Time (00:00 - 23:59)                      ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
 
@@ -102,12 +153,35 @@
 ║                                                               ║
 ║   Departing:          Reykjavik                               ║
 ║   Destination:        Nuuk                                    ║
-║   Day:                06.01.24                                ║
-║   Time:               06:10                                   ║
+║   Day of Departure:   06.01.24                                ║
+║   Time of Departure:  06:10                                   ║
+║   Day of Return:      06.01.24                                ║
+║   Time of Return:     18:40                                   ║
 ║   Plane:              NaNair_1                                ║
 ║   Flight Nmbr:        NA040                                   ║
 ║   Staff Status:       Not Staffed                             ║
 ║                                                               ║
-║   <Enter> : Back to Edit Trip Schedules                       ║
+║   1 : Save this Trip (Destination and Time) to Saved Trips    ║
+║                                                               ║
+║   0 : Back to Edit Trip Schedules                             ║
 ╚═══════════════════════════════════════════════════════════════╝
 
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > Trip Schedules > Re-create existing                                                                        █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                                                                                           ║
+║   Saved Trips:                                                                                                            ║
+║                                                                                                                           ║
+║   1 : Reykjavik > Nuuk   |    06:10         6 : Reykjavik > Nuuk   |    06:10       11: Reykjavik > Nuuk   |    06:10     ║
+║       Nuuk > Reykjavik   |    18:40             Nuuk > Reykjavik   |    18:40           Nuuk > Reykjavik   |    18:40     ║
+║   2 : Reykjavik > Nuuk   |    06:10         7 : Reykjavik > Nuuk   |    06:10       12: Reykjavik > Nuuk   |    06:10     ║
+║       Nuuk > Reykjavik   |    18:40             Nuuk > Reykjavik   |    18:40           Nuuk > Reykjavik   |    18:40     ║
+║   3 : Reykjavik > Nuuk   |    06:10         8 : Reykjavik > Nuuk   |    06:10       13: Reykjavik > Nuuk   |    06:10     ║
+║       Nuuk > Reykjavik   |    18:40             Nuuk > Reykjavik   |    18:40           Nuuk > Reykjavik   |    18:40     ║
+║   4 : Reykjavik > Nuuk   |    06:10         9 : Reykjavik > Nuuk   |    06:10       14: Reykjavik > Nuuk   |    06:10     ║
+║       Nuuk > Reykjavik   |    18:40             Nuuk > Reykjavik   |    18:40           Nuuk > Reykjavik   |    18:40     ║
+║   5 : Reykjavik > Nuuk   |    06:10         10: Reykjavik > Nuuk   |    06:10       15: ------...-------   |    ...       ║
+║       Nuuk > Reykjavik   |    18:40             Nuuk > Reykjavik   |    18:40           ------...-------   |    ...       ║
+║                                                                                                                           ║
+║   0 : Back to Edit Trip Schedules                                                                                         ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
