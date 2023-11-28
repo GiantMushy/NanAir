@@ -24,6 +24,8 @@
 ║   2 : Human Resources                                         ║
 ║   3 : Chuck Norris                                            ║
 ║                                                               ║
+║   *Hint: input the number you want to select and then enter   ║
+║    For ex.: 1 --> Trip Manager                                ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -81,7 +83,7 @@
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║      Jón Karl Magnússon                                       ║
-║  --> Social Security Number (xxxxxx xxxx)                     ║
+║  --> Input Social Security Number (xxxxxx xxxx)               ║
 ║      Phone Number                                             ║
 ║      Home Address                                             ║
 ║      Email                                                    ║
@@ -95,7 +97,7 @@
 ║                                                               ║
 ║      Jón Karl Magnússon                                       ║
 ║      301288 2559                                              ║
-║  --> Phone Number (xxx xxxx)                                  ║
+║  --> Input Phone Number (xxx xxxx)                            ║
 ║      Home Address                                             ║
 ║      Email                                                    ║
 ║      Home Phone                                               ║
@@ -109,7 +111,7 @@
 ║      Jón Karl Magnússon                                       ║
 ║      301288 2559                                              ║
 ║      555 1234                                                 ║
-║  --> Home Address (Street, number)                            ║
+║  --> Input Home Address (Street, number)                      ║
 ║      Email                                                    ║
 ║      Home Phone                                               ║
 ║                                                               ║
@@ -123,7 +125,7 @@
 ║      301288 2559                                              ║
 ║      555 1234                                                 ║
 ║      Karlagata 12                                             ║
-║  --> Email (example@email.com)                                ║
+║  --> Input Email (example@email.com)                          ║
 ║      Home Phone                                               ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
@@ -137,7 +139,7 @@
 ║      555 1234                                                 ║
 ║      Karlagata 12                                             ║
 ║      jonkarl@nanair.is                                        ║
-║  --> Home Phone (xxx xxxx) (optional)                         ║
+║  --> Input Home Phone (xxx xxxx) (optional)                   ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
 

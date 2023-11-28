@@ -24,6 +24,8 @@
 ║   2 : Human Resources                                         ║
 ║   3 : Chuck Norris                                            ║
 ║                                                               ║
+║   *Hint: input the number you want to select and then enter   ║
+║    For ex.: 1 --> Trip Manager                                ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 
@@ -102,5 +104,5 @@
 ║   3 : Email        name@nanair.is                             ║
 ║   4 : Home Phone   --Not Given--                              ║
 ║                                                               ║
-║   0 : Back                                                    ║
+║   0 : Back to Employee Managment Menu                         ║
 ╚═══════════════════════════════════════════════════════════════╝

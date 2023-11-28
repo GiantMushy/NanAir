@@ -24,6 +24,8 @@
 ║   2 : Human Resources                                         ║
 ║   3 : Chuck Norris                                            ║
 ║                                                               ║
+║   *Hint: input the number you want to select and then enter   ║
+║    For ex.: 1 --> Trip Manager                                ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -69,16 +71,6 @@
 ║                                                                                                                           ║
 ║   0 : Back              00 : Change Week               n : Previous Week             m : Next Week                        ║
 ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-
-█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█                          Change Week                          █
-█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
-║                                                               ║
-║                 Enter the week you want to see                ║
-║                      (DD.MM.YY - DD.MM.YY)                    ║
-║                                                               ║
-║   0 : Back                                                    ║
-╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
 █ Trip Manager > Trip Schedules > Create new                    █
@@ -170,57 +162,4 @@
 ║   1 : Save this Trip (Destination and Time) to Saved Trips    ║
 ║                                                               ║
 ║   0 : Back to Edit Trip Schedules                             ║
-╚═══════════════════════════════════════════════════════════════╝
-
-#Frá Trip Schedules ( V : Re-create Existing Trip )
-█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > Trip Schedules > Re-create existing                                                                        █
-█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
-║                                                                                                                           ║
-║   Saved One-Day Trips:                                                                                                    ║
-║                                                                                                                           ║
-║  1 : Reykjavik > Nuuk       06:10     ||    6 : Reykjavik > Nuuk       06:10    ||   11: Reykjavik > Nuuk       06:10     ║
-║      Nuuk > Reykjavik       18:40     ||        Nuuk > Reykjavik       18:40    ||       Nuuk > Reykjavik       18:40     ║
-║  2 : Reykjavik > Nuuk       06:10     ||    7 : Reykjavik > Nuuk       06:10    ||   12: Reykjavik > Nuuk       06:10     ║
-║      Nuuk > Reykjavik       18:40     ||        Nuuk > Reykjavik       18:40    ||       Nuuk > Reykjavik       18:40     ║
-║  3 : Reykjavik > Nuuk       06:10     ||    8 : Reykjavik > Nuuk       06:10    ||   13: Reykjavik > Nuuk       06:10     ║
-║      Nuuk > Reykjavik       18:40     ||        Nuuk > Reykjavik       18:40    ||       Nuuk > Reykjavik       18:40     ║
-║  4 : Reykjavik > Nuuk       06:10     ||    9 : Reykjavik > Nuuk       06:10    ||   14: Reykjavik > Nuuk       06:10     ║
-║      Nuuk > Reykjavik       18:40     ||        Nuuk > Reykjavik       18:40    ||       Nuuk > Reykjavik       18:40     ║
-║  5 : Reykjavik > Nuuk       06:10     ||    10: Reykjavik > Nuuk       06:10    ||   15: ------...-------       ...       ║
-║      Nuuk > Reykjavik       18:40     ||        Nuuk > Reykjavik       18:40    ||       ------...-------       ...       ║
-║                                                                                                                           ║
-║   0 : Back to Trip Schedules                                                                                              ║
-╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-
-█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > Trip Schedules > Re-create existing > 4        █
-█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
-║                                                               ║
-║   Re-creating Saved Trip #4:                                  ║
-║   Reykjavik > Nuuk           06:10                            ║
-║   Nuuk > Reykjavik           18:40                            ║
-║                                                               ║
-║    --> Input Day of Departure (DD.MM.YY)                      ║
-║                                                               ║
-║   0 : Back to Edit Trip Schedules                             ║
-╚═══════════════════════════════════════════════════════════════╝
-
-█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > Trip Schedules > Re-create existing > 4        █
-█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
-║                                                               ║
-║   Trip Created:                                               ║
-║                                                               ║
-║   Departing:          Reykjavik                               ║
-║   Destination:        Nuuk                                    ║
-║   Day of Departure:   06.01.24                                ║
-║   Time of Departure:  06:10                                   ║
-║   Day of Return:      06.01.24                                ║
-║   Time of Return:     18:40                                   ║
-║   Plane:              NaNair_1                                ║
-║   Flight Nmbr:        NA040                                   ║
-║   Staff Status:       Not Staffed                             ║
-║                                                               ║
-║   <Enter> : Back to Edit Trip Schedules                       ║
 ╚═══════════════════════════════════════════════════════════════╝
