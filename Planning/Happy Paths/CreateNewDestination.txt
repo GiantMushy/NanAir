@@ -28,22 +28,21 @@
 ║    For ex.: 1 --> Trip Manager                                ║
 ╚═══════════════════════════════════════════════════════════════╝
 
-
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█                        Human Resources                        █
+█                        Trip Manager                           █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║   1 : Employee Managment Menu                                 ║
 ║   2 : Destination Managment Menu                              ║
 ║   3 : Trip Schedules                                          ║
-║   5 : Work Reports Menu                                       ║
-║   6 : Airplane Database                                       ║
+║   4 : Work Reports Menu                                       ║
+║   5 : Airplane Database                                       ║
 ║                                                               ║
 ║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Destination Managment Menu                                                                              █
+█ Trip Manager > Destination Managment Menu                                                                                 █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                                                                                           ║
 ║       List of Destinations:                                                                                               ║
@@ -57,3 +56,81 @@
 ║                                                                                                                           ║
 ║   0 : Back            00 : Create New Destination            <Destination number> : Edit Destination Data                 ║
 ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > Destination Managment Menu > Create new        █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║    --> Input Country                                          ║
+║        City                                                   ║
+║        Distance                                               ║
+║        Travel Time                                            ║
+║        Emergency Contact                                      ║
+║                                                               ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > Destination Managment Menu > Create new        █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║        Australia                                              ║
+║    --> Input City                                             ║
+║        Distance                                               ║
+║        Travel Time                                            ║
+║        Emergency Contact                                      ║
+║                                                               ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > Destination Managment Menu > Create new        █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║        Australia                                              ║
+║        Sydney                                                 ║
+║    --> Input Distance (xxxkm)                                 ║
+║        Travel Time                                            ║
+║        Emergency Contact                                      ║
+║                                                               ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > Destination Managment Menu > Create new        █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║        Australia                                              ║
+║        Sydney                                                 ║
+║        16,615km                                               ║
+║    --> Input Travel Time (hours, min)                         ║
+║        Emergency Contact                                      ║
+║                                                               ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > Destination Managment Menu > Create new        █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║        Australia                                              ║
+║        Sydney                                                 ║
+║        16,615km                                               ║
+║        42hours and 69min                                      ║
+║    --> Input Emergency Contact                                ║
+║                                                               ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > Destination Managment Menu > Create new        █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║   New Destination Created:                                    ║
+║     Sydney, Australia                                         ║
+║     Distance: 16,615km                                        ║
+║     Travel Time: Too hours long min                           ║
+║     Emergency Contact: 911                                    ║
+║                                                               ║
+║   <Enter> : Back to Destination Managment Menu                ║
+╚═══════════════════════════════════════════════════════════════╝

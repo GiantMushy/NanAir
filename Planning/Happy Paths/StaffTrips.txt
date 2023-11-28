@@ -35,8 +35,8 @@
 ║	  1 : Employee Managment Menu                                 ║
 ║   2 : Destination Managment Menu                              ║
 ║   3 : Trip Schedules (TripManagmentMenu)                      ║
-║   5 : Work Reports Menu                                       ║
-║   6 : Airplane Database                                       ║
+║   4 : Work Reports Menu                                       ║
+║   5 : Airplane Database                                       ║
 ║                                                               ║
 ║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
@@ -166,6 +166,20 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Human Resources > Crew Assignment Menu > 3 > Assign Staff     █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║   Reykjavík > Torshavn  |  07.01.24 > 08.01.24                ║
+║   Assign more available Stewerdess:                           ║
+║                                                               ║
+║   1 : Katie Holms              (010188 2919)                  ║
+║   3 : Hellena Kaputt           (030378 7959)                  ║
+║   4 : --skip--                                                ║
+║                                                               ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
 █ Human Resources > Crew Assignment Menu > 2                    █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
@@ -173,6 +187,7 @@
 ║   Captain:          Dwayne Johnson         (010198 2919)      ║
 ║   Co-Captain:       Baldur Gateson Jr.     (030388 7959)      ║
 ║   Head-Stewerdess:  Arbies Burger          (020277 1829)      ║
+║   Stewerdess:       Katie Holms            (020278 6429)      ║
 ║                                                               ║
 ║   <Enter> : Back to Crew Assignment Menu                      ║
 ╚═══════════════════════════════════════════════════════════════╝
