@@ -14,7 +14,8 @@ Matthías: Class Diagram
 Edda Eik: Use Case Diagram
 
 28.11.23
-Markmið dagsins er að ????????
+Markmið dagsins er að gera use cases og happy paterns
 Matthías: Logic class diagram
 Þorvarður: Wireframes/happy path 
+Edda & Benjamín & Oliver & Matthías: Use Cases
 
