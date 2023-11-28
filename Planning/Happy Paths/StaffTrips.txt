@@ -86,7 +86,7 @@
 ║   Co-Captain:       Dwayen Rock   (400199 9229)               ║
 ║   Head-Stewerdess:  Jamie Daweson (040400 4469)               ║
 ║                                                               ║
-║   0 : Back                                                    ║
+║   <Enter> : Back to Crew Assignment Menu                      ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -96,7 +96,79 @@
 ║   Reykjavík > Torshavn  |  07.01.24 > 08.01.24                ║
 ║   Not Staffed                                                 ║
 ║                                                               ║
-║                                                               ║
+║   1 : Assign Staff to Trip                                    ║
 ║                                                               ║
 ║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Human Resources > Crew Assignment Menu > 3 > Assign Staff     █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║   Reykjavík > Torshavn  |  07.01.24 > 08.01.24                ║
+║   Assign available Captain:                                   ║
+║                                                               ║
+║   1 : Dwayne Johnson           (010188 2919)                  ║
+║   2 : Jón Jónsson              (020277 1829)                  ║
+║   3 : Baldur Gateson           (030378 7959)                  ║
+║   4 : James Bondsson           (040487 3239)                  ║
+║                                                               ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Human Resources > Crew Assignment Menu > 3 > Assign Staff     █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║   Reykjavík > Torshavn  |  07.01.24 > 08.01.24                ║
+║   Assign available Co-Captain:                                ║
+║                                                               ║
+║   1 : Dwayne Johnson Jr.       (010198 2919)                  ║
+║   2 : Jón Jónsson Jr.          (020287 1829)                  ║
+║   3 : Baldur Gateson Jr.       (030388 7959)                  ║
+║   4 : James Bondsson Jr.       (040497 3239)                  ║
+║                                                               ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Human Resources > Crew Assignment Menu > 3 > Assign Staff     █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║   Reykjavík > Torshavn  |  07.01.24 > 08.01.24                ║
+║   Assign available Head-Stewerdess:                           ║
+║                                                               ║
+║   1 : Katie Holms              (010188 2919)                  ║
+║   2 : Arbies Burger            (020277 1829)                  ║
+║   3 : Hellena Kaputt           (030378 7959)                  ║
+║   4 : Jamie Franko             (040487 3239)                  ║
+║                                                               ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Human Resources > Crew Assignment Menu > 3 > Assign Staff     █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║   Reykjavík > Torshavn  |  07.01.24 > 08.01.24                ║
+║   Assign more available Stewerdess:                           ║
+║                                                               ║
+║   1 : Katie Holms              (010188 2919)                  ║
+║   2 : Arbies Burger            (020277 1829)                  ║
+║   3 : Hellena Kaputt           (030378 7959)                  ║
+║   4 : --skip--                                                ║
+║                                                               ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Human Resources > Crew Assignment Menu > 2                    █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║   Reykjavík > Torshavn  |  07.01.24 > 08.01.24                ║
+║   Captain:          Dwayne Johnson Jr.     (010198 2919)      ║
+║   Co-Captain:       Baldur Gateson Jr.     (030388 7959)      ║
+║   Head-Stewerdess:  Arbies Burger          (020277 1829)      ║
+║                                                               ║
+║   <Enter> : Back to Crew Assignment Menu                      ║
 ╚═══════════════════════════════════════════════════════════════╝
