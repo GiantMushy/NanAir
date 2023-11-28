@@ -16,5 +16,5 @@ Edda Eik: Use Case Diagram
 28.11.23
 Markmið dagsins er að ????????
 Matthías: Logic class diagram
-Oliver: Wireframes/happy path 
+Þorvarður: Wireframes/happy path 
 
