@@ -14,4 +14,6 @@ Matthías: Class Diagram
 Edda Eik: Use Case Diagram
 
 28.11.23
+
 Matthías: Logic class diagram
+Oliver: Wireframes
