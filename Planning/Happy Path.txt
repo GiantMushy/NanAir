@@ -37,7 +37,7 @@
 ║   5 : Work Reports Menu                                       ║
 ║   6 : Airplane Database                                       ║
 ║				                                                ║
-║   9 : Back                                                    ║
+║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -49,7 +49,7 @@
 ║   3 : Airplane Database                                       ║
 ║   4 : Flight Schedules                                        ║
 ║				                                                ║
-║   9 : Back                                                    ║
+║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 
@@ -60,7 +60,7 @@
 ║	1 : Create new Flight                                       ║
 ║   2 : Edit already existing flight                            ║
 ║				                                                ║
-║   9 : Back                                                    ║
+║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -91,37 +91,66 @@
 ║				                                                ║
 ╚═══════════════════════════════════════════════════════════════╝
 
-█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > (Edit Flight Schedules) > Edit Existing        █
-█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
-║				                                                ║
-║	List of created flight plans:                               ║
-║				                                                ║
-║	1 : Reykjavik > Svalbard                                    ║
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > (Edit Flight Schedules) > Edit Existing                                                                   █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║				                                                                                                           ║
+║	Nr.    Destination           Dagsetning         Tími        Plane          Flight Number            Staða             ║
+║	1      Longyearbuen          13.01.24           06:10			                                                ║
+║	1 : Reykjavik > Longyearbuen                                ║
 ║		Departure:      13.01.24 / 06:10                        ║
 ║		Plane:          NaNair_1                                ║
 ║		Flight Nmbr:    NA040                                   ║
 ║		Pilots:         Jón Gunnar Helgason / Bjarni Jónsson    ║
 ║		Stewerdess:     Katrín Björnsdóttir                     ║
-║	1 : Svalbard > Reykjavík                                    ║
+║	2 : Longyearbuen > Reykjavík                                ║
 ║		Departure:      13.01.24 / 18:10                        ║
 ║		Plane:          NaNair_1                                ║
 ║		Flight Nmbr:    NA041                                   ║
 ║		Pilots:         Jón Gunnar Helgason / Bjarni Jónsson    ║
 ║		Stewerdess:     Katrín Björnsdóttir                     ║
 ║				                                                ║
-║	2 : Reykjavik > Nuuk                                        ║
+║	3 : Reykjavik > Nuuk                                        ║
 ║		Departure:      05.01.24 / 09:10                        ║
-║		Plane:          NaNair_1                                ║
+║		Plane:          NaNair_3                                ║
 ║		Flight Nmbr:    NA020                                   ║
-║		Pilots:         Jón Gunnar Helgason / Bjarni Jónsson    ║
-║		Stewerdess:     Katrín Björnsdóttir                     ║
-║	2 : Nuuk > Reykjavík                                        ║
-║		Departure:      13.01.24 / 19:50                        ║
-║		Plane:          NaNair_1                                ║
+║		Pilots:         Birkir F. Halldórsson / Bjarni Jónsson  ║
+║		Stewerdess:     Bimma Jacobs                            ║
+║	4 : Nuuk > Reykjavík                                        ║
+║		Departure:      05.01.24 / 19:50                        ║
+║		Plane:          NaNair_3                                ║
 ║		Flight Nmbr:    NA021                                   ║
-║		Pilots:         Jón Gunnar Helgason / Bjarni Jónsson    ║
+║		Pilots:         Birkir F. Halldórsson / Bjarni Jónsson  ║
+║		Stewerdess:     Bimma Jacobs                            ║
+║				                                                ║
+║	5 : Reykjavik > Torshavn                                    ║
+║		Departure:      05.01.24 / 11:00                        ║
+║		Plane:          NaNair_1                                ║
+║		Flight Nmbr:    NA010                                   ║
+║		Pilots:         Birkir F. Halldórsson / Gylfi Gunnar    ║
+║		Stewerdess:     Katrín Björnsdóttir                     ║
+║	6 : Torshavn > Reykjavík                                    ║
+║		Departure:      06.01.24 / 06:50                        ║
+║		Plane:          NaNair_1                                ║
+║		Flight Nmbr:    NA010                                   ║
+║		Pilots:         Birkir F. Halldórsson / Gylfi Gunnar    ║
 ║		Stewerdess:     Katrín Björnsdóttir                     ║
 ║				                                                ║
-║   9 : Back                                                    ║
+║	7 : ... 	                                                ║
+║				                                                ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > (Edit Flight Schedules) > Edit Existing > 3    █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║				                                                ║
+║	Reykjavik > Nuuk                                            ║
+║	1 : Departure:      05.01.24 / 09:10                        ║
+║	2 :	Plane:          NaNair_3                                ║
+║	3 :	Flight Nmbr:    NA020                                   ║
+║	4 :	Pilots:         Birkir F. Halldórsson / Bjarni Jónsson  ║
+║	5 :	Stewerdess:     Bimma Jacobs                            ║
+║				                                                ║
+║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
