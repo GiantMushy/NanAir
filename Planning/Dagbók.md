@@ -17,5 +17,6 @@ Edda Eik: Use Case Diagram
 Markmið dagsins er að gera use cases og happy paterns
 Matthías: Logic class diagram
 Þorvarður: Wireframes/happy path 
+Benjamín: klára requirements B og C
 Edda & Benjamín & Oliver & Matthías: Use Cases
 Eydís Sunna: Mætti ekki
