@@ -12,3 +12,9 @@ Oliver & Þorvarður: User group analysis
 Benjamín: Requirements list
 Matthías: Class Diagram
 Edda Eik: Use Case Diagram
+
+28.11.23
+Markmið dagsins er að ????????
+Matthías: Logic class diagram
+Þorvarður: Wireframes/happy path 
+
