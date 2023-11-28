@@ -27,10 +27,10 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█	                       Trip Manager                         █
+█                          Trip Manager                         █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║	1 : Employee Managment Menu                                 ║
+║   1 : Employee Managment Menu                                 ║
 ║   2 : Destination Managment Menu                              ║
 ║   3 : Trip Schedules (TripManagmentMenu)                      ║
 ║   4 : Edit Trip Schedules (TripSchedulingMenu)                ║
@@ -44,8 +44,8 @@
 █ Trip Manager > Edit Trip Schedules                            █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║	1 : Re-create Existing Trip                                 ║
-║	2 : Create New Trip                                         ║
+║   1 : Re-create Existing Trip                                 ║
+║   2 : Create New Trip                                         ║
 ║   3 : Edit already existing Flight                            ║
 ║                                                               ║
 ║   0 : Back                                                    ║
@@ -55,7 +55,7 @@
 █ Trip Manager > Edit Flight Schedules > Create new             █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║				Input Day of Departure (DD:MM:YYYY)             ║
+║               Input Day of Departure (DD:MM:YYYY)             ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
 
@@ -63,7 +63,7 @@
 █ Trip Manager > Edit Flight Schedules > Create new             █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║				 Input Departure Time (00:00 - 23:59)           ║
+║                Input Departure Time (00:00 - 23:59)           ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
 

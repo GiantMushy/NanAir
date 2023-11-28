@@ -79,7 +79,7 @@
 ║                                                               ║
 ║   Employee Data:                                              ║
 ║                                                               ║
-║     : Name         Jón Karl Magnússon                         ║
+║     : Name         Name McNameFace                            ║
 ║     : SSN          3012882559                                 ║
 ║   1 : Phone        555 1234                                   ║
 ║   2 : Address      Karlagata 12                               ║
