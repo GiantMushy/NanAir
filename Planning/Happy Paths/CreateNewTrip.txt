@@ -32,7 +32,7 @@
 ║                                                               ║
 ║   1 : Employee Managment Menu                                 ║
 ║   2 : Destination Managment Menu                              ║
-║   3 : Trip Schedules (TripManagmentMenu)                      ║
+║   3 : Trip Schedules                                          ║
 ║   4 : Work Reports Menu                                       ║
 ║   5 : Airplane Database                                       ║
 ║                                                               ║
@@ -75,7 +75,7 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > Edit Flight Schedules > Create new             █
+█ Trip Manager > Trip Schedules > Create new                    █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║    --> Input Day of Departure (DD.MM.YY)                      ║
@@ -86,7 +86,7 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > Edit Flight Schedules > Create new             █
+█ Trip Manager > Trip Schedules > Create new                    █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║        01.06.24                                               ║
@@ -97,7 +97,7 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > Edit Flight Schedules > Create new             █
+█ Trip Manager > Trip Schedules > Create new                    █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║        01.06.24                                               ║
@@ -108,7 +108,7 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > Edit Flight Schedules > Create new             █
+█ Trip Manager > Trip Schedules > Create new                    █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║        01.06.24                                               ║
@@ -119,7 +119,7 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > Edit Flight Schedules > Create new             █
+█ Trip Manager > Trip Schedules > Create new                    █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║   Available Planes:                                           ║
@@ -132,7 +132,7 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > Edit Flight Schedules > Create new             █
+█ Trip Manager > Trip Schedules > Create new                    █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║   Select Destination:                                         ║
@@ -146,10 +146,10 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > Edit Flight Schedules > Create new             █
+█ Trip Manager > Trip Schedules > Create new                    █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║   Flight Created:                                             ║
+║   Trip Created:                                               ║
 ║                                                               ║
 ║   Departing:          Reykjavik                               ║
 ║   Destination:        Nuuk                                    ║
@@ -166,22 +166,55 @@
 ║   0 : Back to Edit Trip Schedules                             ║
 ╚═══════════════════════════════════════════════════════════════╝
 
+#frá Trip Schedules ( V : Re-create Existing Trip)
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
 █ Trip Manager > Trip Schedules > Re-create existing                                                                        █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                                                                                           ║
-║   Saved Trips:                                                                                                            ║
+║   Saved One-Day Trips:                                                                                                    ║
 ║                                                                                                                           ║
-║   1 : Reykjavik > Nuuk   |    06:10         6 : Reykjavik > Nuuk   |    06:10       11: Reykjavik > Nuuk   |    06:10     ║
-║       Nuuk > Reykjavik   |    18:40             Nuuk > Reykjavik   |    18:40           Nuuk > Reykjavik   |    18:40     ║
-║   2 : Reykjavik > Nuuk   |    06:10         7 : Reykjavik > Nuuk   |    06:10       12: Reykjavik > Nuuk   |    06:10     ║
-║       Nuuk > Reykjavik   |    18:40             Nuuk > Reykjavik   |    18:40           Nuuk > Reykjavik   |    18:40     ║
-║   3 : Reykjavik > Nuuk   |    06:10         8 : Reykjavik > Nuuk   |    06:10       13: Reykjavik > Nuuk   |    06:10     ║
-║       Nuuk > Reykjavik   |    18:40             Nuuk > Reykjavik   |    18:40           Nuuk > Reykjavik   |    18:40     ║
-║   4 : Reykjavik > Nuuk   |    06:10         9 : Reykjavik > Nuuk   |    06:10       14: Reykjavik > Nuuk   |    06:10     ║
-║       Nuuk > Reykjavik   |    18:40             Nuuk > Reykjavik   |    18:40           Nuuk > Reykjavik   |    18:40     ║
-║   5 : Reykjavik > Nuuk   |    06:10         10: Reykjavik > Nuuk   |    06:10       15: ------...-------   |    ...       ║
-║       Nuuk > Reykjavik   |    18:40             Nuuk > Reykjavik   |    18:40           ------...-------   |    ...       ║
+║  1 : Reykjavik > Nuuk       06:10     ||    6 : Reykjavik > Nuuk       06:10    ||   11: Reykjavik > Nuuk       06:10     ║
+║      Nuuk > Reykjavik       18:40     ||        Nuuk > Reykjavik       18:40    ||       Nuuk > Reykjavik       18:40     ║
+║  2 : Reykjavik > Nuuk       06:10     ||    7 : Reykjavik > Nuuk       06:10    ||   12: Reykjavik > Nuuk       06:10     ║
+║      Nuuk > Reykjavik       18:40     ||        Nuuk > Reykjavik       18:40    ||       Nuuk > Reykjavik       18:40     ║
+║  3 : Reykjavik > Nuuk       06:10     ||    8 : Reykjavik > Nuuk       06:10    ||   13: Reykjavik > Nuuk       06:10     ║
+║      Nuuk > Reykjavik       18:40     ||        Nuuk > Reykjavik       18:40    ||       Nuuk > Reykjavik       18:40     ║
+║  4 : Reykjavik > Nuuk       06:10     ||    9 : Reykjavik > Nuuk       06:10    ||   14: Reykjavik > Nuuk       06:10     ║
+║      Nuuk > Reykjavik       18:40     ||        Nuuk > Reykjavik       18:40    ||       Nuuk > Reykjavik       18:40     ║
+║  5 : Reykjavik > Nuuk       06:10     ||    10: Reykjavik > Nuuk       06:10    ||   15: ------...-------       ...       ║
+║      Nuuk > Reykjavik       18:40     ||        Nuuk > Reykjavik       18:40    ||       ------...-------       ...       ║
 ║                                                                                                                           ║
-║   0 : Back to Edit Trip Schedules                                                                                         ║
+║   0 : Back to Trip Schedules                                                                                              ║
 ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > Trip Schedules > Re-create existing            █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║   Re-creating Saved Trip #4:                                  ║
+║   Reykjavik > Nuuk      |    06:10                            ║
+║   Nuuk > Reykjavik      |    18:40                            ║
+║                                                               ║
+║    --> Input Day of Departure (DD.MM.YY)                      ║
+║                                                               ║
+║   0 : Back to Edit Trip Schedules                             ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > Trip Schedules > Re-create existing            █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║   Trip Created:                                               ║
+║                                                               ║
+║   Departing:          Reykjavik                               ║
+║   Destination:        Nuuk                                    ║
+║   Day of Departure:   06.01.24                                ║
+║   Time of Departure:  06:10                                   ║
+║   Day of Return:      06.01.24                                ║
+║   Time of Return:     18:40                                   ║
+║   Plane:              NaNair_1                                ║
+║   Flight Nmbr:        NA040                                   ║
+║   Staff Status:       Not Staffed                             ║
+║                                                               ║
+║   0 : Back to Edit Trip Schedules                             ║
+╚═══════════════════════════════════════════════════════════════╝
