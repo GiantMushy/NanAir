@@ -108,6 +108,6 @@
 ║   Flight Nmbr:        NA040                                   ║
 ║   Staff Status:       Not Staffed                             ║
 ║                                                               ║
-║   <Enter> : Back                                              ║
+║   <Enter> : Back to Edit Trip Schedules                       ║
 ╚═══════════════════════════════════════════════════════════════╝
 
