@@ -14,7 +14,8 @@ Matthías: Class Diagram
 Edda Eik: Use Case Diagram
 
 28.11.23
-Markmið dagsins er að ????????
+Markmið dagsins er að er að klára gera grunn af öllum köflum sem við ætlum að hafa í skýrslunni, unnið verður í allskonar verkefnum og ??? klára gera markmið 
 Matthías: Logic class diagram
 Þorvarður: Wireframes/happy path 
-
+Edda & Benjamín: Use Cases
+Oliver: Vinna í skýrslu, skipuleggja kafla
