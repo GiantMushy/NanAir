@@ -44,8 +44,9 @@
 █ Trip Manager > Edit Trip Schedules                            █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║	1 : Create new Flight                                       ║
-║   2 : Edit already existing flight                            ║
+║	1 : Re-create Existing Trip                                 ║
+║	2 : Create New Trip                                         ║
+║   3 : Edit already existing Flight                            ║
 ║                                                               ║
 ║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
@@ -71,10 +72,25 @@
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║   Available Planes:                                           ║
+║                                                               ║
 ║   1 : NaNair_1                                                ║
 ║   2 : NaNair_2                                                ║
 ║   3 : NaNair_3                                                ║
 ║   4 : NaNair_4                                                ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > Edit Flight Schedules > Create new             █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║   Select Destination:                                         ║
+║                                                               ║
+║   1 : Longyearbuen  (Svalbard)                                ║
+║   2 : Torshavn      (Faroe Islands)                           ║
+║   3 : Kulusuk       (Greenland)                               ║
+║   4 : Nuuk          (Greenland)                               ║
+║   5 : Tingwall      (Shetland)                                ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
 
