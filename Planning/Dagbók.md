@@ -19,4 +19,4 @@ Matthías: Logic class diagram
 Þorvarður: Wireframes/happy path 
 Benjamín: klára requirements B og C
 Edda & Benjamín & Oliver & Matthías: Use Cases
-
+Eydís Sunna: Mætti ekki
