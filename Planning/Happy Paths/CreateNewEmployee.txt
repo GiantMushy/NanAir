@@ -32,23 +32,36 @@
 ║                                                               ║
 ║   1 : Employee Managment Menu                                 ║
 ║   2 : Destination Managment Menu                              ║
-║   3 : Trip Schedules (TripManagmentMenu)                      ║
-║   4 : Edit Employee Schedules (CrewAssignmentMenu)            ║
+║   3 : Trip Schedules                                          ║
 ║   5 : Work Reports Menu                                       ║
 ║   6 : Airplane Database                                       ║
 ║                                                               ║
 ║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
 
-█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Employee Managment Menu                     █
-█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
-║                                                               ║
-║   1 : Create New Employee                                     ║
-║   2 : Edit Existing Employee Data                             ║
-║                                                               ║
-║   0 : Back                                                    ║
-╚═══════════════════════════════════════════════════════════════╝
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Human Resources > Employee Managment Menu                                                                                 █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                                                                                           ║
+║   List of Employees:                                                                                                      ║
+║       Name                     Position      SSN            Phone       Address          Email               Home Phone   ║
+║                                                                                                                           ║
+║  01 : Gunnar Gunnarson         Captain       010180 2029    555 1234    Flugvegur 10     gunnar@nanair.is    --Not Given--║
+║  02 : Jón Jónsson              Captain       010180 2029    555 1234    Flugvegur 11     jon@nanair.is       --Not Given--║
+║  03 : Gunna Gunnarsdóttir      Captain       010180 2029    555 1234    Flugvegur 12     gunna@nanair.is     --Not Given--║
+║  04 : Helga Helgadóttir        Co-Pilot      010180 2029    555 1234    Flugvegur 13     helga@nanair.is     555 1234     ║
+║  05 : Bjarni Bjarnason         Co-Pilot      010180 2029    555 1234    Flugvegur 14     bjarni@nanair.is    --Not Given--║
+║  06 : Muhammed Ali             Co-Pilot      010180 2029    555 1234    Flugvegur 15     mali@nanair.is      --Not Given--║
+║  07 : Chuck Chuckson           Stewerdess    010180 2029    555 1234    Flugvegur 16     chuck@nanair.is     --Not Given--║
+║  08 : Name McNameFace          Stewerdess    010180 2029    555 1234    Flugvegur 17     name@nanair.is      555 4321     ║
+║  09 : Tom Cruise               Stewerdess    010180 2029    555 1234    Flugvegur 18     tomc@nanair.is      --Not Given--║
+║  10 : Margeret Thatcher        Stewerdess    010180 2029    555 1234    Flugvegur 19     marge@nanair.is     --Not Given--║
+║  11 : Ace Pilotsson            Stewerdess    010180 2029    555 1234    Flugvegur 09     acep@nanair.is      --Not Given--║
+║  12 : Im Boredsson             Stewerdess    010180 2029    555 1234    Flugvegur 01     bored@nanair.is     --Not Given--║
+║  13 : ...                      ...           ...... ....    ... ....    ...              ....@nanair.is      --Not Given--║
+║                                                                                                                           ║
+║   0 : Back                     00 : Create New Employee                  <Employee number> : Edit Employee Data           ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
 █ Human Resources > Employee Managment Menu > Create New        █
@@ -67,6 +80,7 @@
 █ Human Resources > Employee Managment Menu > Create New        █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
+║      Jón Karl Magnússon                                       ║
 ║  --> Social Security Number (xxxxxx xxxx)                     ║
 ║      Phone Number                                             ║
 ║      Home Address                                             ║
@@ -79,6 +93,8 @@
 █ Human Resources > Employee Managment Menu > Create New        █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
+║      Jón Karl Magnússon                                       ║
+║      301288 2559                                              ║
 ║  --> Phone Number (xxx xxxx)                                  ║
 ║      Home Address                                             ║
 ║      Email                                                    ║
@@ -90,6 +106,9 @@
 █ Human Resources > Employee Managment Menu > Create New        █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
+║      Jón Karl Magnússon                                       ║
+║      301288 2559                                              ║
+║      555 1234                                                 ║
 ║  --> Home Address (Street, number)                            ║
 ║      Email                                                    ║
 ║      Home Phone                                               ║
@@ -100,6 +119,10 @@
 █ Human Resources > Employee Managment Menu > Create New        █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
+║      Jón Karl Magnússon                                       ║
+║      301288 2559                                              ║
+║      555 1234                                                 ║
+║      Karlagata 12                                             ║
 ║  --> Email (example@email.com)                                ║
 ║      Home Phone                                               ║
 ║                                                               ║
@@ -109,6 +132,11 @@
 █ Human Resources > Employee Managment Menu > Create New        █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
+║      Jón Karl Magnússon                                       ║
+║      301288 2559                                              ║
+║      555 1234                                                 ║
+║      Karlagata 12                                             ║
+║      jonkarl@nanair.is                                        ║
 ║  --> Home Phone (xxx xxxx) (optional)                         ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
@@ -120,11 +148,11 @@
 ║   New Employee Created:                                       ║
 ║                                                               ║
 ║   Name:         Jón Karl Magnússon                            ║
-║   SSN:          3012882559                                    ║
+║   SSN:          301288 2559                                   ║
 ║   Phone:        555 1234                                      ║
 ║   Address:      Karlagata 12                                  ║
-║   Email:        jonkarl@gmail.com                             ║
+║   Email:        jonkarl@nanair.is                             ║
 ║   Home Phone:   --Not Given--                                 ║
 ║                                                               ║
-║   <Enter> : Back                                              ║
+║   <Enter> : Back to Employee Managment Menu                   ║
 ╚═══════════════════════════════════════════════════════════════╝
