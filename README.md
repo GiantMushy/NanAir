@@ -13,3 +13,4 @@ Happy paths staðsett undir Planning folder
 Notendahópagreining:
 
 bara test.
+bara test 2.
