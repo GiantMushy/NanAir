@@ -36,8 +36,8 @@
 ║   1 : Employee Managment Menu                                 ║
 ║   2 : Destination Managment Menu                              ║
 ║   3 : Trip Schedules                                          ║
-║   5 : Work Reports Menu                                       ║
-║   6 : Airplane Database                                       ║
+║   4 : Work Reports Menu                                       ║
+║   5 : Airplane Database                                       ║
 ║                                                               ║
 ║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
