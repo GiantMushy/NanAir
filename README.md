@@ -10,4 +10,6 @@ External link to class diagrams: https://lucid.app/lucidchart/7b1cbf61-5347-4380
 
 Happy paths staðsett undir Planning folder
 
-Notendahópagreining: 
+Notendahópagreining:
+
+bara test.
