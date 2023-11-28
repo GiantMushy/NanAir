@@ -33,7 +33,6 @@
 ║	  1 : Employee Managment Menu                                 ║
 ║   2 : Destination Managment Menu                              ║
 ║   3 : Trip Schedules (TripManagmentMenu)                      ║
-║   4 : Crew Assignment Menu                                    ║
 ║   5 : Work Reports Menu                                       ║
 ║   6 : Airplane Database                                       ║
 ║                                                               ║
@@ -41,29 +40,33 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Crew Assignment Menu                                                                                    █
+█ Human Resources > Trip Schedules                                                                                          █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                                                                                           ║
-║   Select Trip to Staff                                                                                                    ║
 ║   Week of: 08.01.24 - 14.01.24                                                                                            ║
+║   Select Trip to Staff                                                                                                    ║
 ║                                                                                                                           ║
 ║   Nr.    Departing      Destination     Dagsetning      Tími        Plane          Flight Number       Staff Status       ║
 ║                                                                                                                           ║
-║   1      Reykjavik    > Longyearbuen    06.01.24        06:10       NaNair_1       NA040               Staffed            ║
-║          Longyearbuen > Reykjavik       06.01.24        18:10       NaNair_1       NA041               Staffed            ║
-║                                                                                                                           ║
-║   2      Reykjavik    > Nuuk            06.01.24        09:30       NaNair_3       NA020               Staffed            ║
+║   1 :    Reykjavik    > Longyearbuen    06.01.24        06:10       NaNair_1       NA040               Staffed            ║
+║          Longyearbuen > Reykjavik       06.01.24        18:10       NaNair_1       NA041               Not Staffed        ║
+║   2 :    Reykjavik    > Nuuk            06.01.24        09:30       NaNair_3       NA020               Staffed            ║
 ║          Nuuk         > Reykjavik       06.01.24        19:30       NaNair_3       NA021               Staffed            ║
-║                                                                                                                           ║
-║   3      Reykjavik    > Toshavn         07.01.24        11:00       NaNair_2       NA010               Not Staffed        ║
+║   3 :    Reykjavik    > Toshavn         07.01.24        11:00       NaNair_2       NA010               Not Staffed        ║
 ║          Torshavn     > Reykjavik       08.01.24        09:30       NaNair_2       NA010               Not Staffed        ║
-║                                                                                                                           ║
-║   4      Reykjavik    > Longyearbuen    08.01.24        06:10       NaNair_1       NA040               Not Staffed        ║
+║   4 :    Reykjavik    > Longyearbuen    08.01.24        06:10       NaNair_1       NA040               Not Staffed        ║
 ║          Longyearbuen > Reykjavik       08.01.24        18:10       NaNair_1       NA041               Not Staffed        ║
+║   5 :    Reykjavik    > Longyearbuen    09.01.24        06:10       NaNair_1       NA040               Staffed            ║
+║          Longyearbuen > Reykjavik       09.01.24        18:10       NaNair_1       NA041               Staffed            ║
+║   6 :    Reykjavik    > Nuuk            10.01.24        09:30       NaNair_3       NA020               Staffed            ║
+║          Nuuk         > Reykjavik       10.01.24        19:30       NaNair_3       NA021               Staffed            ║
+║   7 :    Reykjavik    > Toshavn         11.01.24        11:00       NaNair_2       NA010               Not Staffed        ║
+║          Torshavn     > Reykjavik       11.01.24        09:30       NaNair_2       NA010               Not Staffed        ║
+║   8 :    Reykjavik    > Longyearbuen    11.01.24        06:10       NaNair_1       NA040               Not Staffed        ║
+║          Longyearbuen > Reykjavik       11.01.24        18:10       NaNair_1       NA041               Staffed            ║
+║   9 :    ...            ...             ...             ...         ...            ...                 ...                ║
 ║                                                                                                                           ║
-║   5      ...            ...             ...             ...         ...            ...                 ...                ║
-║                                                                                                                           ║
-║   0 : Back              00 : Change Week                                                                                  ║
+║   0 : Back              00 : Change Week               n : Previous Week             m : Next Week                        ║
 ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -77,7 +80,7 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Crew Assignment Menu > 2                    █
+█ Human Resources > Trip Schedules > 2                          █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║   Reykjavík > Longyearbuen  |  07.01.24 > 08.01.24            ║
@@ -89,7 +92,7 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Crew Assignment Menu > 3                    █
+█ Human Resources > Trip Schedules > 3                          █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║   Reykjavík > Torshavn  |  07.01.24 > 08.01.24                ║
@@ -101,7 +104,7 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Crew Assignment Menu > 3 > Assign Staff     █
+█ Human Resources > Trip Schedules > 3 > Assign Staff           █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║   Reykjavík > Torshavn  |  07.01.24 > 08.01.24                ║
