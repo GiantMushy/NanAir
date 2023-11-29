@@ -5,8 +5,8 @@
                                  ' ___ '
                        ---------'  .-.  '---------
       \_________________________'  '-'  '_________________________/
-        ''''''-|---|--/    \==[]^',_m_,'^[]==/    \--|---|-''''''
-                      \    /  ||/   H   \||  \    /
+        ''''''-|---|--/_\/_\==[]^',_m_,'^[]==/_\/_\--|---|-''''''
+                      \ /\ /  ||/   H   \||  \ /\ /
                        '--'   OO   O|O   OO   '--'
  ____  _____      __      ____  _____          __      _____ _______    
 |_   \|_   _|    /  \    |_   \|_   _|        /  \    |_   _|_   __ \   
@@ -66,7 +66,87 @@
 ║          Longyearbuen > Reykjavik       11.01.24        18:10       NaNair_1       NA041               Staffed            ║
 ║   9      ...            ...             ...             ...         ...            ...                 ...                ║
 ║                                                                                                                           ║
-║   C : Change to Employee Oriented Schedules                                                                               ║
+║   C : Change to Employee Oriented Daily Schedules                                                                         ║
 ║                                                                                                                           ║
 ║   0 : Back              00 : Change Week               n : Previous Week             m : Next Week                        ║
 ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Human Resources > Employee Working Schedules                                                                              █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                                                                                           ║
+║  List of Employees working on 08.01.24                                                                                    ║
+║  Nr   Name                     Position      Flying to      || Nr   Name                     Position      Flying to      ║
+║                                                             ||                                                            ║
+║  01 : Gunnar Gunnarson         Captain       Torshavn       || 09 : Name McNameFace          Captain       Nuuk           ║
+║  02 : Jón Jónsson              Captain       Longyearbyen   || 10 : Name McNameFace          Co-Pilot      Nuuk           ║
+║  03 : Gunna Gunnarsdóttir      Co-Pilot      Torshavn       || 11 : Gunna Þ. Gunnarsdóttir   Stewerdess    Nuuk           ║
+║  04 : Helga Helgadóttir        Co-Pilot      Longyearbyen   || 12 : Name McNameFace          Stewerdess    Nuuk           ║
+║  05 : Bjarni Bjarnason         Stewerdess    Torshavn       || 13 : Name McNameFace          Captain       Kulusuk        ║
+║  06 : Muhammed Ali             Stewerdess    Kulusuk        || 14 : Name McNameFace          Co-Pilot      Kulusuk        ║
+║  07 : Chuck Chuckson           Stewerdess    Longyearbyen   || 15 : Name McNameFace          Captain       Nuuk           ║
+║  08 : Name McNameFace          Stewerdess    Longyearbyen   || 16 : Name McNameFace          Co-Pilot      Nuuk           ║
+║                                                                                                                           ║
+║   C : Change to Trip Oriented Weekly Schedules                                                                            ║
+║   V : Change to List of Employeees NOT working on 08.01.24                                                                ║
+║   <Nr> : See Employees Week Schedule                                                                                      ║
+║                                                                                                                           ║
+║   0 : Back To Main Menu       00 : Change Day          n : Previous Day             m : Next Day                          ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█                          Change Day                           █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║                 Enter the day you want to see                 ║
+║                           (DD.MM.YY)                          ║
+║                                                               ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Human Resources > Employee Not Working Schedules                                                                          █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                                                                                           ║
+║  List of Employees not working on 08.01.24                                                                                ║
+║  Nr   Name                     Position      Flying to      || Nr   Name                     Position      Flying to      ║
+║                                                             ||                                                            ║
+║  01 : Gunnar Gunnarson         Captain                      || 09 : Name McNameFace          Captain                      ║
+║  02 : Jón Jónsson              Captain                      || 10 : Name McNameFace          Co-Pilot                     ║
+║  03 : Gunna Gunnarsdóttir      Co-Pilot                     || 11 : Gunna Þ. Gunnarsdóttir   Stewerdess                   ║
+║  04 : Helga Helgadóttir        Co-Pilot                     || 12 : Name McNameFace          Stewerdess                   ║
+║  05 : Bjarni Bjarnason         Stewerdess                   || 13 : Name McNameFace          Captain                      ║
+║  06 : Muhammed Ali             Stewerdess                   || 14 : Name McNameFace          Co-Pilot                     ║
+║  07 : Chuck Chuckson           Stewerdess                   || 15 : Name McNameFace          Captain                      ║
+║  08 : Name McNameFace          Stewerdess                   || 16 : Name McNameFace          Co-Pilot                     ║
+║                                                                                                                           ║
+║   C : Change to Trip Oriented Weekly Schedules                                                                            ║
+║   V : Change to List of Employeees working on 08.01.24                                                                    ║
+║   <Nr> : See Employees Week Schedule                                                                                      ║
+║                                                                                                                           ║
+║   0 : Back To Main Menu       00 : Change Day          n : Previous Day             m : Next Day                          ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Human Resources > Employee Working Schedules > 7                                                                          █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                                                                                           ║
+║  Chuch Chucksson's schedule: 08.01.24 - 15.01.24                                                                          ║
+║                 _______________________________________________________________________________________________________   ║
+║ Weekday        |Monday 08     Tuesday 09     Wednesday 10   Thursday 11    Friday 12      Saturday 13    Sunday 14     |  ║
+║ Working (Y/N)  |Y             Y              N              N              N              Y              Y             |  ║
+║ Destination    |Nuuk          Reykjavik                                                   Longyearbyen   Reykjavik     |  ║
+║                |_______________________________________________________________________________________________________|  ║
+║                                                                                                                           ║
+║   0 : Back To Employee Schedules         00 : Change Week          n : Previous Week            m : Next Week             ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█                          Change Week                          █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║                 Enter the week you want to see                ║
+║                      (DD.MM.YY - DD.MM.YY)                    ║
+║                                                               ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
