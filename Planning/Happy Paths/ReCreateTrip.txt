@@ -29,14 +29,13 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█                          Trip Manager                         █
+█                        Trip Manager                           █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║   1 : Employee Managment Menu                                 ║
 ║   2 : Destination Managment Menu                              ║
 ║   3 : Trip Schedules                                          ║
-║   4 : Work Reports Menu                                       ║
-║   5 : Airplane Database                                       ║
+║   4 : Airplane Database                                       ║
 ║                                                               ║
 ║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
@@ -103,6 +102,19 @@
 ║    --> Input Day of Departure (DD.MM.YY)                      ║
 ║                                                               ║
 ║   0 : Back to Edit Trip Schedules                             ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > Trip Schedules > Re-create Existing > 4        █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║   Available Planes:                                           ║
+║                                                               ║ #Hérna væri kerfið búið að tjékka hvaða
+║   1 : NaNair_1                                                ║ #flugvélar væru lausar fyrir þetta ákveðið
+║   2 : NaNair_2                                                ║ #flug, og byrtir einungis þær flugvélar
+║   3 : NaNair_3                                                ║ #sem eru lausar
+║   4 : NaNair_4                                                ║
+║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█

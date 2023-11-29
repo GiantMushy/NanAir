@@ -29,46 +29,49 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█                          Trip Manager                         █
+█                        Trip Manager                           █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║   1 : Employee Managment Menu                                 ║
-║   2 : Destination Managment Menu                              ║
-║   3 : Trip Schedules                                          ║
-║   4 : Work Reports Menu                                       ║
-║   5 : Airplane Database                                       ║
+║   1 : Trip Schedules                                          ║
+║   2 : Employee Managment Menu                                 ║
+║   3 : Destination Managment Menu                              ║
+║   4 : Airplane Managment Menu                                 ║
 ║                                                               ║
 ║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Managment > Trip Schedules                                                                                           █
+█ Trip Manager > Trip Schedules                                                                                             █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                                                                                           ║
 ║   Week of: 08.01.24 - 14.01.24                                                                                            ║
 ║                                                                                                                           ║
 ║   Nr.    Departing      Destination     Dagsetning      Tími        Plane          Flight Number       Staff Status       ║
 ║                                                                                                                           ║
-║   1      Reykjavik    > Longyearbuen    06.01.24        06:10       NaNair_1       NA040               Staffed            ║
+║   01 :   Reykjavik    > Longyearbuen    06.01.24        06:10       NaNair_1       NA040               Staffed            ║
 ║          Longyearbuen > Reykjavik       06.01.24        18:10       NaNair_1       NA041               Not Staffed        ║
-║   2      Reykjavik    > Nuuk            06.01.24        09:30       NaNair_3       NA020               Staffed            ║
+║   02 :   Reykjavik    > Nuuk            06.01.24        09:30       NaNair_3       NA020               Staffed            ║
 ║          Nuuk         > Reykjavik       06.01.24        19:30       NaNair_3       NA021               Staffed            ║
-║   3      Reykjavik    > Toshavn         07.01.24        11:00       NaNair_2       NA010               Not Staffed        ║
+║   03 :   Reykjavik    > Toshavn         07.01.24        11:00       NaNair_2       NA010               Not Staffed        ║
 ║          Torshavn     > Reykjavik       08.01.24        09:30       NaNair_2       NA010               Not Staffed        ║
-║   4      Reykjavik    > Longyearbuen    08.01.24        06:10       NaNair_1       NA040               Not Staffed        ║
+║   04 :   Reykjavik    > Longyearbuen    08.01.24        06:10       NaNair_1       NA040               Not Staffed        ║
 ║          Longyearbuen > Reykjavik       08.01.24        18:10       NaNair_1       NA041               Not Staffed        ║
-║   5      Reykjavik    > Longyearbuen    09.01.24        06:10       NaNair_1       NA040               Staffed            ║
+║   05 :   Reykjavik    > Longyearbuen    09.01.24        06:10       NaNair_1       NA040               Staffed            ║
 ║          Longyearbuen > Reykjavik       09.01.24        18:10       NaNair_1       NA041               Staffed            ║
-║   6      Reykjavik    > Nuuk            10.01.24        09:30       NaNair_3       NA020               Staffed            ║
+║   06 :   Reykjavik    > Nuuk            10.01.24        09:30       NaNair_3       NA020               Staffed            ║
 ║          Nuuk         > Reykjavik       10.01.24        19:30       NaNair_3       NA021               Staffed            ║
-║   7      Reykjavik    > Toshavn         11.01.24        11:00       NaNair_2       NA010               Not Staffed        ║
+║   07 :   Reykjavik    > Toshavn         11.01.24        11:00       NaNair_2       NA010               Not Staffed        ║
 ║          Torshavn     > Reykjavik       11.01.24        09:30       NaNair_2       NA010               Not Staffed        ║
-║   8      Reykjavik    > Longyearbuen    11.01.24        06:10       NaNair_1       NA040               Not Staffed        ║
+║   08 :   Reykjavik    > Longyearbuen    11.01.24        06:10       NaNair_1       NA040               Not Staffed        ║
 ║          Longyearbuen > Reykjavik       11.01.24        18:10       NaNair_1       NA041               Staffed            ║
-║   9      ...            ...             ...             ...         ...            ...                 ...                ║
+║   09 :   ...            ...             ...             ...         ...            ...                 ...                ║
 ║                                                                                                                           ║
-║   C : Create New Trip                                                                                                     ║
-║   V : Re-create Existing Trip                                                                                             ║
+║ <Nr> : Examine Staff Status of Trip                                                                                       ║
+║    C : Go to Daily Schedules of Working Employees                                                                         ║
+║    V : Go to Daily Schedules of Not Working Employee                                                                      ║
+║    D : Go to Single Day Flight Schedules                                                                                  ║
+║    C : Create New Trip                                                                                                    ║
+║    V : Re-create Existing Trip                                                                                            ║
 ║                                                                                                                           ║
 ║   0 : Back              00 : Change Week               n : Previous Week             m : Next Week                        ║
 ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
@@ -136,10 +139,10 @@
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║   Available Planes:                                           ║
-║                                                               ║#Hérna væri kerfið búið að tjékka hvaða
-║   1 : NaNair_1                                                ║#flugvélar væru lausar fyrir þetta ákveðið
-║   2 : NaNair_2                                                ║#flug, og byrtir einungis þær flugvélar
-║   3 : NaNair_3                                                ║#sem eru lausar
+║                                                               ║ #Hérna væri kerfið búið að tjékka hvaða
+║   1 : NaNair_1                                                ║ #flugvélar væru lausar fyrir þetta ákveðið
+║   2 : NaNair_2                                                ║ #flug, og byrtir einungis þær flugvélar
+║   3 : NaNair_3                                                ║ #sem eru lausar
 ║   4 : NaNair_4                                                ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
@@ -150,8 +153,8 @@
 ║                                                               ║
 ║   Error occured when scheduling trip:                         ║
 ║                                                               ║
-║   No plane available during assigned time period:             ║#Ef engar flugvélar eru lausar fyrir þetta
-║   06.01.24, 06.10 --> 06.01.24, 18:40 (plus travel time)      ║#tímabil birtist þessi villiskilaboð
+║   No plane available during assigned time period:             ║ #Ef engar flugvélar eru lausar fyrir þetta
+║   06.01.24, 06.10 --> 06.01.24, 18:40 (plus travel time)      ║ #tímabil birtist þessi villiskilaboð
 ║                                                               ║
 ║   1 : Back to Create New Trip                                 ║
 ║   0 : Back to Edit Trip Schedules                             ║

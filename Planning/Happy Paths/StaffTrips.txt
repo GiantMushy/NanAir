@@ -29,14 +29,13 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█	                        Human Resources                       █
+█                        Human Resources                        █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║	  1 : Employee Managment Menu                                 ║
-║   2 : Destination Managment Menu                              ║
-║   3 : Trip Schedules (TripManagmentMenu)                      ║
-║   4 : Work Reports Menu                                       ║
-║   5 : Airplane Database                                       ║
+║   1 : Trip Schedules                                          ║
+║   2 : Employee Managment Menu                                 ║
+║   3 : Destination Managment Menu                              ║
+║   4 : Airplane Managment Menu                                 ║
 ║                                                               ║
 ║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
@@ -46,7 +45,7 @@
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                                                                                           ║
 ║   Week of: 08.01.24 - 14.01.24                                                                                            ║
-║   Select Trip to Staff                                                                                                    ║
+║   <Nr> : Select Trip to Staff                                                                                             ║
 ║                                                                                                                           ║
 ║   Nr.    Departing      Destination     Dagsetning      Tími        Plane          Flight Number       Staff Status       ║
 ║                                                                                                                           ║
@@ -68,7 +67,9 @@
 ║          Longyearbuen > Reykjavik       11.01.24        18:10       NaNair_1       NA041               Staffed            ║
 ║   9 :    ...            ...             ...             ...         ...            ...                 ...                ║
 ║                                                                                                                           ║
-║   0 : Back              00 : Change Week              n : Previous Week             m : Next Week                         ║
+║   C : Change to Employee Oriented Daily Schedules                                                                         ║
+║                                                                                                                           ║
+║   0 : Back              00 : Change Week               n : Previous Week             m : Next Week                        ║
 ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -90,7 +91,7 @@
 ║   Co-Captain:       Dwayen Rock   (400199 9229)               ║
 ║   Head-Stewerdess:  Jamie Daweson (040400 4469)               ║
 ║                                                               ║
-║   <Enter> : Back to Crew Assignment Menu                      ║
+║   <Enter> : Back to Trip Schedule                             ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -121,7 +122,7 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Crew Assignment Menu > 3 > Assign Staff     █
+█ Human Resources > Trip Schedules > 3 > Assign Staff           █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║   Reykjavík > Torshavn  |  07.01.24 > 08.01.24                ║
@@ -136,7 +137,7 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Crew Assignment Menu > 3 > Assign Staff     █
+█ Human Resources > Trip Schedules > 3 > Assign Staff           █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║   Reykjavík > Torshavn  |  07.01.24 > 08.01.24                ║
@@ -151,7 +152,7 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Crew Assignment Menu > 3 > Assign Staff     █
+█ Human Resources > Trip Schedules > 3 > Assign Staff           █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║   Reykjavík > Torshavn  |  07.01.24 > 08.01.24                ║
@@ -166,7 +167,7 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Crew Assignment Menu > 3 > Assign Staff     █
+█ Human Resources > Trip Schedules > 3 > Assign Staff           █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║   Reykjavík > Torshavn  |  07.01.24 > 08.01.24                ║
@@ -180,7 +181,7 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Crew Assignment Menu > 2                    █
+█ Human Resources > Trip Schedules > 3 > Assign Staff           █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║   Reykjavík > Torshavn  |  07.01.24 > 08.01.24                ║
