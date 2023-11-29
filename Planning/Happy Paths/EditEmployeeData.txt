@@ -22,7 +22,6 @@
 ║                                                               ║
 ║   1 : Trip Manager                                            ║
 ║   2 : Human Resources                                         ║
-║   3 : Chuck Norris                                            ║
 ║                                                               ║
 ║   *Hint: input the number you want to select and then enter   ║
 ║    For ex.: 1 --> Trip Manager                                ║
@@ -32,10 +31,11 @@
 █                        Human Resources                        █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║   1 : Trip Schedules                                          ║
-║   2 : Employee Managment Menu                                 ║
-║   3 : Destination Managment Menu                              ║
-║   4 : Airplane Managment Menu                                 ║
+║   1 : Flight Schedules                                        ║
+║   2 : Employee Schedules                                      ║
+║   3 : Employee Managment Menu                                 ║
+║   4 : Destination Managment Menu                              ║
+║   5 : Airplane Database                                       ║
 ║                                                               ║
 ║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝

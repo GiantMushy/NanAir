@@ -5,8 +5,8 @@
                                  ' ___ '
                        ---------'  .-.  '---------
       \_________________________'  '-'  '_________________________/
-        ''''''-|---|--/    \==[]^',_m_,'^[]==/    \--|---|-''''''
-                      \    /  ||/   H   \||  \    /
+        ''''''-|---|--/_\/_\==[]^',_m_,'^[]==/_\/_\--|---|-''''''
+                      \ /\ /  ||/   H   \||  \ /\ /
                        '--'   OO   O|O   OO   '--'    
  ____  _____      __      ____  _____          __      _____ _______    
 |_   \|_   _|    /  \    |_   \|_   _|        /  \    |_   _|_   __ \   
@@ -22,7 +22,6 @@
 ║                                                               ║
 ║   1 : Trip Manager                                            ║
 ║   2 : Human Resources                                         ║
-║   3 : Chuck Norris                                            ║
 ║                                                               ║
 ║   *Hint: input the number you want to select and then enter   ║
 ║    For ex.: 1 --> Trip Manager                                ║
@@ -32,95 +31,105 @@
 █                        Trip Manager                           █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║   1 : Employee Managment Menu                                 ║
-║   2 : Destination Managment Menu                              ║
-║   3 : Trip Schedules (TripManagmentMenu)                      ║
-║   4 : Edit Trip Schedules (TripSchedulingMenu)                ║
-║   5 : Work Reports Menu                                       ║
-║   6 : Airplane Database                                       ║
+║   1 : Flight Schedules                                        ║
+║   2 : Employee Schedules                                      ║
+║   3 : Employee Managment Menu                                 ║
+║   4 : Destination Managment Menu                              ║
+║   5 : Airplane Database                                       ║
 ║                                                               ║
 ║   0 : Back                                                    ║
-╚═══════════════════════════════════════════════════════════════╝
-
-█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█	                        Human Resources                       █
-█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
-║                                                               ║
-║   1 : Employee Managment Menu                                 ║
-║   2 : Destination Managment Menu                              ║
-║   3 : Trip Schedules (TripManagmentMenu)                      ║
-║   4 : Edit Employee Schedules (CrewAssignmentMenu)            ║
-║   5 : Work Reports Menu                                       ║
-║   6 : Airplane Database                                       ║
-║                                                               ║
-║   0 : Back                                                    ║
-╚═══════════════════════════════════════════════════════════════╝
-
-
-█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > (Edit Trip Schedules)                          █
-█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
-║                                                               ║
-║   1 : Create new Flight                                       ║
-║   2 : Edit already existing flight                            ║
-║                                                               ║
-║   0 : Back                                                    ║
-╚═══════════════════════════════════════════════════════════════╝
-
-█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > (Edit Flight Schedules) > Create new           █
-█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
-║                                                               ║
-║             Input Day of Departure (DD:MM:YYYY)               ║
-║                                                               ║
-╚═══════════════════════════════════════════════════════════════╝
-
-█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > (Edit Flight Schedules) > Create new           █
-█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
-║                                                               ║
-║             Input Departure Time (00:00 - 23:59)              ║
-║                                                               ║
-╚═══════════════════════════════════════════════════════════════╝
-
-█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > (Edit Flight Schedules) > Create new           █
-█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
-║                                                               ║
-║   Available Planes:                                           ║
-║   1 : NaNair_1                                                ║
-║   2 : NaNair_2                                                ║
-║   3 : NaNair_3                                                ║
-║   4 : NaNair_4                                                ║
-║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > (Edit Flight Schedules) > Edit Existing                                                                    █
+█ Destination Managment Menu                                                                                                █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                                                                                           ║
-║   Nr.    Departing      Destination     Dagsetning      Tími        Plane          Flight Number       Staff Status       ║
-║   1      Reykjavik    > Longyearbuen    06.01.24        06:10       NaNair_1       NA040               Staffed            ║
-║   2      Longyearbuen > Reykjavik       06.01.24        18:10       NaNair_1       NA041               Staffed            ║
-║   3      Reykjavik    > Nuuk            06.01.24        09:30       NaNair_3       NA020               Staffed            ║
-║   4      Nuuk         > Reykjavik       06.01.24        19:30       NaNair_3       NA021               Staffed            ║
-║   5      Reykjavik    > Toshavn         07.01.24        11:00       NaNair_2       NA010               Not Staffed        ║
-║   6      Torshavn     > Reykjavik       09.01.24        09:30       NaNair_2       NA010               Not Staffed        ║
-║   7      ...            ...             ...             ...         ...            ...                 ...                ║
+║       List of Destinations:                                                                                               ║
+║       City                     Country            Distance       Travel Time         Emergency Phone                      ║
 ║                                                                                                                           ║
-║ 0 : Back                                                                                                                  ║
+║   1 : Longyearbuen             Svalbard           1,992km        3klst               112                                  ║
+║   2 : Torshavn                 Faroe Islands      778km          1klst og 30min      112                                  ║
+║   3 : Kulusuk                  Greenland          1,287km        1klst og 25min      112                                  ║
+║   4 : Nuuk                     Greenland          1,432km        2klst og 17min      112                                  ║
+║   5 : Tingwall                 Shetland           1,137km        1klst og 20min      112                                  ║
+║                                                                                                                           ║
+║   0 : Back            00 : Create New Destination            <Destination number> : Edit Destination Data                 ║
 ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > (Edit Flight Schedules) > Edit Existing > 3    █
+█ Destination Managment Menu > Create new                       █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║   Reykjavik > Nuuk                                            ║
-║   1 : Departure:      05.01.24 / 09:10                        ║
-║   2 : Plane:          NaNair_3                                ║
-║   3 : Flight Nmbr:    NA020                                   ║
-║     : Pilots:         Birkir F. Halldórsson / Bjarni Jónsson  ║
-║     : Stewerdess:     Bimma Jacobs                            ║
+║    --> Input Country                                          ║
+║        City                                                   ║
+║        Distance                                               ║
+║        Travel Time                                            ║
+║        Emergency Contact                                      ║
 ║                                                               ║
 ║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Destination Managment Menu > Create new                       █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║        Australia                                              ║
+║    --> Input City                                             ║
+║        Distance                                               ║
+║        Travel Time                                            ║
+║        Emergency Contact                                      ║
+║                                                               ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Destination Managment Menu > Create new                       █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║        Australia                                              ║
+║        Sydney                                                 ║
+║    --> Input Distance (xxxkm)                                 ║
+║        Travel Time                                            ║
+║        Emergency Contact                                      ║
+║                                                               ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Destination Managment Menu > Create new                       █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║        Australia                                              ║
+║        Sydney                                                 ║
+║        16,615km                                               ║
+║    --> Input Travel Time (hours, min)                         ║
+║        Emergency Contact                                      ║
+║                                                               ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Destination Managment Menu > Create new                       █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║        Australia                                              ║
+║        Sydney                                                 ║
+║        16,615km                                               ║
+║        42hours and 69min                                      ║
+║    --> Input Emergency Contact                                ║
+║                                                               ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Destination Managment Menu > Create new                       █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║   New Destination Created:                                    ║
+║     Sydney, Australia                                         ║
+║     Distance: 16,615km                                        ║
+║     Travel Time: Too hours long min                           ║
+║     Emergency Contact: 911                                    ║
+║                                                               ║
+║   <Enter> : Back to Destination Managment Menu                ║
 ╚═══════════════════════════════════════════════════════════════╝
