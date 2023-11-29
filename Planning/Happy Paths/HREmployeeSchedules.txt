@@ -31,7 +31,7 @@
 █                        Human Resources                        █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║   1 : Flight Schedule                                         ║
+║   1 : Flight Schedules                                        ║
 ║   2 : Employee Schedules                                      ║
 ║   3 : Employee Managment Menu                                 ║
 ║   4 : Destination Managment Menu                              ║
