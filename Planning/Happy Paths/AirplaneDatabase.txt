@@ -46,13 +46,74 @@
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                                                                                           ║
 ║       List of Airplanes:                                                                                                  ║
-║       Name                Current Location        Type         Seats         Emergency Phone                              ║
+║       Name                Current Location        Type         Seats                                                      ║
 ║                                                                                                                           ║
-║   1 : NaNair_1            Svalbard                747          -----         112                                          ║
-║   2 : NaNair_2            >Faroe Islands          744          -----         112                                          ║
-║   3 : NaNair_3            Reykjavik               744          -----         112                                          ║
-║   4 : NaNair_4            Reykjavik               745          -----         112                                          ║
-║   5 : NaNair_5            >Reykjavik              757          -----         112                                          ║
+║   1 : NaNair_1            Svalbard                747          -----                                                      ║
+║   2 : NaNair_2            >Faroe Islands          744          -----                                                      ║
+║   3 : NaNair_3            Reykjavik               744          -----                                                      ║
+║   4 : NaNair_4            Reykjavik               745          -----                                                      ║
+║   5 : NaNair_5            >Reykjavik              757          -----                                                      ║
 ║                                                                                                                           ║
-║   0 : Back            00 : Create New Destination            <Destination number> : Edit Destination Data                 ║
+║   0 : Back            00 : Create New Airplane              <Airplane number> : Edit Airplane Data                        ║
 ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > Airplane Database > Create new                 █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║    --> Input Name                                             ║
+║        Current Location                                       ║
+║        Type                                                   ║
+║        Seats                                                  ║
+║                                                               ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > Airplane Database > Create new                 █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║        NaNair_6                                               ║
+║    --> Input Current Location                                 ║
+║        Type                                                   ║
+║        Seats                                                  ║
+║                                                               ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > Airplane Database > Create new                 █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║        NaNair_6                                               ║
+║        Reykjavik                                              ║
+║    --> Input Type                                             ║
+║        Seats                                                  ║
+║                                                               ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > Airplane Database > Create new                 █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║        NaNair_6                                               ║
+║        Reykjavik                                              ║
+║        747                                                    ║
+║   -->  Input Seats                                            ║
+║                                                               ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > Airplane Database > Create new                 █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║   New Airplane Created:                                       ║
+║     Name: NaNair_6                                            ║
+║     Location: Reykjavik, Iceland                              ║
+║     Type: 747                                                 ║
+║     Seats: 150                                                ║
+║                                                               ║
+║   <Enter> : Back to Destination Managment Menu                ║
+╚═══════════════════════════════════════════════════════════════╝

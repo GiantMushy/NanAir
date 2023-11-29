@@ -120,19 +120,6 @@
 █ Trip Manager > Trip Schedules > Create new                    █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║   Available Planes:                                           ║
-║                                                               ║
-║   1 : NaNair_1                                                ║
-║   2 : NaNair_2                                                ║
-║   3 : NaNair_3                                                ║
-║   4 : NaNair_4                                                ║
-║                                                               ║
-╚═══════════════════════════════════════════════════════════════╝
-
-█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > Trip Schedules > Create new                    █
-█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
-║                                                               ║
 ║   Select Destination:                                         ║
 ║                                                               ║
 ║   1 : Longyearbuen  (Svalbard)                                ║
@@ -141,6 +128,32 @@
 ║   4 : Nuuk          (Greenland)                               ║
 ║   5 : Tingwall      (Shetland)                                ║
 ║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > Trip Schedules > Create new                    █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║   Available Planes:                                           ║
+║                                                               ║#Hérna væri kerfið búið að tjékka hvaða
+║   1 : NaNair_1                                                ║#flugvélar væru lausar fyrir þetta ákveðið
+║   2 : NaNair_2                                                ║#flug, og byrtir einungis þær flugvélar
+║   3 : NaNair_3                                                ║#sem eru lausar
+║   4 : NaNair_4                                                ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > Trip Schedules > Create new > Error Message    █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║   Error occured when scheduling trip:                         ║
+║                                                               ║
+║   No plane available during assigned time period:             ║#Ef engar flugvélar eru lausar fyrir þetta
+║   06.01.24, 06.10 --> 06.01.24, 18:40 (plus travel time)      ║#tímabil birtist þessi villiskilaboð
+║                                                               ║
+║   1 : Back to Create New Trip                                 ║
+║   0 : Back to Edit Trip Schedules                             ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
