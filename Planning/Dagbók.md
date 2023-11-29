@@ -35,3 +35,7 @@ Edda: skýrsla
 Þorvarður: happypaths
 Eydís Sunna: Mætti ekki
 
+Við erum komin mjög langt í skýrslunni og flestir kaflar komnnir nema eftir að klára happy paths þar sem Þorvarður er að fínpússa það
+Matthías kláraði class diagrams og er að fínpússa það
+
+Plan á morgun: Klára allt og skila inn
