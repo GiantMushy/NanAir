@@ -52,7 +52,7 @@
 ║   2 : Torshavn                 Faroe Islands      778km          1klst og 30min      112                                  ║
 ║   3 : Kulusuk                  Greenland          1,287km        1klst og 25min      112                                  ║
 ║   4 : Nuuk                     Greenland          1,432km        2klst og 17min      112                                  ║
-║   5 : Tingwall                 Shetland           1,137km        ~1klst og 20min     112                                  ║
+║   5 : Tingwall                 Shetland           1,137km        1klst og 20min      112                                  ║
 ║                                                                                                                           ║
 ║   0 : Back            00 : Create New Destination            <Destination number> : Edit Destination Data                 ║
 ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
