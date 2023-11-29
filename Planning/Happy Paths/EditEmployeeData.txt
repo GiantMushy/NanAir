@@ -32,40 +32,40 @@
 █                        Human Resources                        █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║   1 : Employee Managment Menu                                 ║
-║   2 : Destination Managment Menu                              ║
-║   3 : Trip Schedules                                          ║
-║   4 : Airplane Database                                       ║
+║   1 : Trip Schedules                                          ║
+║   2 : Employee Managment Menu                                 ║
+║   3 : Destination Managment Menu                              ║
+║   4 : Airplane Managment Menu                                 ║
 ║                                                               ║
 ║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Employee Managment Menu                                                                                 █
+█ Employee Managment Menu                                                                                                   █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                                                                                           ║
 ║   List of Employees:                                                                                                      ║
-║  Nr   Name                     Position      SSN            Phone       Address          Email               Home Phone   ║
+║  Nr.  Name                     Position      SSN            Phone       Address          Email               Home Phone   ║
 ║                                                                                                                           ║
-║  1  : Gunnar Gunnarson         Captain       010180 2029    555 1234    Flugvegur 10     gunnar@nanair.is    --Not Given--║
-║  2  : Jón Jónsson              Captain       010180 2029    555 1234    Flugvegur 11     jon@nanair.is       --Not Given--║
-║  3  : Gunna Gunnarsdóttir      Captain       010180 2029    555 1234    Flugvegur 12     gunna@nanair.is     --Not Given--║
-║  4  : Helga Helgadóttir        Co-Pilot      010180 2029    555 1234    Flugvegur 13     helga@nanair.is     555 1234     ║
-║  5  : Bjarni Bjarnason         Co-Pilot      010180 2029    555 1234    Flugvegur 14     bjarni@nanair.is    --Not Given--║
-║  6  : Muhammed Ali             Co-Pilot      010180 2029    555 1234    Flugvegur 15     mali@nanair.is      --Not Given--║
-║  7  : Chuck Chuckson           Stewerdess    010180 2029    555 1234    Flugvegur 16     chuck@nanair.is     --Not Given--║
-║  8  : Name McNameFace          Stewerdess    010180 2029    555 1234    Flugvegur 17     name@nanair.is      555 4321     ║
-║  9  : Tom Cruise               Stewerdess    010180 2029    555 1234    Flugvegur 18     tomc@nanair.is      --Not Given--║
+║  01 : Gunnar Gunnarson         Captain       010180 2029    555 1234    Flugvegur 10     gunnar@nanair.is    --Not Given--║
+║  02 : Jón Jónsson              Captain       010180 2029    555 1234    Flugvegur 11     jon@nanair.is       --Not Given--║
+║  03 : Gunna Gunnarsdóttir      Captain       010180 2029    555 1234    Flugvegur 12     gunna@nanair.is     --Not Given--║
+║  04 : Helga Helgadóttir        Co-Pilot      010180 2029    555 1234    Flugvegur 13     helga@nanair.is     555 1234     ║
+║  05 : Bjarni Bjarnason         Co-Pilot      010180 2029    555 1234    Flugvegur 14     bjarni@nanair.is    --Not Given--║
+║  06 : Muhammed Ali             Co-Pilot      010180 2029    555 1234    Flugvegur 15     mali@nanair.is      --Not Given--║
+║  07 : Chuck Chuckson           Stewerdess    010180 2029    555 1234    Flugvegur 16     chuck@nanair.is     --Not Given--║
+║  08 : Name McNameFace          Stewerdess    010180 2029    555 1234    Flugvegur 17     name@nanair.is      555 4321     ║
+║  09 : Tom Cruise               Stewerdess    010180 2029    555 1234    Flugvegur 18     tomc@nanair.is      --Not Given--║
 ║  10 : Margeret Thatcher        Stewerdess    010180 2029    555 1234    Flugvegur 19     marge@nanair.is     --Not Given--║
 ║  11 : Ace Pilotsson            Stewerdess    010180 2029    555 1234    Flugvegur 09     acep@nanair.is      --Not Given--║
 ║  12 : Im Boredsson             Stewerdess    010180 2029    555 1234    Flugvegur 01     bored@nanair.is     --Not Given--║
 ║  13 : ...                      ...           ...... ....    ... ....    ...              ....@nanair.is      --Not Given--║
 ║                                                                                                                           ║
-║   0 : Back                     00 : Create New Employee                  <Nr> : Edit Employee Data                        ║
+║   0 : Back                     00 : Create New Employee                  <Employee number> : Edit Employee Data           ║
 ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Employee Managment Menu > Edit Existing > 8 █
+█ Employee Managment Menu > Edit Existing > 8                   █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║   Employee Data:                                              ║
@@ -90,7 +90,7 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Employee Managment Menu > Edit Existing > 8 █
+█ Employee Managment Menu > Edit Existing > 8                   █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║   Employee Data updated:                                      ║
