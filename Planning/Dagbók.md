@@ -26,3 +26,12 @@ Markmið dagsins eru langt komin á leið, V0 á github manual komið, öll use 
 Plan á morgun, klára happy paths, skrifa inn texta á skýrslu, refine'a github manual.
 
 29.11.23
+Markmið dagsins í dag er að klára happypaths og byrja á að skrifa skýrsluna. 
+Oliver ætlar síðan að klára sinn part í use caseunum.
+Matthías: Class diagrams
+Benjamín: Skýrsla
+Oliver: Skýrsla og klára sín use case
+Edda: skýrsla
+Þorvarður: happypaths
+Eydís Sunna: Mætti ekki
+
