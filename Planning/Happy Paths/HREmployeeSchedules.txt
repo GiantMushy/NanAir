@@ -22,7 +22,6 @@
 ║                                                               ║
 ║   1 : Trip Manager                                            ║
 ║   2 : Human Resources                                         ║
-║   3 : Chuck Norris                                            ║
 ║                                                               ║
 ║   *Hint: input the number you want to select and then enter   ║
 ║    For ex.: 1 --> Trip Manager                                ║
@@ -32,66 +31,34 @@
 █                        Human Resources                        █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║   1 : Flight Schedules                                        ║
-║   2 : Employee Managment Menu                                 ║
-║   3 : Destination Managment Menu                              ║
-║   4 : Airplane Managment Menu                                 ║
+║   1 : Flight Schedule                                         ║
+║   2 : Employee Schedules                                      ║
+║   3 : Employee Managment Menu                                 ║
+║   4 : Destination Managment Menu                              ║
+║   5 : Airplane Managment Menu                                 ║
 ║                                                               ║
 ║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Flight Schedules                                                                                        █
+█ Human Resources > Employee Schedules                                                                                      █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                                                                                           ║
-║   Week of: 08.01.24 - 14.01.24                                                                                            ║
-║                                                                                                                           ║
-║   Nr.    Departing      Destination     Dagsetning      Tími        Plane          Flight Number       Staff Status       ║
-║                                                                                                                           ║
-║   01 :   Reykjavik    > Longyearbuen    06.01.24        06:10       NaNair_1       NA040               Staffed            ║
-║          Longyearbuen > Reykjavik       06.01.24        18:10       NaNair_1       NA041               Staffed            ║
-║   02 :   Reykjavik    > Nuuk            06.01.24        09:30       NaNair_3       NA020               Staffed            ║
-║          Nuuk         > Reykjavik       06.01.24        19:30       NaNair_3       NA021               Staffed            ║
-║   03 :   Reykjavik    > Toshavn         07.01.24        11:00       NaNair_2       NA010               Not Staffed        ║
-║          Torshavn     > Reykjavik       08.01.24        09:30       NaNair_2       NA010               Not Staffed        ║
-║   04 :   Reykjavik    > Longyearbuen    08.01.24        06:10       NaNair_1       NA040               Not Staffed        ║
-║          Longyearbuen > Reykjavik       08.01.24        18:10       NaNair_1       NA041               Not Staffed        ║
-║   05 :   Reykjavik    > Longyearbuen    09.01.24        06:10       NaNair_1       NA040               Staffed            ║
-║          Longyearbuen > Reykjavik       09.01.24        18:10       NaNair_1       NA041               Staffed            ║
-║   06 :   Reykjavik    > Nuuk            10.01.24        09:30       NaNair_3       NA020               Staffed            ║
-║          Nuuk         > Reykjavik       10.01.24        19:30       NaNair_3       NA021               Staffed            ║
-║   07 :   Reykjavik    > Toshavn         11.01.24        11:00       NaNair_2       NA010               Not Staffed        ║
-║          Torshavn     > Reykjavik       11.01.24        09:30       NaNair_2       NA010               Not Staffed        ║
-║   08 :   Reykjavik    > Longyearbuen    11.01.24        06:10       NaNair_1       NA040               Staffed            ║
-║          Longyearbuen > Reykjavik       11.01.24        18:10       NaNair_1       NA041               Staffed            ║
-║   09 :   ...            ...             ...             ...         ...            ...                 ...                ║
-║                                                                                                                           ║
-║ <Nr> : Examine Staff Status of Trip                                                                                       ║
-║    C : Go to Daily Schedules of Working Employees                                                                         ║
-║    V : Go to Daily Schedules of Not Working Employee                                                                      ║
-║                                                                                                                           ║
-║   0 : Back              00 : Change Week               n : Previous Week             m : Next Week                        ║
-╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-
-█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Employee Working Schedules                                                                              █
-█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
-║                                                                                                                           ║
-║  List of Employees working on 08.01.24                                                                                    ║
+║  List of Employees Work Status on 08.01.24                                                                                ║
 ║  Nr   Name                     Position      Flying to      || Nr   Name                     Position      Flying to      ║
-║                                                             ||                                                            ║
+║                                                                                                                           ║
 ║  01 : Gunnar Gunnarson         Captain       Torshavn       || 09 : Name McNameFace          Captain       Nuuk           ║
-║  02 : Jón Jónsson              Captain       Longyearbyen   || 10 : Name McNameFace          Co-Pilot      Nuuk           ║
-║  03 : Gunna Gunnarsdóttir      Co-Pilot      Torshavn       || 11 : Gunna Þ. Gunnarsdóttir   Stewerdess    Nuuk           ║
-║  04 : Helga Helgadóttir        Co-Pilot      Longyearbyen   || 12 : Name McNameFace          Stewerdess    Nuuk           ║
+║  02 : Jón Jónsson              Captain       Not Working    || 10 : Name McNameFace          Co-Pilot      Nuuk           ║
+║  03 : Gunna Gunnarsdóttir      Co-Pilot      Not Working    || 11 : Gunna Þ. Gunnarsdóttir   Stewerdess    Not Working    ║
+║  04 : Helga Helgadóttir        Co-Pilot      Longyearbyen   || 12 : Name McNameFace          Stewerdess    Not Working    ║
 ║  05 : Bjarni Bjarnason         Stewerdess    Torshavn       || 13 : Name McNameFace          Captain       Kulusuk        ║
 ║  06 : Muhammed Ali             Stewerdess    Kulusuk        || 14 : Name McNameFace          Co-Pilot      Kulusuk        ║
-║  07 : Chuck Chuckson           Stewerdess    Longyearbyen   || 15 : Name McNameFace          Captain       Nuuk           ║
-║  08 : Name McNameFace          Stewerdess    Longyearbyen   || 16 : Name McNameFace          Co-Pilot      Nuuk           ║
+║  07 : Chuck Chuckson           Stewerdess    Longyearbyen   || 15 : Name McNameFace          Captain       Not Working    ║
+║  08 : Name McNameFace          Stewerdess    Not Working    || 16 : Name McNameFace          Co-Pilot      Not Working    ║
 ║                                                                                                                           ║
-║   C : Change to Flight Schedules                                                                                          ║
-║   V : Change to List of Employeees NOT working on 08.01.24                                                                ║
-║   <Nr> : See Employees Week Schedule                                                                                      ║
+║   A : Show Only Working Employees                                                                                         ║
+║   S : Show Only Non-Working Employees                                                                                     ║
+║   <Nr> : See Specific Employee's Week Schedule                                                                            ║
 ║                                                                                                                           ║
 ║   0 : Back To Main Menu       00 : Change Day          n : Previous Day             m : Next Day                          ║
 ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
@@ -107,24 +74,47 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Employee Not Working Schedules                                                                          █
+█ Human Resources > Employee Schedules > Only Working                                                                       █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                                                                                           ║
+║  List of Employees Work Status on 08.01.24                                                                                ║
+║  Nr   Name                     Position      Flying to      || Nr   Name                     Position      Flying to      ║
+║                                                                                                                           ║
+║  01 : Gunnar Gunnarson         Captain       Torshavn       || 09 :                                                       ║
+║  02 : Jón Jónsson              Captain       Longyearbyen   || 10 :                                                       ║
+║  03 : Gunna Gunnarsdóttir      Co-Pilot      Longyearbyen   || 11 :                                                       ║
+║  04 : Helga Helgadóttir        Co-Pilot      Longyearbyen   || 12 :                                                       ║
+║  05 : Bjarni Bjarnason         Stewerdess    Torshavn       || 13 :                                                       ║
+║  06 : Muhammed Ali             Stewerdess    Kulusuk        || 14 :                                                       ║
+║  07 : Chuck Chuckson           Stewerdess    Longyearbyen   || 15 :                                                       ║
+║  08 : Name McNameFace          Stewerdess    Kulusuk        || 16 :                                                       ║
+║                                                                                                                           ║
+║   S : Show Only Non-Working Employees                                                                                     ║
+║   D : Show All Employees                                                                                                  ║
+║   <Nr> : See Specific Employee's Week Schedule                                                                            ║
+║                                                                                                                           ║
+║   0 : Back To Main Menu       00 : Change Day          n : Previous Day             m : Next Day                          ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Human Resources > Employee Schedules > Only Non-Working                                                                   █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                                                                                           ║
 ║  List of Employees not working on 08.01.24                                                                                ║
 ║  Nr   Name                     Position      Flying to      || Nr   Name                     Position      Flying to      ║
-║                                                             ||                                                            ║
-║  01 : Gunnar Gunnarson         Captain                      || 09 : Name McNameFace          Captain                      ║
-║  02 : Jón Jónsson              Captain                      || 10 : Name McNameFace          Co-Pilot                     ║
-║  03 : Gunna Gunnarsdóttir      Co-Pilot                     || 11 : Gunna Þ. Gunnarsdóttir   Stewerdess                   ║
-║  04 : Helga Helgadóttir        Co-Pilot                     || 12 : Name McNameFace          Stewerdess                   ║
-║  05 : Bjarni Bjarnason         Stewerdess                   || 13 : Name McNameFace          Captain                      ║
-║  06 : Muhammed Ali             Stewerdess                   || 14 : Name McNameFace          Co-Pilot                     ║
-║  07 : Chuck Chuckson           Stewerdess                   || 15 : Name McNameFace          Captain                      ║
-║  08 : Name McNameFace          Stewerdess                   || 16 : Name McNameFace          Co-Pilot                     ║
 ║                                                                                                                           ║
-║   C : Change to Trip Oriented Weekly Schedules                                                                            ║
-║   V : Change to List of Employeees working on 08.01.24                                                                    ║
-║   <Nr> : See Employees Week Schedule                                                                                      ║
+║  01 : Gunnar Gunnarson         Captain       Not Working    || 09 :                                                       ║
+║  02 : Jón Jónsson              Captain       Not Working    || 10 :                                                       ║
+║  03 : Gunna Gunnarsdóttir      Co-Pilot      Not Working    || 11 :                                                       ║
+║  04 : Helga Helgadóttir        Co-Pilot      Not Working    || 12 :                                                       ║
+║  05 : Bjarni Bjarnason         Stewerdess    Not Working    || 13 :                                                       ║
+║  06 : Muhammed Ali             Stewerdess    Not Working    || 14 :                                                       ║
+║  07 : Chuck Chuckson           Stewerdess    Not Working    || 15 :                                                       ║
+║  08 : Name McNameFace          Stewerdess    Not Working    || 16 :                                                       ║
+║                                                                                                                           ║
+║   A : Show Only Working Employees                                                                                         ║
+║   D : Show All Employees                                                                                                  ║
+║   <Nr> : See Specific Employee's Week Schedule                                                                            ║
 ║                                                                                                                           ║
 ║   0 : Back To Main Menu       00 : Change Day          n : Previous Day             m : Next Day                          ║
 ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
@@ -137,18 +127,8 @@
 ║                 _______________________________________________________________________________________________________   ║
 ║ Weekday        |Monday 08     Tuesday 09     Wednesday 10   Thursday 11    Friday 12      Saturday 13    Sunday 14     |  ║
 ║ Working (Y/N)  |Y             Y              N              N              N              Y              Y             |  ║
-║ Destination    |Nuuk          Reykjavik                                                   Longyearbyen   Reykjavik     |  ║
+║ Destination    |Nuuk          Nuuk                                                        Longyearbyen   Reykjavik     |  ║
 ║                |_______________________________________________________________________________________________________|  ║
 ║                                                                                                                           ║
 ║   0 : Back To Employee Schedules         00 : Change Week          n : Previous Week            m : Next Week             ║
 ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-
-█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█                          Change Week                          █
-█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
-║                                                               ║
-║                 Enter the week you want to see                ║
-║                      (DD.MM.YY - DD.MM.YY)                    ║
-║                                                               ║
-║   0 : Back                                                    ║
-╚═══════════════════════════════════════════════════════════════╝
