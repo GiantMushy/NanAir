@@ -39,3 +39,9 @@ Við erum komin mjög langt í skýrslunni og flestir kaflar komnnir nema eftir 
 Matthías kláraði class diagrams og er að fínpússa það
 
 Plan á morgun: Klára allt og skila inn
+
+30.11.23
+
+nokkuð þægilegur dagur, tekinn heima og nýttur í það að renna yfir skýrsluna.
+Allir hópmeðlimir unnu heima.
+
