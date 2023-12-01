@@ -45,3 +45,8 @@ Plan á morgun: Klára allt og skila inn
 nokkuð þægilegur dagur, tekinn heima og nýttur í það að renna yfir skýrsluna.
 Allir hópmeðlimir unnu heima.
 
+1.12.23
+
+Lokarennsli og spurningar varðandi skýrsluna settar fram, dagurinn var nýttur í það að skila skýrslunni. 
+Hópurinn vann að heimann.
+
