@@ -1,16 +1,17 @@
 #from logic_ui_wrapper import wrapper
 from UiLayer.PrintFunctions import PrintFunctions
+from UiLayer.MainMenuUI import MainMenuUI
 
-class MainMenu_UI:
+class LoginUI:
     def __init__(self):
         self.PrintUi = PrintFunctions()
 
-    def menu_output(self):
+    def login_output(self):
         self.PrintUi.logo()
-        self.PrintUi.print_header("Main Menu", "center")
+        self.PrintUi.print_header("Login", "center")
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left("1 : Trip Manager"))
-        print(self.PrintUi.allign_left("2 : Human Resources"))
+        print(self.PrintUi.allign_center("1 : Trip Manager"))
+        print(self.PrintUi.allign_center("2 : Human Resources"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
@@ -32,7 +33,7 @@ class MainMenu_UI:
 
     def input_prompt(self):
         while True:
-            self.menu_output()
+            self.login_output()
             command = input("Enter you command: ")
             command = command.lower()
 
@@ -40,8 +41,10 @@ class MainMenu_UI:
                 print("Goodbye")
                 break
             elif command == "1":
-                pass
+                main_menu = MainMenuUI()
+                main_menu.input_prompt()
             elif command == "2":
-                pass
+                main_menu = MainMenuUI()
+                main_menu.input_prompt()
             else:
                 print("Invalid input, try again")

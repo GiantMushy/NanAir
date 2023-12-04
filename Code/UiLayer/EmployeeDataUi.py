@@ -1,7 +1,7 @@
 #from logic_ui_wrapper import wrapper
-from PrintFunctions import PrintFunctions
+from UiLayer.PrintFunctions import PrintFunctions
 
-class EmployeeData_Ui:
+class EmployeeDataUI:
     def __init__(self):
         self.PrintUi = PrintFunctions()
 

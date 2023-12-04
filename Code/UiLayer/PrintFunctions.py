@@ -16,8 +16,10 @@ class PrintFunctions:
         str_length = len(text)
         spaces = (123 - str_length)
         odd_even = spaces % 2
-        left_spaces = spaces - odd_even * 0.5
-        right_spaces = spaces + odd_even * 0.5
+        left_spaces = (spaces - odd_even) * 0.5
+        left_spaces = int(left_spaces)
+        right_spaces = (spaces + odd_even) * 0.5
+        right_spaces = int(right_spaces)
         return "║" + (" " * left_spaces) + text + (" " * right_spaces) + "║"   
 
     def print_header(self, text, allignment):
@@ -57,4 +59,4 @@ class PrintFunctions:
         print("                                | |\ \| |    / ____ \    | |\ \| |        / ____ \    | |   |  __ /   ")
         print("                               _| |_\   |_ _/ /    \ \_ _| |_\   |_     _/ /    \ \_ _| |_ _| |  \ \_ ")
         print("                              |_____|\____|____|  |____|_____|\____|   |____|  |____|_____|____| |___|")
-        print("                                    🅦 🅗 🅔 🅡 🅔  🅓 🅘 🅥 🅘 🅓 🅘 🅝 🅖  🅑 🅨  🅩 🅔 🅡 🅞  🅜 🅐 🅚 🅔 🅢  🅢 🅔 🅝 🅒 🅔")
+        print("                        🅦 🅗 🅔 🅡 🅔  🅓 🅘 🅥 🅘 🅓 🅘 🅝 🅖  🅑 🅨  🅩 🅔 🅡 🅞  🅜 🅐 🅚 🅔 🅢  🅢 🅔 🅝 🅒 🅔")

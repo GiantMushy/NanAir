@@ -1,5 +1,5 @@
-from UiLayer.MainMenu import MainMenu_UI
+from UiLayer.LoginUI import LoginUI
 
-mainmenu = MainMenu_UI()
+login = LoginUI()
 
-mainmenu.input_prompt()
+login.input_prompt()
