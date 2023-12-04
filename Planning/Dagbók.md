@@ -39,3 +39,24 @@ Við erum komin mjög langt í skýrslunni og flestir kaflar komnnir nema eftir 
 Matthías kláraði class diagrams og er að fínpússa það
 
 Plan á morgun: Klára allt og skila inn
+
+30.11.23
+
+nokkuð þægilegur dagur, tekinn heima og nýttur í það að renna yfir skýrsluna.
+Allir hópmeðlimir unnu heima.
+
+1.12.23
+
+Lokarennsli og spurningar varðandi skýrsluna settar fram, dagurinn var nýttur í það að skila skýrslunni. 
+Hópurinn vann að heimann.
+
+4.12.23
+
+Horft á fyrilestur á netinu 
+Skipuleggja forritunina og búa til files
+Oliver Emil: Data 
+Benjamín: 
+Þorvarður: ui 
+Edda: 
+Matthías: Data
+

@@ -13,5 +13,6 @@ class Employee_Data:
                 ret_lis.append(Employee(row["name"], row["ssn"], row["phone"], row["adress"], row["email"], row["home_phone"]))
                 #print(row['first_name'], row['last_name'])
             return ret_lis
+
     def create_employees(self, employees):
         pass
