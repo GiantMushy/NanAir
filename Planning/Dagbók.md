@@ -54,9 +54,9 @@ Hópurinn vann að heimann.
 
 Horft á fyrilestur á netinu 
 Skipuleggja forritunina og búa til files
-Oliver Emil: 
+Oliver Emil: Data 
 Benjamín: 
-Þorvarður:
+Þorvarður: ui 
 Edda: 
-Matthías:
+Matthías: Data
 
