@@ -10,7 +10,7 @@ class Employee_Data:
         with open('employees.csv', newline='', endcoding = "utf-8") as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
-                ret_lis.append(Employee(row["name"], row["ssn"], row["phone"], row["adress"], row["email"], row["home_phone"]))
+                ret_lis.append(Employee(row["Name"], row["ssn"], row["phone"], row["adress"], row["email"], row["home_phone"]))
                 #print(row['first_name'], row['last_name'])
             return ret_lis
 
