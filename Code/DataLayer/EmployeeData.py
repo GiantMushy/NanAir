@@ -48,13 +48,6 @@ class EmployeeData:
         Add a new employee to the CSV file.
         :param employee: Employee object to be added.
         """
-        required_fields = ['id', 'name', 'social_security_number', 'address',
-                           'mobile_phone_number', 'email_address']
-
-        # checking for missing required fields
-        for field in required_fields:
-            if getattr(employee, field, None) is None:
-                raise ValueError(f"Missing required employee field: {field}")
 
         try:
             with open(self.filename, mode='a', newline='', encoding='utf-8') as file:
@@ -67,34 +60,22 @@ class EmployeeData:
             raise Exception(
                 f"An error occurred while writing to the file: {e}")
 
-    def modify_employee(self, id, **updates):
+    def modify_employee_data(self, updated_employees):
         """
-        Modify an existing employee's details in the CSV file.
-        :param id: ID of the employee to be modified.
-        :param updates: Dictionary of updates to be applied.
+        Write the updated list of employees to the CSV file.
+        :param updated_employees: List of Employee objects with updated information.
         """
-        if any(key in updates for key in ['id', 'name', 'social_security_number']):
-            raise ValueError(
-                "Modification of 'id', 'name', or 'social_security_number' is not allowed")
-
-        employees = self.read_all_employees()
-        employee_found = False
         try:
             with open(self.filename, mode='w', newline='', encoding='utf-8') as file:
-                writer = csv.DictWriter(
-                    file, fieldnames=employees[0].__dict__.keys())
-                writer.writeheader()
-                for emp in employees:
-                    if emp.id == id:
-                        employee_found = True
-                        for key, value in updates.items():
-                            setattr(emp, key, value)
-                    writer.writerow(emp.__dict__)
+                if updated_employees:
+                    writer = csv.DictWriter(
+                        file, fieldnames=updated_employees[0].__dict__.keys())
+                    writer.writeheader()
+                    for emp in updated_employees:
+                        writer.writerow(emp.__dict__)
         except Exception as e:
-            raise Exception(f"An error occurred while modifying the file: {e}")
-
-        if not employee_found:
-            raise ValueError(f"Employee with ID {id} not found")
+            raise Exception(
+                f"An error occurred while writing to the file: {e}")
 
     def delete_employee(self, id):
         """
@@ -102,20 +83,8 @@ class EmployeeData:
         :param id: ID of the employee to be deleted.
         """
         employees = self.read_all_employees()
-        if not any(emp.id == id for emp in employees):
-            raise ValueError(f"Employee with ID {id} not found")
-
+        # filter out the employee to delete
         employees = [emp for emp in employees if emp.id != id]
-
-        # check if the employees list is empty before proceeding
-        if not employees:
-            # if the list is empty, clear the file or handle it as needed
-            with open(self.filename, mode='w', newline='', encoding='utf-8') as file:
-                writer = csv.DictWriter(file, fieldnames=['id', 'name', 'social_security_number',
-                                                          'address', 'mobile_phone_number',
-                                                          'email_address', 'home_phone_number'])
-                writer.writeheader()
-            return
 
         try:
             with open(self.filename, mode='w', newline='', encoding='utf-8') as file:
