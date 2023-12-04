@@ -1,5 +1,6 @@
-NameOfPlane,CurrentLocation,Type,Capacity
-Edda,Reykjavík,DHC-8-200,37
-Þorvarður,Nuuk,DHC-8-400,76
-Oliver,Kulusuk,DHC-8-400,76
+NameOfPlane,CurrentLocation,Type,Manufacturer,Capacity
+Edda,Reykjavík,DHC-8-200,De Havilland,37
+Þorvarður,Nuuk,DHC-8-400,De Havilland,76
+Oliver,Kulusuk,DHC-8-400,De Havilland,76
+
 
