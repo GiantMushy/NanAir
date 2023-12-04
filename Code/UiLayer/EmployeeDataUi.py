@@ -1,5 +1,6 @@
 #from logic_ui_wrapper import wrapper
 from UiLayer.PrintFunctions import PrintFunctions
+from UiLayer.EmployeeDataCreateNewUI import EmployeeDataCreateNewUI
 
 class EmployeeDataUI:
     def __init__(self):
@@ -41,6 +42,7 @@ class EmployeeDataUI:
             elif command == "0":
                 pass
             elif command == "00":
-                pass
+                create_new = EmployeeDataCreateNewUI()
+                create_new.input_prompt()
             else:
                 print("Invalid input, try again")
