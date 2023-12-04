@@ -26,7 +26,7 @@ Markmið dagsins eru langt komin á leið, V0 á github manual komið, öll use 
 Plan á morgun, klára happy paths, skrifa inn texta á skýrslu, refine'a github manual.
 
 29.11.23
-Markmið dagsins í dag er að klára happypaths og byrja á að skrifa skýrsluna. 
+Markmið dagsins í dag er að klára happypaths og byrja á að skrifa skýrsluna.
 Oliver ætlar síðan að klára sinn part í use caseunum.
 Matthías: Class diagrams
 Benjamín: Skýrsla
@@ -47,16 +47,15 @@ Allir hópmeðlimir unnu heima.
 
 1.12.23
 
-Lokarennsli og spurningar varðandi skýrsluna settar fram, dagurinn var nýttur í það að skila skýrslunni. 
+Lokarennsli og spurningar varðandi skýrsluna settar fram, dagurinn var nýttur í það að skila skýrslunni.
 Hópurinn vann að heimann.
 
 4.12.23
 
-Horft á fyrilestur á netinu 
+Horft á fyrilestur á netinu
 Skipuleggja forritunina og búa til files
-Oliver Emil: 
-Benjamín: 
-Þorvarður:
-Edda: 
-Matthías:
-
+Oliver Emil: airplane-list-all feature branch
+Benjamín: destination-view feature branch
+Þorvarður: UI-layer-setup feature branch
+Edda: lagaði skýrsluna
+Matthías: create-modify-employees feature branch
