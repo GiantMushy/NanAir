@@ -33,9 +33,9 @@
 ║                                                               ║
 ║   1 : Flight Schedules                                        ║
 ║   2 : Employee Schedules                                      ║
-║   3 : Employee Managment Menu                                 ║
-║   4 : Destination Managment Menu                              ║
-║   5 : Airplane Database                                       ║
+║   3 : Employee Database Menu                                  ║
+║   4 : Destination Database Menu                               ║
+║   5 : Airplane Database Menu                                  ║
 ║                                                               ║
 ║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
