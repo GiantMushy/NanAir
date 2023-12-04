@@ -28,167 +28,176 @@
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█                        Human Resources                        █
+█                        Trip Manager                           █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
 ║   1 : Flight Schedules                                        ║
 ║   2 : Employee Schedules                                      ║
-║   3 : Employee Database Menu                                  ║
-║   4 : Destination Database Menu                               ║
-║   5 : Airplane Database Menu                                  ║
+║   3 : Employee Managment Menu                                 ║
+║   4 : Destination Managment Menu                              ║
+║   5 : Airplane Database                                       ║
 ║                                                               ║
 ║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Flight Schedules                                                                                        █
+█ Trip Manager > Flight Schedules                                                                                           █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                                                                                           ║
 ║   Flights Departing in the week of: 08.01.24 - 14.01.24                                                                   ║
 ║                                                                                                                           ║
 ║   Nr.    Departing      Destination     Dagsetning      Tími        Plane          Flight Number       Staff Status       ║
 ║                                                                                                                           ║
-║   01 :   Reykjavik    > Longyearbuen    06.01.24        06:10       NaNair_1       NA040               Staffed            ║
-║          Longyearbuen > Reykjavik       06.01.24        18:10       NaNair_1       NA041               Not Staffed        ║
-║   02 :   Reykjavik    > Nuuk            06.01.24        09:30       NaNair_3       NA020               Staffed            ║
-║          Nuuk         > Reykjavik       06.01.24        19:30       NaNair_3       NA021               Staffed            ║
-║   03 :   Reykjavik    > Toshavn         07.01.24        11:00       NaNair_2       NA010               Not Staffed        ║
-║          Torshavn     > Reykjavik       08.01.24        09:30       NaNair_2       NA010               Not Staffed        ║
-║   04 :   Reykjavik    > Longyearbuen    08.01.24        06:10       NaNair_1       NA040               Not Staffed        ║
+║   01 :   Reykjavik    > Longyearbuen    08.01.24        06:10       NaNair_1       NA040               Staffed            ║
 ║          Longyearbuen > Reykjavik       08.01.24        18:10       NaNair_1       NA041               Not Staffed        ║
-║   05 :   Reykjavik    > Longyearbuen    09.01.24        06:10       NaNair_1       NA040               Staffed            ║
-║          Longyearbuen > Reykjavik       09.01.24        18:10       NaNair_1       NA041               Staffed            ║
-║   06 :   Reykjavik    > Nuuk            10.01.24        09:30       NaNair_3       NA020               Staffed            ║
-║          Nuuk         > Reykjavik       10.01.24        19:30       NaNair_3       NA021               Staffed            ║
-║   07 :   Reykjavik    > Toshavn         11.01.24        11:00       NaNair_2       NA010               Not Staffed        ║
-║          Torshavn     > Reykjavik       11.01.24        09:30       NaNair_2       NA010               Not Staffed        ║
-║   08 :   Reykjavik    > Longyearbuen    11.01.24        06:10       NaNair_1       NA040               Not Staffed        ║
+║   02 :   Reykjavik    > Nuuk            08.01.24        09:30       NaNair_3       NA020               Staffed            ║
+║          Nuuk         > Reykjavik       08.01.24        19:30       NaNair_3       NA021               Staffed            ║
+║   03 :   Reykjavik    > Toshavn         09.01.24        11:00       NaNair_2       NA010               Not Staffed        ║
+║          Torshavn     > Reykjavik       10.01.24        09:30       NaNair_2       NA010               Not Staffed        ║
+║   04 :   Reykjavik    > Longyearbuen    10.01.24        06:10       NaNair_1       NA040               Not Staffed        ║
+║          Longyearbuen > Reykjavik       10.01.24        18:10       NaNair_1       NA041               Not Staffed        ║
+║   05 :   Reykjavik    > Longyearbuen    11.01.24        06:10       NaNair_1       NA040               Staffed            ║
 ║          Longyearbuen > Reykjavik       11.01.24        18:10       NaNair_1       NA041               Staffed            ║
+║   06 :   Reykjavik    > Nuuk            12.01.24        09:30       NaNair_3       NA020               Staffed            ║
+║          Nuuk         > Reykjavik       12.01.24        19:30       NaNair_3       NA021               Staffed            ║
+║   07 :   Reykjavik    > Toshavn         13.01.24        11:00       NaNair_2       NA010               Not Staffed        ║
+║          Torshavn     > Reykjavik       13.01.24        09:30       NaNair_2       NA010               Not Staffed        ║
+║   08 :   Reykjavik    > Longyearbuen    13.01.24        06:10       NaNair_1       NA040               Not Staffed        ║
+║          Longyearbuen > Reykjavik       13.01.24        18:10       NaNair_1       NA041               Staffed            ║
 ║   09 :   ...            ...             ...             ...         ...            ...                 ...                ║
 ║                                                                                                                           ║
 ║ <Nr> : Examine Staff Status of Trip                                                                                       ║
 ║    S : Change Schedule Duration to 1 Day                                                                                  ║
+║    D : Create New Trip                                                                                                    ║
+║    F : Re-create Existing Trip                                                                                            ║
+║                                                                                                                           ║
+║   0 : Back              00 : Change Week               n : Previous Week             m : Next Week                        ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Trip Manager > Flight Schedules                                                                                           █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                                                                                           ║
+║   Flights Departing on: 08.01.24                                                                                          ║
+║                                                                                                                           ║
+║   Nr.    Departing      Destination     Dagsetning      Tími        Plane          Flight Number       Staff Status       ║
+║                                                                                                                           ║
+║   01 :   Reykjavik    > Longyearbuen    08.01.24        06:10       NaNair_1       NA040               Staffed            ║
+║          Longyearbuen > Reykjavik       08.01.24        18:10       NaNair_1       NA041               Not Staffed        ║
+║   02 :   Reykjavik    > Nuuk            08.01.24        09:30       NaNair_3       NA020               Staffed            ║
+║          Nuuk         > Reykjavik       08.01.24        19:30       NaNair_3       NA021               Staffed            ║
+║   03 :   Reykjavik    > Toshavn         08.01.24        11:00       NaNair_2       NA010               Not Staffed        ║
+║          Torshavn     > Reykjavik       08.01.24        09:30       NaNair_2       NA010               Not Staffed        ║
+║                                                                                                                           ║
+║ <Nr> : Examine Staff Status of Trip                                                                                       ║
+║    S : Change Schedule Duration to Week                                                                                   ║
+║    D : Create New Trip                                                                                                    ║
+║    F : Re-create Existing Trip                                                                                            ║
 ║                                                                                                                           ║
 ║   0 : Back              00 : Change Week               n : Previous Week             m : Next Week                        ║
 ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█                          Change Week                          █
+█ Trip Manager > Flight Schedules > Create new                  █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║                 Enter the week you want to see                ║
-║                      (DD.MM.YY - DD.MM.YY)                    ║
+║    --> Input Day of Departure (DD.MM.YY)                      ║
+║        Departure Time                                         ║
+║        Day of Return                                          ║
+║        Return Time                                            ║
 ║                                                               ║
-║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Flight Schedules > 2                        █
+█ Trip Manager > Flight Schedules > Create new                  █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║   Reykjavík > Longyearbuen  |  07.01.24 > 08.01.24            ║
-║   Captain:          John Cena     (041099 2919)               ║
-║   Co-Captain:       Dwayen Rock   (400199 9229)               ║
-║   Head-Stewerdess:  Jamie Daweson (040400 4469)               ║
+║        01.06.24                                               ║
+║    --> Input Departure Time (00:00 - 23:59)                   ║
+║        Day of Return                                          ║
+║        Return Time                                            ║
 ║                                                               ║
-║   <Enter> : Back to Flight Schedules                          ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Flight Schedules > 3                        █
+█ Trip Manager > Flight Schedules > Create new                  █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║   Reykjavík > Torshavn  |  07.01.24 > 08.01.24                ║ 
-║   Not Staffed                                                 ║
+║        01.06.24                                               ║
+║        06:10                                                  ║
+║    --> Input Day of Return (DD.MM.YY)                         ║
+║        Return Time                                            ║
 ║                                                               ║
-║   1 : Assign Staff to Trip                                    ║ #Einungis HR sem fær þetta option
-║                                                               ║
-║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Flight Schedules > 3 > Assign Staff         █
+█ Trip Manager > Flight Schedules > Create new                  █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║   Reykjavík > Torshavn  |  07.01.24 > 08.01.24                ║
-║   Assign available Captain:                                   ║
+║        01.06.24                                               ║
+║        06:10                                                  ║
+║        01.06.24                                               ║
+║    --> Input Return Time (00:00 - 23:59)                      ║
 ║                                                               ║
-║   1 : Dwayne Johnson           (010188 2919)                  ║
-║   2 : Jón Jónsson              (020277 1829)                  ║
-║   3 : Baldur Gateson           (030378 7959)                  ║
-║   4 : James Bondsson           (040487 3239)                  ║
-║                                                               ║
-║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Flight Schedules > 3 > Assign Staff         █
+█ Trip Manager > Flight Schedules > Create new                  █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║   Reykjavík > Torshavn  |  07.01.24 > 08.01.24                ║
-║   Assign available Co-Captain:                                ║
+║   Select Destination:                                         ║
 ║                                                               ║
-║   1 : Dwayne Johnson Jr.       (010198 2919)                  ║
-║   2 : Jón Jónsson Jr.          (020287 1829)                  ║
-║   3 : Baldur Gateson Jr.       (030388 7959)                  ║
-║   4 : James Bondsson Jr.       (040497 3239)                  ║
+║   1 : Longyearbuen  (Svalbard)                                ║
+║   2 : Torshavn      (Faroe Islands)                           ║
+║   3 : Kulusuk       (Greenland)                               ║
+║   4 : Nuuk          (Greenland)                               ║
+║   5 : Tingwall      (Shetland)                                ║
 ║                                                               ║
-║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Flight Schedules > 3 > Assign Staff         █
+█ Trip Manager > Flight Schedules > Create new                  █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║   Reykjavík > Torshavn  |  07.01.24 > 08.01.24                ║
-║   Assign available Head-Stewerdess:                           ║
+║   Available Planes:                                           ║
+║                                                               ║ #Hérna væri kerfið búið að tjékka hvaða
+║   1 : NaNair_1                                                ║ #flugvélar væru lausar fyrir þetta ákveðið
+║   2 : NaNair_2                                                ║ #flug, og byrtir einungis þær flugvélar
+║   3 : NaNair_3                                                ║ #sem eru lausar
+║   4 : NaNair_4                                                ║
 ║                                                               ║
-║   1 : Katie Holms              (010188 2919)                  ║
-║   2 : Arbies Burger            (020277 1829)                  ║
-║   3 : Hellena Kaputt           (030378 7959)                  ║
-║   4 : Jamie Franko             (040487 3239)                  ║
-║                                                               ║
-║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Flight Schedules > 3 > Assign Staff         █
+█ Trip Manager > Flight Schedules > Create new > Error Message  █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║   Reykjavík > Torshavn  |  07.01.24 > 08.01.24                ║
-║   Assign more available Stewerdess:                           ║
+║   Error occured when scheduling trip:                         ║
 ║                                                               ║
-║   1 : Katie Holms              (010188 2919)                  ║
-║   2 : Arbies Burger            (020277 1829)                  ║
-║   3 : Hellena Kaputt           (030378 7959)                  ║
-║   4 : --skip--                                                ║
+║   No plane available during assigned time period:             ║ #Ef engar flugvélar eru lausar fyrir þetta
+║   06.01.24, 06.10 --> 06.01.24, 18:40 (plus travel time)      ║ #tímabil birtist þessi villiskilaboð
 ║                                                               ║
-║   0 : Back                                                    ║
+║   1 : Back to Create New Trip                                 ║
+║   0 : Back to Edit Trip Schedules                             ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Flight Schedules > 3 > Assign Staff         █
+█ Trip Manager > Flight Schedules > Create new                  █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║   Reykjavík > Torshavn  |  07.01.24 > 08.01.24                ║
-║   Assign more available Stewerdess:                           ║
+║   Trip Created:                                               ║
 ║                                                               ║
-║   1 : Katie Holms              (010188 2919)                  ║
-║   2 : Hellena Kaputt           (030378 7959)                  ║
-║   3 : --skip--                                                ║
+║   Departing:          Reykjavik                               ║
+║   Destination:        Nuuk                                    ║
+║   Day of Departure:   06.01.24                                ║
+║   Time of Departure:  06:10                                   ║
+║   Day of Return:      06.01.24                                ║
+║   Time of Return:     18:40                                   ║
+║   Plane:              NaNair_1                                ║
+║   Flight Nmbr:        NA040                                   ║
+║   Staff Status:       Not Staffed                             ║
 ║                                                               ║
-║   0 : Back                                                    ║
-╚═══════════════════════════════════════════════════════════════╝
-
-█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Human Resources > Flight Schedules > 3 > Assign Staff         █
-█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║   1 : Save this Trip (Destination and Time) to Saved Trips    ║
 ║                                                               ║
-║   Reykjavík > Torshavn  |  07.01.24 > 08.01.24                ║
-║   Captain:          Dwayne Johnson         (010198 2919)      ║
-║   Co-Captain:       Baldur Gateson Jr.     (030388 7959)      ║
-║   Head-Stewerdess:  Arbies Burger          (020277 1829)      ║
-║   Stewerdess:       Katie Holms            (020278 6429)      ║
-║                                                               ║
-║   <Enter> : Back to Flight Schedules                          ║
+║   0 : Back to Edit Trip Schedules                             ║
 ╚═══════════════════════════════════════════════════════════════╝
