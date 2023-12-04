@@ -1,8 +1,6 @@
 id,name,social_security_number,address,mobile_phone_number,email_address,home_phone_number
-001,Matthis,124124124,"kjarrvegur, 3",124124,hdfhdattgmail.com,
-002,d,d,d,d,d,
-003,sdf,sdf,sdf,sdf,sf,
-004,masf,sdmf,,opdfg,idfg,fdg
-005,MAGNUS,asd,superdoobiedoop,asd,masdasd,asdasd
-006,1,1412121212,"olver, 13",876543,asdasd@gmail.com,87654567
-007,virkaðudrasl,1234567654,menntasveigur 79,654345,76543,
+001,Matti,611563-4242,Mac street 1,6686453441,example71@gmail.com,
+002,Sara,430730-9923,Microsoft street 1,1358799863,example55@gmail.com,
+003,Raggi,164862-8280,AMZN street 1,9861589627,example38@gmail.com,
+004,Banani,347784-3214,FB street 1,3550569113,example35@gmail.com,
+005,Epli,628896-8506,Apple street 1,1002571434,example87@gmail.com,
