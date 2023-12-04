@@ -51,9 +51,10 @@ Lokarennsli og spurningar varðandi skýrsluna settar fram, dagurinn var nýttur
 Hópurinn vann að heimann.
 
 4.12.23
+
 Horft á fyrilestur á netinu 
 Skipuleggja forritunina og búa til files
-Oliver Emil:
+Oliver Emil: 
 Benjamín: 
 Þorvarður:
 Edda: 
