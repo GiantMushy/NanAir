@@ -18,21 +18,22 @@ class EmployeeManagerLogic:
         return str(new_id).zfill(3)  # just padding the id with zeros
 
     def add_employee(self, name, ssn, phone, address, email, home_phone):
-
         # validate input data, further checks on the data itself (births etc.) can be
         # implemented here later on.
-        required_fields = [name, ssn, phone, address, email, home_phone]
+        required_fields = [name, ssn, phone, address, email]
         if any(field is None or field == '' for field in required_fields):
             raise ValueError(
-                "All fields are required and cannot be empty, please try again.")
+                "Name, SSN, phone, address, and email fields are required and cannot be empty.")
+
+        # the home_phone field is allowed to be empty, so no need to include it in the check.
 
         employee_id = self.generate_unique_employee_id()
 
-        # create new Employee object
+        # Create new Employee object
         new_employee = Employee(employee_id, name, ssn,
                                 address, phone, email, home_phone)
 
-        # adding new employee
+        # Adding new employee
         self.employee_data.add_employee(new_employee)
 
     def list_all_employees(self):

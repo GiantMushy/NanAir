@@ -15,7 +15,7 @@ class EmployeeData:
 
     def ensure_file_exists(self):
         """
-        Check if CSV file exists, creating one if not
+        Check if CSV file exists, creating one if not with headers
         """
 
         if not os.path.exists(self.filename):
