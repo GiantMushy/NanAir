@@ -26,10 +26,10 @@ class FlightSchedulesUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left("<Nr> : Examine Staff Status of Trip                     S : Change Schedule Duration to 1 Day"))
-        print(self.PrintUi.allign_left("   D : Create New Trip                                  F : Re-Create Existing Trip"))
+        print(self.PrintUi.allign_left("<Nr> : Examine Staff Status of Trip                  S : Change Schedule Duration to 1 Day"))
+        print(self.PrintUi.allign_left("   D : Create New Trip                               F : Re-Create Existing Trip"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left("   0 : Back              00 : Change Week               n : Previous Week             m : Next Week"))
+        print(self.PrintUi.allign_left("0 : Back              00 : Change Week               n : Previous Week             m : Next Week"))
         print(self.PrintUi.end_line())
 
     def input_prompt(self):

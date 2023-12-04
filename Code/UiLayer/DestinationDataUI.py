@@ -5,13 +5,27 @@ class DestinationDataUI:
     def __init__(self):
         self.PrintUi = PrintFunctions()
 
-    def airplane_data_output(self):
+    def destination_data_output(self):
         self.PrintUi.logo()
         self.PrintUi.print_header("Destination Database Menu", "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("List of Destinations"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("------------Table goes here-------------"))
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left(" 0 : Back                     00 : Create New Destination                  <Destination number> : Edit Destination Data"))
         print(self.PrintUi.end_line())

@@ -25,10 +25,10 @@ class EmployeeSchedulesUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left("   A : Show Only Working Employees                   <Nr> : See Specific Employee's Week Schedule"))
-        print(self.PrintUi.allign_left("   S : Show Only Non-Working Employees"))
+        print(self.PrintUi.allign_left("A : Show Only Working Employees                   <Nr> : See Specific Employee's Week Schedule"))
+        print(self.PrintUi.allign_left("S : Show Only Non-Working Employees"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left("   0 : Back To Main Menu       00 : Change Day          n : Previous Day             m : Next Day"))
+        print(self.PrintUi.allign_left("0 : Back To Main Menu       00 : Change Day          n : Previous Day             m : Next Day"))
         print(self.PrintUi.end_line())
 
     def input_prompt(self):

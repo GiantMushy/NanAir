@@ -10,7 +10,7 @@ class LoginUI:
         self.PrintUi.logo()
         self.PrintUi.print_header("Login", "center")
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_center("1 : Trip Manager"))
+        print(self.PrintUi.allign_center("1 : Trip Manager   "))
         print(self.PrintUi.allign_center("2 : Human Resources"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
