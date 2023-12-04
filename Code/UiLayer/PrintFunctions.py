@@ -33,13 +33,15 @@ class PrintFunctions:
             right_spaces = (spaces + odd_even) * 0.5
             right_spaces = int(right_spaces)
             print_str = "█" + (" " * left_spaces) + text + (" " * right_spaces) + "█"
-            print(print_str)
         elif allignment == "left":
             right_space = 120 - str_length
             print_str = "█" + "   " + text + (" " * right_space) + "█"
         elif allignment == "right":
             left_space = 121 - str_length
             print_str = "█" + (" " * left_space) + text + "  " + "█"
+        else:
+            print_str = "Printing Error"
+        print(print_str)
         print("█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█")
 
     def logo(self):

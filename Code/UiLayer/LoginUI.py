@@ -41,10 +41,10 @@ class LoginUI:
                 print("Goodbye")
                 break
             elif command == "1":
-                main_menu = MainMenuUI()
+                main_menu = MainMenuUI("Trip Manager")
                 main_menu.input_prompt()
             elif command == "2":
-                main_menu = MainMenuUI()
+                main_menu = MainMenuUI("Human Resources")
                 main_menu.input_prompt()
             else:
                 print("Invalid input, try again")
