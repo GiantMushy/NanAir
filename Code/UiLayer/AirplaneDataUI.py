@@ -1,24 +1,24 @@
 #from logic_ui_wrapper import wrapper
 from UiLayer.PrintFunctions import PrintFunctions
 
-class EmployeeDataUI:
+class AirplaneDataUI:
     def __init__(self):
         self.PrintUi = PrintFunctions()
 
-    def employee_data_output(self):
+    def airplane_data_output(self):
         self.PrintUi.logo()
-        self.PrintUi.print_header("Employee Database Menu", "left")
+        self.PrintUi.print_header("Airplane Database Menu", "left")
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left("List of Employees"))
+        print(self.PrintUi.allign_left("List of Airplanes"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("------------Table goes here-------------"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(" 0 : Back                     00 : Create New Employee                  <Employee number> : Edit Employee Data"))
+        print(self.PrintUi.allign_left(" 0 : Back                     00 : Create New Airplane                  <Airplane number> : Edit Airplane Data"))
         print(self.PrintUi.end_line())
 
     def input_prompt(self):
         while True:
-            self.employee_data_output()
+            self.airplane_data_output()
             command = input("Enter you command: ")            
 
             if command == "q":

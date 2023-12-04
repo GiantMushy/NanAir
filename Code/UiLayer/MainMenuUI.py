@@ -3,8 +3,8 @@ from UiLayer.PrintFunctions import PrintFunctions
 #from UiLayer.FlightSchedulesUI import FlightSchedulesUI
 #from UiLayer.EmployeeSchedulesUI import EmployeeSchedulesUI
 from UiLayer.EmployeeDataUI import EmployeeDataUI
-#from UiLayer.DestinationDataUI import DestinationDataUI
-#from UiLayer.AirplaneDataUI import AirplaneDataUI
+from UiLayer.DestinationDataUI import DestinationDataUI
+from UiLayer.AirplaneDataUI import AirplaneDataUI
 
 class MainMenuUI:
     def __init__(self):
@@ -56,12 +56,12 @@ class MainMenuUI:
                 employee_database_menu = EmployeeDataUI()
                 employee_database_menu.input_prompt()
             elif command == "4":
-                #destination_database_menu = DestinationDataUI()
-                #destination_database_menu.input_prompt()
+                destination_database_menu = DestinationDataUI()
+                destination_database_menu.input_prompt()
                 pass
             elif command == "5":
-                #airplane_database_menu = AirplaneDataUI()
-                #airplane_database_menu.input_prompt()
+                airplane_database_menu = AirplaneDataUI()
+                airplane_database_menu.input_prompt()
                 pass
             elif command == "0":
                 pass
