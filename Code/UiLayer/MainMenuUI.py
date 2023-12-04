@@ -1,7 +1,7 @@
 #from logic_ui_wrapper import wrapper
 from UiLayer.PrintFunctions import PrintFunctions
-#from UiLayer.FlightSchedulesUI import FlightSchedulesUI
-#from UiLayer.EmployeeSchedulesUI import EmployeeSchedulesUI
+from UiLayer.FlightSchedulesUI import FlightSchedulesUI
+from UiLayer.EmployeeSchedulesUI import EmployeeSchedulesUI
 from UiLayer.EmployeeDataUI import EmployeeDataUI
 from UiLayer.DestinationDataUI import DestinationDataUI
 from UiLayer.AirplaneDataUI import AirplaneDataUI
@@ -45,23 +45,23 @@ class MainMenuUI:
                 print("Goodbye")
                 break
             elif command == "1":
-                #flight_schedules = FlightSchedulesUI()
-                #flight_schedules.input_prompt()
+                flight_schedules = FlightSchedulesUI()
+                flight_schedules.input_prompt()
                 pass
             elif command == "2":
-                #employee_schedules = EmployeeSchedulesUI()
-                #employee_schedules.input_prompt()
+                employee_schedules = EmployeeSchedulesUI()
+                employee_schedules.input_prompt()
                 pass
             elif command == "3":
-                employee_database_menu = EmployeeDataUI()
-                employee_database_menu.input_prompt()
+                employee_database = EmployeeDataUI()
+                employee_database.input_prompt()
             elif command == "4":
-                destination_database_menu = DestinationDataUI()
-                destination_database_menu.input_prompt()
+                destination_database = DestinationDataUI()
+                destination_database.input_prompt()
                 pass
             elif command == "5":
-                airplane_database_menu = AirplaneDataUI()
-                airplane_database_menu.input_prompt()
+                airplane_database = AirplaneDataUI()
+                airplane_database.input_prompt()
                 pass
             elif command == "0":
                 pass
