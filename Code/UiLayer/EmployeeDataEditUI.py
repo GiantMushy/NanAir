@@ -4,9 +4,11 @@ from UiLayer.PrintFunctions import PrintFunctions
 class EmployeeDataEditUI:
     def __init__(self, employee = []):
         self.PrintUi = PrintFunctions()
+        #self.employee = employee
         self.employee = ["Jón Helgi", "010180 2029", "555 1234", "Flugvegur 12", "name@nanair.is", "--Not Given--"]
 
     def employee_data_edit_output(self):
+        '''Print sequence for editing Employee Data (initial)'''
         self.PrintUi.logo()
         self.PrintUi.print_header("Employee Database Menu > Edit > " + self.employee[0], "left")
         print(self.PrintUi.empty_line())
@@ -32,6 +34,7 @@ class EmployeeDataEditUI:
         print(self.PrintUi.end_line())
 
     def edit_data(self, changed_data):
+        '''Print sequence for editing Employee Data'''
         self.PrintUi.logo()
         self.PrintUi.print_header(f"Employee Database Menu > Edit > {self.employee[0]} > {changed_data}", "left")
         print(self.PrintUi.empty_line())
@@ -45,7 +48,7 @@ class EmployeeDataEditUI:
         print(self.PrintUi.allign_left(f"    Home Phone            {self.employee[5]}"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_center(f"    Input new {changed_data}"))
+        print(self.PrintUi.allign_left(f"    Input new {changed_data}"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
@@ -57,8 +60,9 @@ class EmployeeDataEditUI:
         print(self.PrintUi.end_line())
 
     def input_prompt(self):
+        '''Starting function for editing Employee Data'''
         while True:
-            self.employee_data_output()
+            self.employee_data_edit_output()
             command = input("Enter you command: ")            
 
             if command == "0":
