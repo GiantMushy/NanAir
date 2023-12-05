@@ -12,17 +12,18 @@ def generate_random_ssn():
 
 def add_sample_employees(logic):
     employee_details = [
-        ('pilot', 'Matti', "Mac street 1"),
-        ('pilot', 'Sara', "Microsoft street 1"),
-        ('flight_attendant', 'Raggi', "AMZN street 1"),
-        ('flight_attendant', 'Banani', "FB street 1"),
-        ('flight_attendant', 'Epli', "Apple street 1")
+        ('pilot', 'Captain', 'Matti', "Mac street 1"),
+        ('pilot', 'Co-Pilot', 'Sara', "Microsoft street 1"),
+        ('flight_attendant', 'Senior Flight Attendant', 'Raggi', "AMZN street 1"),
+        ('flight_attendant', 'Flight Attendant', 'Banani', "FB street 1"),
+        ('flight_attendant', 'Flight attendant', 'Epli', "Apple street 1")
     ]
 
-    for employee_type, name, address in employee_details:
+    for employee_type, employee_role, name, address in employee_details:
         try:
             logic.add_employee(
                 employee_type,
+                employee_role,
                 name=name,
                 social_security_number=generate_random_ssn(),
                 mobile_phone_number=generate_random_phone(),

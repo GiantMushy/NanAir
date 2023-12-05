@@ -25,7 +25,7 @@ class EmployeeManagerLogic:
         new_id = max_id + 1
         return str(new_id).zfill(3)  # pad with zeros to maintain a length of 3
 
-    def add_employee(self, employee_type, **kwargs):
+    def add_employee(self, employee_type, employee_role, **kwargs):
         """
         Adds a new employee to the system.
         Can add either a pilot or a flight attendant based on the employee type.
@@ -48,14 +48,31 @@ class EmployeeManagerLogic:
         self.employee_data.add_employee(new_employee)
 
         # add specific role information
-        if employee_type == 'pilot':
-            pilot = Pilot(kwargs['id'])
+        if employee_type.lower() == 'pilot':
+            # checking role of pilot, if either captain or co-pilot
+            if employee_role.lower() == 'captain':
+                employee_role = 'Captain'
+            elif employee_role.lower() == 'copilot' or employee_role.lower() == 'co-pilot':
+                employee_role = 'Co-Pilot'
+            else:
+                raise ValueError(
+                    "Invalid pilot role. Must be 'Captain' or 'Co-Pilot'.")
+            pilot = Pilot(kwargs['id'], employee_role)
             self.employee_data.add_pilot(pilot)
-        elif employee_type == 'flight_attendant':
-            flight_attendant = FlightAttendant(kwargs['id'])
+        elif employee_type.lower() == 'flight_attendant':
+            # checking role of flight attendant, if either senior flight attendant or flight attendant
+            if employee_role.lower() == 'senior flight attendant':
+                employee_role = 'Senior Flight Attendant'
+            elif employee_role.lower() == 'flight attendant':
+                employee_role = 'Flight Attendant'
+            else:
+                raise ValueError(
+                    "Invalid flight attendant role. Must be 'Senior Flight Attendant' or 'Flight Attendant'.")
+            flight_attendant = FlightAttendant(kwargs['id'], employee_role)
             self.employee_data.add_flight_attendant(flight_attendant)
         else:
-            raise ValueError("Invalid employee type")
+            raise ValueError(
+                "Invalid employee type, must be either Pilot or Flight Attendant.")
 
     def list_all_employees(self):
         """Returns a list of all employees."""
@@ -70,6 +87,7 @@ class EmployeeManagerLogic:
         combined_pilots = []
         for pilot in pilots:
             employee = self.find_employee_by_id(pilot.id)
+            # combine the values of two dictionaries having same key
             combined_pilot = {**employee.__dict__, **pilot.__dict__}
             combined_pilots.append(combined_pilot)
         return combined_pilots

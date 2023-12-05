@@ -22,9 +22,9 @@ class EmployeeData:
                                                                 'address', 'mobile_phone_number',
                                                                 'email_address', 'home_phone_number'])
         self.create_file_if_not_exists(self.pilot_filename, [
-                                       'id'])
+                                       'id', 'pilot_role'])
         self.create_file_if_not_exists(self.flight_attendant_filename, [
-                                       'id'])
+                                       'id', 'attendant_role'])
 
     def create_file_if_not_exists(self, filename, fieldnames):
         if not os.path.exists(filename):
