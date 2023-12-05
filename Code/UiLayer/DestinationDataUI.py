@@ -1,10 +1,12 @@
 #from logic_ui_wrapper import wrapper
 from UiLayer.PrintFunctions import PrintFunctions
+from UiLayer.DestinationDataCreateNewUI import DestinationDataCreateNewUI
+from UiLayer.DestinationDataEditUI import DestinationDataEditUI
 
 class DestinationDataUI:
     def __init__(self):
         self.PrintUi = PrintFunctions()
-
+        
     def destination_data_output(self):
         self.PrintUi.logo()
         self.PrintUi.print_header("Destination Database Menu", "left")
@@ -35,12 +37,13 @@ class DestinationDataUI:
             self.destination_data_output()
             command = input("Enter you command: ")            
 
-            if command == "q":
-                print("Goodbye")
+            if command == "0":
                 break
-            elif command == "0":
-                pass
+            elif command == "1":
+                edit = DestinationDataEditUI([])
+                edit.input_prompt()
             elif command == "00":
-                pass
+                create_new = DestinationDataCreateNewUI()
+                create_new.input_prompt()
             else:
                 print("Invalid input, try again")
