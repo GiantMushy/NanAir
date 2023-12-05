@@ -10,7 +10,10 @@ class PrintFunctions:
 
     def allign_left(self, text):
         text_len = len(text)
-        return "║" + "   " + text + (" " * (120 - text_len)) + "║"
+        if text_len < 120:
+            return "║" + "   " + text + (" " * (120 - text_len)) + "║"
+        else:
+            return "║" + "   " + text
     
     def allign_center(self, text):
         str_length = len(text)
@@ -70,25 +73,56 @@ class PrintFunctions:
 # {'id': '004', 'name': 'Banani', 'social_security_number': '347784-3214', 'address': 'FB street 1', 'mobile_phone_number': '3550569113', 'email_address': 'example35@gmail.com', 'home_phone_number': ''} 
 # {'id': '005', 'name': 'Epli', 'social_security_number': '628896-8506', 'address': 'Apple street 1', 'mobile_phone_number': '1002571434', 'email_address': 'example87@gmail.com', 'home_phone_number': ''}
 
-    def print_table(self, data, line_num):
+    def print_employee_table(self, data, line_num):
         line_count = 0
-
-        #getting keys
-        keys = []
-        print_format = ""
-        for dict1 in data[0]:
-            for key, value in dict1:
-                if key not in keys:
-                    keys.append(key)
-                    print_format += "{:<10} "
-                else:
-                    break
+        print_format = "%-5s%-20s%-15s%-20s%-15s%-25s%-0s"
         
-        # Print the names of the columns.
-        print(self.allign_left(print_format.format(keys)))
+        print(self.allign_left(print_format % ("ID", "Name", "SSN", "Address", "Mobile Phone", "Email", "Home Phone")))
+        print(self.empty_line())
+        for dic in data:
+            vals = []
+            for value in dic.values():
+                vals.append(value)
+            if vals[6] == '':
+                vals[6] = "--Not Given--"
+            print(self.allign_left(print_format % (vals[0], vals[1], vals[2], vals[3], vals[4], vals[5], vals[6])))
+            line_count += 1
+        while line_count <= line_num:
+            print(self.empty_line())
+            line_count += 1
 
-        #for dictionary in data:
-        #    # print each data item.
-        #    for key, value in dict1.items():
-        #        name, age, course = value
-        #        print("print_format".format(name, age, course))
+    def print_airplane_table(self, data, line_num):
+        line_count = 0
+        print_format = "%-5s%-20s%-15s%-20s%-15s%-25s%-0s"
+        
+        print(self.allign_left(print_format % ("ID", "Name", "SSN", "Address", "Mobile Phone", "Email", "Home Phone")))
+        print(self.empty_line())
+        for dic in data:
+            vals = []
+            for value in dic.values():
+                vals.append(value)
+            if vals[6] == '':
+                vals[6] = "--Not Given--"
+            print(self.allign_left(print_format % (vals[0], vals[1], vals[2], vals[3], vals[4], vals[5], vals[6])))
+            line_count += 1
+        while line_count <= line_num:
+            print(self.empty_line())
+            line_count += 1
+
+    def print_destination_table(self, data, line_num):
+        line_count = 0
+        print_format = "%-5s%-20s%-15s%-20s%-15s%-25s%-0s"
+        
+        print(self.allign_left(print_format % ("ID", "Name", "SSN", "Address", "Mobile Phone", "Email", "Home Phone")))
+        print(self.empty_line())
+        for dic in data:
+            vals = []
+            for value in dic.values():
+                vals.append(value)
+            if vals[6] == '':
+                vals[6] = "--Not Given--"
+            print(self.allign_left(print_format % (vals[0], vals[1], vals[2], vals[3], vals[4], vals[5], vals[6])))
+            line_count += 1
+        while line_count <= line_num:
+            print(self.empty_line())
+            line_count += 1

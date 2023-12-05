@@ -25,9 +25,9 @@ class LoginUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("*Hint: input the number you want to select and then enter"))
         print(self.PrintUi.allign_left(" For ex.: [1] --> Trip Manager"))
+        print(self.PrintUi.allign_left(" q : quit"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.end_line())
 

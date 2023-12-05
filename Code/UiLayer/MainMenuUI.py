@@ -44,8 +44,7 @@ class MainMenuUI:
             command = input("Enter you command: ")
             command = command.lower()
 
-            if command == "q":
-                print("Goodbye")
+            if command == "0":
                 break
             elif command == "1":
                 flight_schedules = FlightSchedulesUI(self.user)
