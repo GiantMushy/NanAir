@@ -32,7 +32,7 @@ def add_destination(self, NameOfPlane, CurrentLocation, Type, Manufacturer, Capa
             raise ValueError("Distance, Travel Time, and Contact Phone Number must be numeric")
 
         # Create a new Destination object
-        NewAirplaine = Information(
+        NewAirplaine = Airplaine(
             NameOfPlane=NameOfPlane,
             CurrentLocation=CurrentLocation,
             Type=Type,
