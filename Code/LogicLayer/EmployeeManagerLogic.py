@@ -88,6 +88,30 @@ class EmployeeManagerLogic:
             combined_flight_attendants.append(combined_flight_attendant)
         return combined_flight_attendants
 
+    def is_pilot(self, employee_id):
+        """Checks if an employee is a pilot.
+
+        Args:
+            employee_id (str): The ID of the employee to check.
+
+        Returns:
+            bool: True if the employee is a pilot, False otherwise.
+        """
+        employee_id_int = int(employee_id)
+        return any(int(pilot.id) == employee_id_int for pilot in self.employee_data.read_all_pilots())
+
+    def is_flight_attendant(self, employee_id):
+        """Checks if an employee is a flight attendant.
+
+        Args:
+            employee_id (str): The ID of the employee to check.
+
+        Returns:
+            bool: True if the employee is a flight attendant, False otherwise.
+        """
+        employee_id_int = int(employee_id)
+        return any(int(attendant.id) == employee_id_int for attendant in self.employee_data.read_all_flight_attendants())
+
     def find_employee_by_id(self, employee_id):
         """
         Finds an employee by their ID.
