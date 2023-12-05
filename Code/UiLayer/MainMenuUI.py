@@ -12,6 +12,7 @@ class MainMenuUI:
         self.user = user
 
     def main_menu_output(self):
+        '''Print sequence for the Main Menu'''
         self.PrintUi.logo()
         self.PrintUi.print_header(self.user + " > Main Menu", "center")
         print(self.PrintUi.empty_line())
@@ -37,6 +38,7 @@ class MainMenuUI:
         print(self.PrintUi.end_line())
 
     def input_prompt(self):
+        '''Starting function for the Main Menu'''
         while True:
             self.main_menu_output()
             command = input("Enter you command: ")
