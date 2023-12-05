@@ -66,12 +66,17 @@ class PrintFunctions:
         print("                              |_____|\____|____|  |____|_____|\____|   |____|  |____|_____|____| |___|")
         print("                                🅦 🅗 🅔 🅡 🅔  🅓 🅘 🅥 🅘 🅓 🅘 🅝 🅖  🅑 🅨  🅩 🅔 🅡 🅞  🅜 🅐 🅚 🅔 🅢  🅢 🅔 🅝 🅒 🅔")
 
+    def shorten_name(self, name, min_length):
+        '''Abbreviates given name'''
+        names = name.split()
+        if len(names) > 1:
+            for n in range(len(names)-1):
+                names[n+1] = names[n+1][0] + "."
+        name = " ".join(names)
 
-#data = {'id': '001', 'name': 'Matti', 'social_security_number': '611563-4242', 'address': 'Mac street 1', 'mobile_phone_number': '6686453441', 'email_address': 'example71@gmail.com', 'home_phone_number': ''} 
-# {'id': '002', 'name': 'Sara', 'social_security_number': '430730-9923', 'address': 'Microsoft street 1', 'mobile_phone_number': '1358799863', 'email_address': 'example55@gmail.com', 'home_phone_number': ''} 
-# {'id': '003', 'name': 'Raggi', 'social_security_number': '164862-8280', 'address': 'AMZN street 1', 'mobile_phone_number': '9861589627', 'email_address': 'example38@gmail.com', 'home_phone_number': ''} 
-# {'id': '004', 'name': 'Banani', 'social_security_number': '347784-3214', 'address': 'FB street 1', 'mobile_phone_number': '3550569113', 'email_address': 'example35@gmail.com', 'home_phone_number': ''} 
-# {'id': '005', 'name': 'Epli', 'social_security_number': '628896-8506', 'address': 'Apple street 1', 'mobile_phone_number': '1002571434', 'email_address': 'example87@gmail.com', 'home_phone_number': ''}
+        if len(name) > min_length:
+            name = name[0] + ". (Name Too Long)"
+        return name
 
     def print_employee_table(self, data, line_num):
         line_count = 0
@@ -83,46 +88,51 @@ class PrintFunctions:
             vals = []
             for value in dic.values():
                 vals.append(value)
+            for n in range(len(value)):
+                if len(vals[n]) > 18: #shorten names
+                    vals[n] = self.shorten_name(vals[n])
             if vals[6] == '':
-                vals[6] = "--Not Given--"
+                vals[6] = "--Not Given--" #Empty Home Phone input prints "--Not Given--"
             print(self.allign_left(print_format % (vals[0], vals[1], vals[2], vals[3], vals[4], vals[5], vals[6])))
             line_count += 1
         while line_count <= line_num:
-            print(self.empty_line())
-            line_count += 1
-
-    def print_airplane_table(self, data, line_num):
-        line_count = 0
-        print_format = "%-5s%-20s%-15s%-20s%-15s%-25s%-0s"
-        
-        print(self.allign_left(print_format % ("ID", "Name", "SSN", "Address", "Mobile Phone", "Email", "Home Phone")))
-        print(self.empty_line())
-        for dic in data:
-            vals = []
-            for value in dic.values():
-                vals.append(value)
-            if vals[6] == '':
-                vals[6] = "--Not Given--"
-            print(self.allign_left(print_format % (vals[0], vals[1], vals[2], vals[3], vals[4], vals[5], vals[6])))
-            line_count += 1
-        while line_count <= line_num:
-            print(self.empty_line())
+            print(self.empty_line()) #fills out UI box to correct size with empty lines
             line_count += 1
 
     def print_destination_table(self, data, line_num):
         line_count = 0
-        print_format = "%-5s%-20s%-15s%-20s%-15s%-25s%-0s"
+        print_format = "%-5s%-20s%-20s%-20s%-12s%-15s%-15s%-0s"
         
-        print(self.allign_left(print_format % ("ID", "Name", "SSN", "Address", "Mobile Phone", "Email", "Home Phone")))
+        print(self.allign_left(print_format % ("ID", "City", "Airport", "Country", "Distance", "Travel Time", "Emerg. Name", "Emerg. Phone")))
         print(self.empty_line())
         for dic in data:
             vals = []
             for value in dic.values():
                 vals.append(value)
-            if vals[6] == '':
-                vals[6] = "--Not Given--"
-            print(self.allign_left(print_format % (vals[0], vals[1], vals[2], vals[3], vals[4], vals[5], vals[6])))
+            for n in range(len(value)):
+                if len(vals[n]) > 18: #shorten names
+                    vals[n] = self.shorten_name(vals[n])
+            print(self.allign_left(print_format % (vals[0], vals[1], vals[2], vals[3], vals[4] + "km", vals[5] + "min", vals[6], vals[7])))
             line_count += 1
         while line_count <= line_num:
-            print(self.empty_line())
+            print(self.empty_line()) #fills out UI box to correct size with empty lines
+            line_count += 1
+
+    def print_airplane_table(self, data, line_num):
+        line_count = 0
+        print_format = "%-5s%-20s%-20s%-15s%-20s%-0s"
+        
+        print(self.allign_left(print_format % ("ID", "City", "Current Location", "Type", "Manufacturer", "Capacity")))
+        print(self.empty_line())
+        for dic in data:
+            vals = []
+            for value in dic.values():
+                vals.append(value)
+            for n in range(len(value)):
+                if len(vals[n]) > 18: #shorten names
+                    vals[n] = self.shorten_name(vals[n])
+            print(self.allign_left(print_format % (vals[0], vals[1], vals[2], vals[3], vals[4], vals[5])))
+            line_count += 1
+        while line_count <= line_num:
+            print(self.empty_line()) #fills out UI box to correct size with empty lines
             line_count += 1
