@@ -172,4 +172,31 @@ class EmployeeManagerLogic:
         # write the updated list back to the data layer
         self.employee_data.modify_employee_data(updated_employees)
 
+        # specific request, check fields for employee if valid
+        def field_checker(self, field, input):
+            '''
+            Checks employee inputs, and checks if something has letters when not supposed to
+            and if something has numbers when not supposed to.
+            :param field: field to check
+            :param input: user input to check for the given field
+            '''
+            allowed_fields = ['name', 'ssn',
+                              'mobile', 'address', 'email_address']
+            field = field.lower()
+            if field not in allowed_fields:
+                raise ValueError(
+                    "Invalid field type, must be name, ssn, mobile, address or email_address"
+                )
+            else:
+                if field in ['name', 'email_address, address']:
+                    if input.isalpha():
+                        return True
+                    else:
+                        return False
+                else:
+                    if input.isdigit():
+                        return True
+                    else:
+                        return False
+
     # B-requirements will be implemented  here.
