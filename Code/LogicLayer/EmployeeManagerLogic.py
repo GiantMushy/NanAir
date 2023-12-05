@@ -1,4 +1,4 @@
-from DataLayer.EmployeeData import EmployeeData
+from DataLayer.DataLayerAPI import DataLayerAPI
 from Models.Employee import Employee
 from Models.Pilot import Pilot
 from Models.FlightAttendant import FlightAttendant
@@ -6,7 +6,7 @@ from Models.FlightAttendant import FlightAttendant
 
 class EmployeeManagerLogic:
     def __init__(self):
-        self.employee_data = EmployeeData()
+        self.employee_data = DataLayerAPI()
 
     def generate_unique_employee_id(self):
         """
