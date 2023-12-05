@@ -71,7 +71,7 @@ class Destination_Data:
         :param destination: Destination object to be updated.
         """
         required_fields = ['City', 'Airport', 'Country', 'Distance',
-                           'Travel_Time', 'Contact_Name', 'Contact_Phone_Number']
+                        'Travel_Time', 'Contact_Name', 'Contact_Phone_Number']
 
         # checking for missing required fields
         for field in required_fields:
@@ -83,11 +83,18 @@ class Destination_Data:
             with open(self.filename, mode='r+', newline='', encoding='utf-8') as file:
                 reader = csv.DictReader(file)
                 destinations = []
+                destination_exists = False
+
                 for row in reader:
                     if row['City'] == destination.City:
                         destinations.append(destination.__dict__)
+                        destination_exists = True
                     else:
                         destinations.append(row)
+
+                if not destination_exists:
+                    raise ValueError(f"Destination with City {destination.City} does not exist.")
+
                 file.seek(0)
                 writer = csv.DictWriter(file, fieldnames=required_fields)
                 writer.writeheader()

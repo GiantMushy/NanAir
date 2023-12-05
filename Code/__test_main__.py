@@ -26,13 +26,17 @@ def add_destination(destination_manager):
     city = input("Enter City: ")
     airport = input("Enter Airport: ")
     country = input("Enter Country: ")
-    distance = int(input("Enter Distance (km): "))
-    travel_time = int(input("Enter Travel Time (minutes): "))
+    distance = input("Enter Distance (km): ")
+    travel_time = input("Enter Travel Time (minutes): ")    
     contact_name = input("Enter Contact Name: ")
     contact_phone_number = input("Enter Contact Phone Number: ")
-
-    destination_manager.add_destination(city, airport, country, distance, travel_time, contact_name, contact_phone_number)
-    print("Destination added successfully!")
+    
+    try:
+        destination_manager.add_destination(city, airport, country, distance, travel_time, contact_name, contact_phone_number)
+        print("Destination added successfully!")
+    except ValueError as e:
+        print("ValueError:", e)
+        print("Could not add destination.")
 
 def list_all_destinations(destination_manager):
     # Call the logic function to list all destinations
