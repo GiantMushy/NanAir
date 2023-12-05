@@ -1,7 +1,6 @@
 import csv
 import os
 from Models.AirplaineModel import Airplaine
-#finna út undefined why 
 
 
 
