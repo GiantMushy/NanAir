@@ -57,21 +57,8 @@ class AirplaineData:
         Read all pilots from the Pilot CSV file and return them as a list of Pilot objects.
         :return: List of Pilot objects.
         """
-        pilots = []
-        try:
-            with open(self.pilot_filename, mode='r', newline='', encoding='utf-8') as file:
-                reader = csv.DictReader(file)
-                for row in reader:
-                    pilots.append(Pilot(**row))
-        except FileNotFoundError:
-            raise FileNotFoundError(
-                f"The file {self.airplaine_filename} does not exist.")
-        except Exception as e:
-            raise Exception(
-                f"An error occurred while reading the Airplaine file: {e}")
-        return pilots
-
-    def add_employee(self, airplaine):
+        
+    def add_airplaine(self, airplaine):
         """
         Add a new airplaine to the CSV file.
         :param airplaine: Airplaine object to be added.
