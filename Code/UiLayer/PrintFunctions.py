@@ -3,12 +3,15 @@ class PrintFunctions:
         pass
 
     def empty_line(self):
+        '''Returns the printable string of an empty line'''
         return "║                                                                                                                           ║"
     
     def end_line(self):
+        '''Returns the printable string of the end line ui'''
         return "╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
 
     def allign_left(self, text):
+        '''returns a printable string where the input text has been alligned on the left'''
         text_len = len(text)
         if text_len < 120:
             return "║" + "   " + text + (" " * (120 - text_len)) + "║"
@@ -16,6 +19,7 @@ class PrintFunctions:
             return "║" + "   " + text
     
     def allign_center(self, text):
+        '''returns a printable string where the input text has been alligned in the center of the line'''
         str_length = len(text)
         spaces = (123 - str_length)
         odd_even = spaces % 2
@@ -26,6 +30,7 @@ class PrintFunctions:
         return "║" + (" " * left_spaces) + text + (" " * right_spaces) + "║"   
 
     def print_header(self, text, allignment):
+        '''Prints the header of the interface'''
         print("█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█")#123
         str_length = len(text)
         if allignment == "center":
@@ -48,6 +53,7 @@ class PrintFunctions:
         print("█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█")
 
     def logo(self):
+        '''Prints the Company Logo'''
         print("                                                                  |                                   ")
         print("                                                                  |                                   ")
         print("                                                                  |                                   ")
@@ -67,7 +73,7 @@ class PrintFunctions:
         print("                                🅦 🅗 🅔 🅡 🅔  🅓 🅘 🅥 🅘 🅓 🅘 🅝 🅖  🅑 🅨  🅩 🅔 🅡 🅞  🅜 🅐 🅚 🅔 🅢  🅢 🅔 🅝 🅒 🅔")
 
     def shorten_name(self, name, min_length):
-        '''Abbreviates given name'''
+        '''Abbreviates input name'''
         names = name.split()
         if len(names) > 1:
             for n in range(len(names)-1):
