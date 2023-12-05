@@ -66,6 +66,7 @@ class EmployeeDataEditUI:
             command = input("Enter you command: ")            
 
             if command == "0":
+                #-------------Send new Data to Logic-------------
                 break
             elif command == "1":
                 self.edit_data("Phone")
