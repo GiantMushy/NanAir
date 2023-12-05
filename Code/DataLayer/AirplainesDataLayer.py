@@ -22,8 +22,6 @@ class AirplaineData:
     def ensure_file_exists(self):
         self.create_file_if_not_exists(self.airplaine_filename, ['NameOfPlane', 'CurrentLocation', 'Type',
                                                                 'Manufacturer', 'Capacity',])
-        
-        
 
     def create_file_if_not_exists(self, filename, fieldnames):
         if not os.path.exists(filename):
