@@ -2,4 +2,5 @@
 ~$*
 __pycache__/
 .vs/
-
+*.pyc
+.DS_Store
