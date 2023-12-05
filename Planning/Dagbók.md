@@ -59,3 +59,11 @@ Benjamín: destination-view feature branch
 Þorvarður: UI-layer-setup feature branch
 Edda: lagaði skýrsluna
 Matthías: create-modify-employees feature branch
+
+5.12.23
+
+Oliver Emil: airplane-list-all feature branch
+Benjamín: destination-view feature branch
+Þorvarður: UI-layer-employee-create-view-edit feature branch
+Edda: lagaði skýrsluna
+Matthías: create-modify-employees feature branch, wrappers update
