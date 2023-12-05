@@ -13,7 +13,6 @@ class AirplaineData:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 ret_lis.append((row["name"], row["CurrentLocation"], row["Type"], row["Manufacturer"], row["Capacity"]))
-                #print(row['first_name'], row['last_name'])
             return ret_lis
         
         """Initialize the AirplaineData with the path to CSV file with airplaine data"""
