@@ -1,4 +1,10 @@
 import csv
+import os
+from Models.AirplaineModel import Airplaine
+
+
+
+
 class AirplaineData:
     def __init__(self):
         self.file_name = "files/airplaines.csv"
@@ -10,5 +16,11 @@ class AirplaineData:
                 ret_lis.append((row["name"], row["CurrentLocation"], row["Type"], row["Manufacturer"], row["Capacity"]))
                 #print(row['first_name'], row['last_name'])
             return ret_lis
+        
+        """Initialize the AirplaineData with the path to CSV file with airplaine data"""
+        self.filename = filename
+        self.ensure_file_exists()
+
+    def ensure_file_exists(self):
 
     
