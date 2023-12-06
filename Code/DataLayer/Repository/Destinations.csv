@@ -1,4 +1,5 @@
 id,city,airport,country,distance,travel_time,contact_name,contact_phone_number
 001,Reykjavik,RKV,Iceland,0,0,Löggan,911
 002,Keflavik,KFV,Iceland,20,20,Löggan,112
-
+003,Akureyri,AIA,Iceland,50,200,Löggan,112
+004,Nuuk,GIA,Greenland,300,600,Police,911

@@ -1,11 +1,13 @@
 from LogicLayer.EmployeeManagerLogic import EmployeeManagerLogic
 from LogicLayer.DestinationManagerLogic import DestinationManagerLogic
+from LogicLayer.AirplaneManagerLogic import AirplaneManagerLogic
 
 
 class LogicLayerAPI:
     def __init__(self):
         self.employee_logic = EmployeeManagerLogic()
         self.destination_logic = DestinationManagerLogic()
+        self.airplane_logic = AirplaneManagerLogic()
 
     ############################## EmployeeManagerLogic ###############################
     def add_employee(self, employee_type, employee_role, **kwargs):
@@ -23,10 +25,6 @@ class LogicLayerAPI:
     def list_all_employees(self):
         """Returns a list of all employees."""
         return self.employee_logic.list_all_employees()
-    
-    def list_all_Destinations(self):
-        """Returns a list of all destinations."""
-        return self.destination_logic.list_all_Destinations()
 
     def list_all_pilots(self):
         """
@@ -75,5 +73,45 @@ class LogicLayerAPI:
         """
         return self.employee_logic.modify_employee(employee_id, **updates)
 
+    
+    ############################## Destination Manager Logic ###############################
+    def list_all_destinations(self):
+        """Returns a list of all destinations."""
+        return self.destination_logic.list_all_destinations()
+    
+    def add_destination(self, **kwargs):
+        """
+        Adds a new destination to the system.
+        Validates required fields before adding.
+        :raises ValueError: If required fields are missing or empty.
+        """
+        self.destination_logic.add_destination(**kwargs)
+
+
+
+    ############################## Airplane Manager Logic ###############################
+    def list_all_airplanes(self):
+        """Returns a list of all airplanes."""
+        return self.airplane_logic.list_all_airplanes()
+    
+    def add_airplane(self, **kwargs):
+        """
+        Adds a new airplane to the system.
+        Validates required fields before adding.
+        :raises ValueError: If required fields are missing or empty.
+        """
+        self.airplane_logic.add_airplane(**kwargs)
+
+    def modify_airplane(self, airplane_id, **updates):
+        """
+        Modifies the attributes of an existing airplane.
+
+        :param airplane_id: ID of the airplane to be modified.
+        :param updates: Dictionary of updates to be applied. (modify_airplane(123, tpe="1234567", current_location="New Address")
+        :raises ValueError: If trying to modify restricted fields or airplane not found.
+        """
+        return self.airplane_logic.modify_airplane(airplane_id, **updates)
+
+    ############################## GeneralUseLogic ###############################
     def object_list_to_dict_list(self, object_list):
         return self.employee_logic.object_list_to_dict_list(object_list)

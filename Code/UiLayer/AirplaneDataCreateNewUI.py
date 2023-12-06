@@ -1,9 +1,10 @@
-#from logic_ui_wrapper import wrapper
+from LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
 from UiLayer.PrintFunctions import PrintFunctions
 
 class AirplaneDataCreateNewUI:
     def __init__(self):
         self.PrintUi = PrintFunctions()
+        self.Logic = LogicLayerAPI()
         self.new_airplane = []
 
     def input_name(self):
@@ -113,9 +114,9 @@ class AirplaneDataCreateNewUI:
         print(self.PrintUi.end_line())
 
     def input_seats(self):
-        '''Print sequence for Creating a new Airplane : Seats'''
+        '''Print sequence for Creating a new Airplane : Capacity'''
         self.PrintUi.logo()
-        self.PrintUi.print_header("Airplane Database Menu > Create New > Input Seats", "left")
+        self.PrintUi.print_header("Airplane Database Menu > Create New > Input Capacity", "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New Airplane"))
         print(self.PrintUi.empty_line())
@@ -158,52 +159,89 @@ class AirplaneDataCreateNewUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left(" 1 : Remake Airplane (if incorrect data was input)"))
-        print(self.PrintUi.allign_left(" 2 : Create Another Airplane"))
-        print(self.PrintUi.allign_left(" 0 : Return to the Airplane Database Menu"))
+        print(self.PrintUi.allign_left(" 2 : Save and Create Another Airplane"))
+        print(self.PrintUi.allign_left(" 3 : Save and Return to the Airplane Database Menu"))
+        print(self.PrintUi.allign_left(" 4 : Discard and Return to the Airplane Database Menu"))
         print(self.PrintUi.end_line())
 
-    def input_prompt(self):
-        '''Starting function for creating a new Airplane'''
+    def create_new_sequence(self):
         n = 1
+        input_check = True
+        value_error = "Value Error string goes here"
         while n < 6:
             if n == 1:
                 self.input_name()
-                data = input("Enter Name: ")
-                #------------Ask Logic if input actualy a name--------------
+                if input_check:
+                    data = input("Enter Name: ")
+                else:
+                    print(value_error)
+                    data = input("Enter Name:")
+
             elif n == 2:
-                self.input_manufacturer()
-                data = input("Enter Current Location: ")
-                #------------Ask Logic if input actualy a valid Location--------------
+                self.input_current_location()
+                if input_check:
+                    data = input("Enter Current Location: ")
+                else:
+                    print(value_error)
+                    data = input("Enter Current Location:")
+
             elif n == 3:
                 self.input_manufacturer()
-                data = input("Enter Manufacturer: ")
-                #------------Ask Logic if input actualy a valid Manufacturer--------------
+                if input_check:
+                    data = input("Enter Manufacturer: ")
+                else:
+                    print(value_error)
+                    data = input("Enter Manufacturer:")
+
             elif n == 4:
                 self.input_type()
-                data = input("Enter Type: ")
-                #------------Ask Logic if input actualy an Airplane type--------------
+                if input_check:
+                    data = input("Enter Type: ")
+                else:
+                    print(value_error)
+                    data = input("Enter Type:")
+
+                
             elif n == 5:
                 self.input_seats()
-                data = input("Enter Seats: ")
-                #------------Ask Logic if input actualy a realistic seat number--------------
-            self.new_airplane.append(data)
-            n += 1
-        
+                if input_check:
+                    data = input("Enter Seats: ")
+                else:
+                    print(value_error)
+                    data = input("Enter Seats:")
+
+            if input_check:
+                self.new_airplane.append(data)
+                n += 1
+
+    def input_prompt(self):
+        '''Starting function for creating a new Airplane'''
+        self.create_new_sequence()
         while True:
             self.new_created()
             command = input("Enter command: ")
-            if command == "0":
-                #--------------------send data to Logic-----------------------
-                ####-----NEEDS FIXING: Back doesnt always go to AirplaneData after multiple Airplane creations-----####
-                break
-            elif command == "1":
+            if command == "1":  #re=create
                 self.new_airplane = []
-                self.input_prompt()
-            elif command == "2":
-                #--------------------send data to Logic-----------------------
-                self.new_airplane = []
-                self.input_prompt()
+                self.create_new_sequence()
+            elif command == "2": #save and create new
+                try:
+                    self.Logic.add_airplane(name=self.new_airplane[0], current_location=self.new_airplane[1], type=self.new_airplane[2], manufacturer=self.new_airplane[3],
+                                                capacity=self.new_airplane[4])
+                    self.new_airplane = []
+                    self.create_new_sequence()
+                except ValueError as e:
+                    print(f"Error: {e}")
+            elif command == "3": #save and exit
+                try:
+                    self.Logic.add_airplane(name=self.new_airplane[0], current_location=self.new_airplane[1], type=self.new_airplane[2], manufacturer=self.new_airplane[3],
+                                                capacity=self.new_airplane[4])
+                    break
+                except ValueError as e:
+                    print(f"Error: {e}")
+            elif command == "4": #discard and exit
+                break    
+            elif command == "q":
+                exit()
             else:
                 print("Invalid input, try again")

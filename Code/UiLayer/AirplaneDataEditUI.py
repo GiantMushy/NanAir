@@ -1,24 +1,24 @@
-#from logic_ui_wrapper import wrapper
+from LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
 from UiLayer.PrintFunctions import PrintFunctions
 
 class AirplaneDataEditUI:
-    def __init__(self, Airplane = []):
+    def __init__(self, airplane = []):
         self.PrintUi = PrintFunctions()
-        #self.Airplane = Airplane
-        self.airplane = ["Edda", "Reykjavík", "Boeing", "747", "225"]
+        self.Logic = LogicLayerAPI()
+        self.airplane = airplane
 
-    def Airplane_data_edit_output(self):
+    def airplane_data_edit_output(self):
         '''Print sequence for editing Airplane Data (initial)'''
         self.PrintUi.logo()
-        self.PrintUi.print_header("Airplane Database Menu > Edit > " + self.airplane[0], "left")
+        self.PrintUi.print_header("Airplane Database Menu > Edit > " + self.airplane['name'], "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Airplane Data:"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(f"1 : Name                  {self.Airplane[0]}"))
-        print(self.PrintUi.allign_left(f"2 : Current Location      {self.Airplane[1]}"))
-        print(self.PrintUi.allign_left(f"3 : Manufacturer          {self.Airplane[2]}"))
-        print(self.PrintUi.allign_left(f"4 : Type                  {self.Airplane[3]}"))
-        print(self.PrintUi.allign_left(f"5 : Seats                 {self.Airplane[4]}"))
+        print(self.PrintUi.allign_left(f"1 : Name                  {self.airplane['name']}"))
+        print(self.PrintUi.allign_left(f"2 : Current Location      {self.airplane['current_location']}"))
+        print(self.PrintUi.allign_left(f"3 : Type                  {self.airplane['type']}"))
+        print(self.PrintUi.allign_left(f"4 : Manufacturer          {self.airplane['manufacturer']}"))
+        print(self.PrintUi.allign_left(f"5 : Capacity              {self.airplane['capacity']}"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
@@ -36,15 +36,15 @@ class AirplaneDataEditUI:
     def edit_data(self, changed_data):
         '''Print sequence for editing Airplane Data'''
         self.PrintUi.logo()
-        self.PrintUi.print_header(f"Airplane Database Menu > Edit > {self.Airplane[0]} > {changed_data}", "left")
+        self.PrintUi.print_header(f"Airplane Database Menu > Edit > {self.airplane['name']} > {changed_data}", "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Airplane Data:"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(f"    Name                  {self.Airplane[0]}"))
-        print(self.PrintUi.allign_left(f"    Current Location      {self.Airplane[1]}"))
-        print(self.PrintUi.allign_left(f"    Manufacturer          {self.Airplane[2]}"))
-        print(self.PrintUi.allign_left(f"    Type                  {self.Airplane[3]}"))
-        print(self.PrintUi.allign_left(f"    Seats                 {self.Airplane[4]}"))
+        print(self.PrintUi.allign_left(f"    Name                  {self.airplane['name']}"))
+        print(self.PrintUi.allign_left(f"    Current Location      {self.airplane['current_location']}"))
+        print(self.PrintUi.allign_left(f"    Type                  {self.airplane['type']}"))
+        print(self.PrintUi.allign_left(f"    Manufacturer          {self.airplane['manufacturer']}"))
+        print(self.PrintUi.allign_left(f"    Capacity              {self.airplane['capacity']}"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
@@ -56,13 +56,13 @@ class AirplaneDataEditUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(" 0 : Back"))
+        print(self.PrintUi.allign_left(""))
         print(self.PrintUi.end_line())
 
     def input_prompt(self):
         '''Starting function for editing Airplane Data'''
         while True:
-            self.Airplane_data_edit_output()
+            self.airplane_data_edit_output()
             command = input("Enter you command: ")            
 
             if command == "0":
@@ -71,27 +71,37 @@ class AirplaneDataEditUI:
             elif command == "1":
                 self.edit_data("Name")
                 command = input("Input new Name: ")
-                #----------------------Ask Logic if input is actual Name-------------------------
-                self.Airplane[0] = command
+                try:
+                    self.Logic.modify_airplane(self.airplane['id'], name = command)
+                except ValueError as e:
+                    print(f"Error: {e}")
             elif command == "2":
                 self.edit_data("Current Location")
                 command = input("Input new Current Location: ")
-                #----------------------Ask Logic if actual Location-------------------------
-                self.Airplane[1] = command
+                try:
+                    self.Logic.modify_airplane(self.airplane['id'], current_location = command)
+                except ValueError as e:
+                    print(f"Error: {e}")
             elif command == "3":
                 self.edit_data("Manufacturer")
                 command = input("Input new Manufacturer: ")
-                #----------------------Ask Logic if actual phone number-------------------------
-                self.Airplane[2] = command
+                try:
+                    self.Logic.modify_airplane(self.airplane['id'], manufacturer = command)
+                except ValueError as e:
+                    print(f"Error: {e}")
             elif command == "4":
                 self.edit_data("Type")
                 command = input("Input new Type: ")
-                #----------------------Ask Logic if actual Address-------------------------
-                self.Airplane[3] = command
+                try:
+                    self.Logic.modify_airplane(self.airplane['id'], type = command)
+                except ValueError as e:
+                    print(f"Error: {e}")
             elif command == "5":
                 self.edit_data("Seats")
                 command = input("Input new seat ammount: ")
-                #----------------------Ask Logic if actual email-------------------------
-                self.Airplane[4] = command
+                try:
+                    self.Logic.modify_airplane(self.airplane['id'], capacity = command)
+                except ValueError as e:
+                    print(f"Error: {e}")
             else:
                 print("Invalid input, try again")
