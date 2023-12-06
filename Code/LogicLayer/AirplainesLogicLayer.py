@@ -61,6 +61,23 @@ def EditAirplaine(self, NameOfPlaine, updates):
     airplane_found = False
     updated_airplanes = []
 
+    for plaines in airplanes:
+        if plaines.NameOfPlaine == NameOfPlaine:
+            airplaine_found = True
+            for key, value in updates.items():
+                if hasattr(plaines, key):
+                    setattr(plaines, key, value)
+                else:
+                    raise ValueError(f"Invalid field:{key}")
+        updated_airplanes.append(plaines)
+
+    if not airplaine_found:
+        raise ValueError(f"Airplaine with name {NameOfPlaine} not found")
+    
+    # Write the updated list back to the data layer
+    self.AirplainesData_data.ModifyAirplaineData(updated_airplanes)
+                   
+
 
      
         
