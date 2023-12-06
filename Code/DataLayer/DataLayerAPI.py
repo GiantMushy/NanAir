@@ -1,9 +1,11 @@
 from DataLayer.EmployeeData import EmployeeData
+from DataLayer.DestinationData import DestinationData
 
 
 class DataLayerAPI:
     def __init__(self):
         self.employee_data = EmployeeData()
+        self.Destination_data = DestinationData()
 
     def read_all_employees(self):
         """
@@ -11,6 +13,13 @@ class DataLayerAPI:
         :return: List of Employee objects.
         """
         return self.employee_data.read_all_employees()
+    
+    def read_all_Destinations(self):
+        """
+        Read all destination from the Destination CSV file and return them as a list of Destination objects.
+        :return: List of Destination objects.
+        """
+        return self.Destination_data.read_all_Destinations()
 
     def read_all_pilots(self):
         """

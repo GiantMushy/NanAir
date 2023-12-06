@@ -1,9 +1,11 @@
 from LogicLayer.EmployeeManagerLogic import EmployeeManagerLogic
+from LogicLayer.DestinationManagerLogic import DestinationManagerLogic
 
 
 class LogicLayerAPI:
     def __init__(self):
         self.employee_logic = EmployeeManagerLogic()
+        self.destination_logic = DestinationManagerLogic()
 
     ############################## EmployeeManagerLogic ###############################
     def add_employee(self, employee_type, employee_role, **kwargs):
@@ -21,6 +23,10 @@ class LogicLayerAPI:
     def list_all_employees(self):
         """Returns a list of all employees."""
         return self.employee_logic.list_all_employees()
+    
+    def list_all_Destinations(self):
+        """Returns a list of all destinations."""
+        return self.destination_logic.list_all_Destinations()
 
     def list_all_pilots(self):
         """

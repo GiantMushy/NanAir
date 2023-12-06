@@ -1,4 +1,4 @@
-from LogicLayer.LogicLayerAPI import LogicLayerAPI
+from LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
 from UiLayer.PrintFunctions import PrintFunctions
 
 class EmployeeDataEditUI:
@@ -86,6 +86,13 @@ class EmployeeDataEditUI:
             elif command == "3":
                 self.edit_data("Email")
                 command = input("Input new Email: ")
+                try:
+                    self.Logic.modify_employee(self.employee['id'], email_address = command)
+                except ValueError as e:
+                    print(f"Error: {e}")
+            elif command == "4":
+                self.edit_data("Home Phone")
+                command = input("Input new Home Phone: ")
                 try:
                     self.Logic.modify_employee(self.employee['id'], home_phone_number = command)
                 except ValueError as e:
