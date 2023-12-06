@@ -67,3 +67,15 @@ Benjamín: destination-view feature branch
 Þorvarður: UI-layer-employee-create-view-edit feature branch
 Edda: lagaði skýrsluna
 Matthías: create-modify-employees feature branch, wrappers update
+
+6.12.23
+
+Markmið dagsins var að reyna klára logic og data layerið á destinations og airplaines
+Svo að það sé hægt að klára ui layerið á morgun
+Oliver Emil: Airplaines
+Benjamín: Destination
+Þorvarður: Ui-layer fá það til geta spjallað við logic od data
+Matthías: work trips
+Edda: Validator 
+
+Markmið dagsins gekk allt í lagi smá erfiðleikar við að ná að fullklára destinations og add airplaines en erum að vinna í þessu og mun vonandi vera tilbúið á morgun
