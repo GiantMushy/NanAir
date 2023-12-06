@@ -13,7 +13,7 @@ def main():
         choice = input("Enter your choice: ")
 
         if choice == "Id of airplaine":
-            EditAirplaineInformation(AirplaineManager)
+            UpdatedAirplaines(AirplaineManager)
         elif choice == "2":
             AddAirplaine(AirplaineManager)
         elif choice == "0":
@@ -61,10 +61,11 @@ def AddAirplaine(AirplineManager):
             print("ValueError:", error) 
     
 
-def EditAirplaineInformation(AirplaineManager):
+def UpdatedAirplaines(AirplaineManager):
     # Call the logic function to Edit airplaines information
+    
     
 
     if __name__ == "__main__":
         main()
-        
+
