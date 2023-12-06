@@ -68,3 +68,6 @@ class LogicLayerAPI:
         :raises ValueError: If trying to modify restricted fields or employee not found.
         """
         return self.employee_logic.modify_employee(employee_id, **updates)
+
+    def object_list_to_dict_list(self, object_list):
+        return self.employee_logic.object_list_to_dict_list(object_list)
