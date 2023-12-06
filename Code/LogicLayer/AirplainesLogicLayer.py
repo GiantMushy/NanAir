@@ -4,6 +4,24 @@ from Models.AirplaineModel import Airplaine
 class AirplaineManagerLogic:
     def __init__(self):
         self.AirplainesData_data = AirplaineData()
+        
+def generate_unique_airplaine_id(self):
+        """
+        Generates a unique airplaine ID.
+        If no airplaines exist, starts from '001'.
+        Otherwise, increments the maximum existing ID by 1.
+        :return: A string representing the unique ID.
+        """
+        airplaines = self.airplaine_data.read_all_airplaines()
+        if not airplaines:
+            # base case, no airplaines in the database
+            return "001"
+
+        # find the highest existing ID and increment by 1
+        max_id = max(int(plaines.id) for plaines in airplaines)
+        new_id = max_id + 1
+        return str(new_id).zfill(3)  # pad with zeros to maintain a length of 3
+
 
 def AddAirplaine(self, NameOfPlane, CurrentLocation, Type, Manufacturer, Capacity):
         if not NameOfPlane or not NameOfPlane.isalpha():
