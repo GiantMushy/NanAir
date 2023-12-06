@@ -51,3 +51,5 @@ def AddAirplaine(self, NameOfPlane, CurrentLocation, Type, Manufacturer, Capacit
 
         # Adding new airplaine
         self.AirplaineData.AddAirplaine(NewAirplaine)
+        
+        
