@@ -2,8 +2,6 @@ import csv
 import os
 from Models.AirplaineModel import Airplaine
 
-
-
 class AirplaineData:
     def __init__(self):
         self.file_name = "Datalayer/Respository/airplaines.csv"
