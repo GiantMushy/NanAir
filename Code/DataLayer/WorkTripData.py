@@ -40,14 +40,17 @@ class WorkTripData:
             with open(self.work_trip_filename, mode='r', newline='', encoding='utf-8') as file:
                 reader = csv.DictReader(file)
                 for row in reader:
-                    # Print the datetime strings for debugging
+
                     print("Departure:", row['departure_datetime'])
                     print("Return:", row['return_datetime'])
 
+                    departure_datetime = row['departure_datetime']
+                    return_datetime = row['return_datetime']
+
                     row['departure_datetime'] = datetime.strptime(
-                        row['departure_datetime'], '%Y-%m-%d %H:%M')
+                        departure_datetime, '%Y-%m-%d %H:%M')
                     row['return_datetime'] = datetime.strptime(
-                        row['return_datetime'], '%Y-%m-%d %H:%M')
+                        '2012-11-14 20:32', '%Y-%m-%d %H:%M')
 
                     work_trips.append(WorkTrip(**row))
         except Exception as e:
