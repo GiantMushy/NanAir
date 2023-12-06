@@ -65,6 +65,5 @@ def EditAirplaineInformation(AirplaineManager):
     # Call the logic function to Edit airplaines information
     
 
-
-if __name__ == "__main__":
-    main()
+    if __name__ == "__main__":
+        main()

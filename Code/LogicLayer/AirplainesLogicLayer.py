@@ -7,7 +7,7 @@ class AirplaineManagerLogic:
 
 def AddAirplaine(self, NameOfPlane, CurrentLocation, Type, Manufacturer, Capacity):
         if not NameOfPlane or not NameOfPlane.isalpha():
-            raise ValueError("City must be a non-empty string of alphabetic characters")
+            raise ValueError("The name of the airplaine must be a non-empty string of alphabetic characters")
 
         if not CurrentLocation or not CurrentLocation.isalpha():
             raise ValueError("CurrentLocation must be a non-empty string of alphabetic characters")
