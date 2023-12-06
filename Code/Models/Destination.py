@@ -1,6 +1,7 @@
 # Models/Destination.py
 class Destination:
-    def __init__(self, City, Airport, Country, Distance, Travel_Time, Contact_Name, Contact_Phone_Number):
+    def __init__(self, Id, City, Airport, Country, Distance, Travel_Time, Contact_Name, Contact_Phone_Number):
+        self.Id = Id
         self.City = City
         self.Airport = Airport
         self.Country = Country

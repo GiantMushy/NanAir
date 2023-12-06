@@ -8,6 +8,18 @@ class DestinationManagerLogic:
     def list_all_destinations(self):
         return self.destination_data.read_all_destinations()
 
+    def generate_unique_destination_id(self):
+    
+        destinations = self.destination_data.read_all_destinations()
+        
+        if not destinations:
+            # base case, no destinations in the database
+            return "001"
+
+        max_id = max(int(dest.id) for dest in destinations)
+        new_id = max_id + 1
+        return str(new_id).zfill(3)  
+    
     def is_destination(self, City):
         if not City or not City.replace(" ", "").isalpha():
             raise ValueError("City must be a non-empty string of alphabetic characters")
