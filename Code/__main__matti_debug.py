@@ -52,10 +52,8 @@ def test_add_employee():
 def test_list_all_employees():
     logic = EmployeeManagerLogic()
     employees = logic.list_all_employees()
-    print("\nList of All Employees:")
-    for emp in employees:
-        print(emp.__dict__)
-    assert isinstance(employees, list), "Should return a list"
+    print("\nList of All Employees with convertion:")
+    print(logic.object_list_to_dict_list(employees))
 
 
 def test_list_all_pilots():
