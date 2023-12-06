@@ -222,27 +222,26 @@ class EmployeeDataCreateNewUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("New Employee Created:"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(f"    {self.new_employee[0]}"))
-        print(self.PrintUi.allign_left(f"    {self.new_employee[1]}"))
-        print(self.PrintUi.allign_left(f"    {self.new_employee[2]}"))
-        print(self.PrintUi.allign_left(f"    {self.new_employee[3]}"))
-        print(self.PrintUi.allign_left(f"    {self.new_employee[4]}"))
-        print(self.PrintUi.allign_left(f"    {self.new_employee[5]}"))
-        print(self.PrintUi.allign_left(f"    {self.new_employee[6]}"))
-        print(self.PrintUi.allign_left(f"    {self.new_employee[7]}"))
-        print(self.PrintUi.empty_line())
+        print(self.PrintUi.allign_left(f"Employee Type:    {self.new_employee[0]}"))
+        print(self.PrintUi.allign_left(f"Employee Role:    {self.new_employee[1]}"))
+        print(self.PrintUi.allign_left(f"         Name:    {self.new_employee[2]}"))
+        print(self.PrintUi.allign_left(f"          SSN:    {self.new_employee[3]}"))
+        print(self.PrintUi.allign_left(f"        Phone:    {self.new_employee[4]}"))
+        print(self.PrintUi.allign_left(f"      Address:    {self.new_employee[5]}"))
+        print(self.PrintUi.allign_left(f"        Email:    {self.new_employee[6]}"))
+        print(self.PrintUi.allign_left(f"   Home Phone:    {self.new_employee[7]}"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left(" 1 : Remake Employee (if incorrect data was input)"))
-        print(self.PrintUi.allign_left(" 2 : Create Another Employee"))
-        print(self.PrintUi.allign_left(" 0 : Return to the Employee Database Menu"))
+        print(self.PrintUi.allign_left(" 2 : Save and Create Another Employee"))
+        print(self.PrintUi.allign_left(" 3 : Save and Return to the Employee Database Menu"))
+        print(self.PrintUi.allign_left(" 4 : Discard and Return to the Employee Database Menu"))
         print(self.PrintUi.end_line())
 
-    def input_prompt(self):
-        '''Starting function for creating a new Employee'''
+    def create_new_sequence(self):
         n = 1
         input_check = True
         value_error = "Value Error string goes here"
@@ -254,32 +253,22 @@ class EmployeeDataCreateNewUI:
                 else:
                     print(value_error)
                     data = input("Enter Type:")
-                if data.isalpha():#------------isemployeetype()-------------- 
-                    input_check = True
-                else:
-                    input_check = False
-            if n == 2:
+
+            elif n == 2:
                 self.input_employee_role()
                 if input_check:
                     data = input("Enter Role: ")
                 else:
                     print(value_error)
                     data = input("Enter Role:")
-                if data.isalpha():#------------isemployeerole()-------------- 
-                    input_check = True
-                else:
-                    input_check = False
-            if n == 3:
+
+            elif n == 3:
                 self.input_name()
                 if input_check:
                     data = input("Enter Name: ")
                 else:
                     print(value_error)
                     data = input("Enter Name:")
-                if data.isalpha():#------------isName()-------------- 
-                    input_check = True
-                else:
-                    input_check = False
 
             elif n == 4:
                 self.input_SSN()
@@ -315,23 +304,13 @@ class EmployeeDataCreateNewUI:
                     print(value_error)
                     data = input("Enter Address:")
 
-                if data.isalpha():#------------isAddress()-------------- 
-                    input_check = True
-                else:
-                    input_check = False
-
             elif n == 7:
                 self.input_email()
                 if input_check:
                     data = input("Enter Email: ")
                 else:
                     print(value_error)
-                    data = input("Enter Email (ssss@nanair.is):")
-
-                if data.isalpha():#------------isEmail()-------------- 
-                    input_check = True
-                else:
-                    input_check = False
+                    data = input("Enter Email:")
 
             elif n == 8:
                 self.input_home_phone()
@@ -350,20 +329,15 @@ class EmployeeDataCreateNewUI:
                 self.new_employee.append(data)
                 n += 1
 
+    def input_prompt(self):
+        '''Starting function for creating a new Employee'''
+        self.create_new_sequence()
         while True:
             self.new_created()
             command = input("Enter command: ")
-            if command == "0":
-                try:
-                    self.Logic.add_employee(self.new_employee[0], self.new_employee[1], name=self.new_employee[2], social_security_number=self.new_employee[3],
-                                            mobile_phone_number=self.new_employee[4], address=self.new_employee[5], email_address=self.new_employee[6], home_phone_number=self.new_employee[7])
-                except ValueError as e:
-                    print(f"Error: {e}")
-                ####-----NEEDS FIXING: Back doesnt always go to EmployeeData after multiple employee creations-----####
-                break
-            elif command == "1":
+            if command == "1":
                 self.new_employee = []
-                self.input_prompt()
+                self.create_new_sequence()
             elif command == "2":
                 try:
                     self.Logic.add_employee(self.new_employee[0], self.new_employee[1], name=self.new_employee[2], social_security_number=self.new_employee[3],
@@ -371,6 +345,17 @@ class EmployeeDataCreateNewUI:
                 except ValueError as e:
                     print(f"Error: {e}")
                 self.new_employee = []
-                self.input_prompt()
+                self.create_new_sequence()
+            elif command == "3":
+                try:
+                    self.Logic.add_employee(self.new_employee[0], self.new_employee[1], name=self.new_employee[2], social_security_number=self.new_employee[3],
+                                            mobile_phone_number=self.new_employee[4], address=self.new_employee[5], email_address=self.new_employee[6], home_phone_number=self.new_employee[7])
+                    break
+                except ValueError as e:
+                    print(f"Error: {e}")
+            elif command == "4":
+                break    
+            elif command == "q":
+                exit()
             else:
                 print("Invalid input, try again")
