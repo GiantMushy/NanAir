@@ -1,9 +1,11 @@
 from LogicLayer.EmployeeManagerLogic import EmployeeManagerLogic
+from LogicLayer.WorkTripLogic import WorkTripLogic
 
 
 class LogicLayerAPI:
     def __init__(self):
         self.employee_logic = EmployeeManagerLogic()
+        self.work_trip_logic = WorkTripLogic()
 
     ############################## EmployeeManagerLogic ###############################
     def add_employee(self, employee_type, employee_role, **kwargs):
@@ -68,3 +70,31 @@ class LogicLayerAPI:
         :raises ValueError: If trying to modify restricted fields or employee not found.
         """
         return self.employee_logic.modify_employee(employee_id, **updates)
+
+    ############################## WorkTripLogic ###############################
+    def add_work_trip(self, destination, departure_datetime, return_datetime, crew_members=None):
+        """
+        Adds a new work trip to the system.
+        Validates required fields before adding.
+
+        :param destination: Destination of the work trip.
+        :param departure_datetime: Departure date and time.
+        :param return_datetime: Return date and time.
+        :param crew_members: List of crew member IDs (optional).
+        :raises ValueError: If required fields are missing or empty.
+        """
+        self.work_trip_logic.add_work_trip(
+            destination, departure_datetime, return_datetime, crew_members)
+
+    def get_mock_destinations(self):
+        """Temporary method to return detailed mock destinations."""
+        return self.work_trip_logic.get_mock_destinations()
+
+    def list_all_work_trips(self):
+        """
+        returns a list of WorkTrip objects.
+
+        Returns:
+            list: A list of WorkTrip objects representing all the work trips read from the file.
+        """
+        return self.work_trip_logic.list_all_work_trips()

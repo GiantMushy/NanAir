@@ -1,9 +1,11 @@
 from DataLayer.EmployeeData import EmployeeData
+from DataLayer.WorkTripData import WorkTripData
 
 
 class DataLayerAPI:
     def __init__(self):
         self.employee_data = EmployeeData()
+        self.work_trip_data = WorkTripData()
 
     def read_all_employees(self):
         """
@@ -53,3 +55,21 @@ class DataLayerAPI:
         :param flight_attendant: FlightAttendant object to be added.
         """
         self.employee_data.add_flight_attendant(flight_attendant)
+
+    ################# WorkTripData #################
+    def read_all_work_trips(self):
+        """
+        returns a list of WorkTrip objects.
+
+        Returns:
+            list: A list of WorkTrip objects representing all the work trips read from the file.
+        """
+        return self.work_trip_data.read_all_work_trips()
+
+    def add_work_trip(self, work_trip):
+        """Add a new work trip to the CSV file."""
+        self.work_trip_data.add_work_trip(work_trip)
+
+    def get_mock_destinations(self):
+        """Temporary method to return detailed mock destinations."""
+        return self.work_trip_data.get_mock_destinations()
