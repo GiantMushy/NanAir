@@ -51,5 +51,17 @@ def AddAirplaine(self, NameOfPlane, CurrentLocation, Type, Manufacturer, Capacit
 
         # Adding new airplaine
         self.AirplaineData.AddAirplaine(NewAirplaine)
+
+def EditAirplaine(self, NameOfPlaine, updates):
+    """"Finds the airplaine by the name """
+    if any(key in updates for key in['Name', 'Type', 'Manufacturer']):
+         raise ValueError( "Modification of 'Name', 'Type' or 'Manufacturer' is not allowed")
+    
+    airplanes = self.AirplainesData_data.ReadAllAirplaines()
+    airplane_found = False
+    updated_airplanes = []
+
+
+     
         
         
