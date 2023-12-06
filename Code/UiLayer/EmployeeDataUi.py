@@ -7,7 +7,6 @@ class EmployeeDataUI:
     def __init__(self):
         self.PrintUi = PrintFunctions()
         self.Logic = LogicLayerAPI()
-        self.list_data = self.Logic.list_all_employees()      
 
     def employee_data_output(self):
         '''Print sequence for the Employee Data Menu'''
@@ -16,8 +15,9 @@ class EmployeeDataUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("List of Employees"))
         print(self.PrintUi.empty_line())
-        print(self.Logic.list_all_employees().__dict__)
-        #self.PrintUi.print_employee_table(self.Logic.list_all_employees(), 13)
+        list_data = self.Logic.list_all_employees()
+        printable_dict = self.Logic.object_list_to_dict_list(list_data)
+        self.PrintUi.print_employee_table(printable_dict, 13)
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left(" A : Show Pilots               S  : Show Flight-Attendants"))
         print(self.PrintUi.allign_left(" 0 : Back                      00 : Create New Employee      <ID> : Edit Employee Data"))
