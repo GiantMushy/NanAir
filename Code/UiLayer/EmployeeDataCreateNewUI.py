@@ -191,35 +191,89 @@ class EmployeeDataCreateNewUI:
     def input_prompt(self):
         '''Starting function for creating a new Employee'''
         n = 1
+        input_check = True
+        value_error = "Value Error string goes here"
         while n < 7:
             if n == 1:
                 self.input_name()
-                data = input("Enter name: ")
-                #------------Ask Logic if input actualy a name--------------
+                if input_check:
+                    data = input("Enter Name: ")
+                else:
+                    print(value_error)
+                    data = input("Enter Name:")
+                if data.isnumeric():#------------isName()-------------- 
+                    input_check = True
+                else:
+                    input_check = False
+
             elif n == 2:
                 self.input_SSN()
-                data = input("Enter SSN: ")
-                #------------Ask Logic if input actualy a valid SSN--------------
+                if input_check:
+                    data = input("Enter SSN: ")
+                else:
+                    print(value_error)
+                    data = input("Enter SSN (dddddd-dddd):")
+
+                if data.isnumeric():#------------isSSN()-------------- 
+                    input_check = True
+                else:
+                    input_check = False
+                
             elif n == 3:
                 self.input_phone()
-                data = input("Enter Phone: ")
-                #------------Ask Logic if input actualy a phone number--------------
+                if input_check:
+                    data = input("Enter Phone number: ")
+                else:
+                    print(value_error)
+                    data = input("Enter Phone number (ddd dddd):")
+
+                if data.isnumeric():#------------isPhone()-------------- 
+                    input_check = True
+                else:
+                    input_check = False
+
             elif n == 4:
                 self.input_address()
-                data = input("Enter Address: ")
-                #------------Ask Logic if input actualy an address--------------
+                if input_check:
+                    data = input("Enter Address: ")
+                else:
+                    print(value_error)
+                    data = input("Enter Address:")
+
+                if data.isnumeric():#------------isAddress()-------------- 
+                    input_check = True
+                else:
+                    input_check = False
+
             elif n == 5:
                 self.input_email()
-                data = input("Enter Email: ")
-                #------------Ask Logic if input actualy an email--------------
+                if input_check:
+                    data = input("Enter Email: ")
+                else:
+                    print(value_error)
+                    data = input("Enter Email (ssss@nanair.is):")
+
+                if data.isnumeric():#------------isEmail()-------------- 
+                    input_check = True
+                else:
+                    input_check = False
+
             elif n == 6:
                 self.input_home_phone()
-                data = input("Enter Home Phone: ")
-                if data == "":
-                    data = "--Not Given--"
-                #------------Ask Logic if input actualy a phone number--------------
-            self.new_employee.append(data)
-            n += 1
+                if input_check:
+                    data = input("Enter Home Phone: ")
+                else:
+                    print(value_error)
+                    data = input("Enter Home Phone (ddd dddd):")
+                    
+                if data.isnumeric():#------------isPhone()-------------- 
+                    input_check = True
+                else:
+                    input_check = False
+
+            if input_check:
+                self.new_employee.append(data)
+                n += 1
         
         while True:
             self.new_created()

@@ -72,6 +72,36 @@ class PrintFunctions:
         print("                              |_____|\____|____|  |____|_____|\____|   |____|  |____|_____|____| |___|")
         print("                                🅦 🅗 🅔 🅡 🅔  🅓 🅘 🅥 🅘 🅓 🅘 🅝 🅖  🅑 🅨  🅩 🅔 🅡 🅞  🅜 🅐 🅚 🅔 🅢  🅢 🅔 🅝 🅒 🅔")
 
+    def test_logo1(self):
+        '''Prints the Company Logo'''
+        print(" ____  _____      __      ____  _____          __      _____ _______    ")
+        print("|_   \|_   _|    /  \    |_   \|_   _|        /  \    |_   _|_   __ \   ")
+        print("  |   \ | |     / /\ \     |   \ | |         / /\ \     | |   | |__) |  ")
+        print("  | |\ \| |    / ____ \    | |\ \| |        / ____ \    | |   |  __ /   ")
+        print(" _| |_\   |_ _/ /    \ \_ _| |_\   |_     _/ /    \ \_ _| |_ _| |  \ \_ ")
+        print("|_____|\____|____|  |____|_____|\____|   |____|  |____|_____|____| |___|")
+        print("🅦 🅗 🅔 🅡 🅔  🅓 🅘 🅥 🅘 🅓 🅘 🅝 🅖  🅑 🅨  🅩 🅔 🅡 🅞  🅜 🅐 🅚 🅔 🅢  🅢 🅔 🅝 🅒 🅔")
+
+    def test_logo2(self):
+        '''Prints the Company Logo'''
+        print("                                                                              ______ ")
+        print(" ____  _____      __      ____  _____          __      _____ _______          _\ _~-\___")
+        print("|_   \|_   _|    /  \    |_   \|_   _|        /  \    |_   _|_   __ \     = =(____AA____D")
+        print("  |   \ | |     / /\ \     |   \ | |         / /\ \     | |   | |__) |            \_____\______________________,-~~~~~-.._")
+        print("  | |\ \| |    / ____ \    | |\ \| |        / ____ \    | |   |  __ /             /     o O o o o o O O o o o o o o O o  |\_")
+        print(" _| |_\   |_ _/ /    \ \_ _| |_\   |_     _/ /    \ \_ _| |_ _| |  \ \_           `~-.__        ___..----..                  )")
+        print("|_____|\____|____|  |____|_____|\____|   |____|  |____|_____|____| |___|                `---~~\___________/------------`````")
+        print("                                                                                        =  ===(_________D")
+        print("🅦 🅗 🅔 🅡 🅔  🅓 🅘 🅥 🅘 🅓 🅘 🅝 🅖  🅑 🅨  🅩 🅔 🅡 🅞  🅜 🅐 🅚 🅔 🅢  🅢 🅔 🅝 🅒 🅔")
+
+
+
+
+
+
+
+
+
     def shorten_name(self, name, min_length):
         '''Abbreviates input name'''
         names = name.split()
@@ -81,7 +111,7 @@ class PrintFunctions:
         name = " ".join(names)
 
         if len(name) > min_length:
-            name = name[0] + ". (Name Too Long)"
+            name = "(Item Too Long)"
         return name
 
     def print_employee_table(self, data, line_num):
@@ -95,8 +125,8 @@ class PrintFunctions:
             for value in dic.values():
                 vals.append(value)
             for n in range(len(vals)):
-                if len(vals[n]) > 18: #shorten names
-                    vals[n] = self.shorten_name(vals[n])
+                if len(vals[n]) > 20: #shorten names
+                    vals[n] = self.shorten_name(vals[n], 19)
             if vals[6] == '':
                 vals[6] = "--Not Given--" #Empty Home Phone input prints "--Not Given--"
             print(self.allign_left(print_format % (vals[0], vals[1], vals[2], vals[3], vals[4], vals[5], vals[6])))
@@ -117,7 +147,7 @@ class PrintFunctions:
                 vals.append(value)
             for n in range(len(vals)):
                 if len(vals[n]) > 18: #shorten names
-                    vals[n] = self.shorten_name(vals[n])
+                    vals[n] = self.shorten_name(vals[n], 18)
             print(self.allign_left(print_format % (vals[0], vals[1], vals[2], vals[3], vals[4] + "km", vals[5] + "min", vals[6], vals[7])))
             line_count += 1
         while line_count <= line_num:
@@ -136,7 +166,7 @@ class PrintFunctions:
                 vals.append(value)
             for n in range(len(vals)):
                 if len(vals[n]) > 18: #shorten names
-                    vals[n] = self.shorten_name(vals[n])
+                    vals[n] = self.shorten_name(vals[n], 18)
             print(self.allign_left(print_format % (vals[0], vals[1], vals[2], vals[3], vals[4], vals[5])))
             line_count += 1
         while line_count <= line_num:

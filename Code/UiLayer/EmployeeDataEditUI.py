@@ -70,14 +70,26 @@ class EmployeeDataEditUI:
                 break
             elif command == "1":
                 self.edit_data("Phone")
-                command = input("Input new Phone number (xxx xxxx): ")
-                #----------------------Ask Logic if actual phone number-------------------------
+                command = input("Input new Phone number: ")
+                validity = command.isnumeric()#----------------------logic.isPhone()-------------------------
+                value_error = "Value Error goes here"
+                while not validity:
+                    print(value_error)
+                    command = input("Input new Phone number: ")
+                    validity = command.isnumeric()#----------------------logic.isPhone()-------------------------
                 self.employee[2] = command
+                
             elif command == "2":
                 self.edit_data("Address")
                 command = input("Input new Address: ")
-                #----------------------Ask Logic if actual Address-------------------------
+                validity = command.isnumeric()#----------------------logic.isAddress()-------------------------
+                value_error = "Value Error goes here"
+                while not validity:
+                    print(value_error)
+                    command = input("Input new Addreess: ")
+                    validity = command.isnumeric()#----------------------logic.isAddress()-------------------------
                 self.employee[3] = command
+                
             elif command == "3":
                 self.edit_data("Email")
                 command = input("Input new Email: ")
