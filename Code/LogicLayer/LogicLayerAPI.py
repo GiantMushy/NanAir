@@ -5,6 +5,19 @@ class LogicLayerAPI:
     def __init__(self):
         self.employee_logic = EmployeeManagerLogic()
 
+    ############################## EmployeeManagerLogic ###############################
+    def add_employee(self, employee_type, employee_role, **kwargs):
+        """
+        Adds a new employee to the system.
+        Can add either a pilot or a flight attendant based on the employee type.
+        Validates required fields before adding.
+        :param employee_type: 'pilot' or 'flight_attendant'.
+        :param kwargs: Attributes of the employee.
+        :raises ValueError: If required fields are missing or empty.
+        """
+        self.employee_logic.add_employee(
+            employee_type, employee_role, **kwargs)
+
     def list_all_employees(self):
         """Returns a list of all employees."""
         return self.employee_logic.list_all_employees()
