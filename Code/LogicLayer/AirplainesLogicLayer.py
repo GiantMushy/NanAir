@@ -31,10 +31,19 @@ def add_destination(self, NameOfPlane, CurrentLocation, Type, Manufacturer, Capa
         except ValueError:
             raise ValueError("Capacity must be numeric")
         #Validate that name of plane and current location only has letters and 
+        try:
+             NameOfPlane = str(NameOfPlane)
+        except ValueError:
+             raise ValueError("The Name of the plane must only contain letters")
+        try: 
+             CurrentLocation = str(CurrentLocation)
+        except ValueError:
+             raise ValueError("Current location must only have letters")
+
 
         #validate tha 1-3 of type is letters and 4-7 is - and 5 is a number and 6-9 is a number
 
-        # Create a new Destination object
+        # Create a new Airplaine Object
         NewAirplaine = Airplaine(
             NameOfPlane=NameOfPlane,
             CurrentLocation=CurrentLocation,
