@@ -6,7 +6,7 @@ from Models.AirplaineModel import Airplaine
 
 class AirplaineData:
     def __init__(self):
-        self.file_name = "files/airplaines.csv"
+        self.file_name = "Datalayer/Respository/airplaines.csv"
     def get_all_airplaines(self):
         ret_lis = []
         with open('airplaines.csv', newline='', endcoding = "utf-8") as csvfile:
@@ -20,8 +20,7 @@ class AirplaineData:
         self.EnsureFileExists()
 
     def EnsureFileExists(self):
-        self.CreateFileIfNotExists(self.AirplaineFilename, ['NameOfPlane', 'CurrentLocation', 'Type',
-                                                                'Manufacturer', 'Capacity',])
+        self.CreateFileIfNotExists(self.AirplaineFilename, ['NameOfPlane', 'CurrentLocation', 'Type','Manufacturer', 'Capacity',])
 
     def CreateFileIfNotExists(self, filename, fieldnames):
         if not os.path.exists(filename):
