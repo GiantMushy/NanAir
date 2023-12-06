@@ -1,10 +1,63 @@
-#from logic_ui_wrapper import wrapper
+from LogicLayer.LogicLayerAPI import LogicLayerAPI
 from UiLayer.PrintFunctions import PrintFunctions
 
 class EmployeeDataCreateNewUI:
     def __init__(self):
         self.PrintUi = PrintFunctions()
+        self.Logic = LogicLayerAPI()
         self.new_employee = []
+
+    def input_employee_type(self):
+        '''Print sequence for Creating a new Employee : Name'''
+        self.PrintUi.logo()
+        self.PrintUi.print_header("Employee Database Menu > Create New > Input Name", "left")
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.allign_left("Creating New Employee"))
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.allign_left("--> Input Employee Type (Pilot/Flight Attendant)"))
+        print(self.PrintUi.allign_left("    Employee Role"))
+        print(self.PrintUi.allign_left("    Employee Name"))
+        print(self.PrintUi.allign_left("    Social Security Number"))
+        print(self.PrintUi.allign_left("    Phone Number"))
+        print(self.PrintUi.allign_left("    Home Address"))
+        print(self.PrintUi.allign_left("    Email"))
+        print(self.PrintUi.allign_left("    Home Phone"))
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.allign_left(""))
+        print(self.PrintUi.end_line())
+
+    def input_employee_role(self):
+        '''Print sequence for Creating a new Employee : Name'''
+        self.PrintUi.logo()
+        self.PrintUi.print_header("Employee Database Menu > Create New > Input Name", "left")
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.allign_left("Creating New Employee"))
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.allign_left(f"    {self.new_employee[0]}"))
+        print(self.PrintUi.allign_left("--> Input Employee Role (Captain/Co-Pilot, Senior/Flight Attendant)"))
+        print(self.PrintUi.allign_left("    Employee Name"))
+        print(self.PrintUi.allign_left("    Social Security Number"))
+        print(self.PrintUi.allign_left("    Phone Number"))
+        print(self.PrintUi.allign_left("    Home Address"))
+        print(self.PrintUi.allign_left("    Email"))
+        print(self.PrintUi.allign_left("    Home Phone"))
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.allign_left(""))
+        print(self.PrintUi.end_line())
 
     def input_name(self):
         '''Print sequence for Creating a new Employee : Name'''
@@ -13,14 +66,14 @@ class EmployeeDataCreateNewUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New Employee"))
         print(self.PrintUi.empty_line())
+        print(self.PrintUi.allign_left(f"    {self.new_employee[0]}"))
+        print(self.PrintUi.allign_left(f"    {self.new_employee[1]}"))
         print(self.PrintUi.allign_left("--> Input Employee Name"))
         print(self.PrintUi.allign_left("    Social Security Number"))
         print(self.PrintUi.allign_left("    Phone Number"))
         print(self.PrintUi.allign_left("    Home Address"))
         print(self.PrintUi.allign_left("    Email"))
         print(self.PrintUi.allign_left("    Home Phone"))
-        print(self.PrintUi.empty_line())
-        print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
@@ -40,13 +93,13 @@ class EmployeeDataCreateNewUI:
         print(self.PrintUi.allign_left("Creating New Employee"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left(f"    {self.new_employee[0]}"))
+        print(self.PrintUi.allign_left(f"    {self.new_employee[1]}"))
+        print(self.PrintUi.allign_left(f"    {self.new_employee[2]}"))
         print(self.PrintUi.allign_left("--> Social Security Number (xxxxxx xxxx)"))
         print(self.PrintUi.allign_left("    Phone Number"))
         print(self.PrintUi.allign_left("    Home Address"))
         print(self.PrintUi.allign_left("    Email"))
         print(self.PrintUi.allign_left("    Home Phone"))
-        print(self.PrintUi.empty_line())
-        print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
@@ -67,12 +120,12 @@ class EmployeeDataCreateNewUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left(f"    {self.new_employee[0]}"))
         print(self.PrintUi.allign_left(f"    {self.new_employee[1]}"))
+        print(self.PrintUi.allign_left(f"    {self.new_employee[2]}"))
+        print(self.PrintUi.allign_left(f"    {self.new_employee[3]}"))
         print(self.PrintUi.allign_left("--> Input Phone Number (xxx xxxx)"))
         print(self.PrintUi.allign_left("    Home Address"))
         print(self.PrintUi.allign_left("    Email"))
         print(self.PrintUi.allign_left("    Home Phone"))
-        print(self.PrintUi.empty_line())
-        print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
@@ -94,11 +147,11 @@ class EmployeeDataCreateNewUI:
         print(self.PrintUi.allign_left(f"    {self.new_employee[0]}"))
         print(self.PrintUi.allign_left(f"    {self.new_employee[1]}"))
         print(self.PrintUi.allign_left(f"    {self.new_employee[2]}"))
+        print(self.PrintUi.allign_left(f"    {self.new_employee[3]}"))
+        print(self.PrintUi.allign_left(f"    {self.new_employee[4]}"))
         print(self.PrintUi.allign_left("--> Input Home Address (Street, Number)"))
         print(self.PrintUi.allign_left("    Email"))
         print(self.PrintUi.allign_left("    Home Phone"))
-        print(self.PrintUi.empty_line())
-        print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
@@ -121,10 +174,10 @@ class EmployeeDataCreateNewUI:
         print(self.PrintUi.allign_left(f"    {self.new_employee[1]}"))
         print(self.PrintUi.allign_left(f"    {self.new_employee[2]}"))
         print(self.PrintUi.allign_left(f"    {self.new_employee[3]}"))
+        print(self.PrintUi.allign_left(f"    {self.new_employee[4]}"))
+        print(self.PrintUi.allign_left(f"    {self.new_employee[5]}"))
         print(self.PrintUi.allign_left("--> Input Email Address"))
         print(self.PrintUi.allign_left("    Home Phone"))
-        print(self.PrintUi.empty_line())
-        print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
@@ -148,9 +201,9 @@ class EmployeeDataCreateNewUI:
         print(self.PrintUi.allign_left(f"    {self.new_employee[2]}"))
         print(self.PrintUi.allign_left(f"    {self.new_employee[3]}"))
         print(self.PrintUi.allign_left(f"    {self.new_employee[4]}"))
+        print(self.PrintUi.allign_left(f"    {self.new_employee[5]}"))
+        print(self.PrintUi.allign_left(f"    {self.new_employee[6]}"))
         print(self.PrintUi.allign_left("--> Input Home Phone"))
-        print(self.PrintUi.empty_line())
-        print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
@@ -175,8 +228,8 @@ class EmployeeDataCreateNewUI:
         print(self.PrintUi.allign_left(f"    {self.new_employee[3]}"))
         print(self.PrintUi.allign_left(f"    {self.new_employee[4]}"))
         print(self.PrintUi.allign_left(f"    {self.new_employee[5]}"))
-        print(self.PrintUi.empty_line())
-        print(self.PrintUi.empty_line())
+        print(self.PrintUi.allign_left(f"    {self.new_employee[6]}"))
+        print(self.PrintUi.allign_left(f"    {self.new_employee[7]}"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
@@ -193,20 +246,42 @@ class EmployeeDataCreateNewUI:
         n = 1
         input_check = True
         value_error = "Value Error string goes here"
-        while n < 7:
+        while n < 9:
             if n == 1:
+                self.input_employee_type()
+                if input_check:
+                    data = input("Enter Type: ")
+                else:
+                    print(value_error)
+                    data = input("Enter Type:")
+                if data.isalpha():#------------isemployeetype()-------------- 
+                    input_check = True
+                else:
+                    input_check = False
+            if n == 2:
+                self.input_employee_role()
+                if input_check:
+                    data = input("Enter Role: ")
+                else:
+                    print(value_error)
+                    data = input("Enter Role:")
+                if data.isalpha():#------------isemployeerole()-------------- 
+                    input_check = True
+                else:
+                    input_check = False
+            if n == 3:
                 self.input_name()
                 if input_check:
                     data = input("Enter Name: ")
                 else:
                     print(value_error)
                     data = input("Enter Name:")
-                if data.isnumeric():#------------isName()-------------- 
+                if data.isalpha():#------------isName()-------------- 
                     input_check = True
                 else:
                     input_check = False
 
-            elif n == 2:
+            elif n == 4:
                 self.input_SSN()
                 if input_check:
                     data = input("Enter SSN: ")
@@ -219,7 +294,7 @@ class EmployeeDataCreateNewUI:
                 else:
                     input_check = False
                 
-            elif n == 3:
+            elif n == 5:
                 self.input_phone()
                 if input_check:
                     data = input("Enter Phone number: ")
@@ -232,7 +307,7 @@ class EmployeeDataCreateNewUI:
                 else:
                     input_check = False
 
-            elif n == 4:
+            elif n == 6:
                 self.input_address()
                 if input_check:
                     data = input("Enter Address: ")
@@ -240,12 +315,12 @@ class EmployeeDataCreateNewUI:
                     print(value_error)
                     data = input("Enter Address:")
 
-                if data.isnumeric():#------------isAddress()-------------- 
+                if data.isalpha():#------------isAddress()-------------- 
                     input_check = True
                 else:
                     input_check = False
 
-            elif n == 5:
+            elif n == 7:
                 self.input_email()
                 if input_check:
                     data = input("Enter Email: ")
@@ -253,12 +328,12 @@ class EmployeeDataCreateNewUI:
                     print(value_error)
                     data = input("Enter Email (ssss@nanair.is):")
 
-                if data.isnumeric():#------------isEmail()-------------- 
+                if data.isalpha():#------------isEmail()-------------- 
                     input_check = True
                 else:
                     input_check = False
 
-            elif n == 6:
+            elif n == 8:
                 self.input_home_phone()
                 if input_check:
                     data = input("Enter Home Phone: ")
@@ -274,19 +349,27 @@ class EmployeeDataCreateNewUI:
             if input_check:
                 self.new_employee.append(data)
                 n += 1
-        
+
         while True:
             self.new_created()
             command = input("Enter command: ")
             if command == "0":
-                #--------------------send data to Logic-----------------------
+                try:
+                    self.Logic.add_employee(self.new_employee[0], self.new_employee[1], name=self.new_employee[2], social_security_number=self.new_employee[3],
+                                            mobile_phone_number=self.new_employee[4], address=self.new_employee[5], email_address=self.new_employee[6], home_phone_number=self.new_employee[7])
+                except ValueError as e:
+                    print(f"Error: {e}")
                 ####-----NEEDS FIXING: Back doesnt always go to EmployeeData after multiple employee creations-----####
                 break
             elif command == "1":
                 self.new_employee = []
                 self.input_prompt()
             elif command == "2":
-                #--------------------send data to Logic-----------------------
+                try:
+                    self.Logic.add_employee(self.new_employee[0], self.new_employee[1], name=self.new_employee[2], social_security_number=self.new_employee[3],
+                                            mobile_phone_number=self.new_employee[4], address=self.new_employee[5], email_address=self.new_employee[6], home_phone_number=self.new_employee[7])
+                except ValueError as e:
+                    print(f"Error: {e}")
                 self.new_employee = []
                 self.input_prompt()
             else:
