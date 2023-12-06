@@ -5,11 +5,7 @@ class AirplaineManagerLogic:
     def __init__(self):
         self.AirplainesData_data = AirplaineData()
 
-def list_all_destinations(self):
-        return self.destination_data.read_all_destinations()
-
-
-def add_destination(self, NameOfPlane, CurrentLocation, Type, Manufacturer, Capacity):
+def AddAirplaine(self, NameOfPlane, CurrentLocation, Type, Manufacturer, Capacity):
         if not NameOfPlane or not NameOfPlane.isalpha():
             raise ValueError("City must be a non-empty string of alphabetic characters")
 
@@ -41,7 +37,7 @@ def add_destination(self, NameOfPlane, CurrentLocation, Type, Manufacturer, Capa
              raise ValueError("Current location must only have letters")
 
 
-        #validate tha 1-3 of type is letters and 4-7 is - and 5 is a number and 6-9 is a number
+        
 
         # Create a new Airplaine Object
         NewAirplaine = Airplaine(
