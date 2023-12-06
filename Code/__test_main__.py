@@ -23,20 +23,48 @@ def main():
 
 def add_destination(destination_manager):
     # Get input from the user and call the appropriate logic function
-    city = input("Enter City: ")
-    airport = input("Enter Airport: ")
-    country = input("Enter Country: ")
-    distance = input("Enter Distance (km): ")
-    travel_time = input("Enter Travel Time (minutes): ")    
-    contact_name = input("Enter Contact Name: ")
-    contact_phone_number = input("Enter Contact Phone Number: ")
     
     try:
-        destination_manager.add_destination(city, airport, country, distance, travel_time, contact_name, contact_phone_number)
+        city = input("Enter City: ")
+        destination_manager.is_destination(city)
+    except ValueError as error:
+        print("ValueError:", error)
+    try:
+        airport = input("Enter Airport: ")
+        destination_manager.is_airport(airport)
+    except ValueError as error:
+        print("ValueError:", error)
+    try:
+        country = input("Enter Country: ")
+        destination_manager.is_country(country)
+    except ValueError as error:
+        print("ValueError:", error)
+    try:
+        distance = input("Enter Distance (km): ")
+        destination_manager.is_distance(distance)
+    except ValueError as error:
+        print("ValueError:", error)  
+    try:
+        travel_time = input("Enter Travel Time (minutes): ")    
+        destination_manager.is_travel_time(travel_time)
+    except ValueError as error:
+        print("ValueError:", error) 
+    try:
+        contact_name = input("Enter Contact Name: ")
+        destination_manager.is_contact_name(contact_name)
+    except ValueError as error:
+        print("ValueError:", error)
+    try: 
+        contact_phone_number = input("Enter Contact Phone Number: ")
+        destination_manager.is_contact_phone_number(contact_phone_number)
+    except ValueError as error:
+        print("ValueError:", error)
+    try:
+        destination_manager.add_new_destination(city, airport, country, distance, travel_time, contact_name, contact_phone_number)
         print("Destination added successfully!")
-    except ValueError as e:
-        print("ValueError:", e)
-        print("Could not add destination.")
+    except Exception as error:
+        print("Exception:", error)
+
 
 def list_all_destinations(destination_manager):
     # Call the logic function to list all destinations
