@@ -73,3 +73,7 @@ class DataLayerAPI:
     def get_mock_destinations(self):
         """Temporary method to return detailed mock destinations."""
         return self.work_trip_data.get_mock_destinations()
+
+    def update_work_trip_data(self, updated_work_trips):
+        '''Write updated WorkTrips'''
+        self.work_trip_data.update_work_trip_data(updated_work_trips)

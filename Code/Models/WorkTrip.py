@@ -4,4 +4,4 @@ class WorkTrip:
         self.destination = destination
         self.departure_datetime = departure_datetime
         self.return_datetime = return_datetime
-        self.crew_members = crew_members if crew_members else []
+        self.crew_members = crew_members if crew_members else ""

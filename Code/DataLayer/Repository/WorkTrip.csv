@@ -1,2 +1,0 @@
-id,destination,departure_datetime,return_datetime,crew_members
-001,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2012-11-14 14:32,2012-11-14 17:32,[]

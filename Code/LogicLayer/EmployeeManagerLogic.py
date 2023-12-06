@@ -13,7 +13,7 @@ class EmployeeManagerLogic:
         Generates a unique employee ID.
         If no employees exist, starts from '001'.
         Otherwise, increments the maximum existing ID by 1.
-        :return: A string representing the unique ID.
+        Returns, return: A string representing the unique ID.
         """
         employees = self.employee_data.read_all_employees()
         if not employees:
@@ -81,7 +81,7 @@ class EmployeeManagerLogic:
     def list_all_pilots(self):
         """
         Compiles a list of all pilots with their general employee information.
-        :return: List of dictionaries combining Pilot and Employee objects.
+        Returns, return: List of dictionaries combining Pilot and Employee objects.
         """
         pilots = self.employee_data.read_all_pilots()
         combined_pilots = []
@@ -95,7 +95,7 @@ class EmployeeManagerLogic:
     def list_all_flight_attendants(self):
         """
         Compiles a list of all flight attendants with their general employee information.
-        :return: List of dictionaries combining FlightAttendant and Employee objects.
+        Returns, return: List of dictionaries combining FlightAttendant and Employee objects.
         """
         flight_attendants = self.employee_data.read_all_flight_attendants()
         combined_flight_attendants = []
@@ -134,7 +134,7 @@ class EmployeeManagerLogic:
         """
         Finds an employee by their ID.
         :param employee_id: ID of the employee to find.
-        :return: Employee object if found, None otherwise.
+        Returns, return: Employee object if found, None otherwise.
         """
         return next((emp for emp in self.employee_data.read_all_employees() if emp.id == employee_id), None)
 
@@ -169,34 +169,43 @@ class EmployeeManagerLogic:
         if not employee_found:
             raise ValueError(f"Employee with ID {employee_id} not found")
 
-        # write the updated list back to the data layer
+        # write updated list back to data layer
         self.employee_data.modify_employee_data(updated_employees)
 
         # specific request, check fields for employee if valid
-        def field_checker(self, field, input):
-            '''
-            Checks employee inputs, and checks if something has letters when not supposed to
-            and if something has numbers when not supposed to.
-            :param field: field to check
-            :param input: user input to check for the given field
-            '''
-            allowed_fields = ['name', 'ssn',
-                              'mobile', 'address', 'email_address']
-            field = field.lower()
-            if field not in allowed_fields:
-                raise ValueError(
-                    "Invalid field type, must be name, ssn, mobile, address or email_address"
-                )
-            else:
-                if field in ['name', 'email_address, address']:
-                    if input.isalpha():
-                        return True
-                    else:
-                        return False
+    def field_checker(self, field, input):
+        '''
+        Checks employee inputs, and checks if something has letters when not supposed to
+        and if something has numbers when not supposed to.
+        :param field: field to check
+        :param input: user input to check for the given field
+        '''
+        allowed_fields = ['name', 'ssn',
+                          'mobile', 'address', 'email_address']
+        field = field.lower()
+        if field not in allowed_fields:
+            raise ValueError(
+                "Invalid field type, must be name, ssn, mobile, address or email_address"
+            )
+        else:
+            if field in ['name', 'email_address, address']:
+                if input.isalpha():
+                    return True
                 else:
-                    if input.isdigit():
-                        return True
-                    else:
-                        return False
+                    return False
+            else:
+                if input.isdigit():
+                    return True
+                else:
+                    return False
+
+    def is_employee(self, employee_id):
+        """Checks if an employee exists in the system.
+
+        :param employee_id: employee_id: The ID of the employee to check.
+
+        Returns, returns: bool True if the employee exists, False otherwise.
+        """
+        return any(int(emp.id) == int(employee_id) for emp in self.employee_data.read_all_employees())
 
     # B-requirements will be implemented  here.

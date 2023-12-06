@@ -12,7 +12,6 @@ class LogicLayerAPI:
         """
         Adds a new employee to the system.
         Can add either a pilot or a flight attendant based on the employee type.
-        Validates required fields before adding.
         :param employee_type: 'pilot' or 'flight_attendant'.
         :param kwargs: Attributes of the employee.
         :raises ValueError: If required fields are missing or empty.
@@ -27,14 +26,14 @@ class LogicLayerAPI:
     def list_all_pilots(self):
         """
         Returns a list of all pilots with their general employee information.
-        :return: List of dictionaries combining Pilot and Employee objects.
+        Returns, return: List of dictionaries combining Pilot and Employee objects.
         """
         return self.employee_logic.list_all_pilots()
 
     def list_all_flight_attendants(self):
         """
         Compiles a list of all flight attendants with their general employee information.
-        :return: List of dictionaries combining FlightAttendant and Employee objects.
+        Returns, return: List of dictionaries combining FlightAttendant and Employee objects.
         """
         return self.employee_logic.list_all_flight_attendants()
 
@@ -71,6 +70,9 @@ class LogicLayerAPI:
         """
         return self.employee_logic.modify_employee(employee_id, **updates)
 
+    def is_employee(self, employee_id):
+        return self.employee_logic.is_employee(employee_id)
+
     ############################## WorkTripLogic ###############################
     def add_work_trip(self, destination, departure_datetime, return_datetime, crew_members=None):
         """
@@ -92,9 +94,37 @@ class LogicLayerAPI:
 
     def list_all_work_trips(self):
         """
-        returns a list of WorkTrip objects.
+        Returns all work trips.
 
-        Returns:
-            list: A list of WorkTrip objects representing all the work trips read from the file.
+        Returns, return: List of WorkTrip objects.
         """
         return self.work_trip_logic.list_all_work_trips()
+
+    def add_crew_member(self, work_trip_id, employee_id):
+        '''
+        Adds a crew member to a worktrip
+        :param work_trip_id: The id of the work trip for the employee to be added to
+        :param employee_id: The id of the employee to be added
+
+        '''
+        self.work_trip_logic.add_crew_member(work_trip_id, employee_id)
+
+    def create_recurring_work_trips(self, work_trip_id, weekly_or_daily, number_of_recorrunces):
+        '''
+        Creates recurring work trips
+        :param work_trip_id: The id of the work trip to be copied
+        :param weekly_or_daily: A string either "weekly" or "daily"
+        :param number_of_recurrunces: The number of times the work trip should be copied, (x days or x weeks)
+        '''
+        self.work_trip_logic.create_recurring_work_trips(
+            work_trip_id, weekly_or_daily, number_of_recorrunces)
+
+    def work_trip_validity_period(self, weekly_or_daily, start_date):
+        '''
+        :param weekly_or_daily: weekly or daily validity period
+        :param start_date: The start date of the period, in string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13"
+
+        Returns, return: List of WorkTrip objects with additional field "validity" set to True or False.
+        '''
+        return self.work_trip_logic.work_trip_validity_period(
+            weekly_or_daily, start_date)

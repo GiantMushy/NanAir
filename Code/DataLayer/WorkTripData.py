@@ -50,7 +50,12 @@ class WorkTripData:
                     row['departure_datetime'] = datetime.strptime(
                         departure_datetime, '%Y-%m-%d %H:%M')
                     row['return_datetime'] = datetime.strptime(
-                        '2012-11-14 20:32', '%Y-%m-%d %H:%M')
+                        return_datetime, '%Y-%m-%d %H:%M')
+                    # returning employees as a list
+                    # if row['crew_members'] == "":
+                    #    row['crew_members'] = []
+                    # else:
+                    #    row['crew_members'] = row['crew_members'].split(",")
 
                     work_trips.append(WorkTrip(**row))
         except Exception as e:
@@ -86,3 +91,26 @@ class WorkTripData:
             },
         ]
         return mock_destinations
+
+    def update_work_trip_data(self, updated_work_trips):
+        '''
+        Writing updated list of Work Trips after editing
+        '''
+        try:
+            with open(self.work_trip_filename, mode='w', newline='', encoding='utf-8') as file:
+                if updated_work_trips:
+                    writer = csv.DictWriter(
+                        file, fieldnames=updated_work_trips[0].__dict__.keys())
+                    writer.writeheader()
+                    for trip in updated_work_trips:
+                        # Update datetime objects to string for CSV writing
+                        trip_dict = trip.__dict__
+                        trip_dict['departure_datetime'] = trip.departure_datetime.strftime(
+                            '%Y-%m-%d %H:%M')
+                        trip_dict['return_datetime'] = trip.return_datetime.strftime(
+                            '%Y-%m-%d %H:%M')
+                        writer.writerow(trip_dict)
+        except Exception as e:
+            raise Exception(
+                f"An error occurred while writing to the file: {e}"
+            )
