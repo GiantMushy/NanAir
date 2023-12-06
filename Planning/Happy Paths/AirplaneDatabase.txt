@@ -5,8 +5,8 @@
                                  ' ___ '
                        ---------'  .-.  '---------
       \_________________________'  '-'  '_________________________/
-        ''''''-|---|--/    \==[]^',_m_,'^[]==/    \--|---|-''''''
-                      \    /  ||/   H   \||  \    /
+        ''''''-|---|--/_\/_\==[]^',_m_,'^[]==/_\/_\--|---|-''''''
+                      \ /\ /  ||/   H   \||  \ /\ /
                        '--'   OO   O|O   OO   '--'    
  ____  _____      __      ____  _____          __      _____ _______    
 |_   \|_   _|    /  \    |_   \|_   _|        /  \    |_   _|_   __ \   
@@ -22,92 +22,97 @@
 ║                                                               ║
 ║   1 : Trip Manager                                            ║
 ║   2 : Human Resources                                         ║
-║   3 : Chuck Norris                                            ║
 ║                                                               ║
+║   *Hint: input the number you want to select and then enter   ║
+║    For ex.: 1 --> Trip Manager                                ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█	                       Trip Manager                         █
+█                        Trip Manager                           █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║	1 : Employee Managment Menu                                 ║
-║   2 : Destination Managment Menu                              ║
-║   3 : Trip Schedules (TripManagmentMenu)                      ║
-║   4 : Edit Trip Schedules (TripSchedulingMenu)                ║
-║   5 : Work Reports Menu                                       ║
-║   6 : Airplane Database                                       ║
+║   1 : Flight Schedules                                        ║
+║   2 : Employee Schedules                                      ║
+║   3 : Employee Managment Menu                                 ║
+║   4 : Destination Managment Menu                              ║
+║   5 : Airplane Database                                       ║
+║                                                               ║
+║   0 : Back                                                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Airplane Database                                                                                                         █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                                                                                           ║
+║       List of Airplanes:                                                                                                  ║
+║       Name                Current Location        Type         Seats                                                      ║
+║                                                                                                                           ║
+║   1 : NaNair_1            Svalbard                747          -----                                                      ║
+║   2 : NaNair_2            >Faroe Islands          744          -----                                                      ║
+║   3 : NaNair_3            Reykjavik               744          -----                                                      ║
+║   4 : NaNair_4            Reykjavik               745          -----                                                      ║
+║   5 : NaNair_5            >Reykjavik              757          -----                                                      ║
+║                                                                                                                           ║
+║   0 : Back            00 : Create New Airplane              <Airplane number> : Edit Airplane Data                        ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█ Airplane Database > Create new                                █
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+║                                                               ║
+║    --> Input Name                                             ║
+║        Current Location                                       ║
+║        Type                                                   ║
+║        Seats                                                  ║
 ║                                                               ║
 ║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > Edit Trip Schedules                            █
+█ Airplane Database > Create new                                █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║	1 : Re-create Existing Trip                                 ║
-║	2 : Create New Trip                                         ║
-║   3 : Edit already existing Flight                            ║
+║        NaNair_6                                               ║
+║    --> Input Current Location                                 ║
+║        Type                                                   ║
+║        Seats                                                  ║
 ║                                                               ║
 ║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > Edit Flight Schedules > Create new             █
+█ Airplane Database > Create new                                █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║				Input Day of Departure (DD:MM:YYYY)             ║
+║        NaNair_6                                               ║
+║        Reykjavik                                              ║
+║    --> Input Type                                             ║
+║        Seats                                                  ║
 ║                                                               ║
+║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > Edit Flight Schedules > Create new             █
+█ Airplane Database > Create new                                █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║				 Input Departure Time (00:00 - 23:59)           ║
+║        NaNair_6                                               ║
+║        Reykjavik                                              ║
+║        747                                                    ║
+║   -->  Input Seats                                            ║
 ║                                                               ║
+║   0 : Back                                                    ║
 ╚═══════════════════════════════════════════════════════════════╝
 
 █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > Edit Flight Schedules > Create new             █
+█ Airplane Database > Create new                                █
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ║                                                               ║
-║   Available Planes:                                           ║
+║   New Airplane Created:                                       ║
+║     Name: NaNair_6                                            ║
+║     Location: Reykjavik, Iceland                              ║
+║     Type: 747                                                 ║
+║     Seats: 150                                                ║
 ║                                                               ║
-║   1 : NaNair_1                                                ║
-║   2 : NaNair_2                                                ║
-║   3 : NaNair_3                                                ║
-║   4 : NaNair_4                                                ║
-║                                                               ║
+║   <Enter> : Back to Airplane Database                         ║
 ╚═══════════════════════════════════════════════════════════════╝
-
-█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > Edit Flight Schedules > Create new             █
-█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
-║                                                               ║
-║   Select Destination:                                         ║
-║                                                               ║
-║   1 : Longyearbuen  (Svalbard)                                ║
-║   2 : Torshavn      (Faroe Islands)                           ║
-║   3 : Kulusuk       (Greenland)                               ║
-║   4 : Nuuk          (Greenland)                               ║
-║   5 : Tingwall      (Shetland)                                ║
-║                                                               ║
-╚═══════════════════════════════════════════════════════════════╝
-
-█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-█ Trip Manager > Edit Flight Schedules > Create new             █
-█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
-║                                                               ║
-║   Flight Created:                                             ║
-║                                                               ║
-║   Departing:          Reykjavik                               ║
-║   Destination:        Nuuk                                    ║
-║   Day:                06.01.24                                ║
-║   Time:               06:10                                   ║
-║   Plane:              NaNair_1                                ║
-║   Flight Nmbr:        NA040                                   ║
-║   Staff Status:       Not Staffed                             ║
-║                                                               ║
-║   <Enter> : Back                                              ║
-╚═══════════════════════════════════════════════════════════════╝
-
