@@ -94,7 +94,7 @@ class PrintFunctions:
             vals = []
             for value in dic.values():
                 vals.append(value)
-            for n in range(len(value)):
+            for n in range(len(vals)):
                 if len(vals[n]) > 18: #shorten names
                     vals[n] = self.shorten_name(vals[n])
             if vals[6] == '':
@@ -115,7 +115,7 @@ class PrintFunctions:
             vals = []
             for value in dic.values():
                 vals.append(value)
-            for n in range(len(value)):
+            for n in range(len(vals)):
                 if len(vals[n]) > 18: #shorten names
                     vals[n] = self.shorten_name(vals[n])
             print(self.allign_left(print_format % (vals[0], vals[1], vals[2], vals[3], vals[4] + "km", vals[5] + "min", vals[6], vals[7])))
@@ -134,7 +134,7 @@ class PrintFunctions:
             vals = []
             for value in dic.values():
                 vals.append(value)
-            for n in range(len(value)):
+            for n in range(len(vals)):
                 if len(vals[n]) > 18: #shorten names
                     vals[n] = self.shorten_name(vals[n])
             print(self.allign_left(print_format % (vals[0], vals[1], vals[2], vals[3], vals[4], vals[5])))
