@@ -7,6 +7,7 @@ class LoginUI:
         self.PrintUi = PrintFunctions()
 
     def login_output(self):
+        '''Print sequence for Login'''
         self.PrintUi.logo()
         self.PrintUi.print_header("Login", "center")
         print(self.PrintUi.empty_line())
@@ -26,12 +27,13 @@ class LoginUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left("*Hint: input the number you want to select and then enter"))
-        print(self.PrintUi.allign_left(" For ex.: [1] --> Trip Manager"))
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.allign_left("Input 'q' at any time to exit the program"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.end_line())
 
     def input_prompt(self):
+        '''Starting function for Login (And the whole program)'''
         while True:
             self.login_output()
             command = input("Enter you command: ")
@@ -41,10 +43,10 @@ class LoginUI:
                 print("Goodbye")
                 break
             elif command == "1":
-                main_menu = MainMenuUI()
+                main_menu = MainMenuUI("Trip Manager")
                 main_menu.input_prompt()
             elif command == "2":
-                main_menu = MainMenuUI()
+                main_menu = MainMenuUI("Human Resources")
                 main_menu.input_prompt()
             else:
                 print("Invalid input, try again")
