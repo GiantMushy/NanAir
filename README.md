@@ -14,3 +14,5 @@ Notendahópagreining:
 
 bara test.
 bara test 2.
+
+To test run the program, open the <Code> folder in your terminal, and run "thorri__main__.py"
