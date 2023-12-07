@@ -72,6 +72,9 @@ class EmployeeDataEditUI:
             elif command == "1":
                 self.edit_data("Phone")
                 command = input("Input new Phone number: ")
+                if command == "q":
+                    print("Goodbye")
+                    exit()
                 try:
                     self.Logic.modify_employee(self.employee['id'], mobile_phone_number = command)
                 except ValueError as e:
@@ -80,6 +83,9 @@ class EmployeeDataEditUI:
             elif command == "2":
                 self.edit_data("Address")
                 command = input("Input new Address: ")
+                if command == "q":
+                    print("Goodbye")
+                    exit()
                 try:
                     self.Logic.modify_employee(self.employee['id'], address = command)
                 except ValueError as e:
@@ -88,6 +94,9 @@ class EmployeeDataEditUI:
             elif command == "3":
                 self.edit_data("Email")
                 command = input("Input new Email: ")
+                if command == "q":
+                    print("Goodbye")
+                    exit()
                 try:
                     self.Logic.modify_employee(self.employee['id'], email_address = command)
                 except ValueError as e:
@@ -95,11 +104,15 @@ class EmployeeDataEditUI:
             elif command == "4":
                 self.edit_data("Home Phone")
                 command = input("Input new Home Phone: ")
+                if command == "q":
+                    print("Goodbye")
+                    exit()
                 try:
                     self.Logic.modify_employee(self.employee['id'], home_phone_number = command)
                 except ValueError as e:
                     print(f"Error: {e}")
             elif command == "q":
+                print("Goodbye")
                 exit()
             else:
                 print("Invalid input, try again")

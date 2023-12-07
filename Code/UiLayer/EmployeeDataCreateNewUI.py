@@ -250,33 +250,57 @@ class EmployeeDataCreateNewUI:
                 self.input_employee_type()
                 if input_check:
                     data = input("Enter Type: ")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
                 else:
                     print(value_error)
                     data = input("Enter Type:")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
 
             elif n == 2:
                 self.input_employee_role()
                 if input_check:
                     data = input("Enter Role: ")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
                 else:
                     print(value_error)
                     data = input("Enter Role:")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
 
             elif n == 3:
                 self.input_name()
                 if input_check:
                     data = input("Enter Name: ")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
                 else:
                     print(value_error)
                     data = input("Enter Name:")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
 
             elif n == 4:
                 self.input_SSN()
                 if input_check:
                     data = input("Enter SSN: ")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
                 else:
                     print(value_error)
                     data = input("Enter SSN (dddddd-dddd):")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
 
                 if data.isnumeric():#------------isSSN()-------------- 
                     input_check = True
@@ -287,9 +311,15 @@ class EmployeeDataCreateNewUI:
                 self.input_phone()
                 if input_check:
                     data = input("Enter Phone number: ")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
                 else:
                     print(value_error)
                     data = input("Enter Phone number (ddd dddd):")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
 
                 if data.isnumeric():#------------isPhone()-------------- 
                     input_check = True
@@ -300,25 +330,43 @@ class EmployeeDataCreateNewUI:
                 self.input_address()
                 if input_check:
                     data = input("Enter Address: ")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
                 else:
                     print(value_error)
                     data = input("Enter Address:")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
 
             elif n == 7:
                 self.input_email()
                 if input_check:
                     data = input("Enter Email: ")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
                 else:
                     print(value_error)
                     data = input("Enter Email:")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
 
             elif n == 8:
                 self.input_home_phone()
                 if input_check:
                     data = input("Enter Home Phone: ")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
                 else:
                     print(value_error)
                     data = input("Enter Home Phone (ddd dddd):")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
                     
                 if data.isnumeric():#------------isPhone()-------------- 
                     input_check = True
@@ -356,6 +404,7 @@ class EmployeeDataCreateNewUI:
             elif command == "4":
                 break    
             elif command == "q":
+                print("Goodbye")
                 exit()
             else:
                 print("Invalid input, try again")
