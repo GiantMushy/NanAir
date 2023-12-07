@@ -79,3 +79,5 @@ Matthías: work trips
 Edda: Validator 
 
 Markmið dagsins gekk allt í lagi smá erfiðleikar við að ná að fullklára destinations og add airplaines en erum að vinna í þessu og mun vonandi vera tilbúið á morgun
+
+
