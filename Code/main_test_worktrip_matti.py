@@ -63,6 +63,13 @@ def main():
         print(f"printing this busy_trip {busy_trip}")
         print(busy_trip)
 
+    busy_employees = work_trip_logic.list_all_busy_employees(
+        '2032-11-14 14:32')
+
+    print("TESTING BUSY EMPLOYEES")
+    for emp in busy_employees:
+        print(f"Employee with ID {emp} is busy this day: 2032-11-14 14:32")
+
 
 if __name__ == "__main__":
     main()

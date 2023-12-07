@@ -228,8 +228,23 @@ class WorkTripLogic:
         '''Helper function for create_recurring_work_trips to correct datetime format'''
         return datetime.strftime(datetime_str, '%Y-%m-%d %H:%M')
 
-    def list_all_available_employees(self, string_date):
-        '''Use employee availability function to check for certain date'''
+    def list_all_busy_employees(self, string_date):
+        '''
+        List all employees who are not working at a certain date. 
+
+        '''
+        start_date = datetime.strptime(string_date, '%Y-%m-%d %H:%M')
+        start_date = start_date.date()
+        all_work_trips = self.work_trip_data.read_all_work_trips()
+        crew_members_list = []
+        for trip in all_work_trips:
+            if start_date == trip.departure_datetime.date():
+                # need to do a for loop for all employees
+                # changing crew_members to list, need to first check if empty
+                if not trip.crew_members == "":
+                    crew_members_list = trip.crew_members.split(',')
+
+        return crew_members_list
 
     def list_employees_working_and_destinations(self, string_date):
         '''

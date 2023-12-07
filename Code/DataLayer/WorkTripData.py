@@ -46,9 +46,6 @@ class WorkTripData:
                 reader = csv.DictReader(file)
                 for row in reader:
 
-                    print("Departure:", row['departure_datetime'])
-                    print("Return:", row['return_datetime'])
-
                     departure_datetime = row['departure_datetime']
                     return_datetime = row['return_datetime']
 
