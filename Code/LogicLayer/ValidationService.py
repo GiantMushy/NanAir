@@ -11,5 +11,5 @@ class ValidationService:
     def validate_work_trip(self, trip):
         pass
 
-    def validate_employee_availability(self, trip):
+    def validate_employee_availability(self, employee):
         pass
