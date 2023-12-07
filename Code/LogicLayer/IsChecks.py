@@ -36,8 +36,8 @@ class IsChecks:
         except:
             raise ValueError("Travel Time and must be numeric")
         travel_time = int(Travel_Time)
-        if travel_time > 840:
-            raise ValueError("Longest Flight in the world is 840min")
+        if travel_time > 1120:
+            raise ValueError("Longest Commercial Flight in the world is/was 1120min, be realistic")
 
     def is_contact_name(self, Contact_Name):
         if not Contact_Name or not Contact_Name.replace(" ", "").isalpha():
