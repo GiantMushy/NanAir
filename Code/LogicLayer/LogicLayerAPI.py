@@ -258,8 +258,8 @@ class LogicLayerAPI:
     def is_current_location(self, Current_Location):
         return self.check.is_current_location(Current_Location)
 
-    def is_ssn(self, social_security_number):
-        return self.check.is_name(social_security_number)
+    def is_social_security_number(self, social_security_number):
+        return self.check.is_social_security_number(social_security_number)
 
     def is_type(self, Type):
         return self.check.is_type(Type)

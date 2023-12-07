@@ -291,7 +291,7 @@ class EmployeeDataCreateNewUI:
                     print("Goodbye")
                     exit()
                 try:
-                    self.Logic.is_ssn(data)
+                    self.Logic.is_social_security_number(data)
                     input_check = True
                 except ValueError as e:
                     print(f"Error: {e}")
