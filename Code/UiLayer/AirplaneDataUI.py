@@ -40,6 +40,7 @@ class AirplaneDataUI:
                         edit = AirplaneDataEditUI(dict['id'])
                         edit.input_prompt()
             elif command == "q":
+                print("Goodbye")
                 exit()
             else:
                 print("Invalid input, try again")
