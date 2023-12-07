@@ -15,7 +15,7 @@ def main():
         destinations[0], '2032-11-14 14:32', '2032-11-14 17:32')
 
     work_trip_logic.add_work_trip(
-        destinations[1], '2033-11-14 14:32', '2034-11-14 17:32', '001,002,003')
+        destinations[1], '2032-11-14 14:32', '2034-11-14 17:32', '003')
 
     work_trips = work_trip_logic.list_all_work_trips()
 
@@ -47,6 +47,14 @@ def main():
 
     for trip in work_trip_validity_test:
         print(f"{trip.id} validity: {trip.validity}")
+
+    print("\n Testing listing all employees working on a certain date")
+    testing = work_trip_logic.list_employees_working_and_destinations(
+        "2032-11-14 14:32")
+
+    for busy_trip in testing:
+        print(f"printing this busy_trip {busy_trip}")
+        print(busy_trip)
 
 
 if __name__ == "__main__":

@@ -173,6 +173,9 @@ class LogicLayerAPI:
         """
         return self.employee_logic.find_employee_by_id(employee_id)
 
+    def list_employees_working_and_destinations(self, string_date):
+        return self.work_trip_logic.list_employees_working_and_destinations(string_date)
+
     ############################## Destination Manager Logic ###############################
 
     def list_all_destinations(self):
