@@ -1,4 +1,5 @@
 from LogicLayer.EmployeeManagerLogic import EmployeeManagerLogic
+from LogicLayer.LogicLayerAPI import LogicLayerAPI
 import random
 
 
@@ -60,6 +61,8 @@ def test_list_all_pilots():
     logic = EmployeeManagerLogic()
     pilots = logic.list_all_pilots()
     print("\nList of All Pilots:")
+    print(pilots)
+    print('testing')
     for pilot in pilots:
         print(pilot)
     assert isinstance(pilots, list), "Should return a list"
@@ -74,12 +77,37 @@ def test_list_all_flight_attendants():
     assert isinstance(flight_attendants, list), "Should return a list"
 
 
+def test_modification_field():
+    logic = LogicLayerAPI()
+    logic.modify_employee('002', mobile_phone_number='696969')
+
+    print("\n list all employees after modification")
+
+    all_employees = logic.list_all_employees()
+
+    for emp in all_employees:
+        print(emp.__dict__)
+
+
+def test_role_role():
+    logic = LogicLayerAPI()
+    print("should be true")
+    print(logic.is_senior_flight_attendant("003"))
+    print("")
+    print("should be false")
+    print(logic.is_senior_flight_attendant("001"))
+    print("should be true")
+    print(logic.is_captain("001"))
+
+
 def run_tests():
     test_generate_unique_employee_id()
     test_add_employee()
     test_list_all_employees()
     test_list_all_pilots()
     test_list_all_flight_attendants()
+    test_modification_field()
+    test_role_role()
     print("\nSuccessfully ran all tests")
 
 
