@@ -34,7 +34,7 @@ class MainMenuUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line()) 
-        print(self.PrintUi.allign_center("0: Back"))
+        print(self.PrintUi.allign_center("0: Back       q : exit"))
         print(self.PrintUi.end_line())
 
     def input_prompt(self):
@@ -62,5 +62,7 @@ class MainMenuUI:
                 airplane_database.input_prompt()
             elif command == "0":
                 pass
+            elif command == "q":
+                exit()
             else:
                 print("Invalid input, try again")

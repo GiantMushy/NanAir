@@ -18,7 +18,7 @@ class AirplaneDataUI:
         print(self.PrintUi.empty_line())
         self.PrintUi.print_airplane_table(printed_dict, 15)
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(" 0 : Back                     00 : Create New Airplane                  <ID> : Edit Airplane Data"))
+        print(self.PrintUi.allign_left(" 0 : Back        q : exit          00 : Create New Airplane                  <ID> : Edit Airplane Data"))
         print(self.PrintUi.end_line())
 
     def input_prompt(self):
@@ -36,8 +36,8 @@ class AirplaneDataUI:
                 create_new.input_prompt()
             elif command.isdigit():
                 for dict in all_airplane_data:
-                    if int(command) == int(dict["id"]):
-                        edit = AirplaneDataEditUI(dict)
+                    if int(command) == int(dict['id']):
+                        edit = AirplaneDataEditUI(dict['id'])
                         edit.input_prompt()
             elif command == "q":
                 exit()
