@@ -95,9 +95,11 @@ class IsChecks:
             raise ValueError("Email must be a non-empty string of alphabetic characters")
 
     def is_employee_type(self, Employee_Type):
-        if not Employee_Type or not Employee_Type.replace(" ", "").strip(self.punc).lower() == "pilot" or not Employee_Type.replace(" ", "").strip(self.punc).lower() == "flightattendant":
-            raise ValueError("Employee Type must be a non-empty string of alphabetic characters")
+        input_str = Employee_Type.replace(" ", "").strip(self.punc).lower()
+        if not Employee_Type or not input_str == "pilot" or not input_str == "flightattendant":
+            raise ValueError("Employee Type must be either 'Pilot' or 'Flight Attendant'")
 
     def is_employee_role(self, Employee_Role):
-        if not Employee_Role or not Employee_Role.replace(" ", "").strip(self.punc).lower() == "captain" or not Employee_Role.replace(" ", "").strip(self.punc).lower() == "copilot" or not Employee_Role.replace(" ", "").strip(self.punc).lower() == "seniorflightattendant" or not Employee_Role.replace(" ", "").strip(self.punc).lower() == "flightattendant":
-            raise ValueError("Employee Role must be a non-empty string of alphabetic characters")
+        input_str = Employee_Role.replace(" ", "").strip(self.punc).lower()
+        if not Employee_Role or not input_str == "captain" or not input_str == "copilot" or not input_str == "seniorflightattendant" or not input_str == "flightattendant":
+            raise ValueError("Employee Role must be either 'Captain','Co-Pilot','Senior Flight Attendant' or 'Flight Attendant'")
