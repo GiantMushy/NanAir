@@ -7,8 +7,8 @@ def generate_random_airplane_name():
 
 def add_sample_airplanes(logic):
     airplane_details = [
-        ("Boeing 747", "Reykjavik", "Commercial", "Boeing", 400),
-        ("Airbus A320", "Nuuk", "Commercial", "Airbus", 180),
+        ("Oliver", "Reykjavik", "DHC-8-200", "De Havilland", 37),
+        ("Benjamín", "Nuuk", "DHC-8-400", "De Havilland", 76),
         # Add more sample airplanes as needed
     ]
 
