@@ -78,6 +78,13 @@ def main():
         print(
             f"Employee with ID {emp} is available this day: 2032-11-14 14:32")
 
+    print("TESTING WORKTRIPS OF EMPLOYEE WEEKLY")
+    testing_worktrips = work_trip_logic.all_work_trips_of_employee(
+        "001", "2032-11-14 14:32")
+
+    for trip in testing_worktrips:
+        print(trip.__dict__)
+
 
 if __name__ == "__main__":
     main()
