@@ -113,6 +113,16 @@ class EmployeeManagerLogic:
             combined_flight_attendants.append(combined_flight_attendant)
         return combined_flight_attendants
 
+    def object_list_to_dict_list(self, object_list):
+        dict_list = []
+        for obj in object_list:
+            dict_list.append(obj.__dict__)
+
+        return dict_list
+    
+    def object_to_dict(self, object):
+        return object.__dict__
+
     def is_pilot(self, employee_id):
         '''Checks if an employee is a pilot.
 

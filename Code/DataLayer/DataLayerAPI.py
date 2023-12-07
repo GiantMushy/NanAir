@@ -1,12 +1,17 @@
 from DataLayer.EmployeeData import EmployeeData
 from DataLayer.WorkTripData import WorkTripData
+from DataLayer.DestinationData import DestinationData
+from DataLayer.AirplaneData import AirplaneData
 
 
 class DataLayerAPI:
     def __init__(self):
         self.employee_data = EmployeeData()
         self.work_trip_data = WorkTripData()
+        self.destination_data = DestinationData()
+        self.airplane_data = AirplaneData()
 
+    ################################## Employee Data Functions ###################################
     def read_all_employees(self):
         '''
         Read all employees from the Employee CSV file and return them as a list of Employee objects.
@@ -91,3 +96,42 @@ class DataLayerAPI:
         :param updated_work_trips: updated WorkTrip objects to write.
         '''
         self.work_trip_data.update_work_trip_data(updated_work_trips)
+
+    ################################## Destination Data Functions ###################################
+
+    def read_all_destinations(self):
+        """
+        Read all destination from the Destination CSV file and return them as a list of Destination objects.
+        :return: List of Destination objects.
+        """
+        return self.destination_data.read_all_destinations()
+
+    def add_destination(self, destination):
+        """
+        Add a new destination to the CSV file.
+        :param destination: Destination object to be added.
+        """
+        self.destination_data.add_destination(destination)
+
+    ################################## Airplane Data Functions ###################################
+
+    def read_all_airplanes(self):
+        """
+        Read all airplane from the Airplane CSV file and return them as a list of Airplane objects.
+        :return: List of airplane objects.
+        """
+        return self.airplane_data.read_all_airplanes()
+
+    def add_airplane(self, airplane):
+        """
+        Add a new airplane to the CSV file.
+        :param airplane: Airplane object to be added.
+        """
+        self.airplane_data.add_airplane(airplane)
+
+    def modify_airplane_data(self, updated_airplanes):
+        """
+        Write the updated list of airplanes to the CSV file.
+        :param updated_airplanes: List of airplane objects with updated information.
+        """
+        self.airplane_data.modify_airplane_data(updated_airplanes)
