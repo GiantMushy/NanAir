@@ -61,8 +61,8 @@ class AirplaneDataEditUI:
 
     def input_prompt(self):
         '''Starting function for editing Airplane Data'''
-        input_check = False
         while True:
+            input_check = False
             airplane_obj = self.Logic.find_airplane_by_id(self.airplane_id)
             self.airplane = self.Logic.object_to_dict(airplane_obj)
             self.airplane_data_edit_output()

@@ -61,8 +61,8 @@ class EmployeeDataEditUI:
 
     def input_prompt(self):
         '''Starting function for editing Employee Data'''
-        input_check = False
         while True:
+            input_check = False
             employee_obj = self.Logic.find_employee_by_id(self.employee_id)
             self.employee = self.Logic.object_to_dict(employee_obj)
             self.employee_data_edit_output()
@@ -147,3 +147,4 @@ class EmployeeDataEditUI:
                 exit()
             else:
                 print("Invalid input, try again")
+
