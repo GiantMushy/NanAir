@@ -34,7 +34,9 @@ def is_travel_time(self, Travel_Time):
     try:
         Travel_Time = int(Travel_Time)
     except:
-        raise ValueError("Travel Time and must be numeric")
+        raise ValueError("Travel Time must be numeric")
+    if Travel_Time > 1440:
+        raise ValueError("Travel Time must be less than 24 hours")
 
 def is_contact_name(self, Contact_Name):
     if not Contact_Name or not Contact_Name.replace(" ", "").isalpha():
@@ -60,6 +62,9 @@ def is_name(self, Name):
 def is_current_location(self, Current_Location):
     if not Current_Location or not Current_Location.replace(" ", "").isalpha():
         raise ValueError("Current Location must be a non-empty string of alphabetic characters")
+    if not Current_Location > 20:
+        raise ValueError("Manufacturer must be less than 20 characters")
+
 
 def is_ssn(self, SSN):
     if not SSN.replace(" ", "").isdigit():
