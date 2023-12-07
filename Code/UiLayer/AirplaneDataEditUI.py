@@ -30,7 +30,7 @@ class AirplaneDataEditUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(" 0 : Back      q : exit"))
+        print(self.PrintUi.allign_left(" 0 : Back"))
         print(self.PrintUi.end_line())
 
     def edit_data(self, changed_data):
@@ -73,6 +73,9 @@ class AirplaneDataEditUI:
             elif command == "1":
                 self.edit_data("Name")
                 command = input("Input new Name: ")
+                if command == "q":
+                    print("Goodbye")
+                    exit()
                 try:
                     self.Logic.modify_airplane(self.airplane['id'], name = command)
                 except ValueError as e:
@@ -80,6 +83,9 @@ class AirplaneDataEditUI:
             elif command == "2":
                 self.edit_data("Current Location")
                 command = input("Input new Current Location: ")
+                if command == "q":
+                    print("Goodbye")
+                    exit()
                 try:
                     self.Logic.modify_airplane(self.airplane['id'], current_location = command)
                 except ValueError as e:
@@ -87,6 +93,9 @@ class AirplaneDataEditUI:
             elif command == "3":
                 self.edit_data("Type")
                 command = input("Input new Type: ")
+                if command == "q":
+                    print("Goodbye")
+                    exit()
                 try:
                     self.Logic.modify_airplane(self.airplane['id'], type = command)
                 except ValueError as e:
@@ -94,6 +103,9 @@ class AirplaneDataEditUI:
             elif command == "4":
                 self.edit_data("Manufacturer")
                 command = input("Input new Manufacturer: ")
+                if command == "q":
+                    print("Goodbye")
+                    exit()
                 try:
                     self.Logic.modify_airplane(self.airplane['id'], manufacturer = command)
                 except ValueError as e:
@@ -101,11 +113,15 @@ class AirplaneDataEditUI:
             elif command == "5":
                 self.edit_data("Seats")
                 command = input("Input new seat ammount: ")
+                if command == "q":
+                    print("Goodbye")
+                    exit()
                 try:
                     self.Logic.modify_airplane(self.airplane['id'], capacity = command)
                 except ValueError as e:
                     print(f"Error: {e}")
             elif command == "q":
+                print("Goodbye")
                 exit()
             else:
                 print("Invalid input, try again")

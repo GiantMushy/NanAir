@@ -70,31 +70,49 @@ class DestinationDataEditUI:
             elif command == "1":
                 self.edit_data("Country")
                 command = input("Input new Country: ")
+                if command == "q":
+                    print("Goodbye")
+                    exit()
                 #----------------------Ask Logic if input is actual Country-------------------------
                 self.Destination[0] = command
             elif command == "2":
                 self.edit_data("City")
                 command = input("Input new City: ")
+                if command == "q":
+                    print("Goodbye")
+                    exit()
                 #----------------------Ask Logic if actual City-------------------------
                 self.Destination[1] = command
             elif command == "3":
                 self.edit_data("Airport")
                 command = input("Input new Airport: ")
+                if command == "q":
+                    print("Goodbye")
+                    exit()
                 #----------------------Ask Logic if actual Airport-------------------------
                 self.Destination[2] = command
             elif command == "4":
                 self.edit_data("Distance(km)")
                 command = input("Input new Distance: ")
+                if command == "q":
+                    print("Goodbye")
+                    exit()
                 #----------------------Ask Logic if actual Distance-------------------------
                 self.Destination[3] = command
             elif command == "5":
                 self.edit_data("Travel Time (min)")
                 command = input("Input new Travel Time: ")
+                if command == "q":
+                    print("Goodbye")
+                    exit()
                 #----------------------Ask Logic if actual Time-------------------------
                 self.Destination[4] = command
             elif command == "6":
                 self.edit_data("Emergency Contact")
                 command = input("Input new Emergency Contact: ")
+                if command == "q":
+                    print("Goodbye")
+                    exit()
                 #----------------------Ask Logic if actual phone number/email-------------------------
                 self.Destination[5] = command
             elif command == "q":

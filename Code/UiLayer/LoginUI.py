@@ -28,7 +28,7 @@ class LoginUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left("q : quit"))
+        print(self.PrintUi.allign_left("Input 'q' at any time to exit the program"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.end_line())
 
