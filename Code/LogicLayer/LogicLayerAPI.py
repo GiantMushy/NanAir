@@ -252,6 +252,9 @@ class LogicLayerAPI:
     def is_contact_phone_number(self, Contact_Phone_Number):
         return self.check.is_contact_phone_number(Contact_Phone_Number)
     
+    def is_home_phone(self, home_phone):
+        return self.check.is_home_phone(home_phone)
+    
     def is_name(self, Name):
         return self.check.is_name(Name)
 

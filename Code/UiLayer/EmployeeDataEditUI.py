@@ -72,7 +72,7 @@ class EmployeeDataEditUI:
                 break
             elif command == "1":
                 self.edit_data("Phone")
-                while not input_check:
+                while not input_check: #input check becomes True once a valid input is entered
                     command = input("Input new Phone number: ")
                     if command == "q":
                         print("Goodbye")
@@ -132,7 +132,7 @@ class EmployeeDataEditUI:
                         print("Goodbye")
                         exit()
                     try:
-                        self.Logic.is_contact_phone_number(command)
+                        self.Logic.is_home_phone(command)
                         input_check = True
                         try:
                             self.Logic.modify_employee(self.employee['id'], home_phone_number = command)

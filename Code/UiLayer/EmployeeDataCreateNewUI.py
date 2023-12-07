@@ -41,7 +41,7 @@ class EmployeeDataCreateNewUI:
         print(self.PrintUi.allign_left("Creating New Employee"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left(f"    {self.new_employee[0]}"))
-        print(self.PrintUi.allign_left("--> Input Employee Role (Captain/Co-Pilot, Senior/Flight Attendant)"))
+        print(self.PrintUi.allign_left("--> Input Employee Role (Captain/Co Pilot, Senior/Flight Attendant)"))
         print(self.PrintUi.allign_left("    Employee Name"))
         print(self.PrintUi.allign_left("    Social Security Number"))
         print(self.PrintUi.allign_left("    Phone Number"))
@@ -299,7 +299,7 @@ class EmployeeDataCreateNewUI:
                 
             elif n == 5:
                 self.input_phone()
-                data = input("Enter Phone: ")
+                data = input("Enter Phone number: ")
                 if data == "q":
                     print("Goodbye")
                     exit()
@@ -343,7 +343,7 @@ class EmployeeDataCreateNewUI:
                     print("Goodbye")
                     exit()
                 try:
-                    self.Logic.is_contact_phone_number(data)
+                    self.Logic.is_home_phone(data)
                     input_check = True
                 except ValueError as e:
                     print(f"Error: {e}")

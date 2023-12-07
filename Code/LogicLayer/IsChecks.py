@@ -52,6 +52,19 @@ class IsChecks:
             Contact_Phone_Number = int(Contact_Phone_Number.replace(" ", ""))
         except:
             raise ValueError("Phone Number must be numeric")
+    
+    def is_home_phone(self, home_phone):
+        if not home_phone:
+            pass
+        else:
+            if not home_phone.replace(" ", "").isdigit():
+                raise ValueError("Phone Number must be a positive integer")
+            if len(Contact_Phone_Number) > 10:
+                raise ValueError("Phone number length cannot exceed 10 digits")
+            try:
+                Contact_Phone_Number = int(Contact_Phone_Number.replace(" ", ""))
+            except:
+                raise ValueError("Phone Number must be numeric")
 
     def is_name(self, Name):
         if not Name:
