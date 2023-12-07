@@ -2,14 +2,14 @@ from LogicLayer.AirplainesLogicLayer import AirplaineManagerLogic
 import random
 
 def generate_random_airplane_name():
-    # Generate a random airplane name for testing
+    #generate a random airplane name for testing
     return f"Plane{random.randint(100, 999)}"
 
 def add_sample_airplanes(logic):
     airplane_details = [
         ("Oliver", "Reykjavik", "DHC-8-200", "De Havilland", 37),
         ("Benjamín", "Nuuk", "DHC-8-400", "De Havilland", 76),
-        # Add more sample airplanes as needed
+        #add more sample airplanes as needed
     ]
 
     for name, location, type, manufacturer, capacity in airplane_details:
@@ -29,10 +29,10 @@ def test_list_all_airplanes():
 def run_tests():
     logic = AirplaineManagerLogic()
 
-    # Test adding sample airplanes
+    #test adding sample airplanes
     add_sample_airplanes(logic)
 
-    # Test listing all airplanes
+    #test listing all airplanes
     test_list_all_airplanes()
 
     print("\nSuccessfully ran all tests")

@@ -24,7 +24,7 @@ def main():
             print("Invalid choice. Please enter a valid option.")
 
 def AddAirplaine(AirplineManager):
-    # Get input from the user and call the appropriate logic function
+    #get input from the user and call the appropriate logic function
     while True:
         try:
             NameOfPlaine = input("Enter a Name the Airplaine")

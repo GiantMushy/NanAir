@@ -14,10 +14,10 @@ def generate_unique_airplaine_id(self):
         """
         airplaines = self.airplaine_data.read_all_airplaines()
         if not airplaines:
-            # base case, no airplaines in the database
+            #base case, no airplaines in the database
             return "001"
 
-        # find the highest existing ID and increment by 1
+        #find the highest existing ID and increment by 1
         max_id = max(int(plaines.id) for plaines in airplaines)
         new_id = max_id + 1
         return str(new_id).zfill(3)  # pad with zeros to maintain a length of 3
@@ -39,12 +39,12 @@ def AddAirplaine(self, NameOfPlane, CurrentLocation, Type, Manufacturer, Capacit
         if not Capacity.isdigit():
             raise ValueError("Capacity must be a positive integer")
 
-        # Validate that capacity only has digits
+        #validate that capacity only has digits
         try:
             Capacity = int(Capacity)
         except ValueError:
             raise ValueError("Capacity must be numeric")
-        #Validate that name of plane and current location only has letters and 
+        #validate that name of plane and current location only has letters and 
         try:
              NameOfPlane = str(NameOfPlane)
         except ValueError:
@@ -57,7 +57,7 @@ def AddAirplaine(self, NameOfPlane, CurrentLocation, Type, Manufacturer, Capacit
 
         
 
-        # Create a new Airplaine Object
+        # create a new Airplaine Object
         NewAirplaine = Airplaine(
             NameOfPlane=NameOfPlane,
             CurrentLocation=CurrentLocation,
@@ -67,7 +67,7 @@ def AddAirplaine(self, NameOfPlane, CurrentLocation, Type, Manufacturer, Capacit
             
         )
 
-        # Adding new airplaine
+        # adding new airplaine
         self.AirplaineData.AddAirplaine(NewAirplaine)
 
 def EditAirplaine(self, NameOfPlaine, updates):
@@ -92,7 +92,7 @@ def EditAirplaine(self, NameOfPlaine, updates):
     if not airplaine_found:
         raise ValueError(f"Airplaine with name {NameOfPlaine} not found")
     
-    # Write the updated list back to the data layer
+    # write the updated list back to the data layer
     self.AirplainesData_data.ModifyAirplaineData(updated_airplanes)
                    
 
