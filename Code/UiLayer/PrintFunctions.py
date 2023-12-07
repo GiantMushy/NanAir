@@ -100,7 +100,7 @@ class PrintFunctions:
         if len(names) > 1:
             for n in range(len(names)-1):
                 names[n+1] = names[n+1][0] + "."
-        name = " ".join(names)
+        name = "".join(names)
 
         if len(name) > min_length:
             name = "(Item Too Long)"

@@ -225,59 +225,73 @@ class DestinationDataCreateNewUI:
         while n < 8:
             if n == 1:
                 self.input_city()
-                if input_check:
-                    data = input("Enter City: ")
-                else:
-                    print(value_error)
-                    data = input("Enter City:")
+                data = input("Enter City: ")
+                try:
+                    self.Logic.is_destination(data)
+                    input_check = True
+                except ValueError as e:
+                    print(f"Error: {e}")
+                    input_check = False
 
             elif n == 2:
                 self.input_airport()
-                if input_check:
-                    data = input("Enter Airport: ")
-                else:
-                    print(value_error)
-                    data = input("Enter Airport:")
+                data = input("Enter Airport: ")
+                try:
+                    self.Logic.is_airport(data)
+                    input_check = True
+                except ValueError as e:
+                    print(f"Error: {e}")
+                    input_check = False
 
             elif n == 3:
                 self.input_country()
-                if input_check:
-                    data = input("Enter Country: ")
-                else:
-                    print(value_error)
-                    data = input("Enter Country:")
+                data = input("Enter Country: ")
+                try:
+                    self.Logic.is_country(data)
+                    input_check = True
+                except ValueError as e:
+                    print(f"Error: {e}")
+                    input_check = False
 
             elif n == 4:
                 self.input_distance()
-                if input_check:
-                    data = input("Enter Distance: ")
-                else:
-                    print(value_error)
-                    data = input("Enter Distance (km):")
+                data = input("Enter Distance: ")
+                try:
+                    self.Logic.is_distance(data)
+                    input_check = True
+                except ValueError as e:
+                    print(f"Error: {e}")
+                    input_check = False
                 
             elif n == 5:
                 self.input_travel_time()
-                if input_check:
-                    data = input("Enter Travel Time: ")
-                else:
-                    print(value_error)
-                    data = input("Enter Travel Time (min):")
+                data = input("Enter Travel Time: ")
+                try:
+                    self.Logic.is_travel_time(data)
+                    input_check = True
+                except ValueError as e:
+                    print(f"Error: {e}")
+                    input_check = False
 
             elif n == 6:
                 self.input_emerg_contact_name()
-                if input_check:
-                    data = input("Enter Name: ")
-                else:
-                    print(value_error)
-                    data = input("Enter the Emergency Contact's name:")
+                data = input("Enter Contact Name: ")
+                try:
+                    self.Logic.is_contact_name(data)
+                    input_check = True
+                except ValueError as e:
+                    print(f"Error: {e}")
+                    input_check = False
 
             elif n == 7:
                 self.input_emerg_contact_phone_number()
-                if input_check:
-                    data = input("Enter Phone number: ")
-                else:
-                    print(value_error)
-                    data = input("Enter the Emergency Contact's Phone Number:")
+                data = input("Enter Phone Number: ")
+                try:
+                    self.Logic.is_contact_phone_number(data)
+                    input_check = True
+                except ValueError as e:
+                    print(f"Error: {e}")
+                    input_check = False
 
             if input_check:
                 self.new_destination.append(data)
