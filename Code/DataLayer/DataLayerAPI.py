@@ -86,10 +86,6 @@ class DataLayerAPI:
         '''
         self.work_trip_data.add_work_trip(work_trip)
 
-    def get_mock_destinations(self):
-        '''Temporary method to return detailed mock destinations.'''
-        return self.work_trip_data.get_mock_destinations()
-
     def update_work_trip_data(self, updated_work_trips):
         '''
         Writing updated list of Work Trips after editing

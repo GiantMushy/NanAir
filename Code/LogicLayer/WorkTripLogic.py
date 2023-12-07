@@ -6,6 +6,8 @@ from datetime import datetime, timedelta
 # for testing
 from random import randint
 
+# TODO: add destination usage
+
 
 class WorkTripLogic:
     def __init__(self):
@@ -83,10 +85,6 @@ class WorkTripLogic:
         Returns, return: A list of all WorkTrip Objects.
         '''
         return self.work_trip_data.read_all_work_trips()
-
-    def get_mock_destinations(self):
-        '''Mocking destinations data'''
-        return self.work_trip_data.get_mock_destinations()
 
     def add_crew_member(self, work_trip_id, employee_id):
         '''
@@ -229,3 +227,82 @@ class WorkTripLogic:
     def correct_datetime_format(self, datetime_str):
         '''Helper function for create_recurring_work_trips to correct datetime format'''
         return datetime.strftime(datetime_str, '%Y-%m-%d %H:%M')
+
+    def list_all_busy_employees(self, string_date):
+        '''
+        List all employees who are working at a certain date. 
+
+        :param string_date: The date to check, in string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13" 
+
+        Returns, return: a list of employee ids busy on the date
+
+        '''
+        start_date = datetime.strptime(string_date, '%Y-%m-%d %H:%M')
+        start_date = start_date.date()
+        all_work_trips = self.work_trip_data.read_all_work_trips()
+        crew_members_list = []
+        for trip in all_work_trips:
+            if start_date == trip.departure_datetime.date():
+                # need to do a for loop for all employees
+                # changing crew_members to list, need to first check if empty
+                if not trip.crew_members == "":
+                    crew_members_list = trip.crew_members.split(',')
+
+        return crew_members_list
+
+    def list_all_available_employees(self, string_date):
+        '''
+        List all employees who are not working at a certain date. 
+
+        :param string_date: The date to check, in string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13" 
+
+        Returns, return: a list of employee ids busy on the date
+
+        '''
+
+        busy_employees = self.list_all_busy_employees(string_date)
+
+        all_employees = self.work_trip_data.read_all_employees()
+
+        all_employee_ids = []
+
+        for emp in all_employees:
+            print(
+                f"inside for loop pop all employees, adding id {emp.id} to all employee id's")
+            all_employee_ids.append(emp.id)
+
+        available_employees = []
+
+        for emp in all_employee_ids:
+            if not emp in busy_employees:
+                available_employees.append(emp)
+
+        return available_employees
+
+    def list_employees_working_and_destinations(self, string_date):
+        '''
+        Lists all employee id's who are working on given date and to which destination they're going.
+
+        :param string_date: The date to check, in string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13" 
+
+        Returns, return: a list of dictionaries, with the employee_id and destination for given day.
+        '''
+        start_date = datetime.strptime(string_date, '%Y-%m-%d %H:%M')
+        start_date = start_date.date()
+        # need to find all work trips with this departure date
+        all_work_trips_in_day = []
+        all_work_trips = self.work_trip_data.read_all_work_trips()
+        for trip in all_work_trips:
+            if start_date == trip.departure_datetime.date():
+                # need to do a for loop for all employees
+
+                # changing crew_members to list, need to first check if empty
+                if not trip.crew_members == "":
+                    crew_members_list = trip.crew_members.split(',')
+
+                    for member in crew_members_list:
+                        print(f"adding member with id {member} to list")
+                        all_work_trips_in_day.append(
+                            {'employee_id': str(member), 'destination': trip.destination})
+
+        return all_work_trips_in_day

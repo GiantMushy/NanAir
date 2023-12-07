@@ -125,10 +125,6 @@ class LogicLayerAPI:
         self.work_trip_logic.add_work_trip(
             destination, departure_datetime, return_datetime, crew_members)
 
-    def get_mock_destinations(self):
-        '''Mocking destinations data'''
-        return self.work_trip_logic.get_mock_destinations()
-
     def list_all_work_trips(self):
         '''
         Returns, return: A list of all WorkTrip Objects.
@@ -172,6 +168,15 @@ class LogicLayerAPI:
         :return: Employee object if found, None otherwise.
         """
         return self.employee_logic.find_employee_by_id(employee_id)
+
+    def list_employees_working_and_destinations(self, string_date):
+        return self.work_trip_logic.list_employees_working_and_destinations(string_date)
+
+    def list_all_busy_employees(self, string_date):
+        return self.work_trip_logic.list_all_busy_employees(string_date)
+
+    def list_all_available_employees(self, string_date):
+        return self.work_trip_logic.list_all_available_employees(string_date)
 
     ############################## Destination Manager Logic ###############################
 
