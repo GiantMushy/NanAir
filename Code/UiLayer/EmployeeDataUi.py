@@ -21,17 +21,24 @@ class EmployeeDataUI:
         print(self.PrintUi.allign_left(" 0 : Back       q : exit       00 : Create New Employee      <ID> : Edit Employee Data"))
         print(self.PrintUi.end_line())
 
+    def innitiate_and_switch_lists(self, employee_type):
+        temp_list_data = self.Logic.list_all_employees()
+        if employee_type == 0:
+            return self.Logic.object_list_to_dict_list(temp_list_data)
+        elif employee_type == 1:
+            return self.Logic.list_all_pilots()
+        elif employee_type == 2:
+            return self.Logic.list_all_flight_attendants()
+
     def input_prompt(self):
         '''Starting function for EmployeeDataUI'''
-        temp_list_data = self.Logic.list_all_employees()
-        all_employee_data = self.Logic.object_list_to_dict_list(temp_list_data)
-        all_pilot_data = self.Logic.list_all_pilots()
-        all_flight_attendant_data = self.Logic.list_all_flight_attendants()
-
-        printed_dicts = all_employee_data
-        employee_type = ["Employees", " A : Show Pilots               S : Show Flight-Attendants"]
+        employee_type = 0 #0 = all ---- 1 = Pilots -----2 = Flight Attendants
+        employee_type_prints = [["Employees", " A : Show Pilots               S : Show Flight-Attendants"],
+                                ["Pilots", " D : Show All Employees        S : Show Flight-Attendants"],
+                                ["Flight Attendants", " A : Show Pilots               D : Show All Employees"]]
         while True:
-            self.employee_data_output(printed_dicts, employee_type)
+            printed_dicts = self.innitiate_and_switch_lists(employee_type)
+            self.employee_data_output(printed_dicts, employee_type_prints[employee_type])
             command = input("Enter you command: ")            
 
             if command == "0":
@@ -45,14 +52,11 @@ class EmployeeDataUI:
                         edit = EmployeeDataEditUI(dict)
                         edit.input_prompt()
             elif command == "a":
-                printed_dicts = all_pilot_data
-                employee_type = ["Pilots", " D : Show All Employees        S : Show Flight-Attendants"]
+                employee_type = 1
             elif command == "s":
-                printed_dicts = all_flight_attendant_data
-                employee_type = ["Flight Attendants", " A : Show Pilots               D : Show All Employees"]
+                employee_type = 2
             elif command == "d":
-                printed_dicts = all_employee_data
-                employee_type = ["Employees", " A : Show Pilots               S : Show Flight-Attendants"]
+                employee_type = 0
             elif command == "q":
                 exit()
             else:

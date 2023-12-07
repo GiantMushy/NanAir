@@ -12,4 +12,4 @@ empl_data = EmployeeDataUI()
 dest_data = DestinationDataUI()
 air_data = AirplaneDataUI()
 
-air_data.input_prompt()
+login.input_prompt()
