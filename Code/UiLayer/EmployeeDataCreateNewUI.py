@@ -122,7 +122,7 @@ class EmployeeDataCreateNewUI:
         print(self.PrintUi.allign_left(f"    {self.new_employee[1]}"))
         print(self.PrintUi.allign_left(f"    {self.new_employee[2]}"))
         print(self.PrintUi.allign_left(f"    {self.new_employee[3]}"))
-        print(self.PrintUi.allign_left("--> Input Phone Number (xxx xxxx)"))
+        print(self.PrintUi.allign_left("--> Input Phone Number"))
         print(self.PrintUi.allign_left("    Home Address"))
         print(self.PrintUi.allign_left("    Email"))
         print(self.PrintUi.allign_left("    Home Phone"))
