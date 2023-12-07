@@ -57,15 +57,16 @@ class IsChecks:
     def is_social_security_number(self, social_security_number):
         if not social_security_number.replace(" ", "").isdigit():
             raise ValueError("social_security_number must be a positive integer")
+        social_security_number = social_security_number.replace(" ", "") 
         try:
-            social_security_number = int(social_security_number.replace(" ", ""))
+            social_security_number_int = int(social_security_number)
         except:
             raise ValueError("social_security_number must be numeric")
-        if len(str(social_security_number)) != 10:
+        if len(social_security_number) != 10:
             raise ValueError("social_security_number must be 10 digits")
-        if social_security_number[0:1] > 31 or social_security_number[2:3] > 12 or social_security_number[-1] != 0 or social_security_number[-1] != 9:
+        if int(social_security_number[0:2]) > 31 or int(social_security_number[2:4]) > 12 or (social_security_number[-1] != "0" and social_security_number[-1] != "9"):
             raise ValueError("social_security_number must be a valid date")
-        if social_security_number[4:5] > 10 and social_security_number[-1] == 0:
+        if int(social_security_number[4:6]) > 10 and social_security_number[-1] == "0":
             raise ValueError("Birth dat in social_security_number is too young or not born yet")
         
     def is_type(self, Type):

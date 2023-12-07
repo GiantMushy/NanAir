@@ -232,25 +232,25 @@ class LogicLayerAPI:
     ############################## Input Varification ###############################
 
     def is_city(self, City):
-        return self.checks.is_city(City)
+        return self.check.is_city(City)
 
     def is_airport(self, Airport):
-        return self.checks.is_airport(Airport)
+        return self.check.is_airport(Airport)
 
     def is_country(self, Country):
-        return self.checks.is_country(Country)
+        return self.check.is_country(Country)
 
     def is_distance(self, Distance):
-        return self.checks.is_distance(Distance)
+        return self.check.is_distance(Distance)
 
     def is_travel_time(self, Travel_Time):
-        return self.checks.is_travel_time(Travel_Time)
+        return self.check.is_travel_time(Travel_Time)
 
     def is_contact_name(self, Contact_Name):
-        return self.checks.is_contact_name(Contact_Name)
+        return self.check.is_contact_name(Contact_Name)
 
     def is_contact_phone_number(self, Contact_Phone_Number):
-        return self.checks.is_contact_phone_number(Contact_Phone_Number)
+        return self.check.is_contact_phone_number(Contact_Phone_Number)
     
     def is_name(self, Name):
         return self.check.is_name(Name)
