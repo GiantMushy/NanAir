@@ -15,9 +15,9 @@ class EmployeeData:
         self.ensure_file_exists()
 
     def ensure_file_exists(self):
-        """
+        '''
         Check if CSV files exist, creating them if not with headers.
-        """
+        '''
         self.create_file_if_not_exists(self.employee_filename, ['id', 'name', 'social_security_number',
                                                                 'address', 'mobile_phone_number',
                                                                 'email_address', 'home_phone_number'])
@@ -33,10 +33,11 @@ class EmployeeData:
                 writer.writeheader()
 
     def read_all_employees(self):
-        """
+        '''
         Read all employees from the Employee CSV file and return them as a list of Employee objects.
-        :return: List of Employee objects.
-        """
+
+        Returns, return: List of Employee objects.
+        '''
         employees = []
         try:
             with open(self.employee_filename, mode='r', newline='', encoding='utf-8') as file:
@@ -51,10 +52,11 @@ class EmployeeData:
         return employees
 
     def read_all_pilots(self):
-        """
+        '''
         Read all pilots from the Pilot CSV file and return them as a list of Pilot objects.
-        :return: List of Pilot objects.
-        """
+
+        Returns, return: List of Pilot objects.
+        '''
         pilots = []
         try:
             with open(self.pilot_filename, mode='r', newline='', encoding='utf-8') as file:
@@ -70,10 +72,11 @@ class EmployeeData:
         return pilots
 
     def read_all_flight_attendants(self):
-        """
+        '''
         Read all flight attendants from the FlightAttendant CSV file and return them as a list of FlightAttendant objects.
-        :return: List of FlightAttendant objects.
-        """
+
+        Return, return: List of FlightAttendant objects.
+        '''
         flight_attendants = []
         try:
             with open(self.flight_attendant_filename, mode='r', newline='', encoding='utf-8') as file:
@@ -89,10 +92,11 @@ class EmployeeData:
         return flight_attendants
 
     def add_employee(self, employee):
-        """
+        '''
         Add a new employee to the CSV file.
+
         :param employee: Employee object to be added.
-        """
+        '''
 
         try:
             with open(self.employee_filename, mode='a', newline='', encoding='utf-8') as file:
@@ -106,10 +110,11 @@ class EmployeeData:
                 f"An error occurred while writing to the file: {e}")
 
     def modify_employee_data(self, updated_employees):
-        """
+        '''
         Write the updated list of employees to the CSV file.
+
         :param updated_employees: List of Employee objects with updated information.
-        """
+        '''
         try:
             with open(self.employee_filename, mode='w', newline='', encoding='utf-8') as file:
                 if updated_employees:
@@ -123,17 +128,19 @@ class EmployeeData:
                 f"An error occurred while writing to the file: {e}")
 
     def add_pilot(self, pilot):
-        """
+        '''
         Add a new pilot to the Pilot CSV file.
+
         :param pilot: Pilot object to be added.
-        """
+        '''
         self.add_record(self.pilot_filename, pilot)
 
     def add_flight_attendant(self, flight_attendant):
-        """
+        '''
         Add a new flight attendant to the FlightAttendant CSV file.
+
         :param flight_attendant: FlightAttendant object to be added.
-        """
+        '''
         self.add_record(self.flight_attendant_filename, flight_attendant)
 
     def add_record(self, filename, record):

@@ -13,12 +13,11 @@ class WorkTripLogic:
         self.employee_manager = EmployeeManagerLogic()
 
     def generate_unique_work_trip_id(self):
-        """
+        '''
         Generates a unique work trip ID.
-        If no work trips exist, starts from '001'.
-        Otherwise, increments the maximum existing ID by 1.
-        :return: A string representing the unique ID.
-        """
+
+        Returns, return: Unique ID string
+        '''
         work_trips = self.work_trip_data.read_all_work_trips()
         if not work_trips:
             return "001"
@@ -28,16 +27,16 @@ class WorkTripLogic:
         return str(new_id).zfill(3)
 
     def add_work_trip(self, destination, departure_datetime, return_datetime, crew_members=None):
-        """
-        Adds a new work trip to the system.
-        Validates required fields before adding.
+        '''
+        Adds a new work trip.
 
         :param destination: Destination object of the work trip.
         :param departure_datetime: Departure date and time. In string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13"
         :param return_datetime: Return date and time. In string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13"
         :param crew_members: String comma seperated list of crew member IDs (optional). f.x. "001,002,003"
+
         :raises ValueError: If required fields are missing or empty.
-        """
+        '''
 
         # date cannot be in the past, return_datetime cannot be less than departure_datetime
         if not destination or not departure_datetime or not return_datetime:
@@ -80,14 +79,22 @@ class WorkTripLogic:
         self.work_trip_data.add_work_trip(new_work_trip)
 
     def list_all_work_trips(self):
-        """Returns a list of all work trips."""
+        '''
+        Returns, return: A list of all WorkTrip Objects.
+        '''
         return self.work_trip_data.read_all_work_trips()
 
     def get_mock_destinations(self):
+        '''Mocking destinations data'''
         return self.work_trip_data.get_mock_destinations()
 
     def add_crew_member(self, work_trip_id, employee_id):
+        '''
+        Adds a crew member to a WorkTrip object
 
+        :param work_trip_id: The ID of the WorkTrip for the Employee ID to be added to
+        :param employee_id: The ID of the employee to be added
+        '''
         # check if employee is employee
         if not self.employee_manager.is_employee(employee_id):
             raise ValueError(
@@ -123,12 +130,27 @@ class WorkTripLogic:
         self.work_trip_data.update_work_trip_data(all_work_trips_updated)
 
     def validate_employee_availability(self):
-        '''wait for ValidationService to be implemented'''
+        '''wait for ValidationService to be implemented
+        should be one for loop i think, read all work trips
+        for each work trip, check if the employee_id given to check 
+        is in the crew of any trips happening at a certain day/interval
+        which is given. 
+        '''
         return True
 
     def validate_trip_validity(self, work_trip):
-        '''wait for ValidationService to be implemented'''
+        '''wait for ValidationService to be implemented
+        A simple way to do this would be to obtain the members_crew of the work_trip and splitting
+        the employee id's into a list, by splitting at the comma (split(,)). 
+        Then iterating through the employee id's and gather all the pilots and flight attendants
+        into seperate lists, using the is_pilot and is_flight_attendant which can be fetched
+        in the LogicLayerAPI.
+        and then using the is_captain and is senior flight attendant
+        of LogicLayerAPI. ()'''
         # implement with import random 50 50 chance of returning true or false
+        # each work trip should have at least two pilots (one being a captain)
+        # and at least one flight attendant (one being a senior attendant).
+
         zero_to_one = randint(0, 1)
         if zero_to_one == 0:
             return False
@@ -166,6 +188,13 @@ class WorkTripLogic:
         return work_trips_in_period
 
     def create_recurring_work_trips(self, work_trip_id, weekly_or_daily, number_of_recurrences):
+        '''
+        Creates recurring WorkTrips of given WorkTrip either weekly or daily for a certain amount of times.
+
+        :param work_trip_id: The ID of the work trip to be copied
+        :param weekly_or_daily: A string either "weekly" or "daily"
+        :param number_of_recurrunces: The number of times the work trip should be copied, (x days or x weeks)
+        '''
         # takes in either weekly or daily, and number of recurrences and work trip to be repeated
 
         # need to first obtain dates to be repeated and then use timedelta to add 1 day to it or 7 days.
@@ -198,4 +227,5 @@ class WorkTripLogic:
                 f"WorkTrip with ID {work_trip_id} not found in CSV")
 
     def correct_datetime_format(self, datetime_str):
+        '''Helper function for create_recurring_work_trips to correct datetime format'''
         return datetime.strftime(datetime_str, '%Y-%m-%d %H:%M')

@@ -10,7 +10,9 @@ class WorkTripData:
         self.ensure_file_exists()
 
     def ensure_file_exists(self):
-        """Check if the WorkTrip CSV file exists, creating one if not with headers."""
+        '''
+        Check if CSV files exist, creating them if not with headers.
+        '''
         if not os.path.exists(self.work_trip_filename):
             with open(self.work_trip_filename, mode='w', newline='', encoding='utf-8') as file:
                 writer = csv.DictWriter(file, fieldnames=[
@@ -18,7 +20,11 @@ class WorkTripData:
                 writer.writeheader()
 
     def add_work_trip(self, work_trip):
-        """Add a new work trip to the CSV file."""
+        '''
+        Add a new work tirp to the CSV file.
+
+        :param work_trip: WorkTrip object to be added.
+        '''
         try:
             with open(self.work_trip_filename, mode='a', newline='', encoding='utf-8') as file:
                 writer = csv.DictWriter(
@@ -29,12 +35,11 @@ class WorkTripData:
                 f"An error occurred while writing to the WorkTrip file: {e}")
 
     def read_all_work_trips(self):
-        """
-        Reads all work trips from a file and returns a list of WorkTrip objects.
+        '''
+        Returns a list of WorkTrip objects.
 
-        Returns:
-            list: A list of WorkTrip objects representing all the work trips read from the file.
-        """
+        Returns, list: A list of WorkTrip objects.
+        '''
         work_trips = []
         try:
             with open(self.work_trip_filename, mode='r', newline='', encoding='utf-8') as file:
@@ -63,7 +68,7 @@ class WorkTripData:
         return work_trips
 
     def get_mock_destinations(self):
-        """Temporary method to return detailed mock destinations."""
+        '''Temporary method to return detailed mock destinations.'''
         mock_destinations = [
             {
                 "country": "Greenland",
@@ -95,6 +100,8 @@ class WorkTripData:
     def update_work_trip_data(self, updated_work_trips):
         '''
         Writing updated list of Work Trips after editing
+
+        :param updated_work_trips: updated WorkTrip objects to write.
         '''
         try:
             with open(self.work_trip_filename, mode='w', newline='', encoding='utf-8') as file:
