@@ -46,9 +46,6 @@ class WorkTripData:
                 reader = csv.DictReader(file)
                 for row in reader:
 
-                    print("Departure:", row['departure_datetime'])
-                    print("Return:", row['return_datetime'])
-
                     departure_datetime = row['departure_datetime']
                     return_datetime = row['return_datetime']
 
@@ -66,36 +63,6 @@ class WorkTripData:
         except Exception as e:
             print(f"Error occurred while reading the file: {e}")
         return work_trips
-
-    def get_mock_destinations(self):
-        '''Temporary method to return detailed mock destinations.'''
-        mock_destinations = [
-            {
-                "country": "Greenland",
-                "airport": "Nuuk Airport",
-                "flight_time": "3h",
-                "distance_from_iceland": "1500km",
-                "contact_name": "John Nuuk",
-                "emergency_phone": "765467"
-            },
-            {
-                "country": "Greenland",
-                "airport": "Kulusuk Airport",
-                "flight_time": "2h 30m",
-                "distance_from_iceland": "1300km",
-                "contact_name": "Anna Kulusuk",
-                "emergency_phone": "65434"
-            },
-            {
-                "country": "Faroe Islands",
-                "airport": "Vágar Airport",
-                "flight_time": "1h 20m",
-                "distance_from_iceland": "800km",
-                "contact_name": "Ólavur Þórshöfn",
-                "emergency_phone": "298127"
-            },
-        ]
-        return mock_destinations
 
     def update_work_trip_data(self, updated_work_trips):
         '''
