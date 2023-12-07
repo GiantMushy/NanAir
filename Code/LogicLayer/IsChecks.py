@@ -94,12 +94,16 @@ class IsChecks:
         if not Email or not Email.replace(" ", "").strip("@.").isalpha():
             raise ValueError("Email must be a non-empty string of alphabetic characters")
 
-    def is_employee_type(self, Employee_Type):
-        input_str = Employee_Type.replace(" ", "").strip(self.punc).lower()
-        if not Employee_Type or not input_str == "pilot" or not input_str == "flightattendant":
+    def is_employee_type(self, employee_type):
+        if not employee_type:
+            raise ValueError("Employee Type field cannot be empty")
+        input_str = employee_type.replace(" ", "").strip(self.punc).lower()
+        if input_str != "pilot" and input_str != "flightattendant":
             raise ValueError("Employee Type must be either 'Pilot' or 'Flight Attendant'")
 
-    def is_employee_role(self, Employee_Role):
-        input_str = Employee_Role.replace(" ", "").strip(self.punc).lower()
-        if not Employee_Role or not input_str == "captain" or not input_str == "copilot" or not input_str == "seniorflightattendant" or not input_str == "flightattendant":
+    def is_employee_role(self, employee_role):
+        if not employee_role:
+            raise ValueError("Employee Role field cannot be empty")
+        input_str = employee_role.replace(" ", "").strip(self.punc).lower()
+        if input_str != "captain" and input_str != "copilot" and input_str != "seniorflightattendant" and input_str != "flightattendant":
             raise ValueError("Employee Role must be either 'Captain','Co-Pilot','Senior Flight Attendant' or 'Flight Attendant'")
