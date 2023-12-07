@@ -34,7 +34,7 @@ class MainMenuUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line()) 
-        print(self.PrintUi.allign_center("0: Back       q : exit"))
+        print(self.PrintUi.allign_center("0: Back"))
         print(self.PrintUi.end_line())
 
     def input_prompt(self):
@@ -63,6 +63,7 @@ class MainMenuUI:
             elif command == "0":
                 pass
             elif command == "q":
+                print("Goodbye")
                 exit()
             else:
                 print("Invalid input, try again")

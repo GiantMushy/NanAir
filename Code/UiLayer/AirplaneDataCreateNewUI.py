@@ -180,39 +180,66 @@ class AirplaneDataCreateNewUI:
                 else:
                     print(value_error)
                     data = input("Enter Name:")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
 
             elif n == 2:
                 self.input_current_location()
                 if input_check:
                     data = input("Enter Current Location: ")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
                 else:
                     print(value_error)
                     data = input("Enter Current Location:")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
 
             elif n == 3:
                 self.input_manufacturer()
                 if input_check:
                     data = input("Enter Manufacturer: ")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
                 else:
                     print(value_error)
                     data = input("Enter Manufacturer:")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
 
             elif n == 4:
                 self.input_type()
                 if input_check:
                     data = input("Enter Type: ")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
                 else:
                     print(value_error)
                     data = input("Enter Type:")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
 
                 
             elif n == 5:
                 self.input_seats()
                 if input_check:
                     data = input("Enter Seats: ")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
                 else:
                     print(value_error)
                     data = input("Enter Seats:")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
 
             if input_check:
                 self.new_airplane.append(data)
