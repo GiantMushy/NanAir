@@ -273,7 +273,7 @@ class EmployeeDataCreateNewUI:
 
             elif n == 3:
                 self.input_name()
-                data = input("Enter City: ")
+                data = input("Enter Name: ")
                 if data == "q":
                     print("Goodbye")
                     exit()
@@ -308,11 +308,6 @@ class EmployeeDataCreateNewUI:
                     input_check = True
                 except ValueError as e:
                     print(f"Error: {e}")
-                    input_check = False
-
-                if data.isnumeric():#------------isPhone()-------------- 
-                    input_check = True
-                else:
                     input_check = False
 
             elif n == 6:

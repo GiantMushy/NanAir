@@ -46,18 +46,18 @@ class IsChecks:
     def is_contact_phone_number(self, Contact_Phone_Number):
         if not Contact_Phone_Number.replace(" ", "").isdigit():
             raise ValueError("Phone Number must be a positive integer")
+        if len(Contact_Phone_Number) > 10:
+            raise ValueError("Phone number length cannot exceed 10 digits")
         try:
             Contact_Phone_Number = int(Contact_Phone_Number.replace(" ", ""))
         except:
             raise ValueError("Phone Number must be numeric")
-        if len(Contact_Phone_Number) > 10:
-            raise ValueError("Phone number length cannot exceed 10 digits")
 
     def is_name(self, Name):
         if not Name:
             raise ValueError("Name must be a non-empty string")
         if not Name.replace(" ", "").isalpha():
-            raise ValueError("Get out of here 'X Æ A-12' We dont allow numbers in our names")
+            raise ValueError("Get out of here 'X Æ A-12' We dont allow numbers or symbols in our names")
 
     def is_current_location(self, Current_Location):
         if not Current_Location or not Current_Location.replace(" ", "").isalpha():
