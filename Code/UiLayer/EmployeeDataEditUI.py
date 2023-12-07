@@ -2,10 +2,10 @@ from LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
 from UiLayer.PrintFunctions import PrintFunctions
 
 class EmployeeDataEditUI:
-    def __init__(self, employee = []):
+    def __init__(self, employee_id = ""):
         self.PrintUi = PrintFunctions()
         self.Logic = LogicLayerAPI()
-        self.employee = employee
+        self.employee_id = employee_id
 
     def employee_data_edit_output(self):
         '''Print sequence for editing Employee Data (initial)'''
@@ -62,6 +62,8 @@ class EmployeeDataEditUI:
     def input_prompt(self):
         '''Starting function for editing Employee Data'''
         while True:
+            employee_obj = self.Logic.find_employee_by_id(self.employee_id)
+            self.employee = self.Logic.object_to_dict(employee_obj)
             self.employee_data_edit_output()
             command = input("Enter you command: ")            
 

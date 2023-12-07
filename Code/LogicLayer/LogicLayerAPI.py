@@ -72,6 +72,14 @@ class LogicLayerAPI:
         :raises ValueError: If trying to modify restricted fields or employee not found.
         """
         return self.employee_logic.modify_employee(employee_id, **updates)
+    
+    def find_employee_by_id(self, employee_id):
+        """
+        Finds an employee by their ID.
+        :param employee_id: ID of the employee to find.
+        :return: Employee object if found, None otherwise.
+        """
+        return self.employee_logic.find_employee_by_id(employee_id)
 
     
     ############################## Destination Manager Logic ###############################
@@ -86,6 +94,14 @@ class LogicLayerAPI:
         :raises ValueError: If required fields are missing or empty.
         """
         self.destination_logic.add_destination(**kwargs)
+
+    def find_destination_by_id(self, destination_id):
+        """
+        Finds an destination by their ID.
+        :param destination_id: ID of the destination to find.
+        :return: Destination object if found, None otherwise.
+        """
+        return self.destination_logic.find_destination_by_id(destination_id)
 
 
 
@@ -111,7 +127,19 @@ class LogicLayerAPI:
         :raises ValueError: If trying to modify restricted fields or airplane not found.
         """
         return self.airplane_logic.modify_airplane(airplane_id, **updates)
+    
+    def find_airplane_by_id(self, airplane_id):
+        """
+        Finds an airplane by their ID.
+        :param airplane_id: ID of the airplane to find.
+        :return: Airplane object if found, None otherwise.
+        """
+        return self.airplane_logic.find_airplane_by_id(airplane_id)
 
     ############################## GeneralUseLogic ###############################
+
     def object_list_to_dict_list(self, object_list):
         return self.employee_logic.object_list_to_dict_list(object_list)
+    
+    def object_to_dict(self,object):
+        return self.employee_logic.object_to_dict(object)

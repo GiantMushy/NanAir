@@ -49,7 +49,7 @@ class EmployeeDataUI:
             elif command.isdigit():
                 for dict in printed_dicts:
                     if int(command) == int(dict["id"]):
-                        edit = EmployeeDataEditUI(dict)
+                        edit = EmployeeDataEditUI(dict["id"])
                         edit.input_prompt()
             elif command == "a":
                 employee_type = 1

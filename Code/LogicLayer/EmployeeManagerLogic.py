@@ -112,6 +112,9 @@ class EmployeeManagerLogic:
             dict_list.append(obj.__dict__)
 
         return dict_list
+    
+    def object_to_dict(self, object):
+        return object.__dict__
 
     def is_pilot(self, employee_id):
         """Checks if an employee is a pilot.
