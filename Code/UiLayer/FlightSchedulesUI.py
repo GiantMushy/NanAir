@@ -2,14 +2,15 @@
 from UiLayer.PrintFunctions import PrintFunctions
 
 class FlightSchedulesUI:
-    def __init__(self):
+    def __init__(self, user = ""):
         self.PrintUi = PrintFunctions()
+        self.user = user
 
     def flight_schedules_output(self):
         start_date = "08.01.24"
         end_date = "14.01.24"
         self.PrintUi.logo()
-        self.PrintUi.print_header("Flight Schedules", "left")
+        self.PrintUi.print_header(self.user + " > Flight Schedules", "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left(f"Flights Departing in the week of: {start_date} - {end_date}"))
         print(self.PrintUi.empty_line())
@@ -27,7 +28,10 @@ class FlightSchedulesUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("<Nr> : Examine Staff Status of Trip                  S : Change Schedule Duration to 1 Day"))
-        print(self.PrintUi.allign_left("   D : Create New Trip                               F : Re-Create Existing Trip"))
+        if self.user == "Trip Manager":
+            print(self.PrintUi.allign_left("   D : Create New Trip                               F : Re-Create Existing Trip"))
+        else:
+            print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("0 : Back              00 : Change Week               n : Previous Week             m : Next Week"))
         print(self.PrintUi.end_line())
