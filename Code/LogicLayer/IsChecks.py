@@ -11,6 +11,8 @@ class IsChecks:
     def is_airport(self, Airport):
         if not Airport or not Airport.replace(" ", "").isalpha():
             raise ValueError("Airport must be a non-empty string of alphabetic characters")
+        if len(Airport) > 3:
+            raise ValueError("Airport name must be input as the 3 letter abbreviation (ex. LAX, KEF)")
 
     def is_country(self, Country):
         if not Country or not Country.replace(" ", "").isalpha():
@@ -33,6 +35,9 @@ class IsChecks:
             Travel_Time = int(Travel_Time)
         except:
             raise ValueError("Travel Time and must be numeric")
+        travel_time = int(Travel_Time)
+        if travel_time > 840:
+            raise ValueError("Longest Flight in the world is 840min")
 
     def is_contact_name(self, Contact_Name):
         if not Contact_Name or not Contact_Name.replace(" ", "").isalpha():
@@ -40,15 +45,19 @@ class IsChecks:
 
     def is_contact_phone_number(self, Contact_Phone_Number):
         if not Contact_Phone_Number.replace(" ", "").isdigit():
-            raise ValueError("Contact Phone Number must be a positive integer")
+            raise ValueError("Phone Number must be a positive integer")
         try:
             Contact_Phone_Number = int(Contact_Phone_Number.replace(" ", ""))
         except:
-            raise ValueError("Contact Phone Number must be numeric")
+            raise ValueError("Phone Number must be numeric")
+        if len(Contact_Phone_Number) > 10:
+            raise ValueError("Phone number length cannot exceed 10 digits")
 
     def is_name(self, Name):
-        if not Name or not Name.replace(" ", "").isalpha():
-            raise ValueError("Name must be a non-empty string of alphabetic characters")
+        if not Name:
+            raise ValueError("Name must be a non-empty string")
+        if not Name.replace(" ", "").isalpha():
+            raise ValueError("Get out of here 'X Æ A-12' We dont allow numbers in our names")
 
     def is_current_location(self, Current_Location):
         if not Current_Location or not Current_Location.replace(" ", "").isalpha():
@@ -72,10 +81,14 @@ class IsChecks:
     def is_type(self, Type):
         if not Type:
             raise ValueError("Type must be a non-empty string")
+        if len(Type) > 15:
+            raise ValueError("Type_str cannot be longer than 15 characters")
 
     def is_manufacturer(self, Manufacturer):
-        if not Manufacturer or not Manufacturer.replace(" ", "").isalpha():
-            raise ValueError("Manufacturer must be a non-empty string of alphabetic characters")
+        if not Manufacturer:
+            raise ValueError("Manufacturer must be a non-empty string")
+        if len(Manufacturer) > 20:
+            raise ValueError("Manufacturer name cannot be longer than 20 characters")
 
     def is_capacity(self, Capacity):
         if not Capacity.isdigit():
@@ -87,13 +100,17 @@ class IsChecks:
         if Capacity > 853:
             raise ValueError("No plane in the world has a seat capacity of more than 853")
 
-    def is_address(self, adress):
-        if not adress or not adress.replace(" ", "").isalpha():
-            raise ValueError("Address must be a non-empty string of alphabetic characters")
+    def is_address(self, address):
+        if not address:
+            raise ValueError("Address must be a non-empty string")
+        if len(address) > 20:
+            raise ValueError("Address too long")
 
     def is_email(self, Email):
-        if not Email or not Email.replace(" ", "").strip("@.").isalpha():
-            raise ValueError("Email must be a non-empty string of alphabetic characters")
+        if not Email:
+            raise ValueError("Email must be a non-empty string")
+        if len(Email) > 20:
+            raise ValueError("Email is too long")
 
     def is_employee_type(self, employee_type):
         if not employee_type:
