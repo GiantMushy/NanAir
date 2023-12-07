@@ -230,7 +230,11 @@ class WorkTripLogic:
 
     def list_all_busy_employees(self, string_date):
         '''
-        List all employees who are not working at a certain date. 
+        List all employees who are working at a certain date. 
+
+        :param string_date: The date to check, in string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13" 
+
+        Returns, return: a list of employee ids busy on the date
 
         '''
         start_date = datetime.strptime(string_date, '%Y-%m-%d %H:%M')
@@ -245,6 +249,35 @@ class WorkTripLogic:
                     crew_members_list = trip.crew_members.split(',')
 
         return crew_members_list
+
+    def list_all_available_employees(self, string_date):
+        '''
+        List all employees who are not working at a certain date. 
+
+        :param string_date: The date to check, in string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13" 
+
+        Returns, return: a list of employee ids busy on the date
+
+        '''
+
+        busy_employees = self.list_all_busy_employees(string_date)
+
+        all_employees = self.work_trip_data.read_all_employees()
+
+        all_employee_ids = []
+
+        for emp in all_employees:
+            print(
+                f"inside for loop pop all employees, adding id {emp.id} to all employee id's")
+            all_employee_ids.append(emp.id)
+
+        available_employees = []
+
+        for emp in all_employee_ids:
+            if not emp in busy_employees:
+                available_employees.append(emp)
+
+        return available_employees
 
     def list_employees_working_and_destinations(self, string_date):
         '''
