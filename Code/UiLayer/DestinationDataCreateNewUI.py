@@ -221,11 +221,13 @@ class DestinationDataCreateNewUI:
     def create_new_sequence(self):
         n = 1
         input_check = True
-        value_error = "Value Error string goes here"
         while n < 8:
             if n == 1:
                 self.input_city()
                 data = input("Enter City: ")
+                if data == "q":
+                    print("Goodbye")
+                    exit()
                 try:
                     self.Logic.is_destination(data)
                     input_check = True
@@ -236,6 +238,9 @@ class DestinationDataCreateNewUI:
             elif n == 2:
                 self.input_airport()
                 data = input("Enter Airport: ")
+                if data == "q":
+                    print("Goodbye")
+                    exit()
                 try:
                     self.Logic.is_airport(data)
                     input_check = True
@@ -246,6 +251,9 @@ class DestinationDataCreateNewUI:
             elif n == 3:
                 self.input_country()
                 data = input("Enter Country: ")
+                if data == "q":
+                    print("Goodbye")
+                    exit()
                 try:
                     self.Logic.is_country(data)
                     input_check = True
@@ -256,6 +264,9 @@ class DestinationDataCreateNewUI:
             elif n == 4:
                 self.input_distance()
                 data = input("Enter Distance: ")
+                if data == "q":
+                    print("Goodbye")
+                    exit()
                 try:
                     self.Logic.is_distance(data)
                     input_check = True
@@ -266,6 +277,9 @@ class DestinationDataCreateNewUI:
             elif n == 5:
                 self.input_travel_time()
                 data = input("Enter Travel Time: ")
+                if data == "q":
+                    print("Goodbye")
+                    exit()
                 try:
                     self.Logic.is_travel_time(data)
                     input_check = True
@@ -276,6 +290,9 @@ class DestinationDataCreateNewUI:
             elif n == 6:
                 self.input_emerg_contact_name()
                 data = input("Enter Contact Name: ")
+                if data == "q":
+                    print("Goodbye")
+                    exit()
                 try:
                     self.Logic.is_contact_name(data)
                     input_check = True
@@ -286,6 +303,9 @@ class DestinationDataCreateNewUI:
             elif n == 7:
                 self.input_emerg_contact_phone_number()
                 data = input("Enter Phone Number: ")
+                if data == "q":
+                    print("Goodbye")
+                    exit()
                 try:
                     self.Logic.is_contact_phone_number(data)
                     input_check = True
@@ -324,6 +344,7 @@ class DestinationDataCreateNewUI:
             elif command == "4": #discard and exit
                 break    
             elif command == "q":
+                print("Goodbye")
                 exit()
             else:
                 print("Invalid input, try again")

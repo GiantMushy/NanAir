@@ -174,6 +174,9 @@ class AirplaneDataCreateNewUI:
                 self.input_name()
                 if input_check:
                     data = input("Enter Name: ")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
                 else:
                     print(value_error)
                     data = input("Enter Name:")
@@ -242,6 +245,7 @@ class AirplaneDataCreateNewUI:
             elif command == "4": #discard and exit
                 break    
             elif command == "q":
+                print("Goodbye")
                 exit()
             else:
                 print("Invalid input, try again")

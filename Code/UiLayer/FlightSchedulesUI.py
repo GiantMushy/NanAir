@@ -1,9 +1,10 @@
-#from logic_ui_wrapper import wrapper
+from LogicLayer.LogicLayerAPI import LogicLayerAPI
 from UiLayer.PrintFunctions import PrintFunctions
 
 class FlightSchedulesUI:
     def __init__(self, user = ""):
         self.PrintUi = PrintFunctions()
+        self.Logic = LogicLayerAPI()
         self.user = user
 
     def flight_schedules_output(self):
@@ -48,5 +49,8 @@ class FlightSchedulesUI:
                 pass
             elif command == "00":
                 pass
+            elif command == "q":
+                print("Goodbye")
+                exit()
             else:
                 print("Invalid input, try again")
