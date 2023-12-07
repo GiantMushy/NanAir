@@ -79,3 +79,15 @@ Matthías: work trips
 Edda: Validator 
 
 Markmið dagsins gekk allt í lagi smá erfiðleikar við að ná að fullklára destinations og add airplaines en erum að vinna í þessu og mun vonandi vera tilbúið á morgun
+
+7.12.23
+
+Markmið dagsins var að klára worktrips og einnig byrja á að debugga employees, destination og airplaines
+
+Matthías: Work trips 
+Þorvarður: Debugging Ui layer
+Benjamín: Debugg
+Edda: Validation service
+Oliver: Debugging in terminal
+
+Það gekk mjög vel í dag náðum að finna fullt af villum og laga þær og worktrips ætti að vera tilbúið fyrir Ui layerinn
