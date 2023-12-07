@@ -1,9 +1,13 @@
 from LogicLayer.EmployeeManagerLogic import EmployeeManagerLogic
+from LogicLayer.DestinationManagerLogic import DestinationManagerLogic
+from LogicLayer.AirplaneManagerLogic import AirplaneManagerLogic
 
 
 class LogicLayerAPI:
     def __init__(self):
         self.employee_logic = EmployeeManagerLogic()
+        self.destination_logic = DestinationManagerLogic()
+        self.airplane_logic = AirplaneManagerLogic()
 
     ############################## EmployeeManagerLogic ###############################
     def add_employee(self, employee_type, employee_role, **kwargs):
@@ -68,6 +72,95 @@ class LogicLayerAPI:
         :raises ValueError: If trying to modify restricted fields or employee not found.
         """
         return self.employee_logic.modify_employee(employee_id, **updates)
+    
+    def find_employee_by_id(self, employee_id):
+        """
+        Finds an employee by their ID.
+        :param employee_id: ID of the employee to find.
+        :return: Employee object if found, None otherwise.
+        """
+        return self.employee_logic.find_employee_by_id(employee_id)
+
+    
+    ############################## Destination Manager Logic ###############################
+    def list_all_destinations(self):
+        """Returns a list of all destinations."""
+        return self.destination_logic.list_all_destinations()
+    
+    def add_destination(self, **kwargs):
+        """
+        Adds a new destination to the system.
+        Validates required fields before adding.
+        :raises ValueError: If required fields are missing or empty.
+        """
+        self.destination_logic.add_destination(**kwargs)
+
+    def find_destination_by_id(self, destination_id):
+        """
+        Finds an destination by their ID.
+        :param destination_id: ID of the destination to find.
+        :return: Destination object if found, None otherwise.
+        """
+        return self.destination_logic.find_destination_by_id(destination_id)
+
+
+
+    ############################## Airplane Manager Logic ###############################
+    def list_all_airplanes(self):
+        """Returns a list of all airplanes."""
+        return self.airplane_logic.list_all_airplanes()
+    
+    def add_airplane(self, **kwargs):
+        """
+        Adds a new airplane to the system.
+        Validates required fields before adding.
+        :raises ValueError: If required fields are missing or empty.
+        """
+        self.airplane_logic.add_airplane(**kwargs)
+
+    def modify_airplane(self, airplane_id, **updates):
+        """
+        Modifies the attributes of an existing airplane.
+
+        :param airplane_id: ID of the airplane to be modified.
+        :param updates: Dictionary of updates to be applied. (modify_airplane(123, tpe="1234567", current_location="New Address")
+        :raises ValueError: If trying to modify restricted fields or airplane not found.
+        """
+        return self.airplane_logic.modify_airplane(airplane_id, **updates)
+    
+    def find_airplane_by_id(self, airplane_id):
+        """
+        Finds an airplane by their ID.
+        :param airplane_id: ID of the airplane to find.
+        :return: Airplane object if found, None otherwise.
+        """
+        return self.airplane_logic.find_airplane_by_id(airplane_id)
+
+    ############################## GeneralUseLogic ###############################
 
     def object_list_to_dict_list(self, object_list):
         return self.employee_logic.object_list_to_dict_list(object_list)
+    
+    def object_to_dict(self,object):
+        return self.employee_logic.object_to_dict(object)
+    
+    def is_destination(self, City):         
+        return self.destination_logic.is_destination(City)
+    
+    def is_airport(self, Airport):         
+        return self.destination_logic.is_airport(Airport)          
+    
+    def is_country(self, Country):         
+        return self.destination_logic.is_country(Country)          
+    
+    def is_distance(self, Distance):         
+        return self.destination_logic.is_distance(Distance)          
+    
+    def is_travel_time(self, Travel_Time):         
+        return self.destination_logic.is_travel_time(Travel_Time)          
+    
+    def is_contact_name(self, Contact_Name):         
+        return self.destination_logic.is_contact_name(Contact_Name)          
+    
+    def is_contact_phone_number(self, Contact_Phone_Number):         
+        return self.destination_logic.is_contact_phone_number(Contact_Phone_Number)
