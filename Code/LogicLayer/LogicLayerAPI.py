@@ -125,10 +125,6 @@ class LogicLayerAPI:
         self.work_trip_logic.add_work_trip(
             destination, departure_datetime, return_datetime, crew_members)
 
-    def get_mock_destinations(self):
-        '''Mocking destinations data'''
-        return self.work_trip_logic.get_mock_destinations()
-
     def list_all_work_trips(self):
         '''
         Returns, return: A list of all WorkTrip Objects.

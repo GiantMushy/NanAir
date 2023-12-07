@@ -6,7 +6,14 @@ from datetime import datetime, timedelta
 def main():
     work_trip_logic = LogicLayerAPI()
 
-    destinations = work_trip_logic.get_mock_destinations()
+    print("adding some destinations")
+
+    work_trip_logic.add_destination(city="Matta city", airport="Matti airport", country="Mattaland",
+                                    distance='6', travel_time='200',	contact_name="Helgi", contact_phone_number="9876543")
+
+    destinations_ = work_trip_logic.list_all_destinations()
+
+    destinations = work_trip_logic.object_list_to_dict_list(destinations_)
 
     for dest in destinations:
         print(dest)

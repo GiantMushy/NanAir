@@ -86,10 +86,6 @@ class WorkTripLogic:
         '''
         return self.work_trip_data.read_all_work_trips()
 
-    def get_mock_destinations(self):
-        '''Mocking destinations data'''
-        return self.work_trip_data.get_mock_destinations()
-
     def add_crew_member(self, work_trip_id, employee_id):
         '''
         Adds a crew member to a WorkTrip object
