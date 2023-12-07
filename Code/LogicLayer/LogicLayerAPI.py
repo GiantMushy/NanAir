@@ -143,3 +143,24 @@ class LogicLayerAPI:
     
     def object_to_dict(self,object):
         return self.employee_logic.object_to_dict(object)
+    
+    def is_destination(self, City):         
+        return self.destination_logic.is_destination(City)
+    
+    def is_airport(self, Airport):         
+        return self.destination_logic.is_airport(Airport)          
+    
+    def is_country(self, Country):         
+        return self.destination_logic.is_country(Country)          
+    
+    def is_distance(self, Distance):         
+        return self.destination_logic.is_distance(Distance)          
+    
+    def is_travel_time(self, Travel_Time):         
+        return self.destination_logic.is_travel_time(Travel_Time)          
+    
+    def is_contact_name(self, Contact_Name):         
+        return self.destination_logic.is_contact_name(Contact_Name)          
+    
+    def is_contact_phone_number(self, Contact_Phone_Number):         
+        return self.destination_logic.is_contact_phone_number(Contact_Phone_Number)
