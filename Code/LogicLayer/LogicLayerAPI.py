@@ -11,7 +11,7 @@ class LogicLayerAPI:
         self.work_trip_logic = WorkTripLogic()
         self.destination_logic = DestinationManagerLogic()
         self.airplane_logic = AirplaneManagerLogic()
-        self.checks = IsChecks()
+        self.check = IsChecks()
 
     ############################## EmployeeManagerLogic ###############################
     def add_employee(self, employee_type, employee_role, **kwargs):
