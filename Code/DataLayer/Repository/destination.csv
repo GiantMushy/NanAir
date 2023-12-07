@@ -1,6 +1,6 @@
-Id, City, Airport, Country, Distance (km), Travel time (minutes), contact name, contact number
-001, Longyearbyen, Svalbard Airport, Svalbard, 1992, 180, Harry, 112
-002, Torshavn, Vágar Airport, Faroe Islands, 778, 90, Steve, 112
-003, Kulusuk, Svalbard Airport, Greenland, 1287, 85, Carolyn, 112
-004, Nuuk, Kulusuk Airport, Greenland, 1432, 137, Oliver, 112
-005, Tingwall, Tingwall Airport, Shetland Islands, 1137, 80, Bruno, 112
+Id,city,airport,country,distance,travel_time,contact_name,contact_number
+001,Longyearbyen,Svalbard Airport,Svalbard,1992,180,Harry,112
+002,Torshavn,Vágar Airport,Faroe Islands,778,90,Steve,112
+003,Kulusuk,Svalbard Airport,Greenland,1287,85,Carolyn,112
+004,Nuuk,Kulusuk Airport,Greenland,1432,137,Oliver,112
+005,Tingwall,Tingwall Airport,Shetland Islands,1137,80,Bruno,112

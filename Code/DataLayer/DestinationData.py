@@ -27,10 +27,6 @@ class Destination_Data:
                 writer.writeheader()
 
     def read_all_destinations(self):
-        """
-        Read all destinations from the CSV file and return them as a list of Destination objects.
-        :return: List of Destination objects.
-        """
         destinations = []
         try:
             with open(self.filename, mode='r', newline='', encoding='utf-8') as file:

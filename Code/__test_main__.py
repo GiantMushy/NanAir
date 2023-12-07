@@ -69,17 +69,19 @@ def add_destination(destination_manager):
         try: 
             contact_phone_number = input("Enter Contact Phone Number: ")
             destination_manager.is_contact_phone_number(contact_phone_number)
-            break
-        except ValueError as error:
-            print("ValueError:", error)
-    while True:    
-        try:
             destination_manager.add_new_destination(city, airport, country, distance, travel_time, contact_name, contact_phone_number)
             print("Destination added successfully!")
             break
         except Exception as error:
             print("Exception:", error)
 
+
+# def list_all_destinations(destination_manager):
+#     # Call the logic function to list all destinations
+#     destinations = destination_manager.list_all_destinations()
+#     print("\nAll Destinations:")
+#     for dest in destinations:
+#         print(dest.__dict__)
 
 def list_all_destinations(destination_manager):
     # Call the logic function to list all destinations

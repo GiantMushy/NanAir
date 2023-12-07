@@ -1,9 +1,10 @@
 from DataLayer.EmployeeData import EmployeeData
-
+from DataLayer.DestinationData import Destination_Data
 
 class DataLayerAPI:
     def __init__(self):
         self.employee_data = EmployeeData()
+        self.destination_data = Destination_Data()
 
     def read_all_employees(self):
         """
@@ -53,3 +54,24 @@ class DataLayerAPI:
         :param flight_attendant: FlightAttendant object to be added.
         """
         self.employee_data.add_flight_attendant(flight_attendant)
+
+    def read_all_destinations(self):
+        """
+        Read all destinations from the Destination CSV file and return them as a list of Destination objects.
+        :return: List of Destination objects.
+        """
+        return self.destination_data.read_all_destinations()
+
+    def add_destination(self, destination):
+        """
+        Add a new destination to the Destination CSV file.
+        :param destination: Destination object to be added.
+        """
+        self.destination_data.add_destination(destination)
+
+    def modify_destination_data(self, updated_destinations):
+        """
+        Write the updated list of destinations to the CSV file.
+        :param updated_destinations: List of Destination objects with updated information.
+        """
+        self.destination_data.modify_destination_data(updated_destinations)

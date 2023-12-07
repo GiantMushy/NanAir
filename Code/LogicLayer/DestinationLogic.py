@@ -1,15 +1,14 @@
-from DataLayer.DestinationData import Destination_Data
+from DataLayer.DataLayerAPI import DataLayerAPI
 from Models.Destination import Destination
 
 class DestinationManagerLogic:
     def __init__(self):
-        self.destination_data = Destination_Data()
+        self.destination_data = DataLayerAPI()
 
     def list_all_destinations(self):
         return self.destination_data.read_all_destinations()
 
     def generate_unique_destination_id(self):
-    
         destinations = self.destination_data.read_all_destinations()
         
         if not destinations:
@@ -23,12 +22,15 @@ class DestinationManagerLogic:
     def is_destination(self, City):
         if not City or not City.replace(" ", "").isalpha():
             raise ValueError("City must be a non-empty string of alphabetic characters")
+    
     def is_airport(self, Airport):
         if not Airport or not Airport.replace(" ", "").isalpha():
             raise ValueError("Airport must be a non-empty string of alphabetic characters")
+    
     def is_country(self, Country):
         if not Country or not Country.replace(" ", "").isalpha():
             raise ValueError("Country must be a non-empty string of alphabetic characters")
+    
     def is_distance(self, Distance):
         if not Distance.isdigit():
             raise ValueError("Distance must be a positive integer")
@@ -50,6 +52,7 @@ class DestinationManagerLogic:
     def is_contact_name(self, Contact_Name):
         if not Contact_Name or not Contact_Name.replace(" ", "").isalpha():
             raise ValueError("Contact Name must be a non-empty string of alphabetic characters")
+    
     def is_contact_phone_number(self, Contact_Phone_Number):
         if not Contact_Phone_Number.replace(" ", "").isdigit():
             raise ValueError("Contact Phone Number must be a positive integer")
@@ -58,9 +61,6 @@ class DestinationManagerLogic:
         except:
             raise ValueError("Contact Phone Number must be numeric")
     
-        # Validate that Distance, Travel_Time, and Contact_Phone_Number are digits
-        
-        # Create a new Destination object
     def add_new_destination(self, City, Airport, Country, Distance, Travel_Time, Contact_Name, Contact_Phone_Number): 
         new_destination = Destination(
             City=City,
