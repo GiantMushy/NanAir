@@ -41,6 +41,11 @@ def is_contact_name(self, Contact_Name):
         raise ValueError("Contact Name must be a non-empty string of alphabetic characters")
 
 def is_contact_phone_number(self, Contact_Phone_Number):
+        # strip "+"" only from the first character if that is the case
+    if Contact_Phone_Number[0:1] == "+":
+        Contact_Phone_Number = Contact_Phone_Number[1:]
+    if not Contact_Phone_Number <= 10:
+        raise ValueError("Contact Phone Number must be 10 digits maximum")
     if not Contact_Phone_Number.replace(" ", "").isdigit():
         raise ValueError("Contact Phone Number must be a positive integer")
     try:
@@ -69,15 +74,23 @@ def is_ssn(self, SSN):
         raise ValueError("SSN must be a valid date")
     if SSN[4:5] > 10 and SSN[-1] == 0:
         raise ValueError("Birth dat in SSN is too young or not born yet")
+    if SSN[0:1] > 30 and SSN[3] == 4 or SSN[3] == 6 or SSN[3] == 9 or SSN[2:3] == 11: 
+        raise ValueError("SSN must be a valid date")
+    if SSN[0:1] > 29 and SSN[3] == 2:
+        raise ValueError("SSN msut be a valid date")
     
 
 def is_type(self, Type):
     if not Type:
         raise ValueError("Type must be a non-empty string")
+    if not Type > 15:
+        raise ValueError("Type must be less than 15 characters")
 
 def is_manufacturer(self, Manufacturer):
     if not Manufacturer or not Manufacturer.replace(" ", "").isalpha():
         raise ValueError("Manufacturer must be a non-empty string of alphabetic characters")
+    if not Manufacturer > 20:
+        raise ValueError("Manufacturer must be less than 20 characters")
 
 def is_capacity(self, Capacity):
     if not Capacity.isdigit():
