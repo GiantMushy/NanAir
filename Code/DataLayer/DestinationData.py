@@ -1,10 +1,10 @@
 import csv
 import os
-from Models.Destination import Destination
+from Code.Models.Destination import Destination
 
 
 class DestinationData:
-    def __init__(self, destinations_filename='DataLayer/Repository/Destinations.csv'):
+    def __init__(self, destinations_filename='Code/DataLayer/Repository/Destinations.csv'):
         self.destinations_filename = destinations_filename
         self.ensure_file_exists()
 

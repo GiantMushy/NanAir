@@ -1,14 +1,14 @@
 import csv
 import os
-from Models.Employee import Employee
-from Models.Pilot import Pilot
-from Models.FlightAttendant import FlightAttendant
+from Code.Models.Employee import Employee
+from Code.Models.Pilot import Pilot
+from Code.Models.FlightAttendant import FlightAttendant
 
 
 class EmployeeData:
-    def __init__(self, employee_filename='DataLayer/Repository/Employee.csv',
-                 pilot_filename='DataLayer/Repository/Pilot.csv',
-                 flight_attendant_filename='DataLayer/Repository/FlightAttendant.csv'):
+    def __init__(self, employee_filename='Code/DataLayer/Repository/Employee.csv',
+                 pilot_filename='Code/DataLayer/Repository/Pilot.csv',
+                 flight_attendant_filename='Code/DataLayer/Repository/FlightAttendant.csv'):
         self.employee_filename = employee_filename
         self.pilot_filename = pilot_filename
         self.flight_attendant_filename = flight_attendant_filename
