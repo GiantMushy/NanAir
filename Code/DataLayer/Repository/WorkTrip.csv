@@ -1,4 +1,4 @@
-id,destination,departure_datetime,return_datetime,crew_members
+id,destination,departure_datetime,return_datetime,crew_members,airplane_id
 001,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-14 14:32,2032-11-14 17:32,"001,002"
 002,"{'country': 'Greenland', 'airport': 'Kulusuk Airport', 'flight_time': '2h 30m', 'distance_from_iceland': '1300km', 'contact_name': 'Anna Kulusuk', 'emergency_phone': '65434'}",2033-11-14 14:32,2034-11-14 17:32,"001,002,003"
 003,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-15 14:32,2032-11-15 17:32,
@@ -16,20 +16,3 @@ id,destination,departure_datetime,return_datetime,crew_members
 015,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-27 14:32,2032-11-27 17:32,
 016,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-28 14:32,2032-11-28 17:32,
 017,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-29 14:32,2032-11-29 17:32,
-018,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-14 14:32,2032-11-14 17:32,
-019,"{'country': 'Greenland', 'airport': 'Kulusuk Airport', 'flight_time': '2h 30m', 'distance_from_iceland': '1300km', 'contact_name': 'Anna Kulusuk', 'emergency_phone': '65434'}",2033-11-14 14:32,2034-11-14 17:32,"001,002,003"
-020,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-15 14:32,2032-11-15 17:32,
-021,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-16 14:32,2032-11-16 17:32,
-022,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-17 14:32,2032-11-17 17:32,
-023,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-18 14:32,2032-11-18 17:32,
-024,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-19 14:32,2032-11-19 17:32,
-025,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-20 14:32,2032-11-20 17:32,
-026,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-21 14:32,2032-11-21 17:32,
-027,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-22 14:32,2032-11-22 17:32,
-028,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-23 14:32,2032-11-23 17:32,
-029,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-24 14:32,2032-11-24 17:32,
-030,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-25 14:32,2032-11-25 17:32,
-031,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-26 14:32,2032-11-26 17:32,
-032,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-27 14:32,2032-11-27 17:32,
-033,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-28 14:32,2032-11-28 17:32,
-034,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-29 14:32,2032-11-29 17:32,
