@@ -1,3 +1,6 @@
+import datetime
+import ast
+
 class PrintFunctions:
     def __init__(self):
         pass
@@ -166,8 +169,40 @@ class PrintFunctions:
             print(self.empty_line()) #fills out UI box to correct size with empty lines
             line_count += 1
 
-    def print_flight_schedule_table(self, data, line_num):
-        pass
+#{'id': '001', 
+# 'destination': "{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}", 
+# 'departure_datetime': datetime.datetime(2032, 11, 14, 14, 32), 
+# 'return_datetime': datetime.datetime(2032, 11, 14, 17, 32), 
+# 'crew_members': '001,002'}
+
+
+    def print_flight_schedule_table(self, data, date_start, date_end, line_num):
+        line_count = 0
+        print_format = "%-5s%-20s%-20s%-15s%-15s%-15s%-15s%-0s"
+        
+        print(self.allign_left(print_format % ('Id','Departing','Destination','Date','Time','Plane','Flight Nr.','Staff Status')))
+        print(self.empty_line())
+        for dic in data:
+            destination = ast.literal_eval(dic['destination']) #translates the stringed dictionary to a literal dictionary
+            vals = []
+            for value in dic.values():
+                vals.append(value)
+            if not dic['crew_members']:
+                staff_status = 'Not Staffed'
+            elif len(dic['crew_members']) < 8:
+                staff_status = 'Not Staffed'
+            else:
+                staff_status = 'Staffed'
+            print(self.allign_left(print_format % (dic['id'], 'Reykjavik', destination['country'], 
+                                                   dic['departure_datetime'].date(), dic['departure_datetime'].time(),
+                                                   "plane", 'NA040', staff_status)))
+            print(self.allign_left(print_format % ( '', destination['country'], 'Reykjavik', 
+                                                   dic['return_datetime'].date(), dic['return_datetime'].time(),
+                                                   "plane", 'NA041', staff_status)))
+            line_count += 1
+        while line_count <= line_num:
+            print(self.empty_line()) #fills out UI box to correct size with empty lines
+            line_count += 1
 
     def print_employee_schedule_table(self,data,line_num):
         pass
