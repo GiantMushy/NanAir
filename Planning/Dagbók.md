@@ -96,11 +96,10 @@ Oliver: Debugging in terminal
 
 Markmið dagsins í dag er að reyna að byrja og klára schedule fyrir employee og flights, "identifya bugs" og laga þessi "bugs".
 
-Þorvarður: flights schedule
-Benjamín: Debugging og lagfæra
-Oliver: Debugging
-Edda: sama og í gær
+Þorvarður: Started (and almost finished) integrating FlightScheduleUI with WorkTripsLogic
+Benjamín: Debugging og lagfæra Employee/Airplane/DestinationDataUI
+Oliver: Debugging Employee/Airplane/DestinationDataUI
+Edda: Validation Service
 Matthías: buggtesting worktrips og ...
 
 Það gekk ágætlega vel í dag en verið að vinna í flights schedule og worktrips, Debugging var lagfærað smá og fleiri bugs ödduð inn á discordið.
-
