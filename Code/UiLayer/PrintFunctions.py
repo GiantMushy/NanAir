@@ -150,7 +150,7 @@ class PrintFunctions:
         line_count = 0
         print_format = "%-5s%-20s%-20s%-15s%-20s%-0s"
         
-        print(self.allign_left(print_format % ("ID", "City", "Current Location", "Type", "Manufacturer", "Capacity")))
+        print(self.allign_left(print_format % ("ID", "Name", "Current Location", "Type", "Manufacturer", "Capacity")))
         print(self.empty_line())
         for dic in data:
             vals = []
