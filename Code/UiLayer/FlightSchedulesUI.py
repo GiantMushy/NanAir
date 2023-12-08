@@ -22,7 +22,6 @@ class FlightSchedulesUI:
             print(self.PrintUi.allign_left("   A : Create New Trip                               S : Re-Create Existing Trip"))
         else:
             print(self.PrintUi.empty_line())
-
         if not date_end:
             print(self.PrintUi.allign_left("<Nr> : Examine Staff Status of Trip                  D : Change Schedule Duration to Week"))
             print(self.PrintUi.empty_line())
@@ -31,23 +30,23 @@ class FlightSchedulesUI:
             print(self.PrintUi.allign_left("<Nr> : Examine Staff Status of Trip                  D : Change Schedule Duration to 1 Day"))
             print(self.PrintUi.empty_line())
             print(self.PrintUi.allign_left("0 : Back              00 : Change Week               n : Previous Week             m : Next Week"))
-
         print(self.PrintUi.end_line())
 
-    def innitiate_and_switch_lists(self):
-        temp_list_data = self.Logic.list_all_work_trips()
-        return self.Logic.object_list_to_dict_list(temp_list_data)
+    def innitiate_and_switch_lists(self, time, start_date,):
+        temp_list_data = self.Logic.work_trip_validity_period(time, start_date)
+        printed_data = self.Logic.object_list_to_dict_list(temp_list_data)
+        return printed_data
         #if time == 'day':
         #elif time == 'week':
         #    return self.Logic.list_all_pilots()
 
     def input_prompt(self):
         '''Starting function for EmployeeDataUI'''
-        time = 'week'
-        date_start = '08.01.23'
-        date_end = '14.01.23'
+        time = 'weekly'
+        date_start = '2032-11-14 00:00'
+        date_end = '2032-11-20 00:00'
         while True:
-            printed_data = self.innitiate_and_switch_lists()
+            printed_data = self.innitiate_and_switch_lists(time, date_start)
             self.flight_schedules_output(printed_data, date_start, date_end)
             command = input("Enter you command: ").lower()
 
@@ -63,11 +62,24 @@ class FlightSchedulesUI:
                         print(f"gonna see staff status of {command}")
 
             elif command == "d": #change between week and day
-                pass
+                if time == 'weekly':
+                    time = 'daily'
+                    date_end = None
+                else:
+                    time = 'weekly'
+                    date_end = f'{date_start[0:5]}-{date_start[5:7]}-{int(date_start[8:10])+7} {date_start[10:]}'
             elif command == "n": #see yesterday/last week
-                pass
+                if time == 'weekly':
+                    date_start = f'{date_start[0:5]}-{date_start[5:7]}-{int(date_start[8:10])-7} {date_start[10:]}'
+                    date_end = f'{date_start[0:5]}-{date_start[5:7]}-{int(date_start[8:10])+7} {date_start[10:]}'
+                else:
+                    date_start = f'{date_start[0:5]}-{date_start[5:7]}-{int(date_start[8:10])-1} {date_start[10:]}'
             elif command == "m": #see tomorrow/next week
-                pass
+                if time == 'weekly':
+                    date_start = f'{date_start[0:5]}-{date_start[5:7]}-{int(date_start[8:10])+7} {date_start[10:]}'
+                    date_end = f'{date_start[0:5]}-{date_start[5:7]}-{int(date_start[8:10])+7} {date_start[10:]}'
+                else:
+                    date_start = f'{date_start[0:5]}-{date_start[5:7]}-{int(date_start[8:10])+1} {date_start[10:]}'
             elif command == "a":
                 if self.user == 'Trip Manager':
                     #create_new = FlightSchedulesCreateNewUI()
