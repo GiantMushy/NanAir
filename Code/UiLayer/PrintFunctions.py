@@ -140,7 +140,8 @@ class PrintFunctions:
             for n in range(len(vals)):
                 if len(vals[n]) > 18: #shorten names
                     vals[n] = self.shorten_name(vals[n], 18)
-            print(self.allign_left(print_format % (vals[0], vals[1], vals[2], vals[3], vals[4] + "km", vals[5] + "min", vals[6], vals[7])))
+            time = f'{int(vals[5])//60}hrs {int(vals[5])%60}min'
+            print(self.allign_left(print_format % (vals[0], vals[1], vals[2], vals[3], vals[4] + "km", time, vals[6], vals[7])))
             line_count += 1
         while line_count <= line_num:
             print(self.empty_line()) #fills out UI box to correct size with empty lines
