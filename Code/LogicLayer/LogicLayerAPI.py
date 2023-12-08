@@ -2,6 +2,7 @@ from LogicLayer.EmployeeManagerLogic import EmployeeManagerLogic
 from LogicLayer.WorkTripLogic import WorkTripLogic
 from LogicLayer.DestinationManagerLogic import DestinationManagerLogic
 from LogicLayer.AirplaneManagerLogic import AirplaneManagerLogic
+from LogicLayer.IsChecks import IsChecks
 
 
 class LogicLayerAPI:
@@ -10,6 +11,7 @@ class LogicLayerAPI:
         self.work_trip_logic = WorkTripLogic()
         self.destination_logic = DestinationManagerLogic()
         self.airplane_logic = AirplaneManagerLogic()
+        self.check = IsChecks()
 
     ############################## EmployeeManagerLogic ###############################
     def add_employee(self, employee_type, employee_role, **kwargs):
@@ -170,10 +172,47 @@ class LogicLayerAPI:
         return self.employee_logic.find_employee_by_id(employee_id)
 
     def list_employees_working_and_destinations(self, string_date):
+        '''
+        Lists all employee id's who are working on given date and to which destination they're going.
+
+        :param string_date: The date to check, in string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13" 
+
+        Returns, return: a list of dictionaries, with the employee_id and destination for given day.
+        '''
         return self.work_trip_logic.list_employees_working_and_destinations(string_date)
 
     def list_all_busy_employees(self, string_date):
+        '''
+        List all employees who are working at a certain date. 
+
+        :param string_date: The date to check, in string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13" 
+
+        Returns, return: a list of employee ids busy on the date
+
+        '''
         return self.work_trip_logic.list_all_busy_employees(string_date)
+
+    def list_all_available_employees(self, string_date):
+        '''
+        List all employees who are not working at a certain date. 
+
+        :param string_date: The date to check, in string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13" 
+
+        Returns, return: a list of employee ids busy on the date
+
+        '''
+        return self.work_trip_logic.list_all_available_employees(string_date)
+
+    def all_work_trips_of_employee(self, employee_id, string_date):
+        '''
+        Returns all work trips of employee id in week, the date given is the 
+        start of the week that is searched. Example: 2004-6-6 14:00, search range
+        is 2004-6-6 14:00 - 2004-6-13 14:00.
+
+        :param employee_id: ID of the employee to check.
+        :param employee_id: string date start of the week to check.
+        '''
+        return self.work_trip_logic.all_work_trips_of_employee(employee_id, string_date)
 
     ############################## Destination Manager Logic ###############################
 
@@ -229,6 +268,62 @@ class LogicLayerAPI:
         """
         return self.airplane_logic.find_airplane_by_id(airplane_id)
 
+    ############################## Input Varification ###############################
+
+    def is_city(self, City):
+        return self.check.is_city(City)
+
+    def is_airport(self, Airport):
+        return self.check.is_airport(Airport)
+
+    def is_country(self, Country):
+        return self.check.is_country(Country)
+
+    def is_distance(self, Distance):
+        return self.check.is_distance(Distance)
+
+    def is_travel_time(self, Travel_Time):
+        return self.check.is_travel_time(Travel_Time)
+
+    def is_contact_name(self, Contact_Name):
+        return self.check.is_contact_name(Contact_Name)
+
+    def is_contact_phone_number(self, Contact_Phone_Number):
+        return self.check.is_contact_phone_number(Contact_Phone_Number)
+    
+    def is_home_phone(self, home_phone):
+        return self.check.is_home_phone(home_phone)
+    
+    def is_name(self, Name):
+        return self.check.is_name(Name)
+
+    def is_current_location(self, Current_Location):
+        return self.check.is_current_location(Current_Location)
+
+    def is_social_security_number(self, social_security_number):
+        return self.check.is_social_security_number(social_security_number)
+
+    def is_type(self, Type):
+        return self.check.is_type(Type)
+
+    def is_manufacturer(self, Manufacturer):
+        return self.check.is_manufacturer(Manufacturer)
+
+    def is_capacity(self, Capacity):
+        return self.check.is_capacity(Capacity)
+
+    def is_address(self, address):
+        return self.check.is_address(address)
+
+    def is_email(self, Email):
+        return self.check.is_email(Email)
+
+    def is_employee_type(self, Employee_Type):
+        return self.check.is_employee_type(Employee_Type)
+
+    def is_employee_role(self, Employee_Role):
+        return self.check.is_employee_role(Employee_Role)
+
     ############################## GeneralUseLogic ###############################
 
     def object_list_to_dict_list(self, object_list):
@@ -236,24 +331,3 @@ class LogicLayerAPI:
 
     def object_to_dict(self, object):
         return self.employee_logic.object_to_dict(object)
-
-    def is_destination(self, City):
-        return self.destination_logic.is_destination(City)
-
-    def is_airport(self, Airport):
-        return self.destination_logic.is_airport(Airport)
-
-    def is_country(self, Country):
-        return self.destination_logic.is_country(Country)
-
-    def is_distance(self, Distance):
-        return self.destination_logic.is_distance(Distance)
-
-    def is_travel_time(self, Travel_Time):
-        return self.destination_logic.is_travel_time(Travel_Time)
-
-    def is_contact_name(self, Contact_Name):
-        return self.destination_logic.is_contact_name(Contact_Name)
-
-    def is_contact_phone_number(self, Contact_Phone_Number):
-        return self.destination_logic.is_contact_phone_number(Contact_Phone_Number)

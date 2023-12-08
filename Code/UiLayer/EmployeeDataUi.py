@@ -18,7 +18,7 @@ class EmployeeDataUI:
         self.PrintUi.print_employee_table(printed_dicts, 14)
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left(employee_type[1]))
-        print(self.PrintUi.allign_left(" 0 : Back       q : exit       00 : Create New Employee      <ID> : Edit Employee Data"))
+        print(self.PrintUi.allign_left(" 0 : Back                      00 : Create New Employee      <ID> : Edit Employee Data"))
         print(self.PrintUi.end_line())
 
     def innitiate_and_switch_lists(self, employee_type):
@@ -58,6 +58,7 @@ class EmployeeDataUI:
             elif command == "d":
                 employee_type = 0
             elif command == "q":
+                print("Goodbye")
                 exit()
             else:
                 print("Invalid input, try again")

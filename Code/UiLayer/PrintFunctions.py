@@ -164,3 +164,9 @@ class PrintFunctions:
         while line_count <= line_num:
             print(self.empty_line()) #fills out UI box to correct size with empty lines
             line_count += 1
+
+    def print_flight_schedule_table(self, data, line_num):
+        pass
+
+    def print_employee_schedule_table(self,data,line_num):
+        pass

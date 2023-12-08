@@ -171,7 +171,7 @@ class WorkTripLogic:
         if weekly_or_daily.lower() == "weekly":
             end_date = start_date + timedelta(days=7)
             for trip in all_work_trips:
-                if start_date <= trip.departure_datetime.date() < end_date:
+                if start_date <= trip.departure_datetime.date() <= end_date:
                     trip.validity = self.validate_trip_validity(trip)
                     work_trips_in_period.append(trip)
 
@@ -230,7 +230,11 @@ class WorkTripLogic:
 
     def list_all_busy_employees(self, string_date):
         '''
-        List all employees who are not working at a certain date. 
+        List all employees who are working at a certain date. 
+
+        :param string_date: The date to check, in string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13" 
+
+        Returns, return: a list of employee ids busy on the date
 
         '''
         start_date = datetime.strptime(string_date, '%Y-%m-%d %H:%M')
@@ -245,6 +249,35 @@ class WorkTripLogic:
                     crew_members_list = trip.crew_members.split(',')
 
         return crew_members_list
+
+    def list_all_available_employees(self, string_date):
+        '''
+        List all employees who are not working at a certain date. 
+
+        :param string_date: The date to check, in string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13" 
+
+        Returns, return: a list of employee ids busy on the date
+
+        '''
+
+        busy_employees = self.list_all_busy_employees(string_date)
+
+        all_employees = self.work_trip_data.read_all_employees()
+
+        all_employee_ids = []
+
+        for emp in all_employees:
+            print(
+                f"inside for loop pop all employees, adding id {emp.id} to all employee id's")
+            all_employee_ids.append(emp.id)
+
+        available_employees = []
+
+        for emp in all_employee_ids:
+            if not emp in busy_employees:
+                available_employees.append(emp)
+
+        return available_employees
 
     def list_employees_working_and_destinations(self, string_date):
         '''
@@ -273,3 +306,35 @@ class WorkTripLogic:
                             {'employee_id': str(member), 'destination': trip.destination})
 
         return all_work_trips_in_day
+
+    def all_work_trips_of_employee(self, employee_id, string_date):
+        '''
+        Returns all work trips of employee id in week, the date given is the 
+        start of the week that is searched. Example: 2004-6-6 14:00, search range
+        is 2004-6-6 14:00 - 2004-6-13 14:00.
+
+        :param employee_id: ID of the employee to check.
+        :param employee_id: string date start of the week to check.
+        '''
+        start_date = start_date = datetime.strptime(
+            string_date, '%Y-%m-%d %H:%M')
+        start_date = start_date.date()
+
+        end_date = start_date + timedelta(days=7)
+
+        all_work_trips = self.work_trip_data.read_all_work_trips()
+        employee_work_trips = []
+
+        # need to first get list of employees
+
+        for trip in all_work_trips:
+            if start_date <= trip.departure_datetime.date() <= end_date:
+                # changing crew_members to list, need to first check if empty
+                if not trip.crew_members == "":
+                    crew_members_list = trip.crew_members.split(',')
+                    if employee_id in crew_members_list or str(int(employee_id)) in crew_members_list:
+                        employee_work_trips.append(trip)
+
+        return employee_work_trips
+
+        # if start_date <= trip.departure_datetime.date() <= end_date:

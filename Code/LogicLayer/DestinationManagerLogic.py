@@ -31,7 +31,8 @@ class DestinationManagerLogic:
         :param kwargs: Attributes of the Destination.
         :raises ValueError: If required fields are missing or empty.
         """
-        required_fields = ['city', 'airport','country', 'distance','travel_time','contact_name','contact_phone_number']
+        required_fields = ['city', 'airport', 'country', 'distance',
+                           'travel_time', 'contact_name', 'contact_phone_number']
         if any(kwargs.get(field) is None or kwargs.get(field) == '' for field in required_fields):
             raise ValueError("Required fields cannot be empty.")
 
@@ -59,7 +60,12 @@ class DestinationManagerLogic:
         :param Destination_id: ID of the Destination to find.
         :return: Destination object if found, None otherwise.
         """
-        return next((emp for emp in self.destination_data.read_all_destinations() if emp.id == destination_id), None)
+        all_destinations = self.destination_data.read_all_destinations()
+        for destination in all_destinations:
+            if int(destination.id) == int(destination_id):
+                return destination
+
+        return None
 
     # specific request, check fields for Destination if valid
     def field_checker(self, field, input):
@@ -69,14 +75,15 @@ class DestinationManagerLogic:
         :param field: field to check
         :param input: user input to check for the given field
         '''
-        allowed_fields = ['city', 'airport','country', 'distance', 'travel_time', 'contact_name', 'contact_phone_number']
+        allowed_fields = ['city', 'airport', 'country', 'distance',
+                          'travel_time', 'contact_name', 'contact_phone_number']
         field = field.lower()
         if field not in allowed_fields:
             raise ValueError(
                 "Invalid field type, must be 'city', 'airport','country', 'distance', 'travel_time', 'contact_name', 'contact_phone_number'"
             )
         else:
-            if field in ['city', 'airport','country', 'contact_name']:
+            if field in ['city', 'airport', 'country', 'contact_name']:
                 if input.isalpha():
                     return True
                 else:
@@ -90,15 +97,18 @@ class DestinationManagerLogic:
     ##################### Input Varification #############################
     def is_destination(self, City):
         if not City or not City.replace(" ", "").isalpha():
-            raise ValueError("City must be a non-empty string of alphabetic characters")
+            raise ValueError(
+                "City must be a non-empty string of alphabetic characters")
 
     def is_airport(self, Airport):
         if not Airport or not Airport.replace(" ", "").isalpha():
-            raise ValueError("Airport must be a non-empty string of alphabetic characters")
+            raise ValueError(
+                "Airport must be a non-empty string of alphabetic characters")
 
     def is_country(self, Country):
         if not Country or not Country.replace(" ", "").isalpha():
-            raise ValueError("Country must be a non-empty string of alphabetic characters")
+            raise ValueError(
+                "Country must be a non-empty string of alphabetic characters")
 
     def is_distance(self, Distance):
         if not Distance.isdigit():
@@ -108,7 +118,8 @@ class DestinationManagerLogic:
         except ValueError:
             raise ValueError("Distance must be numeric")
         if Distance > 20000:
-            raise ValueError("Distance must be less than 20,000km (half the circumference of the Earth)")
+            raise ValueError(
+                "Distance must be less than 20,000km (half the circumference of the Earth)")
 
     def is_travel_time(self, Travel_Time):
         if not Travel_Time.isdigit():
@@ -120,7 +131,8 @@ class DestinationManagerLogic:
 
     def is_contact_name(self, Contact_Name):
         if not Contact_Name or not Contact_Name.replace(" ", "").isalpha():
-            raise ValueError("Contact Name must be a non-empty string of alphabetic characters")
+            raise ValueError(
+                "Contact Name must be a non-empty string of alphabetic characters")
 
     def is_contact_phone_number(self, Contact_Phone_Number):
         if not Contact_Phone_Number.replace(" ", "").isdigit():
