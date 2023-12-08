@@ -101,3 +101,6 @@ Benjamín: Debugging og lagfæra
 Oliver: Debugging
 Edda: sama og í gær
 Matthías: buggtesting worktrips og ...
+
+Það gekk ágætlega vel í dag en verið að vinna í flights schedule og worktrips, Debugging var lagfærað smá og fleiri bugs ödduð inn á discordið.
+
