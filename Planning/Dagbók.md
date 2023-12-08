@@ -91,3 +91,13 @@ Edda: Validation service
 Oliver: Debugging in terminal
 
 Það gekk mjög vel í dag náðum að finna fullt af villum og laga þær og worktrips ætti að vera tilbúið fyrir Ui layerinn
+
+8.12.23
+
+Markmið dagsins í dag er að reyna að byrja og klára schedule fyrir employee og flights, "identifya bugs" og laga þessi "bugs".
+
+Þorvarður: flights schedule
+Benjamín: Debugging og lagfæra
+Oliver: Debugging
+Edda: sama og í gær
+Matthías: buggtesting worktrips og ...
