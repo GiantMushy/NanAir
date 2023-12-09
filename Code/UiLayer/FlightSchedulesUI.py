@@ -1,5 +1,6 @@
 from LogicLayer.LogicLayerAPI import LogicLayerAPI
 from UiLayer.PrintFunctions import PrintFunctions
+import datetime
 
 class FlightSchedulesUI:
     def __init__(self, user = ""):
@@ -7,22 +8,22 @@ class FlightSchedulesUI:
         self.Logic = LogicLayerAPI()
         self.user = user
 
-    def flight_schedules_output(self, printed_data, date_start, date_end):
+    def flight_schedules_output(self, printed_data, start_date, end_date):
         self.PrintUi.logo()
         self.PrintUi.print_header(self.user + " > Flight Schedules", "left")
         print(self.PrintUi.empty_line())
-        if not date_end:
-            print(self.PrintUi.allign_left(f"Flights Departing on {date_start}:"))
+        if not end_date:
+            print(self.PrintUi.allign_left(f"Flights Departing on {start_date.date()}:"))
         else:
-            print(self.PrintUi.allign_left(f"Flights Departing between {date_start} - {date_end}:"))
+            print(self.PrintUi.allign_left(f"Flights Departing between {start_date.date()} - {end_date.date()}:"))
         print(self.PrintUi.empty_line())
-        self.PrintUi.print_flight_schedule_table(printed_data, date_start, date_end, 12)
+        self.PrintUi.print_flight_schedule_table(printed_data, start_date, end_date, 12)
         print(self.PrintUi.empty_line())
         if self.user == "Trip Manager":
             print(self.PrintUi.allign_left("   A : Create New Trip                               S : Re-Create Existing Trip"))
         else:
             print(self.PrintUi.empty_line())
-        if not date_end:
+        if not end_date:
             print(self.PrintUi.allign_left("<Nr> : Examine Staff Status of Trip                  D : Change Schedule Duration to Week"))
             print(self.PrintUi.empty_line())
             print(self.PrintUi.allign_left("0 : Back              00 : Change Day                n : See Yesterday             m : See Tomorrow"))
@@ -33,27 +34,46 @@ class FlightSchedulesUI:
         print(self.PrintUi.end_line())
 
     def innitiate_and_switch_lists(self, time, start_date,):
-        temp_list_data = self.Logic.work_trip_validity_period(time, start_date)
+        temp_list_data = self.Logic.work_trip_validity_period(time, start_date.strftime('%Y-%m-%d %H:%M'))
         printed_data = self.Logic.object_list_to_dict_list(temp_list_data)
         return printed_data
-        #if time == 'day':
-        #elif time == 'week':
-        #    return self.Logic.list_all_pilots()
 
     def input_prompt(self):
         '''Starting function for EmployeeDataUI'''
         time = 'weekly'
-        date_start = '2032-11-14 00:00'
-        date_end = '2032-11-20 00:00'
+        #start_date = '2032-11-14 00:00'
+        day = datetime.timedelta(1)        
+        week = datetime.timedelta(7)
+        start_date = datetime.datetime(2032,11,14,0,0)
+        end_date = start_date + week
         while True:
-            printed_data = self.innitiate_and_switch_lists(time, date_start)
-            self.flight_schedules_output(printed_data, date_start, date_end)
+            printed_data = self.innitiate_and_switch_lists(time, start_date)
+            self.flight_schedules_output(printed_data, start_date, end_date)
             command = input("Enter you command: ").lower()
 
             if command == "0":
                 break
             elif command == "00": #change day/week
-                pass
+                input_check = False
+                if time == 'weekly':
+                    while not input_check:
+                        try:
+                            year, month, day = input("Enter the first day of the new week (YYYY-MM-DD): ").split('-')
+                            input_check = True
+                            start_date = datetime.datetime(int(year), int(month), int(day), 0,0)
+                            end_date = start_date + week
+                        except ValueError as e:
+                            print(f"Error: {e}")
+                            input_check = False
+                else:
+                    while not input_check:
+                        try:
+                            year, month, day = input("Enter a day (YYYY-MM-DD): ")
+                            input_check = True
+                            start_date = datetime.datetime(year, month, day, 0,0)
+                        except ValueError as e:
+                            print(f"Error: {e}")
+                            input_check = False
             elif command.isdigit():
                 for dict in printed_data:
                     if int(command) == int(dict["id"]):
@@ -64,22 +84,22 @@ class FlightSchedulesUI:
             elif command == "d": #change between week and day
                 if time == 'weekly':
                     time = 'daily'
-                    date_end = None
+                    end_date = None
                 else:
                     time = 'weekly'
-                    date_end = f'{date_start[0:5]}-{date_start[5:7]}-{int(date_start[8:10])+7} {date_start[10:]}'
+                    end_date = start_date + week 
             elif command == "n": #see yesterday/last week
                 if time == 'weekly':
-                    date_start = f'{date_start[0:5]}-{date_start[5:7]}-{int(date_start[8:10])-7} {date_start[10:]}'
-                    date_end = f'{date_start[0:5]}-{date_start[5:7]}-{int(date_start[8:10])+7} {date_start[10:]}'
+                    start_date = start_date - week 
+                    end_date = start_date - week 
                 else:
-                    date_start = f'{date_start[0:5]}-{date_start[5:7]}-{int(date_start[8:10])-1} {date_start[10:]}'
+                    start_date = start_date - day 
             elif command == "m": #see tomorrow/next week
                 if time == 'weekly':
-                    date_start = f'{date_start[0:5]}-{date_start[5:7]}-{int(date_start[8:10])+7} {date_start[10:]}'
-                    date_end = f'{date_start[0:5]}-{date_start[5:7]}-{int(date_start[8:10])+7} {date_start[10:]}'
+                    start_date = start_date + week 
+                    end_date = start_date + week 
                 else:
-                    date_start = f'{date_start[0:5]}-{date_start[5:7]}-{int(date_start[8:10])+1} {date_start[10:]}'
+                    start_date = start_date + day
             elif command == "a":
                 if self.user == 'Trip Manager':
                     #create_new = FlightSchedulesCreateNewUI()
