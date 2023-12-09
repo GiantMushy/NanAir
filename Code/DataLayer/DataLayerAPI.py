@@ -2,6 +2,8 @@ from DataLayer.EmployeeData import EmployeeData
 from DataLayer.WorkTripData import WorkTripData
 from DataLayer.DestinationData import DestinationData
 from DataLayer.AirplaneData import AirplaneData
+from DataLayer.FlightData import FlightData
+from DataLayer.AirplaneTypeData import AirplaneTypeData
 
 
 class DataLayerAPI:
@@ -10,6 +12,8 @@ class DataLayerAPI:
         self.work_trip_data = WorkTripData()
         self.destination_data = DestinationData()
         self.airplane_data = AirplaneData()
+        self.flight_data = FlightData()
+        self.airplane_type_data = AirplaneTypeData()
 
     ################################## Employee Data Functions ###################################
     def read_all_employees(self):
@@ -131,3 +135,55 @@ class DataLayerAPI:
         :param updated_airplanes: List of airplane objects with updated information.
         """
         self.airplane_data.modify_airplane_data(updated_airplanes)
+    ################################## Flight Data ###################################
+
+    def read_all_flights(self):
+        """
+        Read all Flights from the Flight CSV file and return them as a list of Flight objects.
+
+        Returns, return: List of Flight objects.
+        """
+        return self.flight_data.read_all_flights()
+
+    def add_flight(self, flight):
+        """
+        Add a new Flight to the CSV file.
+
+        :param Flight: Flight object to be added.
+        """
+        self.flight_data.add_flight(flight)
+
+    def modify_flight_data(self, updated_flights):
+        '''
+        Write the updated list of flights to the CSV file.
+
+        :param updated_employees: List of Flight objects with updated information.
+        '''
+        self.flight_data.modify_flight_data(updated_flights)
+
+    ################################## AirplaneType Data ###################################
+
+    def read_all_airplane_types(self):
+        """
+        Read all airplane_type type from the airplane_type type CSV file and return them as a list of airplane_type type objects.
+
+        Returns, return: List of airplane_type type objects.
+        """
+        return self.airplane_type_data.read_all_airplane_types()
+
+    def add_airplane_type(self, airplane_type):
+        """
+        Add a new airplane_type to the CSV file.
+
+        :param airplane_type: airplane_type object to be added.
+        """
+        self.airplane_type_data.add_airplane_type(airplane_type)
+
+    def modify_airplane_type_data(self, updated_airplane_types):
+        """
+        Write the updated list of airplane_types to the CSV file.
+
+        :param updated_airplane_types: List of airplane_type objects with updated information.
+        """
+        self.airplane_type_data.modify_airplane_type_data(
+            updated_airplane_types)

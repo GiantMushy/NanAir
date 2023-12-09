@@ -12,7 +12,9 @@ class AirplaneData:
         """
         Check if CSV files exist, creating them if not with headers.
         """
-        self.create_file_if_not_exists(self.airplanes_filename, ['id','name','current_location','type','manufacturer','capacity'])
+        self.create_file_if_not_exists(self.airplanes_filename, [
+                                       'id', 'name', 'type'])
+
     def create_file_if_not_exists(self, filename, fieldnames):
         if not os.path.exists(filename):
             with open(filename, mode='w', newline='', encoding='utf-8') as file:
@@ -21,8 +23,9 @@ class AirplaneData:
 
     def read_all_airplanes(self):
         """
-        Read all airplaness from the Airplanes CSV file and return them as a list of airplanes objects.
-        :return: List of airplanes objects.
+        Read all airplanes from the Airplanes CSV file and return them as a list of airplanes objects.
+
+        Returns, return: List of airplanes objects.
         """
         airplanes = []
         try:
@@ -40,6 +43,7 @@ class AirplaneData:
     def add_airplane(self, airplanes):
         """
         Add a new airplane to the CSV file.
+
         :param airplanes: airplanes object to be added.
         """
 
@@ -82,3 +86,15 @@ class AirplaneData:
         except Exception as e:
             raise Exception(
                 f"An error occurred while writing to the file: {e}")
+
+    def is_airplane_created(self, airplane_id):
+        """
+        Check if airplane is created
+        :param airplane_id: ID of the airplane to check
+        Returns, return: True if airplane is created, False if not
+        """
+        airplanes = self.read_all_airplanes()
+        for airplane in airplanes:
+            if airplane.id == airplane_id:
+                return True
+        return False

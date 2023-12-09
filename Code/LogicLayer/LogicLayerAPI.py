@@ -2,6 +2,8 @@ from LogicLayer.EmployeeManagerLogic import EmployeeManagerLogic
 from LogicLayer.WorkTripLogic import WorkTripLogic
 from LogicLayer.DestinationManagerLogic import DestinationManagerLogic
 from LogicLayer.AirplaneManagerLogic import AirplaneManagerLogic
+from LogicLayer.FlightLogic import FlightLogic
+from LogicLayer.AirplaneTypeLogic import AirplaneTypeLogic
 
 
 class LogicLayerAPI:
@@ -10,6 +12,8 @@ class LogicLayerAPI:
         self.work_trip_logic = WorkTripLogic()
         self.destination_logic = DestinationManagerLogic()
         self.airplane_logic = AirplaneManagerLogic()
+        self.flight_logic = FlightLogic()
+        self.airplane_type_logic = AirplaneTypeLogic()
 
     ############################## EmployeeManagerLogic ###############################
     def add_employee(self, employee_type, employee_role, **kwargs):
@@ -265,6 +269,74 @@ class LogicLayerAPI:
         :return: Airplane object if found, None otherwise.
         """
         return self.airplane_logic.find_airplane_by_id(airplane_id)
+
+    def list_airplanes_detailed(self):
+        '''
+        Returns a list of all airplanes with detailed information.
+        '''
+        return self.airplane_logic.list_airplanes_detailed()
+    ############################## FlightLogic ###############################
+
+    def list_all_flights(self):
+        """Returns, return: a list of all flights."""
+        return self.flight_logic.list_all_flights()
+
+    def add_flight(self, **kwargs):
+        """
+        Adds a new airplane to the system.
+        Validates required fields before adding.
+        :raises ValueError: If required fields are missing or empty.
+        """
+        self.flight_logic.add_flight(**kwargs)
+
+    def get_flight_by_id(self, flight_id):
+        '''
+        :param flight_id: ID of the flight to find
+        Returns, return: Flight object with the given id.
+        '''
+        return self.flight_logic.get_flight_by_id(flight_id)
+
+    def get_all_flights_by_destination_id(self, destination_id):
+        '''
+        :param destination_id: ID of the destination to find
+        Returns, return: List of Flight objects with the given destination id.
+        '''
+        return self.flight_logic.get_all_flights_by_destination_id(destination_id)
+
+    def change_sold_tickets(self, flight_id, tickets_sold):
+        '''
+        :param flight_number: Number of the flight to change
+        :param tickets_sold: Number of tickets sold to add to flight
+        '''
+        self.flight_logic.change_sold_tickets(flight_id, tickets_sold)
+
+    def get_sold_tickets(self, flight_id):
+        '''
+        :param flight_number: Number of the flight to get sold tickets from
+
+        Returns, return: string number of sold tickets
+        '''
+        return self.flight_logic.get_sold_tickets(flight_id)
+
+    def get_available_tickets(self, flight_id):
+        '''
+        :param flight_number: Number of the flight to get available tickets from
+
+        Returns, return: string number of available tickets
+        '''
+        return self.flight_logic.get_available_tickets(flight_id)
+
+    ############################## AirplaneTypeLogic ###############################
+
+    def add_airplane_type(self, **kwargs):
+        """
+        Adds a new airplane type to the system.
+        Validates required fields before adding.
+
+        :param kwargs: Attributes of the airplane type.
+        :raises ValueError: If required fields are missing or empty.
+        """
+        self.airplane_type_logic.add_airplane_type(**kwargs)
 
     ############################## GeneralUseLogic ###############################
 

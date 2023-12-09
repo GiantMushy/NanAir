@@ -24,7 +24,7 @@ class EmployeeManagerLogic:
         new_id = max_id + 1
         return str(new_id).zfill(3)  # pad with zeros to maintain a length of 3
 
-    def add_employee(self, employee_type, employee_role, **kwargs):
+    def add_employee(self, employee_type, employee_role, airplane_type=None, **kwargs):
         '''
         Adds a new employee to the system.
         Can add either a pilot or a flight attendant based on the employee type.
@@ -58,7 +58,11 @@ class EmployeeManagerLogic:
             else:
                 raise ValueError(
                     "Invalid pilot role. Must be 'Captain' or 'Co-Pilot'.")
-            pilot = Pilot(kwargs['id'], employee_role)
+            if airplane_type == None:
+                raise ValueError(
+                    "A pilot needs to have a fly a airplane_type to work for a flight company. Heres a list of all the airplane types we have."
+                )
+            pilot = Pilot(kwargs['id'], employee_role, airplane_type)
             self.employee_data.add_pilot(pilot)
         elif employee_type.lower() == 'flight_attendant':
             # checking role of flight attendant, if either senior flight attendant or flight attendant
@@ -259,5 +263,39 @@ class EmployeeManagerLogic:
                     return True
 
         return False
+
+    def list_pilots_by_airplane_type(self, airplane_type):
+        '''
+        Takes a airplane type string and returns a list of pilots that can fly that airplane type
+
+        :param airplane_type: airplane type string f.x ("Boeing 757")
+
+        Returns, return: list of pilots that can fly that airplane type
+        '''
+        all_pilots = self.employee_data.read_all_pilots()
+        pilots = []
+        for pilot in all_pilots:
+            if pilot.airplane_type == airplane_type:
+                pilots.append(pilot)
+        return pilots
+
+    def list_pilots_sorted_by_airplane_type(self):
+        '''
+        Returns a list of pilots sorted by airplane type
+
+        Returns, return: list of pilots sorted by airplane type
+        '''
+        # get a list of all different unique airplane types
+        all_pilots = self.employee_data.read_all_pilots()
+        airplane_types = []
+        for pilot in all_pilots:
+            if pilot.airplane_type not in airplane_types:
+                airplane_types.append(pilot.airplane_type)
+        airplane_types.sort()
+        # now use list_pilots_by_airplane_type to get a list of pilots for each airplane type in same order of the sorted list
+        pilots = []
+        for airplane_type in airplane_types:
+            pilots.append(self.list_pilots_by_airplane_type(airplane_type))
+        return pilots
 
     # B-requirements will be implemented  here.
