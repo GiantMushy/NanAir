@@ -70,6 +70,21 @@ def main():
     for emp in busy_employees:
         print(f"Employee with ID {emp} is busy this day: 2032-11-14 14:32")
 
+    print("TESTING AVAILABLE EMPLOYEES")
+    available_employees = work_trip_logic.list_all_available_employees(
+        '2032-11-14 14:32'
+    )
+    for emp in available_employees:
+        print(
+            f"Employee with ID {emp} is available this day: 2032-11-14 14:32")
+
+    print("TESTING WORKTRIPS OF EMPLOYEE WEEKLY")
+    testing_worktrips = work_trip_logic.all_work_trips_of_employee(
+        "001", "2032-11-14 14:32")
+
+    for trip in testing_worktrips:
+        print(trip.__dict__)
+
 
 if __name__ == "__main__":
     main()

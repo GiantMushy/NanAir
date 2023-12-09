@@ -35,6 +35,7 @@ class DestinationDataUI:
                 create_new = DestinationDataCreateNewUI()
                 create_new.input_prompt()
             elif command == "q":
+                print("Goodbye")
                 exit()
             else:
                 print("Invalid input, try again")

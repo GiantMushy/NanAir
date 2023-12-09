@@ -31,14 +31,15 @@ class AirplaneManagerLogic:
         :param kwargs: Attributes of the airplane.
         :raises ValueError: If required fields are missing or empty.
         """
-        required_fields = ['name','current_location','type','manufacturer','capacity']
+        required_fields = ['name', 'current_location',
+                           'type', 'manufacturer', 'capacity']
         if any(kwargs.get(field) is None or kwargs.get(field) == '' for field in required_fields):
             raise ValueError("Required fields cannot be empty.")
 
         airplane_id = self.generate_unique_airplane_id()
         kwargs['id'] = airplane_id
 
-        # add general employee information
+        # add airplane information
         new_airplane = Airplane(**kwargs)
         self.airplane_data.add_airplane(new_airplane)
 
@@ -59,7 +60,13 @@ class AirplaneManagerLogic:
         :param airplane_id: ID of the airplane to find.
         :return: airplane object if found, None otherwise.
         """
-        return next((emp for emp in self.airplane_data.read_all_airplanes() if emp.id == airplane_id), None)
+
+        all_airplanes = self.airplane_data.read_all_airplanes()
+        for plane in all_airplanes:
+            if int(plane.id) == int(airplane_id):
+                return plane
+
+        return None
 
     def modify_airplane(self, airplane_id, **updates):
         """
@@ -100,14 +107,15 @@ class AirplaneManagerLogic:
         :param field: field to check
         :param input: user input to check for the given field
         '''
-        allowed_fields = ['name','current_location','type','manufacturer','capacity']
+        allowed_fields = ['name', 'current_location',
+                          'type', 'manufacturer', 'capacity']
         field = field.lower()
         if field not in allowed_fields:
             raise ValueError(
                 "Invalid field type, must be 'name','current_location','type','manufacturer','capacity'"
             )
         else:
-            if field in ['name','current_location','manufacturer']:
+            if field in ['name', 'current_location', 'manufacturer']:
                 if input.isalpha():
                     return True
                 else:

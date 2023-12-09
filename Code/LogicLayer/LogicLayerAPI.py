@@ -172,10 +172,47 @@ class LogicLayerAPI:
         return self.employee_logic.find_employee_by_id(employee_id)
 
     def list_employees_working_and_destinations(self, string_date):
+        '''
+        Lists all employee id's who are working on given date and to which destination they're going.
+
+        :param string_date: The date to check, in string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13" 
+
+        Returns, return: a list of dictionaries, with the employee_id and destination for given day.
+        '''
         return self.work_trip_logic.list_employees_working_and_destinations(string_date)
 
     def list_all_busy_employees(self, string_date):
+        '''
+        List all employees who are working at a certain date. 
+
+        :param string_date: The date to check, in string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13" 
+
+        Returns, return: a list of employee ids busy on the date
+
+        '''
         return self.work_trip_logic.list_all_busy_employees(string_date)
+
+    def list_all_available_employees(self, string_date):
+        '''
+        List all employees who are not working at a certain date. 
+
+        :param string_date: The date to check, in string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13" 
+
+        Returns, return: a list of employee ids busy on the date
+
+        '''
+        return self.work_trip_logic.list_all_available_employees(string_date)
+
+    def all_work_trips_of_employee(self, employee_id, string_date):
+        '''
+        Returns all work trips of employee id in week, the date given is the 
+        start of the week that is searched. Example: 2004-6-6 14:00, search range
+        is 2004-6-6 14:00 - 2004-6-13 14:00.
+
+        :param employee_id: ID of the employee to check.
+        :param employee_id: string date start of the week to check.
+        '''
+        return self.work_trip_logic.all_work_trips_of_employee(employee_id, string_date)
 
     ############################## Destination Manager Logic ###############################
 

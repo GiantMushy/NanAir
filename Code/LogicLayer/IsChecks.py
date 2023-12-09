@@ -36,18 +36,23 @@ class IsChecks:
         except:
             raise ValueError("Travel Time and must be numeric")
         travel_time = int(Travel_Time)
-        if travel_time > 840:
-            raise ValueError("Longest Flight in the world is 840min")
+        if travel_time > 1120:
+            raise ValueError("Longest Commercial Flight in the world is/was 1120min, be realistic")
 
     def is_contact_name(self, Contact_Name):
         if not Contact_Name or not Contact_Name.replace(" ", "").isalpha():
             raise ValueError("Contact Name must be a non-empty string of alphabetic characters")
 
     def is_contact_phone_number(self, Contact_Phone_Number):
+        # strip "+"" only from the first character if that is the case
+        Contact_Phone_Number = Contact_Phone_Number.replace(" ", "")
+        if Contact_Phone_Number[0:1] == "+":
+            Contact_Phone_Number = Contact_Phone_Number[1:]
         if not Contact_Phone_Number.replace(" ", "").isdigit():
             raise ValueError("Phone Number must be a positive integer")
-        if len(Contact_Phone_Number) > 10:
-            raise ValueError("Phone number length cannot exceed 10 digits")
+        # checks if the number has 10 digits maximum
+        if not int(Contact_Phone_Number) <= 9999999999: 
+            raise ValueError("Phone Number must be 10 digits maximum")
         try:
             Contact_Phone_Number = int(Contact_Phone_Number.replace(" ", ""))
         except:
@@ -57,15 +62,8 @@ class IsChecks:
         if not home_phone:
             pass
         else:
-            if not home_phone.isdigit():
-                raise ValueError("Phone Number must be a positive integer")
-            if len(home_phone) > 10:
-                raise ValueError("Phone number length cannot exceed 10 digits")
-            try:
-                home_phone = int(home_phone.replace(" ", ""))
-            except:
-                raise ValueError("Phone Number must be numeric")
-
+            home_phone = self.is_contact_phone_number(home_phone)
+       
     def is_name(self, Name):
         if not Name:
             raise ValueError("Name must be a non-empty string")
@@ -75,6 +73,9 @@ class IsChecks:
     def is_current_location(self, Current_Location):
         if not Current_Location or not Current_Location.replace(" ", "").isalpha():
             raise ValueError("Current Location must be a non-empty string of alphabetic characters")
+        if not len(Current_Location) > 20:
+            raise ValueError("Manufacturer must be less than 20 characters")
+
 
     def is_social_security_number(self, social_security_number):
         if not social_security_number.replace(" ", "").isdigit():
@@ -90,6 +91,11 @@ class IsChecks:
             raise ValueError("social_security_number must be a valid date")
         if int(social_security_number[4:6]) > 10 and social_security_number[-1] == "0":
             raise ValueError("Birth dat in social_security_number is too young or not born yet")
+        if int(social_security_number[0:2]) > 30 and int(social_security_number[3]) == 4 or int(social_security_number[3]) == 6 or int(social_security_number[3]) == 9 or int(social_security_number[2:4]) == 11:
+            raise ValueError("SSN must be a valid date")
+        if int(social_security_number[0:2]) > 29 and int(social_security_number[3]) == 2:
+            raise ValueError("SSN must be a valid date")
+
         
     def is_type(self, Type):
         if not Type:
