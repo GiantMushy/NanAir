@@ -99,6 +99,18 @@ def test_role_role():
     print("should be true")
     print(logic.is_captain("001"))
 
+    print("testing is pilot")
+    print(logic.is_pilot("001"))
+    print("testing is_flight_attendant")
+    print(logic.is_flight_attendant("001"))
+
+    print("TESTING IS EMPLOYEE")
+    print("should be true")
+    print(logic.is_employee("001"))
+    print("")
+    print("should be false")
+    print(logic.is_employee("069"))
+
 
 def run_tests():
     test_generate_unique_employee_id()

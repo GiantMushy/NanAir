@@ -48,7 +48,7 @@ class AirplaneManagerLogic:
         airplane_id = self.generate_unique_airplane_id()
         kwargs['id'] = airplane_id
 
-        # add general employee information
+        # add airplane information
         new_airplane = Airplane(**kwargs)
         self.airplane_data.add_airplane(new_airplane)
 
@@ -62,10 +62,12 @@ class AirplaneManagerLogic:
         :param airplane_id: ID of the airplane to find.
         :return: airplane object if found, None otherwise.
         """
-        all_planes = self.list_all_airplanes()
-        for plane in all_planes:
-            if plane.id == airplane_id:
+
+        all_airplanes = self.airplane_data.read_all_airplanes()
+        for plane in all_airplanes:
+            if int(plane.id) == int(airplane_id):
                 return plane
+
         return None
 
     def modify_airplane(self, airplane_id, **updates):

@@ -66,10 +66,12 @@ class DestinationManagerLogic:
         :param Destination_id: ID of the Destination to find.
         :return: Destination object if found, None otherwise.
         """
-        destinations = self.destination_data.read_all_destinations()
-        for destination in destinations:
-            if destination.id == destination_id:
+        all_destinations = self.destination_data.read_all_destinations()
+        for destination in all_destinations:
+            if int(destination.id) == int(destination_id):
                 return destination
+
+        return None
 
     # specific request, check fields for Destination if valid
     def field_checker(self, field, input):

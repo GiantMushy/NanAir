@@ -229,7 +229,7 @@ class DestinationDataCreateNewUI:
                     print("Goodbye")
                     exit()
                 try:
-                    self.Logic.is_destination(data)
+                    self.Logic.is_city(data)
                     input_check = True
                 except ValueError as e:
                     print(f"Error: {e}")
