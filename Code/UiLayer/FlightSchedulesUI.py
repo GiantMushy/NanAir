@@ -68,9 +68,9 @@ class FlightSchedulesUI:
                 else:
                     while not input_check:
                         try:
-                            year, month, day = input("Enter a day (YYYY-MM-DD): ")
+                            year, month, day = input("Enter a day (YYYY-MM-DD): ").split('-')
                             input_check = True
-                            start_date = datetime.datetime(year, month, day, 0,0)
+                            start_date = datetime.datetime(int(year), int(month), int(day), 0,0)
                         except ValueError as e:
                             print(f"Error: {e}")
                             input_check = False
