@@ -87,14 +87,3 @@ class AirplaneData:
             raise Exception(
                 f"An error occurred while writing to the file: {e}")
 
-    def is_airplane_created(self, airplane_id):
-        """
-        Check if airplane is created
-        :param airplane_id: ID of the airplane to check
-        Returns, return: True if airplane is created, False if not
-        """
-        airplanes = self.read_all_airplanes()
-        for airplane in airplanes:
-            if airplane.id == airplane_id:
-                return True
-        return False
