@@ -117,6 +117,8 @@ class AirplaneManagerLogic:
     def list_airplanes_detailed(self):
         '''
         Returns a list of all airplanes with detailed information.
+        That means, when an airplane is next available, destination and flight number if in use, 
+        and in all cases, name, type and capacity.
         '''
         # day and time of airplane when it is next available if in use
         # name of destination if in use
@@ -134,6 +136,9 @@ class AirplaneManagerLogic:
                 airplane_type)
             airplane_capacity = airplane_type_obj.capacity
             airplane_dict.capacity = airplane_capacity
+            airplane_dict.next_available = "Not in use"
+            airplane_dict.destination = "Not in use"
+            airplane_dict.flight_number = "Not in use"
             flight_or_none = self.flight_logic.is_airplane_in_use(
                 airplane.id)
             if flight_or_none is not None:

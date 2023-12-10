@@ -1,5 +1,6 @@
 from LogicLayer.LogicLayerAPI import LogicLayerAPI
 from datetime import datetime, timedelta
+import time
 
 
 def main():
@@ -88,7 +89,7 @@ def main():
         "02", '2032-11-15 14:32', '2032-11-15 22:32', '001')
 
     logic.add_work_trip(
-        "02", '2032-11-16 14:32', '2032-11-16 22:32', '001')
+        "02", '2023-12-16 23:54', '2023-12-18 13:32', '001')
 
     logic.add_crew_member("001", "001")
 

@@ -135,3 +135,30 @@ class FlightLogic:
                     return flight
 
         return None
+
+    def create_flight_numbers(self, destination_id):
+        '''
+        Creates flight numbers for work trip.
+
+        :param destination_id: ID of the destination to create flight numbers for.
+        '''
+        # flying from iceland should be even numbers, to iceland odd numbers, starting at 0
+        # but no flight can be the same, so need to check highest next available even number
+
+        all_destination_flight_numbers = self.get_all_flights_by_destination_id(
+            destination_id)
+
+        if all_destination_flight_numbers is None:
+            all_destination_flight_numbers = []
+
+        # i know the first 4 strings are always NAxx
+        max_flight_number = 0
+        for flight in all_destination_flight_numbers:
+            flight_number = flight.flight_number[4:]
+            if int(flight_number) > max_flight_number:
+                max_flight_number = int(flight_number)
+
+        if max_flight_number == 0:
+            return str(f"NA{destination_id}0"), str(f"NA{destination_id}1")
+        else:
+            return str(f"NA{destination_id}{max_flight_number+1}"), str(f"NA{destination_id}{max_flight_number+2}")

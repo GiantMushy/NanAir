@@ -116,7 +116,7 @@ class WorkTripLogic:
         # in the format "NA<destinationid with padded zeroes><even numbers from iceland>/<odd numbers to iceland>"
 
         # create flight numbers
-        flight_number_start, flight_number_end = self.create_flight_numbers(
+        flight_number_start, flight_number_end = self.flight_logic.create_flight_numbers(
             destination.id)
 
         departure_datetime_obj = datetime.strptime(
@@ -169,33 +169,6 @@ class WorkTripLogic:
         airplane = self.airplane_logic.find_airplane_by_id(airplane_id)
         airplane_type = self.airplane_type_logic.find_type_data(airplane.type)
         return airplane_type.capacity
-
-    def create_flight_numbers(self, destination_id):
-        '''
-        Creates flight numbers for work trip.
-
-        :param destination_id: ID of the destination to create flight numbers for.
-        '''
-        # flying from iceland should be even numbers, to iceland odd numbers, starting at 0
-        # but no flight can be the same, so need to check highest next available even number
-
-        all_destination_flight_numbers = self.flight_logic.get_all_flights_by_destination_id(
-            destination_id)
-
-        if all_destination_flight_numbers is None:
-            all_destination_flight_numbers = []
-
-        # i know the first 4 strings are always NAxx
-        max_flight_number = 0
-        for flight in all_destination_flight_numbers:
-            flight_number = flight.flight_number[4:]
-            if int(flight_number) > max_flight_number:
-                max_flight_number = int(flight_number)
-
-        if max_flight_number == 0:
-            return str(f"NA{destination_id}0"), str(f"NA{destination_id}1")
-        else:
-            return str(f"NA{destination_id}{max_flight_number+1}"), str(f"NA{destination_id}{max_flight_number+2}")
 
     def get_recommended_departure_datetime(self, destination_id, departure_datetime):
         '''

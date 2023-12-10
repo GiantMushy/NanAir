@@ -133,7 +133,7 @@ class LogicLayerAPI:
 
     def list_all_work_trips(self):
         '''
-        Returns, return: A list of all WorkTrip Objects.
+        Returns, return: A list of detailed work_trips
         '''
         return self.work_trip_logic.list_all_work_trips()
 
@@ -170,8 +170,10 @@ class LogicLayerAPI:
     def find_employee_by_id(self, employee_id):
         """
         Finds an employee by their ID.
+
         :param employee_id: ID of the employee to find.
-        :return: Employee object if found, None otherwise.
+
+        Returns, return: Employee object if found, None otherwise.
         """
         return self.employee_logic.find_employee_by_id(employee_id)
 
@@ -218,6 +220,16 @@ class LogicLayerAPI:
         '''
         return self.work_trip_logic.all_work_trips_of_employee(employee_id, string_date)
 
+    def get_recommended_departure_datetime(self, destination_id, departure_datetime):
+        '''
+        Returns a recommended departure datetime for a work trip based on the destination and departure datetime, basically
+        using the destination trip time and departure time to calculate the recommended departure time.
+
+        :param destination_id: ID of the destination to check.
+        :param departure_datetime: string date start of the week to check. In the format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13"
+        '''
+        return self.work_trip_logic.get_recommended_departure_datetime(destination_id, departure_datetime)
+
     ############################## Destination Manager Logic ###############################
 
     def list_all_destinations(self):
@@ -228,6 +240,7 @@ class LogicLayerAPI:
         """
         Adds a new destination to the system.
         Validates required fields before adding.
+
         :raises ValueError: If required fields are missing or empty.
         """
         self.destination_logic.add_destination(**kwargs)
@@ -235,7 +248,9 @@ class LogicLayerAPI:
     def find_destination_by_id(self, destination_id):
         """
         Finds an destination by their ID.
+
         :param destination_id: ID of the destination to find.
+
         :return: Destination object if found, None otherwise.
         """
         return self.destination_logic.find_destination_by_id(destination_id)
@@ -250,6 +265,7 @@ class LogicLayerAPI:
         """
         Adds a new airplane to the system.
         Validates required fields before adding.
+
         :raises ValueError: If required fields are missing or empty.
         """
         self.airplane_logic.add_airplane(**kwargs)
@@ -260,6 +276,7 @@ class LogicLayerAPI:
 
         :param airplane_id: ID of the airplane to be modified.
         :param updates: Dictionary of updates to be applied. (modify_airplane(123, tpe="1234567", current_location="New Address")
+
         :raises ValueError: If trying to modify restricted fields or airplane not found.
         """
         return self.airplane_logic.modify_airplane(airplane_id, **updates)
@@ -267,8 +284,10 @@ class LogicLayerAPI:
     def find_airplane_by_id(self, airplane_id):
         """
         Finds an airplane by their ID.
+
         :param airplane_id: ID of the airplane to find.
-        :return: Airplane object if found, None otherwise.
+
+        Returns, return: Airplane object if found, None otherwise.
         """
         return self.airplane_logic.find_airplane_by_id(airplane_id)
 
@@ -287,6 +306,7 @@ class LogicLayerAPI:
         """
         Adds a new airplane to the system.
         Validates required fields before adding.
+
         :raises ValueError: If required fields are missing or empty.
         """
         self.flight_logic.add_flight(**kwargs)
@@ -294,6 +314,7 @@ class LogicLayerAPI:
     def get_flight_by_id(self, flight_id):
         '''
         :param flight_id: ID of the flight to find
+
         Returns, return: Flight object with the given id.
         '''
         return self.flight_logic.get_flight_by_id(flight_id)
@@ -301,6 +322,7 @@ class LogicLayerAPI:
     def get_all_flights_by_destination_id(self, destination_id):
         '''
         :param destination_id: ID of the destination to find
+
         Returns, return: List of Flight objects with the given destination id.
         '''
         return self.flight_logic.get_all_flights_by_destination_id(destination_id)
@@ -308,6 +330,7 @@ class LogicLayerAPI:
     def change_sold_tickets(self, flight_id, tickets_sold):
         '''
         :param flight_number: Number of the flight to change
+
         :param tickets_sold: Number of tickets sold to add to flight
         '''
         self.flight_logic.change_sold_tickets(flight_id, tickets_sold)
