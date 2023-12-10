@@ -116,6 +116,24 @@ class LogicLayerAPI:
         '''
         return self.employee_logic.is_senior_flight_attendant(employee_id)
 
+    def list_pilots_by_airplane_type(self, airplane_type):
+        '''
+        Takes a airplane type string and returns a list of pilots that can fly that airplane type
+
+        :param airplane_type: airplane type string f.x ("AKN-77")
+
+        Returns, return: list of pilots that can fly that airplane type
+        '''
+        return self.employee_logic.list_pilots_by_airplane_type(airplane_type)
+
+    def list_pilots_sorted_by_airplane_type(self):
+        '''
+        Returns a list of pilots sorted by airplane type
+
+        Returns, return: list of pilots sorted by airplane type
+        '''
+        return self.employee_logic.list_pilots_sorted_by_airplane_type()
+
     ############################## WorkTripLogic ###############################
     def add_work_trip(self, destination, departure_datetime, return_datetime, crew_members=None):
         '''
@@ -255,6 +273,17 @@ class LogicLayerAPI:
         """
         return self.destination_logic.find_destination_by_id(destination_id)
 
+    def update_emergency_contact(self, destination_id, contact_name, contact_phone_number):
+        '''
+        Update emergency contact and phone number of destination.
+
+        :param destination_id: ID of the destination to update
+        :param contact_name: new contact name
+        :param contact_phone_number: new contact phone number
+        '''
+        self.destination_logic.update_emergency_contact(
+            destination_id, contact_name, contact_phone_number)
+
     ############################## Airplane Manager Logic ###############################
 
     def list_all_airplanes(self):
@@ -351,6 +380,16 @@ class LogicLayerAPI:
         '''
         return self.flight_logic.get_available_tickets(flight_id)
 
+    def is_airplane_available(self, airplane_id, departure_datetime, return_datetime):
+        '''
+        :param airplane_id: ID of the airplane to check
+        :param departure_datetime: Departure date and time. In string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13"
+        :param return_datetime: Return date and time. In string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13"
+
+        Returns, return: True if airplane is available, False otherwise
+        '''
+        return self.flight_logic.is_airplane_available(airplane_id, departure_datetime, return_datetime)
+
     ############################## AirplaneTypeLogic ###############################
 
     def add_airplane_type(self, **kwargs):
@@ -359,9 +398,14 @@ class LogicLayerAPI:
         Validates required fields before adding.
 
         :param kwargs: Attributes of the airplane type.
+
         :raises ValueError: If required fields are missing or empty.
         """
         self.airplane_type_logic.add_airplane_type(**kwargs)
+
+    def list_all_airplane_types(self):
+        """Returns, return: a list of all airplane types."""
+        return self.airplane_type_logic.list_all_airplane_types()
     ############################## Input Varification ###############################
 
     def is_city(self, City):

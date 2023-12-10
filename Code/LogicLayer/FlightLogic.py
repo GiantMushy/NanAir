@@ -127,12 +127,25 @@ class FlightLogic:
 
         Returns, return: flight object if airplane is in use, None otherwise
         '''
+        # need to return if inbetween flights abroad
         now = datetime.now()
         flights = self.data.read_all_flights()
-        for flight in flights:
+        sorted_flights = sorted(flights, key=lambda r: r.start_datetime)
+        for flight in sorted_flights:
+            flight_start = self.date_string_to_datetime(flight.start_datetime)
+            flight_end = self.date_string_to_datetime(flight.arrival_datetime)
             if flight.airplane_id == airplane_id:
-                if now >= self.date_string_to_datetime(flight.start_datetime) and now <= self.date_string_to_datetime(flight.arrival_datetime):
+                # currently flying
+                if now >= flight_start and now <= flight_end:
                     return flight
+                if flight_end < now and flight.end_at != "RKV":
+                    # flight is landed abroad but IN USE so we return the next flight after this
+                    for next_flight in sorted_flights:
+                        next_flight_start = self.date_string_to_datetime(
+                            next_flight.start_datetime)
+                        # we know next flight is always the first flight after this one when ending abroad
+                        if next_flight_start > flight_end:
+                            return next_flight
 
         return None
 

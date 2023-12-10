@@ -61,7 +61,7 @@ class WorkTripData:
 
                     work_trips.append(WorkTrip(**row))
         except Exception as e:
-            print(f"Error occurred while reading the file: {e}")
+            f"Error occurred while reading the file: {e}"
         return work_trips
 
     def update_work_trip_data(self, updated_work_trips):

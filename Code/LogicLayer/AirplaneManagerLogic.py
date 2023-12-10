@@ -59,7 +59,7 @@ class AirplaneManagerLogic:
     def find_airplane_by_id(self, airplane_id):
         """
         Finds an airplane by their ID.
-        
+
         :param airplane_id: ID of the airplane to find.
         :return: airplane object if found, None otherwise.
         """
@@ -143,7 +143,7 @@ class AirplaneManagerLogic:
             flight_or_none = self.flight_logic.is_airplane_in_use(
                 airplane.id)
             if flight_or_none is not None:
-                if flight_or_none.end_at == "KEF":
+                if flight_or_none.end_at == "RKV":
                     airplane_dict.next_available = flight_or_none.arrival_datetime
                     airplane_dict.destination = flight_or_none.end_at
                     airplane_dict.flight_number = flight_or_none.flight_number

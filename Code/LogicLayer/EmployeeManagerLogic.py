@@ -287,7 +287,7 @@ class EmployeeManagerLogic:
         '''
         Takes a airplane type string and returns a list of pilots that can fly that airplane type
 
-        :param airplane_type: airplane type string f.x ("Boeing 757")
+        :param airplane_type: airplane type string f.x ("AKN-77")
 
         Returns, return: list of pilots that can fly that airplane type
         '''
@@ -311,10 +311,10 @@ class EmployeeManagerLogic:
             if pilot.airplane_type not in airplane_types:
                 airplane_types.append(pilot.airplane_type)
         airplane_types.sort()
-        # now use list_pilots_by_airplane_type to get a list of pilots for each airplane type in same order of the sorted list
+        # now using list_pilots_by_airplane_type to get a list of pilots for each airplane type in same order of the sorted list
         pilots = []
         for airplane_type in airplane_types:
-            pilots.append(self.list_pilots_by_airplane_type(airplane_type))
+            pilot_list = self.list_pilots_by_airplane_type(airplane_type)
+            for p in pilot_list:
+                pilots.append(p)
         return pilots
-
-    # B-requirements will be implemented  here.

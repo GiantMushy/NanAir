@@ -10,7 +10,7 @@ class DestinationManagerLogic:
     def create_hq_destination(self):
         if not self.find_destination_by_id("01"):
             self.add_destination(
-                city="Reykjavík", airport="KEF", country="Iceland", distance="0", travel_time="0", contact_name="N/A", contact_phone_number="N/A")
+                city="Reykjavík", airport="RKV", country="Iceland", distance="0", travel_time="0", contact_name="N/A", contact_phone_number="N/A")
 
     def generate_unique_destination_id(self):
         """
@@ -63,7 +63,7 @@ class DestinationManagerLogic:
     def find_destination_by_id(self, destination_id):
         """
         Finds an Destination by their ID.
-        
+
         :param Destination_id: ID of the Destination to find.
         :return: Destination object if found, None otherwise.
         """
@@ -103,10 +103,26 @@ class DestinationManagerLogic:
                     return False
 
     def get_headquarters(self):
+        '''
+        Returns the headquarters of NAN air
+        '''
         return self.find_destination_by_id("01")
 
     def update_emergency_contact(self, destination_id, contact_name, contact_phone_number):
+        '''
+        Update emergency contact and phone number of destination.
+
+        :param destination_id: ID of the destination to update
+        :param contact_name: new contact name
+        :param contact_phone_number: new contact phone number
+        '''
+
         destination = self.find_destination_by_id(destination_id)
+        if destination_id == "01":
+            raise ValueError(
+                "Cannot update emergency contact of headquarters")
+        if not destination or not destination_id or not contact_name or not contact_phone_number:
+            raise ValueError("Invalid input")
         destination.contact_name = contact_name
         destination.contact_phone_number = contact_phone_number
         old_destinations = self.list_all_destinations()

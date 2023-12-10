@@ -46,10 +46,10 @@ class WorkTripLogic:
         '''
         Adds a new work trip.
 
-        :param destination: Destination object of the work trip.
+        :param destination: Destination id of the work trip.
         :param departure_datetime: Departure date and time. In string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13"
         :param return_datetime: Return date and time. In string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13"
-        :param airplane: Airplane object of the work trip.
+        :param airplane: Airplane id of the work trip.
 
         :raises ValueError: If required fields are missing or empty.
         '''
@@ -254,14 +254,16 @@ class WorkTripLogic:
 
         now = datetime.now()
 
-        if start_departure <= now <= start_arrival:
+        if start_departure <= now <= start_departure:
             return "In air"
         elif end_departure <= now <= end_arrival:
+            return "In air"
+        elif start_departure <= now <= end_departure:
             return "Landed abroad"
-        elif now > end_arrival:
-            return "Done"
-        else:
+        elif now < start_departure:
             return "Not started"
+        else:
+            return "Done"
 
     def add_crew_member(self, work_trip_id, employee_id):
         '''
@@ -295,9 +297,10 @@ class WorkTripLogic:
                     # check here if employee is pilot and can fli airplane
                     airplane = ast.literal_eval(trip.airplane)  # trip.airplane
                     airplane_type = airplane['type']
-                    if not self.check_if_pilot_can_fly_airplane(airplane_type, employee_id):
-                        raise ValueError(
-                            f"Employee with ID {employee_id} cannot fly airplane with type {airplane_type}.")
+                    if self.employee_manager.is_pilot(employee_id):
+                        if not self.check_if_pilot_can_fly_airplane(airplane_type, employee_id):
+                            raise ValueError(
+                                f"Employee with ID {employee_id} cannot fly airplane with type {airplane_type}.")
 
                     updated_crew.append(employee_id)
 
@@ -468,8 +471,7 @@ class WorkTripLogic:
         all_employee_ids = []
 
         for emp in all_employees:
-            print(
-                f"inside for loop pop all employees, adding id {emp.id} to all employee id's")
+
             all_employee_ids.append(emp.id)
 
         available_employees = []
@@ -502,7 +504,6 @@ class WorkTripLogic:
                     crew_members_list = trip.crew_members.split(',')
 
                     for member in crew_members_list:
-                        print(f"adding member with id {member} to list")
                         all_work_trips_in_day.append(
                             {'employee_id': str(member), 'destination': trip.destination})
 

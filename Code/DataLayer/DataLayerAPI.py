@@ -115,6 +115,14 @@ class DataLayerAPI:
         """
         self.destination_data.add_destination(destination)
 
+    def modify_destination_data(self, updated_destinations):
+        """
+        Write the updated list of Destinations to the CSV file.
+
+        :param updated_destinations: List of Destinations objects with updated information.
+        """
+        self.destination_data.modify_destination_data(updated_destinations)
+
     ################################## Airplane Data Functions ###################################
 
     def read_all_airplanes(self):
