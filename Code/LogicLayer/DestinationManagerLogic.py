@@ -116,7 +116,6 @@ class DestinationManagerLogic:
         :param contact_name: new contact name
         :param contact_phone_number: new contact phone number
         '''
-
         destination = self.find_destination_by_id(destination_id)
         if destination_id == "01":
             raise ValueError(
