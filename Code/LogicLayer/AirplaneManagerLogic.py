@@ -59,6 +59,7 @@ class AirplaneManagerLogic:
     def find_airplane_by_id(self, airplane_id):
         """
         Finds an airplane by their ID.
+        
         :param airplane_id: ID of the airplane to find.
         :return: airplane object if found, None otherwise.
         """

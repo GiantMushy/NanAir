@@ -102,13 +102,15 @@ class DataLayerAPI:
     def read_all_destinations(self):
         """
         Read all destination from the Destination CSV file and return them as a list of Destination objects.
-        :return: List of Destination objects.
+
+        Returns, return: List of Destination objects.
         """
         return self.destination_data.read_all_destinations()
 
     def add_destination(self, destination):
         """
         Add a new destination to the CSV file.
+
         :param destination: Destination object to be added.
         """
         self.destination_data.add_destination(destination)
@@ -118,13 +120,14 @@ class DataLayerAPI:
     def read_all_airplanes(self):
         """
         Read all airplane from the Airplane CSV file and return them as a list of Airplane objects.
-        :return: List of airplane objects.
+        Returns, return: List of airplane objects.
         """
         return self.airplane_data.read_all_airplanes()
 
     def add_airplane(self, airplane):
         """
         Add a new airplane to the CSV file.
+
         :param airplane: Airplane object to be added.
         """
         self.airplane_data.add_airplane(airplane)
@@ -132,6 +135,7 @@ class DataLayerAPI:
     def modify_airplane_data(self, updated_airplanes):
         """
         Write the updated list of airplanes to the CSV file.
+
         :param updated_airplanes: List of airplane objects with updated information.
         """
         self.airplane_data.modify_airplane_data(updated_airplanes)

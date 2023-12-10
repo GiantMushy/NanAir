@@ -63,6 +63,7 @@ class DestinationManagerLogic:
     def find_destination_by_id(self, destination_id):
         """
         Finds an Destination by their ID.
+        
         :param Destination_id: ID of the Destination to find.
         :return: Destination object if found, None otherwise.
         """
@@ -78,6 +79,7 @@ class DestinationManagerLogic:
         '''
         Checks Destination inputs, and checks if something has letters when not supposed to
         and if something has numbers when not supposed to.
+
         :param field: field to check
         :param input: user input to check for the given field
         '''

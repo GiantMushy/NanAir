@@ -51,7 +51,6 @@ class WorkTripLogic:
         :param return_datetime: Return date and time. In string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13"
         :param airplane: Airplane object of the work trip.
 
-
         :raises ValueError: If required fields are missing or empty.
         '''
         # TODO: add capacity into flights, assume airplane capacity given in worktrip is always correct

@@ -24,6 +24,7 @@ class FlightData:
     def read_all_flights(self):
         """
         Read all Flights from the Flight CSV file and return them as a list of Flight objects.
+
         Returns, return: List of Flight objects.
         """
         flights = []
@@ -42,6 +43,7 @@ class FlightData:
     def add_flight(self, flight):
         """
         Add a new Flight to the CSV file.
+
         :param Flight: Flight object to be added.
         """
 

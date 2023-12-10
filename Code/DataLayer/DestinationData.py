@@ -24,7 +24,8 @@ class DestinationData:
     def read_all_destinations(self):
         """
         Read all Destinationss from the Destinations CSV file and return them as a list of Destinations objects.
-        :return: List of Destinations objects.
+
+        Returns, return: List of Destinations objects.
         """
         destinations = []
         try:

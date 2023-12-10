@@ -61,6 +61,7 @@ class AirplaneData:
     def modify_airplane_data(self, updated_airplaness):
         """
         Write the updated list of airplaness to the CSV file.
+        
         :param updated_airplaness: List of airplanes objects with updated information.
         """
         try:
