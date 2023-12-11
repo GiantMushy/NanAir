@@ -104,11 +104,10 @@ class FlightSchedulesUI:
                                 except ValueError as e:
                                     print(f"Error: {e}")
                                     input_check_recurring = False
-                            self.Logic.create_recurring_work_trips()
+                            self.Logic.create_recurring_work_trips(recurrence_days, recurrence_count, dict['id'])
 
                         else:                        ############# Staff Trips #############
                             print("Staff Trips") 
-                        self.Logic.create_recurring_work_trips(recurrence_days, recurrence_count, dict['id'])
                         #edit = FlightSchedulesStaffStatusUI(dict["id"])
                         #edit.input_prompt()
 
