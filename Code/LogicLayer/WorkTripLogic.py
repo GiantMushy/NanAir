@@ -393,17 +393,17 @@ class WorkTripLogic:
 
         return work_trips_in_period
 
-    def create_recurring_work_trips(self, work_trip_id, weekly_or_daily, number_of_recurrences):
+    def create_recurring_work_trips(self, work_trip_id, days_between_recurrences, number_of_recurrences):
         '''
         Creates recurring WorkTrips of given WorkTrip either weekly or daily for a certain amount of times.
 
         :param work_trip_id: The ID of the work trip to be copied
-        :param weekly_or_daily: A string either "weekly" or "daily"
+        :param days_between_recurrences: How many days between recurrences, weekly would be 7, daily would be 1 etc.
         :param number_of_recurrunces: The number of times the work trip should be copied, (x days or x weeks)
         '''
-        # takes in either weekly or daily, and number of recurrences and work trip to be repeated
+        # takes how many days between recurrences, and number of recurrences and work trip to be repeated
 
-        # need to first obtain dates to be repeated and then use timedelta to add 1 day to it or 7 days.
+        # need to first obtain dates to be repeated and then use timedelta to add number of
 
         # first need to find the corresponding trip id
         all_work_trips = self.work_trip_data.read_all_work_trips()
@@ -413,20 +413,20 @@ class WorkTripLogic:
                 trip_found = True
                 for i in range(number_of_recurrences):
                     # need to take out the seconds
-                    if weekly_or_daily.lower() == "weekly":
-                        new_departure_datetime = trip.departure_datetime + \
-                            timedelta(days=7+7*i)
-                        new_return_datetime = trip.return_datetime + \
-                            timedelta(days=7+7*i)
-                    elif weekly_or_daily.lower() == "daily":
-                        new_departure_datetime = trip.departure_datetime + \
-                            timedelta(days=1+1*i)
-                        new_return_datetime = trip.return_datetime + \
-                            timedelta(days=1+1*i)
-                    else:
-                        raise ValueError("Invalid input for weekly_or_daily")
+                    new_departure_datetime = trip.departure_datetime + \
+                        timedelta(days=days_between_recurrences +
+                                  days_between_recurrences*i)
+                    new_return_datetime = trip.return_datetime + \
+                        timedelta(days=days_between_recurrences +
+                                  days_between_recurrences*i)
+                    airplane = trip.airplane
+                    airplane_dict = ast.literal_eval(airplane)
+
+                    destination = trip.destination
+                    destination_dict = ast.literal_eval(destination)
+
                     self.add_work_trip(
-                        trip.destination, self.correct_datetime_format(new_departure_datetime), self.correct_datetime_format(new_return_datetime))
+                        destination_dict['id'], self.correct_datetime_format(new_departure_datetime), self.correct_datetime_format(new_return_datetime), airplane_dict['id'])
 
         if not trip_found:
             raise ValueError(
