@@ -149,7 +149,7 @@ class FlightSchedulesCreateNewUI:
         while n < 6:
             if n == 1:
                 self.input_departure_day()
-                data = input("Enter Departure Day: ")
+                data = input("Enter Departure Day: ").lower()
                 if data == "q":
                     print("Goodbye")
                     exit()
@@ -166,7 +166,7 @@ class FlightSchedulesCreateNewUI:
 
             elif n == 2:
                 self.input_departure_time(dep_day)
-                data = input("Enter Departure Time: ")
+                data = input("Enter Departure Time: ").lower()
                 if data == "q":
                     print("Goodbye")
                     exit()
@@ -183,7 +183,7 @@ class FlightSchedulesCreateNewUI:
 
             elif n == 3:
                 self.input_return_time()
-                data = input("Enter Return Time: ")
+                data = input("Enter Return Time: ").lower()
                 if data == "q":
                     print("Goodbye")
                     exit()
@@ -223,13 +223,13 @@ class FlightSchedulesCreateNewUI:
                     input_check = False
                 
             elif n == 5:
-                printed_data = self.Logic.list_all_airplanes() #################### Breyt í list_available_airplanes()
+                printed_data = self.Logic.list_all_airplanes() #################### Breyt í list_available_airplanes() ###############################
                 printed_data = self.Logic.object_list_to_dict_list(printed_data)
                 input_check_planes = False
 
                 if len(printed_data) != 0:
                     self.input_plane(printed_data)
-                    data = input("Enter Plane selection: ")
+                    data = input("Enter Plane selection: ").lower()
                     if data == "q":
                         print("Goodbye")
                         exit()

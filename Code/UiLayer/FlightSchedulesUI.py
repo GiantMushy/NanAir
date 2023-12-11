@@ -20,17 +20,18 @@ class FlightSchedulesUI:
         print(self.PrintUi.empty_line())
         self.PrintUi.print_flight_schedule_table(printed_data, start_date, end_date, 12)
         print(self.PrintUi.empty_line())
+
         if self.user == "Trip Manager":
-            print(self.PrintUi.allign_left("   A : Create New Trip                               S : Create Recurring Trip"))
+            print(self.PrintUi.allign_left("   A : Create New Trip"))
+            print(self.PrintUi.allign_left("<ID> : Create Recurring Trip from ID          D : Change between Day/Week"))
         else:
-            print(self.PrintUi.empty_line())
+            print(self.PrintUi.allign_left("   A : Create New Trip"))
+            print(self.PrintUi.allign_left("<ID> : Examine Staff Status of Trip           D : Change between Day/Week"))
+        print(self.PrintUi.empty_line())
+
         if not end_date:
-            print(self.PrintUi.allign_left("<Nr> : Examine Staff Status of Trip                  D : Change Schedule Duration to Week"))
-            print(self.PrintUi.empty_line())
             print(self.PrintUi.allign_left("0 : Back              00 : Change Day                n : See Yesterday             m : See Tomorrow"))
         else:
-            print(self.PrintUi.allign_left("<Nr> : Examine Staff Status of Trip                  D : Change Schedule Duration to 1 Day"))
-            print(self.PrintUi.empty_line())
             print(self.PrintUi.allign_left("0 : Back              00 : Change Week               n : Previous Week             m : Next Week"))
         print(self.PrintUi.end_line())
 
@@ -78,9 +79,37 @@ class FlightSchedulesUI:
             elif command.isdigit():
                 for dict in printed_data:
                     if int(command) == int(dict["id"]):
+                        if self.user == "Trip Manager": ########### Create Recurring Work Trip ############
+                            input_check_recurring = False
+                            while not input_check_recurring:
+                                recurrence_count = input("Input number of recurring flights to be scheduled: ").lower()
+                                if recurrence_count == "q":
+                                    print("Goodbye")
+                                    exit()
+                                try:
+                                    recurrence_count = int(recurrence_count)
+                                    input_check_recurring = True
+                                except ValueError as e:
+                                    print(f"Error: {e}")
+                                    input_check_recurring = False
+                            input_check_recurring = False
+                            while not input_check_recurring:
+                                recurrence_days = input("Input the amount of days between recurring trips (daily = 1, weekly = 7, etc.): ").lower()
+                                if recurrence_days == "q":
+                                    print("Goodbye")
+                                    exit()
+                                try:
+                                    recurrence_days = int(recurrence_days)
+                                    input_check_recurring = True
+                                except ValueError as e:
+                                    print(f"Error: {e}")
+                                    input_check_recurring = False
+                            self.Logic.create_recurring_work_trips()
+
+                        else:                        ############# Staff Trips #############
+                            print("Staff Trips") 
                         #edit = FlightSchedulesStaffStatusUI(dict["id"])
                         #edit.input_prompt()
-                        print(f"gonna see staff status of {command}")
 
             elif command == "d": #change between week and day
                 if time == 'weekly':
