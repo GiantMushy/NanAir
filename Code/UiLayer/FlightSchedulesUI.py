@@ -21,7 +21,7 @@ class FlightSchedulesUI:
         self.PrintUi.print_flight_schedule_table(printed_data, start_date, end_date, 12)
         print(self.PrintUi.empty_line())
         if self.user == "Trip Manager":
-            print(self.PrintUi.allign_left("   A : Create New Trip                               S : Re-Create Existing Trip"))
+            print(self.PrintUi.allign_left("   A : Create New Trip                               S : Create Recurring Trip"))
         else:
             print(self.PrintUi.empty_line())
         if not end_date:
