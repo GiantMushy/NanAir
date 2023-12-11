@@ -43,7 +43,7 @@ class FlightSchedulesUI:
         '''Starting function for EmployeeDataUI'''
         time = 'weekly'
         #start_date = '2032-11-14 00:00'
-        day = datetime.timedelta(1)        
+        day_timedelta = datetime.timedelta(1)        
         week = datetime.timedelta(7)
         start_date = datetime.datetime(2032,11,14,0,0)
         end_date = start_date + week
@@ -94,13 +94,13 @@ class FlightSchedulesUI:
                     start_date = start_date - week 
                     end_date = start_date - week 
                 else:
-                    start_date = start_date - day 
+                    start_date = start_date - day_timedelta 
             elif command == "m": #see tomorrow/next week
                 if time == 'weekly':
                     start_date = start_date + week 
                     end_date = start_date + week 
                 else:
-                    start_date = start_date + day
+                    start_date = start_date + day_timedelta
             elif command == "a":
                 if self.user == 'Trip Manager':
                     create_new = FlightSchedulesCreateNewUI()
