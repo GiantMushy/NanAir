@@ -1,6 +1,7 @@
 from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI
 from Code.UiLayer.PrintFunctions import PrintFunctions
 from Code.UiLayer.FlightSchedulesCreateNewUI import FlightSchedulesCreateNewUI
+from Code.UiLayer.FlightSchedulesStaffTripsUI import FlightSchedulesStaffTripsUI
 import datetime
 
 class FlightSchedulesUI:
@@ -25,7 +26,7 @@ class FlightSchedulesUI:
             print(self.PrintUi.allign_left("   A : Create New Trip"))
             print(self.PrintUi.allign_left("<ID> : Create Recurring Trip from ID          D : Change between Day/Week"))
         else:
-            print(self.PrintUi.allign_left("   A : Create New Trip"))
+            print(self.PrintUi.empty_line())
             print(self.PrintUi.allign_left("<ID> : Examine Staff Status of Trip           D : Change between Day/Week"))
         print(self.PrintUi.empty_line())
 
@@ -113,7 +114,8 @@ class FlightSchedulesUI:
                             self.Logic.create_recurring_work_trips( dict['id'], recurrence_days, recurrence_count)
 
                         else:                        ############# Staff Trips #############
-                            print("Staff Trips") 
+                            staff_trips = FlightSchedulesStaffTripsUI(dict)
+                            staff_trips.input_prompt()
 
             elif command == "d": #change between week and day
                 if time == 'weekly':
