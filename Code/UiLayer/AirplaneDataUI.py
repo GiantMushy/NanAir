@@ -1,7 +1,7 @@
-from LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
-from UiLayer.PrintFunctions import PrintFunctions
-from UiLayer.AirplaneDataCreateNewUI import AirplaneDataCreateNewUI
-from UiLayer.AirplaneDataEditUI import AirplaneDataEditUI
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
+from Code.UiLayer.PrintFunctions import PrintFunctions
+from Code.UiLayer.AirplaneDataCreateNewUI import AirplaneDataCreateNewUI
+from Code.UiLayer.AirplaneDataEditUI import AirplaneDataEditUI
 
 class AirplaneDataUI:
     def __init__(self):
@@ -27,7 +27,7 @@ class AirplaneDataUI:
             temp_list_data = self.Logic.list_all_airplanes()
             all_airplane_data = self.Logic.object_list_to_dict_list(temp_list_data)
             self.airplane_data_output(all_airplane_data)
-            command = input("Enter you command: ")            
+            command = input("Enter you command: ").lower()            
 
             if command == "0":
                 break

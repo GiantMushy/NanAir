@@ -1,7 +1,7 @@
-from DataLayer.DataLayerAPI import DataLayerAPI
-from Models.Employee import Employee
-from Models.Pilot import Pilot
-from Models.FlightAttendant import FlightAttendant
+from Code.DataLayer.DataLayerAPI import DataLayerAPI
+from Code.Models.Employee import Employee
+from Code.Models.Pilot import Pilot
+from Code.Models.FlightAttendant import FlightAttendant
 
 
 class EmployeeManagerLogic:
@@ -24,7 +24,7 @@ class EmployeeManagerLogic:
         new_id = max_id + 1
         return str(new_id).zfill(3)  # pad with zeros to maintain a length of 3
 
-    def add_employee(self, employee_type, employee_role, **kwargs):
+    def add_employee(self, employee_type, employee_role, airplane_type=None, **kwargs):
         '''
         Adds a new employee to the system.
         Can add either a pilot or a flight attendant based on the employee type.
@@ -45,10 +45,6 @@ class EmployeeManagerLogic:
         employee_id = self.generate_unique_employee_id()
         kwargs['id'] = employee_id
 
-        # add general employee information
-        new_employee = Employee(**kwargs)
-        self.employee_data.add_employee(new_employee)
-
         # add specific role information
         if employee_type.lower() == 'pilot':
             # checking role of pilot, if either captain or co-pilot
@@ -59,7 +55,11 @@ class EmployeeManagerLogic:
             else:
                 raise ValueError(
                     "Invalid pilot role. Must be 'Captain' or 'Co-Pilot'.")
-            pilot = Pilot(kwargs['id'], employee_role)
+            if airplane_type == None:
+                raise ValueError(
+                    "A pilot needs to have a fly a airplane_type to work for a flight company. Heres a list of all the airplane types we have."
+                )
+            pilot = Pilot(kwargs['id'], employee_role, airplane_type)
             self.employee_data.add_pilot(pilot)
         elif employee_type.lower() == 'flight_attendant':
             # checking role of flight attendant, if either senior flight attendant or flight attendant
@@ -75,6 +75,10 @@ class EmployeeManagerLogic:
         else:
             raise ValueError(
                 "Invalid employee type, must be either Pilot or Flight Attendant.")
+
+        # add general employee information after going through all checks
+        new_employee = Employee(**kwargs)
+        self.employee_data.add_employee(new_employee)
 
     def list_all_employees(self):
         '''
@@ -279,4 +283,38 @@ class EmployeeManagerLogic:
 
         return False
 
-    # B-requirements will be implemented  here.
+    def list_pilots_by_airplane_type(self, airplane_type):
+        '''
+        Takes a airplane type string and returns a list of pilots that can fly that airplane type
+
+        :param airplane_type: airplane type string f.x ("AKN-77")
+
+        Returns, return: list of pilots that can fly that airplane type
+        '''
+        all_pilots = self.employee_data.read_all_pilots()
+        pilots = []
+        for pilot in all_pilots:
+            if pilot.airplane_type == airplane_type:
+                pilots.append(pilot)
+        return pilots
+
+    def list_pilots_sorted_by_airplane_type(self):
+        '''
+        Returns a list of pilots sorted by airplane type
+
+        Returns, return: list of pilots sorted by airplane type
+        '''
+        # get a list of all different unique airplane types
+        all_pilots = self.employee_data.read_all_pilots()
+        airplane_types = []
+        for pilot in all_pilots:
+            if pilot.airplane_type not in airplane_types:
+                airplane_types.append(pilot.airplane_type)
+        airplane_types.sort()
+        # now using list_pilots_by_airplane_type to get a list of pilots for each airplane type in same order of the sorted list
+        pilots = []
+        for airplane_type in airplane_types:
+            pilot_list = self.list_pilots_by_airplane_type(airplane_type)
+            for p in pilot_list:
+                pilots.append(p)
+        return pilots

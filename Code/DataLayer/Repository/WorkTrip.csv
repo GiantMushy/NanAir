@@ -1,4 +1,4 @@
-id,destination,departure_datetime,return_datetime,crew_members
+id,destination,departure_datetime,return_datetime,crew_members,aiplane_id
 001,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-14 14:32,2032-11-14 17:32,"001,002"
 002,"{'country': 'Greenland', 'airport': 'Kulusuk Airport', 'flight_time': '2h 30m', 'distance_from_iceland': '1300km', 'contact_name': 'Anna Kulusuk', 'emergency_phone': '65434'}",2033-11-14 14:32,2034-11-14 17:32,"001,002,003"
 003,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-15 14:32,2032-11-15 17:32,

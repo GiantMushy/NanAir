@@ -1,18 +1,14 @@
-# VNL1_19
+About: - This program is intented for NaNAir Airlines. - Functionality for adding employees, destinations, worktrip, airplanes and more is implemnted. - A clear overview of all the data mentioned can then be viewed.
 
-Everything connected to planning goes in the Planning folder
+To run the program:
 
-External link to use cases: https://docs.google.com/spreadsheets/d/1kxTIwdAtlA6QNj3RY7d1iiy1dSJ2NECmsctKEqywEb8/edit#gid=0
+1. In VSC
 
-External link to requirements list: https://docs.google.com/spreadsheets/d/1yKYZ7Mhm3DRL2f0yl_ZB9-C14GpwQcZwGuQTL1kjHpQ/edit#gid=0
+   - have the project root open in VSC (VNL1_19)
+   - Press the play button with the **main**.py file open
 
-External link to class diagrams: https://lucid.app/lucidchart/7b1cbf61-5347-4380-8a10-3cccf6d3c237/edit?viewport_loc=-608%2C187%2C2565%2C2364%2CHWEp-vi-RSFO&invitationId=inv_9dfe3db7-67de-4b12-8816-15a63ac3de57
+2. In terminal
+   - Navigate to the project root, "cd VNL1_19"
+   - run "python3 **main**.py"
 
-Happy paths staðsett undir Planning folder
-
-Notendahópagreining:
-
-bara test.
-bara test 2.
-
-To test run the program, open the <Code> folder in your terminal, and run "thorri__main__.py"
+Other things regarding the program. - Headquarters destination is added automatically when starting the program, so the ID "01" is always in use. - Destinations is prepopulated with the destinations mentioned in the stakeholder requirements.

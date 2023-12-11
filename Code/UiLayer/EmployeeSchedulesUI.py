@@ -1,5 +1,5 @@
-from LogicLayer.LogicLayerAPI import LogicLayerAPI
-from UiLayer.PrintFunctions import PrintFunctions
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI
+from Code.UiLayer.PrintFunctions import PrintFunctions
 
 class EmployeeSchedulesUI:
     def __init__(self):
@@ -35,7 +35,7 @@ class EmployeeSchedulesUI:
     def input_prompt(self):
         while True:
             self.employee_schedules_output()
-            command = input("Enter you command: ")            
+            command = input("Enter you command: ").lower()          
 
             if command == "q":
                 print("Goodbye")

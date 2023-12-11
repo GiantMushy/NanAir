@@ -1,0 +1,84 @@
+@startuml
+
+class Employee {
+    - id : string
+    - name : string
+    - social_security_number : string
+    - address : string
+    - mobile_phone_number : string
+    - email_address : string
+    - home_phone_number : string?
+}
+
+class FlightAttendant {
+    - id : string
+    - attendant_role : string
+}
+
+class Pilot {
+    - id : string
+    - pilot_role : string
+    - airplane_type : string
+}
+
+
+class Airplane {
+    - id : string
+    - name : string
+    - type : string
+}
+
+class AirplaneType {
+    - type : string
+    - manufacturer : string
+    - capacity : int
+}
+
+
+
+
+class Flight {
+    - flight_number : string
+    - start_from : string
+    - start_datetime : datetime
+    - end_at : string
+    - arrival_datetime : datetime
+    - airplane_id : string
+    - capacity : int
+    - tickets_sold : int
+}
+
+class Destination {
+    - id : string
+    - city : string
+    - airport : string
+    - country : string
+    - distance : int
+    - travel_time : int
+    - contact_name : string
+    - contact_phone_number : string
+}
+
+
+class WorkTrip {
+    - id : string
+    - destination : string
+    - departure_datetime : datetime
+    - return_datetime : datetime
+    - airplane : string
+    - flight_number_start : string
+    - flight_number_end : string
+    - crew_members : string
+}
+
+AirplaneType "1" <-- "0..*" Airplane : type
+Destination "2" <-- "0..*" Flight : start_from / end_at
+Employee "1" <|-- "0..1" FlightAttendant : id
+Employee "1" <|-- "0..1" Pilot : id
+AirplaneType "1" <-- "0..*" Pilot : flies airplane_type
+Airplane "1" <-- "0..*" Flight : airplane_id
+Destination "1" <-- "0..*" WorkTrip : destination
+Flight "2" <-- "1" WorkTrip : flight_number_start / flight_number_end
+Employee "0..*" <-- "0..*" WorkTrip : crew_members
+
+@enduml
