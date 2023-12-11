@@ -56,6 +56,16 @@ class WorkTripLogic:
         # TODO: add capacity into flights, assume airplane capacity given in worktrip is always correct
         # to make sure of that later on add airplane type in DB and use that when creating airplanes
 
+        # if datetimes are indeed in the correct format
+        try:
+            formatting_departure_datetime = datetime.strptime(
+                departure_datetime, '%Y-%m-%d %H:%M')
+            formatting_return_datetime = datetime.strptime(
+                return_datetime, '%Y-%m-%d %H:%M')
+        except ValueError:
+            raise ValueError(
+                "Departure and return dates must be in the format YYYY-MM-DD HH:MM.")
+
         # date cannot be in the past, return_datetime cannot be less than departure_datetime
         if not destination_id or not departure_datetime or not return_datetime or not airplane:
             raise ValueError("Required fields cannot be empty.")
@@ -66,15 +76,9 @@ class WorkTripLogic:
         if datetime.strptime(return_datetime, '%Y-%m-%d %H:%M') < datetime.strptime(departure_datetime, '%Y-%m-%d %H:%M'):
             raise ValueError("Return date cannot be before departure date.")
 
-        # if datetimes are indeed in the correct format
-        try:
-            formatting_departure_datetime = datetime.strptime(
-                departure_datetime, '%Y-%m-%d %H:%M')
-            formatting_return_datetime = datetime.strptime(
-                return_datetime, '%Y-%m-%d %H:%M')
-        except ValueError:
+        if datetime.strptime(departure_datetime, '%Y-%m-%d %H:%M') < datetime.now() + timedelta(days=7):
             raise ValueError(
-                "Departure and return dates must be in the format YYYY-MM-DD HH:MM.")
+                "Worktrips cannot be created less than a week from today.")
 
         # destination can't be headquarters
         if int(destination_id) == int("01"):
@@ -254,15 +258,15 @@ class WorkTripLogic:
 
         now = datetime.now()
 
-        if start_departure <= now <= start_departure:
+        if now < start_departure:
+            return "Not started"
+        elif start_departure <= now <= start_arrival:
             return "In air"
+        elif start_arrival <= now <= end_departure:
+            return "Landed abroad"
         elif end_departure <= now <= end_arrival:
             return "In air"
-        elif start_departure <= now <= end_departure:
-            return "Landed abroad"
-        elif now < start_departure:
-            return "Not started"
-        else:
+        elif now > end_arrival:
             return "Done"
 
     def add_crew_member(self, work_trip_id, employee_id):

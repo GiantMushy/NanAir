@@ -45,10 +45,6 @@ class EmployeeManagerLogic:
         employee_id = self.generate_unique_employee_id()
         kwargs['id'] = employee_id
 
-        # add general employee information
-        new_employee = Employee(**kwargs)
-        self.employee_data.add_employee(new_employee)
-
         # add specific role information
         if employee_type.lower() == 'pilot':
             # checking role of pilot, if either captain or co-pilot
@@ -79,6 +75,10 @@ class EmployeeManagerLogic:
         else:
             raise ValueError(
                 "Invalid employee type, must be either Pilot or Flight Attendant.")
+
+        # add general employee information after going through all checks
+        new_employee = Employee(**kwargs)
+        self.employee_data.add_employee(new_employee)
 
     def list_all_employees(self):
         '''

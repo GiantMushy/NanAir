@@ -240,6 +240,17 @@ def add_extra_employees():
     )
 
 
+def test_trying_to_use_airplane_twice():
+    departure_date_time_now = datetime.now() + timedelta(minutes=1)
+    return_datetime_now = departure_date_time_now + timedelta(hours=6)
+    departure_date_time_str = departure_date_time_now.strftime(
+        '%Y-%m-%d %H:%M')
+    return_datetime_str = return_datetime_now.strftime('%Y-%m-%d %H:%M')
+
+    logic.add_work_trip("02", departure_date_time_str,
+                        return_datetime_str, "003")
+
+
 def main():
     # add_sample_employees()
     # add_airplanes()
@@ -249,6 +260,7 @@ def main():
     # update_emergency_contact()
     # add_extra_airplane()
     # add_extra_employees()
+    test_trying_to_use_airplane_twice()
     print_all_types_of_data()
 
 
