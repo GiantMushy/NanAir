@@ -108,6 +108,7 @@ class FlightSchedulesUI:
 
                         else:                        ############# Staff Trips #############
                             print("Staff Trips") 
+                        self.Logic.create_recurring_work_trips(recurrence_days, recurrence_count, dict['id'])
                         #edit = FlightSchedulesStaffStatusUI(dict["id"])
                         #edit.input_prompt()
 
