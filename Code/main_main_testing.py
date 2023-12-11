@@ -251,16 +251,34 @@ def test_trying_to_use_airplane_twice():
                         return_datetime_str, "003")
 
 
+def testing_datetime(departure_string):
+    '''
+    :param departure_string: string datetime on the format. In string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13"
+
+    2023-12-10 14:50
+    '''
+    departure_datetime = datetime.strptime(departure_string, "%Y-%m-%d %H:%M")
+    print(f"new departure datetime: {departure_datetime}")
+    departure_datetime_plus_week = departure_datetime + timedelta(days=7)
+    print(f"departure plus one week {departure_datetime_plus_week}")
+    departure_plus_week_string = departure_datetime_plus_week.strftime(
+        "%Y-%m-%d %H:%M")
+    print(f"departure string: {departure_plus_week_string}")
+    today = datetime.now()
+    print(f"right now {today}")
+
+
 def main():
-    # add_sample_employees()
-    # add_airplanes()
-    # add_destinations()
-    # add_work_trips()
-    # add_crew_member_wt()
+    add_sample_employees()
+    add_airplanes()
+    add_destinations()
+    add_work_trips()
+    add_crew_member_wt()
     # update_emergency_contact()
     # add_extra_airplane()
     # add_extra_employees()
-    test_trying_to_use_airplane_twice()
+    # test_trying_to_use_airplane_twice()
+    # testing_datetime("2023-12-15 14:50")
     print_all_types_of_data()
 
 

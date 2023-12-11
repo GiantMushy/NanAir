@@ -76,9 +76,9 @@ class WorkTripLogic:
         if datetime.strptime(return_datetime, '%Y-%m-%d %H:%M') < datetime.strptime(departure_datetime, '%Y-%m-%d %H:%M'):
             raise ValueError("Return date cannot be before departure date.")
 
-        if datetime.strptime(departure_datetime, '%Y-%m-%d %H:%M') < datetime.now() + timedelta(days=7):
-            raise ValueError(
-                "Worktrips cannot be created less than a week from today.")
+        # if datetime.strptime(departure_datetime, '%Y-%m-%d %H:%M') < datetime.now() + timedelta(days=7):
+            # raise ValueError(
+            # "Worktrips cannot be created less than a week from today.")
 
         # destination can't be headquarters
         if int(destination_id) == int("01"):
