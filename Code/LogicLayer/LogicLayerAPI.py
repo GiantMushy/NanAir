@@ -1,10 +1,10 @@
-from LogicLayer.EmployeeManagerLogic import EmployeeManagerLogic
-from LogicLayer.WorkTripLogic import WorkTripLogic
-from LogicLayer.DestinationManagerLogic import DestinationManagerLogic
-from LogicLayer.AirplaneManagerLogic import AirplaneManagerLogic
-from LogicLayer.FlightLogic import FlightLogic
-from LogicLayer.AirplaneTypeLogic import AirplaneTypeLogic
-from LogicLayer.IsChecks import IsChecks
+from Code.LogicLayer.EmployeeManagerLogic import EmployeeManagerLogic
+from Code.LogicLayer.WorkTripLogic import WorkTripLogic
+from Code.LogicLayer.DestinationManagerLogic import DestinationManagerLogic
+from Code.LogicLayer.AirplaneManagerLogic import AirplaneManagerLogic
+from Code.LogicLayer.FlightLogic import FlightLogic
+from Code.LogicLayer.AirplaneTypeLogic import AirplaneTypeLogic
+from Code.LogicLayer.IsChecks import IsChecks
 
 
 class LogicLayerAPI:

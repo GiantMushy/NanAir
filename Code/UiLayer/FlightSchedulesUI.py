@@ -1,6 +1,6 @@
-from LogicLayer.LogicLayerAPI import LogicLayerAPI
-from UiLayer.PrintFunctions import PrintFunctions
-from UiLayer.FlightSchedulesCreateNewUI import FlightSchedulesCreateNewUI
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI
+from Code.UiLayer.PrintFunctions import PrintFunctions
+from Code.UiLayer.FlightSchedulesCreateNewUI import FlightSchedulesCreateNewUI
 import datetime
 
 class FlightSchedulesUI:

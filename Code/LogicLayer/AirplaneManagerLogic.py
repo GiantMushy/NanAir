@@ -1,7 +1,7 @@
-from DataLayer.DataLayerAPI import DataLayerAPI
-from LogicLayer.AirplaneTypeLogic import AirplaneTypeLogic
-from LogicLayer.FlightLogic import FlightLogic
-from Models.Airplane import Airplane
+from Code.DataLayer.DataLayerAPI import DataLayerAPI
+from Code.LogicLayer.AirplaneTypeLogic import AirplaneTypeLogic
+from Code.LogicLayer.FlightLogic import FlightLogic
+from Code.Models.Airplane import Airplane
 
 
 class AirplaneManagerLogic:

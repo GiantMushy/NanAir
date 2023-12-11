@@ -1,10 +1,10 @@
 #from logic_ui_wrapper import wrapper
-from UiLayer.PrintFunctions import PrintFunctions
-from UiLayer.FlightSchedulesUI import FlightSchedulesUI
-from UiLayer.EmployeeSchedulesUI import EmployeeSchedulesUI
-from UiLayer.EmployeeDataUI import EmployeeDataUI
-from UiLayer.DestinationDataUI import DestinationDataUI
-from UiLayer.AirplaneDataUI import AirplaneDataUI
+from Code.UiLayer.PrintFunctions import PrintFunctions
+from Code.UiLayer.FlightSchedulesUI import FlightSchedulesUI
+from Code.UiLayer.EmployeeSchedulesUI import EmployeeSchedulesUI
+from Code.UiLayer.EmployeeDataUI import EmployeeDataUI
+from Code.UiLayer.DestinationDataUI import DestinationDataUI
+from Code.UiLayer.AirplaneDataUI import AirplaneDataUI
 
 class MainMenuUI:
     def __init__(self, user = ""):
