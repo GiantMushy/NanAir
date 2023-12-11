@@ -54,11 +54,11 @@ Hópurinn vann að heimann.
 
 Horft á fyrilestur á netinu
 Skipuleggja forritunina og búa til files
-Oliver Emil: airplane-list-all feature branch
-Benjamín: destination-view feature branch
-Þorvarður: UI-layer-setup feature branch
-Edda: lagaði skýrsluna
-Matthías: create-modify-employees feature branch
+Oliver Emil: Data 
+Benjamín: 
+Þorvarður: ui 
+Edda: 
+Matthías: Data
 
 5.12.23
 
@@ -67,3 +67,27 @@ Benjamín: destination-view feature branch
 Þorvarður: UI-layer-employee-create-view-edit feature branch
 Edda: lagaði skýrsluna
 Matthías: create-modify-employees feature branch, wrappers update
+
+6.12.23
+
+Markmið dagsins var að reyna klára logic og data layerið á destinations og airplaines
+Svo að það sé hægt að klára ui layerið á morgun
+Oliver Emil: Airplaines
+Benjamín: Destination
+Þorvarður: Ui-layer fá það til geta spjallað við logic od data
+Matthías: work trips
+Edda: Validator 
+
+Markmið dagsins gekk allt í lagi smá erfiðleikar við að ná að fullklára destinations og add airplaines en erum að vinna í þessu og mun vonandi vera tilbúið á morgun
+
+7.12.23
+
+Markmið dagsins var að klára worktrips og einnig byrja á að debugga employees, destination og airplaines
+
+Matthías: Work trips 
+Þorvarður: Debugging Ui layer
+Benjamín: Debugg
+Edda: Validation service
+Oliver: Debugging in terminal
+
+Það gekk mjög vel í dag náðum að finna fullt af villum og laga þær og worktrips ætti að vera tilbúið fyrir Ui layerinn
