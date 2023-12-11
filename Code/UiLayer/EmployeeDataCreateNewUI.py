@@ -203,7 +203,7 @@ class EmployeeDataCreateNewUI:
         print(self.PrintUi.allign_left(f"    {self.new_employee[4]}"))
         print(self.PrintUi.allign_left(f"    {self.new_employee[5]}"))
         print(self.PrintUi.allign_left(f"    {self.new_employee[6]}"))
-        print(self.PrintUi.allign_left("--> Input Home Phone"))
+        print(self.PrintUi.allign_left("--> Input Home Phone (optional)"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
