@@ -128,8 +128,8 @@ class FlightSchedulesCreateNewUI:
         print(self.PrintUi.allign_left(f"       Departure:    {self.new_trip[1]}"))
         print(self.PrintUi.allign_left(f"          Return:    {self.new_trip[2]}"))
         print(self.PrintUi.allign_left(f"     Destination:    {self.new_trip[0]['city']}, {self.new_trip[0]['country']}"))
-        print(self.PrintUi.allign_left(f"           Plane:    {self.new_trip[3]}"))
-        print(self.PrintUi.allign_left(f"   Flight Number:    {'self.new_trip[000]'}"))
+        print(self.PrintUi.allign_left(f"           Plane:    {self.new_trip[3]['id']}: {self.new_trip[3]['name']}, {self.new_trip[3]['type']}"))
+        print(self.PrintUi.allign_left(f"   Flight Number:    ---Flight Number Goes Here---"))
         print(self.PrintUi.allign_left(f"    Staff Status:    Not Staffed"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
@@ -224,6 +224,7 @@ class FlightSchedulesCreateNewUI:
                         for dic in printed_data:
                             if int(data) == int(dic['id']):
                                 self.new_trip[3] = self.Logic.find_airplane_by_id(dic['id'])
+                                self.new_trip[3] = self.Logic.object_to_dict(self.new_trip[3])
                                 input_check = True
                     except ValueError as e:
                         print(f"Error: {e}")

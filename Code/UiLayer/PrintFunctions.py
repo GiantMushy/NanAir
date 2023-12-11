@@ -202,10 +202,16 @@ class PrintFunctions:
 
     def print_destinations(self, data, line_num):
         line_count = 0
-        print_format = "%-5s%-15s%-15s%-15s"
+        print_format = "%-5s%-20s%-20s%-20s"
 
         for dic in data:
-            print(self.allign_left(print_format % (dic['id'], dic['city'], dic['country'], dic['airport'])))
+            vals = []
+            for value in dic.values():
+                vals.append(value)
+            for n in range(len(vals)):
+                if len(vals[n]) > 18: #shorten names
+                    vals[n] = self.shorten_name(vals[n], 18)
+            print(self.allign_left(print_format % (vals[0], vals[1], vals[3], vals[2])))
             line_count += 1
         
         while line_count <= line_num:
