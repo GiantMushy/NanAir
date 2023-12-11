@@ -1,5 +1,5 @@
-from LogicLayer.EmployeeManagerLogic import EmployeeManagerLogic
-from LogicLayer.LogicLayerAPI import LogicLayerAPI
+from Code.LogicLayer.EmployeeManagerLogic import EmployeeManagerLogic
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI
 import random
 
 
