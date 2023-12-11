@@ -1,6 +1,7 @@
 from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI
 from Code.UiLayer.PrintFunctions import PrintFunctions
 
+
 class EmployeeDataCreateNewUI:
     def __init__(self):
         self.PrintUi = PrintFunctions()
@@ -10,11 +11,13 @@ class EmployeeDataCreateNewUI:
     def input_employee_type(self):
         '''Print sequence for Creating a new Employee : Name'''
         self.PrintUi.logo()
-        self.PrintUi.print_header("Employee Database Menu > Create New > Input Name", "left")
+        self.PrintUi.print_header(
+            "Employee Database Menu > Create New > Employee Type", "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New Employee"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left("--> Input Employee Type (Pilot/Flight Attendant)"))
+        print(self.PrintUi.allign_left(
+            "--> Input Employee Type (input 1 for Pilot, 2 for Flight Attendant)"))
         print(self.PrintUi.allign_left("    Employee Role"))
         print(self.PrintUi.allign_left("    Employee Name"))
         print(self.PrintUi.allign_left("    Social Security Number"))
@@ -33,15 +36,24 @@ class EmployeeDataCreateNewUI:
         print(self.PrintUi.allign_left(""))
         print(self.PrintUi.end_line())
 
+    def which_role_to_display(self, employee_type):
+        '''which roles to display to choose from'''
+        if employee_type == "pilot":
+            return "input 1 to add a Captain, 2 for Co Pilot"
+        elif employee_type == "flight_attendant":
+            return "input 1 to add a Senior Flight Attendant, 2 for Flight Attendant"
+
     def input_employee_role(self):
         '''Print sequence for Creating a new Employee : Name'''
         self.PrintUi.logo()
-        self.PrintUi.print_header("Employee Database Menu > Create New > Input Name", "left")
+        self.PrintUi.print_header(
+            "Employee Database Menu > Create New > Input Employee Role", "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New Employee"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left(f"    {self.new_employee[0]}"))
-        print(self.PrintUi.allign_left("--> Input Employee Role (Captain/Co Pilot, Senior/Flight Attendant)"))
+        print(self.PrintUi.allign_left(
+            "--> Input Employee Role "+self.which_role_to_display(self.new_employee[0])))
         print(self.PrintUi.allign_left("    Employee Name"))
         print(self.PrintUi.allign_left("    Social Security Number"))
         print(self.PrintUi.allign_left("    Phone Number"))
@@ -59,10 +71,39 @@ class EmployeeDataCreateNewUI:
         print(self.PrintUi.allign_left(""))
         print(self.PrintUi.end_line())
 
+    def input_airplane_type(self):
+        '''Print sequence for Creating a new Employee : Name'''
+        self.PrintUi.logo()
+        self.PrintUi.print_header(
+            "Employee Database Menu > Create New > Input Airplane Type", "left")
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.allign_left("Creating New Employee"))
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.allign_left(f"    {self.new_employee[0]}"))
+        print(self.PrintUi.allign_left(f"    {self.new_employee[1]}"))
+        print(self.PrintUi.allign_left(
+            "--> Input Airplane Type (input 1 for AKN-77, 2 for AKN-78)"))
+        print(self.PrintUi.allign_left("    Employee Name"))
+        print(self.PrintUi.allign_left("    Social Security Number"))
+        print(self.PrintUi.allign_left("    Phone Number"))
+        print(self.PrintUi.allign_left("    Home Address"))
+        print(self.PrintUi.allign_left("    Email"))
+        print(self.PrintUi.allign_left("    Home Phone"))
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.allign_left(
+            "    AKN-77: Boeing 300, AKN-78: Airbus 300"))
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.allign_left(""))
+        print(self.PrintUi.end_line())
+
     def input_name(self):
         '''Print sequence for Creating a new Employee : Name'''
         self.PrintUi.logo()
-        self.PrintUi.print_header("Employee Database Menu > Create New > Input Name", "left")
+        self.PrintUi.print_header(
+            "Employee Database Menu > Create New > Input Name", "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New Employee"))
         print(self.PrintUi.empty_line())
@@ -88,14 +129,16 @@ class EmployeeDataCreateNewUI:
     def input_SSN(self):
         '''Print sequence for Creating a new Employee : Social Security Number'''
         self.PrintUi.logo()
-        self.PrintUi.print_header("Employee Database Menu > Create New > Input SSN", "left")
+        self.PrintUi.print_header(
+            "Employee Database Menu > Create New > Input SSN", "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New Employee"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left(f"    {self.new_employee[0]}"))
         print(self.PrintUi.allign_left(f"    {self.new_employee[1]}"))
         print(self.PrintUi.allign_left(f"    {self.new_employee[2]}"))
-        print(self.PrintUi.allign_left("--> Social Security Number (xxxxxx xxxx)"))
+        print(self.PrintUi.allign_left(
+            "--> Social Security Number (xxxxxx xxxx)"))
         print(self.PrintUi.allign_left("    Phone Number"))
         print(self.PrintUi.allign_left("    Home Address"))
         print(self.PrintUi.allign_left("    Email"))
@@ -114,7 +157,8 @@ class EmployeeDataCreateNewUI:
     def input_phone(self):
         '''Print sequence for Creating a new Employee : Phone number'''
         self.PrintUi.logo()
-        self.PrintUi.print_header("Employee Database Menu > Create New > Input Phone Number", "left")
+        self.PrintUi.print_header(
+            "Employee Database Menu > Create New > Input Phone Number", "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New Employee"))
         print(self.PrintUi.empty_line())
@@ -140,7 +184,8 @@ class EmployeeDataCreateNewUI:
     def input_address(self):
         '''Print sequence for Creating a new Employee : Home Address'''
         self.PrintUi.logo()
-        self.PrintUi.print_header("Employee Database Menu > Create New > Input Address", "left")
+        self.PrintUi.print_header(
+            "Employee Database Menu > Create New > Input Address", "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New Employee"))
         print(self.PrintUi.empty_line())
@@ -166,7 +211,8 @@ class EmployeeDataCreateNewUI:
     def input_email(self):
         '''Print sequence for Creating a new Employee : Email'''
         self.PrintUi.logo()
-        self.PrintUi.print_header("Employee Database Menu > Create New > Input Email", "left")
+        self.PrintUi.print_header(
+            "Employee Database Menu > Create New > Input Email", "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New Employee"))
         print(self.PrintUi.empty_line())
@@ -192,7 +238,8 @@ class EmployeeDataCreateNewUI:
     def input_home_phone(self):
         '''Print sequence for Creating a new Employee : Home Phone'''
         self.PrintUi.logo()
-        self.PrintUi.print_header("Employee Database Menu > Create New > Input Home Phone", "left")
+        self.PrintUi.print_header(
+            "Employee Database Menu > Create New > Input Home Phone", "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New Employee"))
         print(self.PrintUi.empty_line())
@@ -218,27 +265,39 @@ class EmployeeDataCreateNewUI:
     def new_created(self):
         '''Print sequence when a new Employee has been created'''
         self.PrintUi.logo()
-        self.PrintUi.print_header("Employee Database Menu > Create New > Input Home Phone", "left")
+        self.PrintUi.print_header(
+            "Employee Database Menu > Create New > Input Home Phone", "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("New Employee Created:"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(f"Employee Type:    {self.new_employee[0]}"))
-        print(self.PrintUi.allign_left(f"Employee Role:    {self.new_employee[1]}"))
-        print(self.PrintUi.allign_left(f"         Name:    {self.new_employee[2]}"))
-        print(self.PrintUi.allign_left(f"          SSN:    {self.new_employee[3]}"))
-        print(self.PrintUi.allign_left(f"        Phone:    {self.new_employee[4]}"))
-        print(self.PrintUi.allign_left(f"      Address:    {self.new_employee[5]}"))
-        print(self.PrintUi.allign_left(f"        Email:    {self.new_employee[6]}"))
-        print(self.PrintUi.allign_left(f"   Home Phone:    {self.new_employee[7]}"))
+        print(self.PrintUi.allign_left(
+            f"Employee Type:    {self.new_employee[0]}"))
+        print(self.PrintUi.allign_left(
+            f"Employee Role:    {self.new_employee[1]}"))
+        print(self.PrintUi.allign_left(
+            f"         Name:    {self.new_employee[2]}"))
+        print(self.PrintUi.allign_left(
+            f"          SSN:    {self.new_employee[3]}"))
+        print(self.PrintUi.allign_left(
+            f"        Phone:    {self.new_employee[4]}"))
+        print(self.PrintUi.allign_left(
+            f"      Address:    {self.new_employee[5]}"))
+        print(self.PrintUi.allign_left(
+            f"        Email:    {self.new_employee[6]}"))
+        print(self.PrintUi.allign_left(
+            f"   Home Phone:    {self.new_employee[7]}"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(" 1 : Remake Employee (if incorrect data was input)"))
+        print(self.PrintUi.allign_left(
+            " 1 : Remake Employee (if incorrect data was input)"))
         print(self.PrintUi.allign_left(" 2 : Save and Create Another Employee"))
-        print(self.PrintUi.allign_left(" 3 : Save and Return to the Employee Database Menu"))
-        print(self.PrintUi.allign_left(" 4 : Discard and Return to the Employee Database Menu"))
+        print(self.PrintUi.allign_left(
+            " 3 : Save and Return to the Employee Database Menu"))
+        print(self.PrintUi.allign_left(
+            " 4 : Discard and Return to the Employee Database Menu"))
         print(self.PrintUi.end_line())
 
     def create_new_sequence(self):
@@ -251,6 +310,15 @@ class EmployeeDataCreateNewUI:
                 if data == "q":
                     print("Goodbye")
                     exit()
+                elif data == "1":
+                    data = "pilot"
+                elif data == "2":
+                    data = "flight_attendant"
+                else:
+                    print(
+                        "Invalid input, input 1 or 2, choosing a pilot or flight_attendant respectively.")
+                    input_check = False
+
                 try:
                     self.Logic.is_employee_type(data)
                     input_check = True
@@ -264,6 +332,29 @@ class EmployeeDataCreateNewUI:
                 if data == "q":
                     print("Goodbye")
                     exit()
+                if self.new_employee[0] == "pilot":
+                    if data == "1":
+                        data = "Captain"
+                        self.new_employee.append("Captain")
+                    elif data == "2":
+                        data = "Co-Pilot"
+                        self.new_employee.append("Co-Pilot")
+                    else:
+                        print(
+                            "Invalid input, input 1 or 2, choosing a captain or co_pilot respectively.")
+                        input_check = False
+                    # need to display a list of all airplane types
+                    self.input_airplane_type()
+                    data = input("Enter Airplane Type: ")
+                elif self.new_employee[0] == "flight_attendant":
+                    if data == "1":
+                        data = "Senior Flight Attendant"
+                    elif data == "2":
+                        data = "Flight Attendant"
+                    else:
+                        print(
+                            "Invalid input, input 1 or 2, choosing a senior_flight_attendant or flight_attendant respectively.")
+                        input_check = False
                 try:
                     self.Logic.is_employee_role(data)
                     input_check = True
@@ -296,7 +387,7 @@ class EmployeeDataCreateNewUI:
                 except ValueError as e:
                     print(f"Error: {e}")
                     input_check = False
-                
+
             elif n == 5:
                 self.input_phone()
                 data = input("Enter Phone number: ")
@@ -378,7 +469,7 @@ class EmployeeDataCreateNewUI:
                 except ValueError as e:
                     print(f"Error: {e}")
             elif command == "4":
-                break    
+                break
             elif command == "q":
                 print("Goodbye")
                 exit()
