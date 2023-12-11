@@ -1,3 +1,6 @@
+import datetime
+import ast
+
 class PrintFunctions:
     def __init__(self):
         pass
@@ -140,7 +143,8 @@ class PrintFunctions:
             for n in range(len(vals)):
                 if len(vals[n]) > 18: #shorten names
                     vals[n] = self.shorten_name(vals[n], 18)
-            print(self.allign_left(print_format % (vals[0], vals[1], vals[2], vals[3], vals[4] + "km", vals[5] + "min", vals[6], vals[7])))
+            time = f'{int(vals[5])//60}hrs {int(vals[5])%60}min'
+            print(self.allign_left(print_format % (vals[0], vals[1], vals[2], vals[3], vals[4] + "km", time, vals[6], vals[7])))
             line_count += 1
         while line_count <= line_num:
             print(self.empty_line()) #fills out UI box to correct size with empty lines
@@ -165,8 +169,40 @@ class PrintFunctions:
             print(self.empty_line()) #fills out UI box to correct size with empty lines
             line_count += 1
 
-    def print_flight_schedule_table(self, data, line_num):
-        pass
+    def print_flight_schedule_table(self, data, date_start, date_end, line_num):
+        line_count = 0
+        print_format = "%-5s%-20s%-20s%-15s%-15s%-15s%-15s%-0s"
+        
+        print(self.allign_left(print_format % ('Id','Departing','Destination','Date','Time','Plane','Flight Nr.','Staff Status')))
+        print(self.empty_line())
+        for dic in data:
+            destination = ast.literal_eval(dic['destination']) #translates the stringed dictionary to a literal dictionary
+            vals = []
+            for value in dic.values():
+                vals.append(value)
+            if not dic['crew_members']:
+                staff_status = 'Not Staffed'
+            elif len(dic['crew_members']) < 8:
+                staff_status = 'Not Staffed'
+            else:
+                staff_status = 'Staffed'
+            print(self.allign_left(print_format % (dic['id'], 'Reykjavik', destination['country'], 
+                                                   dic['departure_datetime'].date(), dic['departure_datetime'].time(),
+                                                   "plane", 'NA040', staff_status)))
+            print(self.allign_left(print_format % ( '', destination['country'], 'Reykjavik', 
+                                                   dic['return_datetime'].date(), dic['return_datetime'].time(),
+                                                   "plane", 'NA041', staff_status)))
+            line_count += 1
+        while line_count <= line_num:
+            print(self.empty_line()) #fills out UI box to correct size with empty lines
+            line_count += 1
 
     def print_employee_schedule_table(self,data,line_num):
         pass
+
+    def print_destinations(self, data, line_num):
+        line_count = 0
+        print_format = "%-5s%-15s%-15s%-15s"
+
+        for dic in data:
+            self.allign_left(print_format % (dic['id'], dic['city'], dic['country'], dic['airport']))

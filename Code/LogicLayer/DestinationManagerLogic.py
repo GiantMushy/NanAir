@@ -5,6 +5,12 @@ from Models.Destination import Destination
 class DestinationManagerLogic:
     def __init__(self):
         self.destination_data = DataLayerAPI()
+        self.create_hq_destination()
+
+    def create_hq_destination(self):
+        if not self.find_destination_by_id("01"):
+            self.add_destination(
+                city="Reykjavík", airport="RKV", country="Iceland", distance="0", travel_time="0", contact_name="N/A", contact_phone_number="N/A")
 
     def generate_unique_destination_id(self):
         """
@@ -16,12 +22,12 @@ class DestinationManagerLogic:
         destinations = self.destination_data.read_all_destinations()
         if not destinations:
             # base case, no Destinations in the database
-            return "001"
+            return "01"
 
         # find the highest existing ID and increment by 1
         max_id = max(int(emp.id) for emp in destinations)
         new_id = max_id + 1
-        return str(new_id).zfill(3)  # pad with zeros to maintain a length of 3
+        return str(new_id).zfill(2)  # pad with zeros to maintain a length of 3
 
     def add_destination(self, **kwargs):
         """
@@ -57,6 +63,7 @@ class DestinationManagerLogic:
     def find_destination_by_id(self, destination_id):
         """
         Finds an Destination by their ID.
+
         :param Destination_id: ID of the Destination to find.
         :return: Destination object if found, None otherwise.
         """
@@ -72,6 +79,7 @@ class DestinationManagerLogic:
         '''
         Checks Destination inputs, and checks if something has letters when not supposed to
         and if something has numbers when not supposed to.
+
         :param field: field to check
         :param input: user input to check for the given field
         '''
@@ -93,6 +101,37 @@ class DestinationManagerLogic:
                     return True
                 else:
                     return False
+
+    def get_headquarters(self):
+        '''
+        Returns the headquarters of NAN air
+        '''
+        return self.find_destination_by_id("01")
+
+    def update_emergency_contact(self, destination_id, contact_name, contact_phone_number):
+        '''
+        Update emergency contact and phone number of destination.
+
+        :param destination_id: ID of the destination to update
+        :param contact_name: new contact name
+        :param contact_phone_number: new contact phone number
+        '''
+        destination = self.find_destination_by_id(destination_id)
+        if destination_id == "01":
+            raise ValueError(
+                "Cannot update emergency contact of headquarters")
+        if not destination or not destination_id or not contact_name or not contact_phone_number:
+            raise ValueError("Invalid input")
+        destination.contact_name = contact_name
+        destination.contact_phone_number = contact_phone_number
+        old_destinations = self.list_all_destinations()
+        new_destinations = []
+        for dest in old_destinations:
+            if dest.id == destination_id:
+                new_destinations.append(destination)
+            else:
+                new_destinations.append(dest)
+        self.destination_data.modify_destination_data(new_destinations)
 
     ##################### Input Varification #############################
     def is_destination(self, City):

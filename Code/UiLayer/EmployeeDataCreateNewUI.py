@@ -247,7 +247,7 @@ class EmployeeDataCreateNewUI:
         while n < 9:
             if n == 1:
                 self.input_employee_type()
-                data = input("Enter Employee Type: ")
+                data = input("Enter Employee Type: ").lower()
                 if data == "q":
                     print("Goodbye")
                     exit()

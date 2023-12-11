@@ -19,10 +19,10 @@ def main():
         print(dest)
 
     work_trip_logic.add_work_trip(
-        destinations[0], '2032-11-14 14:32', '2032-11-14 17:32')
+        "002", '2032-11-14 14:32', '2032-11-14 23:32', "002")
 
     work_trip_logic.add_work_trip(
-        destinations[1], '2032-11-14 14:32', '2034-11-14 17:32', '003')
+        "002", '2032-11-14 14:32', '2034-11-14 23:32', '003')
 
     work_trips = work_trip_logic.list_all_work_trips()
 

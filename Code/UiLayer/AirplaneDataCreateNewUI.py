@@ -171,7 +171,7 @@ class AirplaneDataCreateNewUI:
         while n < 6:
             if n == 1:
                 self.input_name()
-                data = input("Enter Name: ")
+                data = input("Enter Name: ").lower()
                 if data == "q":
                     print("Goodbye")
                     exit()
