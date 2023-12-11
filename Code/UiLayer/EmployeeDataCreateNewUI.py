@@ -86,8 +86,17 @@ class EmployeeDataCreateNewUI:
         print(self.PrintUi.allign_left(
             f"Choose Pilot's license by inputting the airplane type"))
         print(self.PrintUi.empty_line())
-        self.PrintUi.print_airplane_type_table(
-            self.Logic.object_list_to_dict_list((self.Logic.list_all_airplane_types())), 12)
+        if self.Logic.list_all_airplane_types() == []:
+            print(self.PrintUi.allign_left(
+                "It seems that there are no airplane types in the database, please add some airplanes before creating a pilot."))
+            print(self.PrintUi.allign_left(
+                "Enter '0' to skip this step for now, but you won't be able to create a pilot without a license."))
+            for i in range(10):
+                print(self.PrintUi.empty_line())
+
+        else:
+            self.PrintUi.print_airplane_type_table(
+                self.Logic.object_list_to_dict_list((self.Logic.list_all_airplane_types())), 12)
         print(self.PrintUi.end_line())
 
     def input_name(self):
@@ -264,7 +273,7 @@ class EmployeeDataCreateNewUI:
         print(self.PrintUi.allign_left(f"    {self.new_employee[5]}"))
         print(self.PrintUi.allign_left(f"    {self.new_employee[6]}"))
         print(self.PrintUi.allign_left(f"    {self.new_employee[7]}"))
-        print(self.PrintUi.allign_left("--> Input Home Phone"))
+        print(self.PrintUi.allign_left("--> Input Home Phone (optional)"))
         print(self.PrintUi.empty_line())
         if not self.new_employee[0] == "pilot":
             print(self.PrintUi.empty_line())
@@ -348,6 +357,7 @@ class EmployeeDataCreateNewUI:
                 else:
                     print(
                         "Invalid input, input 1 or 2, choosing a pilot or flight_attendant respectively.")
+                    input_check = False
 
             elif n == 2:
                 self.input_employee_role()
@@ -372,14 +382,19 @@ class EmployeeDataCreateNewUI:
                         data = "Flight Attendant"
                     else:
                         print(
-                            "Invalid input, input 1 or 2, choosing a senior_flight_attendant or flight_attendant respectively.")
+                            "Invalid input, input 1 or 2, choosing a Senior Flight Attendant or Flight Attendant Respectively.")
                         input_check = False
 
             elif n == 3:
                 if self.new_employee[0] == 'pilot':
                     self.input_airplane_type()
                     data = input("Enter Airplane Type: ")
-                    if self.Logic.find_type_data(data) == None:
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
+                    elif data == "0":
+                        data = ""
+                    elif self.Logic.find_type_data(data) == None:
                         print(
                             "Invalid airplane type input, please choose type from provided list.")
                         input_check = False
