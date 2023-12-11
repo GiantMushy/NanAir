@@ -205,4 +205,12 @@ class PrintFunctions:
         print_format = "%-5s%-15s%-15s%-15s"
 
         for dic in data:
-            self.allign_left(print_format % (dic['id'], dic['city'], dic['country'], dic['airport']))
+            print(self.allign_left(print_format % (dic['id'], dic['city'], dic['country'], dic['airport'])))
+            line_count += 1
+        
+        while line_count <= line_num:
+            print(self.empty_line()) #fills out UI box to correct size with empty lines
+            line_count += 1
+
+    def print_available_planes(self, data, line_num):
+        pass
