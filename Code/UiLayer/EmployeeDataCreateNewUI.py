@@ -1,5 +1,5 @@
-from LogicLayer.LogicLayerAPI import LogicLayerAPI
-from UiLayer.PrintFunctions import PrintFunctions
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI
+from Code.UiLayer.PrintFunctions import PrintFunctions
 
 class EmployeeDataCreateNewUI:
     def __init__(self):
@@ -41,7 +41,7 @@ class EmployeeDataCreateNewUI:
         print(self.PrintUi.allign_left("Creating New Employee"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left(f"    {self.new_employee[0]}"))
-        print(self.PrintUi.allign_left("--> Input Employee Role (Captain/Co-Pilot, Senior/Flight Attendant)"))
+        print(self.PrintUi.allign_left("--> Input Employee Role (Captain/Co Pilot, Senior/Flight Attendant)"))
         print(self.PrintUi.allign_left("    Employee Name"))
         print(self.PrintUi.allign_left("    Social Security Number"))
         print(self.PrintUi.allign_left("    Phone Number"))
@@ -122,7 +122,7 @@ class EmployeeDataCreateNewUI:
         print(self.PrintUi.allign_left(f"    {self.new_employee[1]}"))
         print(self.PrintUi.allign_left(f"    {self.new_employee[2]}"))
         print(self.PrintUi.allign_left(f"    {self.new_employee[3]}"))
-        print(self.PrintUi.allign_left("--> Input Phone Number (xxx xxxx)"))
+        print(self.PrintUi.allign_left("--> Input Phone Number"))
         print(self.PrintUi.allign_left("    Home Address"))
         print(self.PrintUi.allign_left("    Email"))
         print(self.PrintUi.allign_left("    Home Phone"))
@@ -244,85 +244,109 @@ class EmployeeDataCreateNewUI:
     def create_new_sequence(self):
         n = 1
         input_check = True
-        value_error = "Value Error string goes here"
         while n < 9:
             if n == 1:
                 self.input_employee_type()
-                if input_check:
-                    data = input("Enter Type: ")
-                else:
-                    print(value_error)
-                    data = input("Enter Type:")
+                data = input("Enter Employee Type: ").lower()
+                if data == "q":
+                    print("Goodbye")
+                    exit()
+                try:
+                    self.Logic.is_employee_type(data)
+                    input_check = True
+                except ValueError as e:
+                    print(f"Error: {e}")
+                    input_check = False
 
             elif n == 2:
                 self.input_employee_role()
-                if input_check:
-                    data = input("Enter Role: ")
-                else:
-                    print(value_error)
-                    data = input("Enter Role:")
+                data = input("Enter Employee Role: ")
+                if data == "q":
+                    print("Goodbye")
+                    exit()
+                try:
+                    self.Logic.is_employee_role(data)
+                    input_check = True
+                except ValueError as e:
+                    print(f"Error: {e}")
+                    input_check = False
 
             elif n == 3:
                 self.input_name()
-                if input_check:
-                    data = input("Enter Name: ")
-                else:
-                    print(value_error)
-                    data = input("Enter Name:")
+                data = input("Enter Name: ")
+                if data == "q":
+                    print("Goodbye")
+                    exit()
+                try:
+                    self.Logic.is_name(data)
+                    input_check = True
+                except ValueError as e:
+                    print(f"Error: {e}")
+                    input_check = False
 
             elif n == 4:
                 self.input_SSN()
-                if input_check:
-                    data = input("Enter SSN: ")
-                else:
-                    print(value_error)
-                    data = input("Enter SSN (dddddd-dddd):")
-
-                if data.isnumeric():#------------isSSN()-------------- 
+                data = input("Enter Social Security Number: ")
+                if data == "q":
+                    print("Goodbye")
+                    exit()
+                try:
+                    self.Logic.is_social_security_number(data)
                     input_check = True
-                else:
+                except ValueError as e:
+                    print(f"Error: {e}")
                     input_check = False
                 
             elif n == 5:
                 self.input_phone()
-                if input_check:
-                    data = input("Enter Phone number: ")
-                else:
-                    print(value_error)
-                    data = input("Enter Phone number (ddd dddd):")
-
-                if data.isnumeric():#------------isPhone()-------------- 
+                data = input("Enter Phone number: ")
+                if data == "q":
+                    print("Goodbye")
+                    exit()
+                try:
+                    self.Logic.is_contact_phone_number(data)
                     input_check = True
-                else:
+                except ValueError as e:
+                    print(f"Error: {e}")
                     input_check = False
 
             elif n == 6:
                 self.input_address()
-                if input_check:
-                    data = input("Enter Address: ")
-                else:
-                    print(value_error)
-                    data = input("Enter Address:")
+                data = input("Enter Address: ")
+                if data == "q":
+                    print("Goodbye")
+                    exit()
+                try:
+                    self.Logic.is_address(data)
+                    input_check = True
+                except ValueError as e:
+                    print(f"Error: {e}")
+                    input_check = False
 
             elif n == 7:
                 self.input_email()
-                if input_check:
-                    data = input("Enter Email: ")
-                else:
-                    print(value_error)
-                    data = input("Enter Email:")
+                data = input("Enter Email: ")
+                if data == "q":
+                    print("Goodbye")
+                    exit()
+                try:
+                    self.Logic.is_email(data)
+                    input_check = True
+                except ValueError as e:
+                    print(f"Error: {e}")
+                    input_check = False
 
             elif n == 8:
                 self.input_home_phone()
-                if input_check:
-                    data = input("Enter Home Phone: ")
-                else:
-                    print(value_error)
-                    data = input("Enter Home Phone (ddd dddd):")
-                    
-                if data.isnumeric():#------------isPhone()-------------- 
+                data = input("Enter Home Phone: ")
+                if data == "q":
+                    print("Goodbye")
+                    exit()
+                try:
+                    self.Logic.is_home_phone(data)
                     input_check = True
-                else:
+                except ValueError as e:
+                    print(f"Error: {e}")
                     input_check = False
 
             if input_check:
@@ -356,6 +380,7 @@ class EmployeeDataCreateNewUI:
             elif command == "4":
                 break    
             elif command == "q":
+                print("Goodbye")
                 exit()
             else:
                 print("Invalid input, try again")

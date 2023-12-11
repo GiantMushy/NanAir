@@ -1,5 +1,5 @@
-from LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
-from UiLayer.PrintFunctions import PrintFunctions
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
+from Code.UiLayer.PrintFunctions import PrintFunctions
 
 class AirplaneDataEditUI:
     def __init__(self, airplane_id = ""):
@@ -62,6 +62,7 @@ class AirplaneDataEditUI:
     def input_prompt(self):
         '''Starting function for editing Airplane Data'''
         while True:
+            input_check = False
             airplane_obj = self.Logic.find_airplane_by_id(self.airplane_id)
             self.airplane = self.Logic.object_to_dict(airplane_obj)
             self.airplane_data_edit_output()
@@ -70,56 +71,97 @@ class AirplaneDataEditUI:
             if command == "0":
                 #-------------Send new Data to Logic-------------
                 break
+
             elif command == "1":
                 self.edit_data("Name")
-                command = input("Input new Name: ")
-                if command == "q":
-                    print("Goodbye")
-                    exit()
-                try:
-                    self.Logic.modify_airplane(self.airplane['id'], name = command)
-                except ValueError as e:
-                    print(f"Error: {e}")
+                while not input_check:
+                    command = input("Input new Name: ").lower()
+                    if command == "q":
+                        print("Goodbye")
+                        exit()
+                    try:
+                        self.Logic.is_name(command)
+                        input_check = True
+                        try:
+                            self.Logic.modify_airplane(self.airplane['id'], name = command)
+                        except ValueError as e:
+                            print(f"Error: {e}")
+                    except ValueError as e:
+                        print(f"Error: {e}")
+                        input_check = False
+
             elif command == "2":
                 self.edit_data("Current Location")
-                command = input("Input new Current Location: ")
-                if command == "q":
-                    print("Goodbye")
-                    exit()
-                try:
-                    self.Logic.modify_airplane(self.airplane['id'], current_location = command)
-                except ValueError as e:
-                    print(f"Error: {e}")
+                while not input_check:
+                    command = input("Input new Current Location: ")
+                    if command == "q":
+                        print("Goodbye")
+                        exit()
+                    try:
+                        self.Logic.is_current_location(command)
+                        input_check = True
+                        try:
+                            self.Logic.modify_airplane(self.airplane['id'], current_location = command)
+                        except ValueError as e:
+                            print(f"Error: {e}")
+                    except ValueError as e:
+                        print(f"Error: {e}")
+                        input_check = False
+
             elif command == "3":
                 self.edit_data("Type")
-                command = input("Input new Type: ")
-                if command == "q":
-                    print("Goodbye")
-                    exit()
-                try:
-                    self.Logic.modify_airplane(self.airplane['id'], type = command)
-                except ValueError as e:
-                    print(f"Error: {e}")
+                while not input_check:
+                    command = input("Input new Type: ")
+                    if command == "q":
+                        print("Goodbye")
+                        exit()
+                    try:
+                        self.Logic.is_type(command)
+                        input_check = True
+                        try:
+                            self.Logic.modify_airplane(self.airplane['id'], type = command)
+                        except ValueError as e:
+                            print(f"Error: {e}")
+                    except ValueError as e:
+                        print(f"Error: {e}")
+                        input_check = False
+
             elif command == "4":
                 self.edit_data("Manufacturer")
-                command = input("Input new Manufacturer: ")
-                if command == "q":
-                    print("Goodbye")
-                    exit()
-                try:
-                    self.Logic.modify_airplane(self.airplane['id'], manufacturer = command)
-                except ValueError as e:
-                    print(f"Error: {e}")
+                while not input_check:
+                    command = input("Input new Manufacturer: ")
+                    if command == "q":
+                        print("Goodbye")
+                        exit()
+                    try:
+                        self.Logic.is_manufacturer(command)
+                        input_check = True
+                        try:
+                            self.Logic.modify_airplane(self.airplane['id'], manufacturer = command)
+                        except ValueError as e:
+                            print(f"Error: {e}")
+                    except ValueError as e:
+                        print(f"Error: {e}")
+                        input_check = False
+
             elif command == "5":
                 self.edit_data("Seats")
-                command = input("Input new seat ammount: ")
-                if command == "q":
-                    print("Goodbye")
-                    exit()
-                try:
-                    self.Logic.modify_airplane(self.airplane['id'], capacity = command)
-                except ValueError as e:
-                    print(f"Error: {e}")
+                while not input_check:
+                    command = input("Input new Capacity: ")
+                    if command == "q":
+                        print("Goodbye")
+                        exit()
+                    try:
+                        self.Logic.is_capacity(command)
+                        input_check = True
+                        try:
+                            self.Logic.modify_airplane(self.airplane['id'], capacity = command)
+                        except ValueError as e:
+                            print(f"Error: {e}")
+                    except ValueError as e:
+                        print(f"Error: {e}")
+                        input_check = False
+
             elif command == "q":
                 print("Goodbye")
                 exit()

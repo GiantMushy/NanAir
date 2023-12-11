@@ -1,5 +1,5 @@
-from LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
-from UiLayer.PrintFunctions import PrintFunctions
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
+from Code.UiLayer.PrintFunctions import PrintFunctions
 
 class EmployeeDataEditUI:
     def __init__(self, employee_id = ""):
@@ -30,7 +30,7 @@ class EmployeeDataEditUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(" 0 : Back          q : Exit"))
+        print(self.PrintUi.allign_left(" 0 : Back"))
         print(self.PrintUi.end_line())
 
     def edit_data(self, changed_data):
@@ -62,44 +62,89 @@ class EmployeeDataEditUI:
     def input_prompt(self):
         '''Starting function for editing Employee Data'''
         while True:
+            input_check = False
             employee_obj = self.Logic.find_employee_by_id(self.employee_id)
             self.employee = self.Logic.object_to_dict(employee_obj)
             self.employee_data_edit_output()
-            command = input("Enter you command: ")            
+            command = input("Enter you command: ").lower()         
 
             if command == "0":
                 break
             elif command == "1":
                 self.edit_data("Phone")
-                command = input("Input new Phone number: ")
-                try:
-                    self.Logic.modify_employee(self.employee['id'], mobile_phone_number = command)
-                except ValueError as e:
-                    print(f"Error: {e}")
+                while not input_check: #input check becomes True once a valid input is entered
+                    command = input("Input new Phone number: ")
+                    if command == "q":
+                        print("Goodbye")
+                        exit()
+                    try:
+                        self.Logic.is_contact_phone_number(command)
+                        input_check = True
+                        try:
+                            self.Logic.modify_employee(self.employee['id'], mobile_phone_number = command)
+                        except ValueError as e:
+                            print(f"Error: {e}")
+                    except ValueError as e:
+                        print(f"Error: {e}")
+                        input_check = False
                 
             elif command == "2":
                 self.edit_data("Address")
-                command = input("Input new Address: ")
-                try:
-                    self.Logic.modify_employee(self.employee['id'], address = command)
-                except ValueError as e:
-                    print(f"Error: {e}")
+                while not input_check:
+                    command = input("Input new Address: ")
+                    if command == "q":
+                        print("Goodbye")
+                        exit()
+                    try:
+                        self.Logic.is_address(command)
+                        input_check = True
+                        try:
+                            self.Logic.modify_employee(self.employee['id'], address = command)
+                        except ValueError as e:
+                            print(f"Error: {e}")
+                    except ValueError as e:
+                        print(f"Error: {e}")
+                        input_check = False
                 
             elif command == "3":
                 self.edit_data("Email")
-                command = input("Input new Email: ")
-                try:
-                    self.Logic.modify_employee(self.employee['id'], email_address = command)
-                except ValueError as e:
-                    print(f"Error: {e}")
+                while not input_check:
+                    command = input("Input new Email: ")
+                    if command == "q":
+                        print("Goodbye")
+                        exit()
+                    try:
+                        self.Logic.is_email(command)
+                        input_check = True
+                        try:
+                            self.Logic.modify_employee(self.employee['id'], email_address = command)
+                        except ValueError as e:
+                            print(f"Error: {e}")
+                    except ValueError as e:
+                        print(f"Error: {e}")
+                        input_check = False
+
             elif command == "4":
                 self.edit_data("Home Phone")
-                command = input("Input new Home Phone: ")
-                try:
-                    self.Logic.modify_employee(self.employee['id'], home_phone_number = command)
-                except ValueError as e:
-                    print(f"Error: {e}")
+                while not input_check:
+                    command = input("Input new Phone number: ")
+                    if command == "q":
+                        print("Goodbye")
+                        exit()
+                    try:
+                        self.Logic.is_home_phone(command)
+                        input_check = True
+                        try:
+                            self.Logic.modify_employee(self.employee['id'], home_phone_number = command)
+                        except ValueError as e:
+                            print(f"Error: {e}")
+                    except ValueError as e:
+                        print(f"Error: {e}")
+                        input_check = False
+
             elif command == "q":
+                print("Goodbye")
                 exit()
             else:
                 print("Invalid input, try again")
+

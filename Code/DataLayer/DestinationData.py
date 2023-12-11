@@ -12,8 +12,9 @@ class DestinationData:
         """
         Check if CSV files exist, creating them if not with headers.
         """
-        self.create_file_if_not_exists(self.destinations_filename, ['id', 'city', 'airport','country', 'distance', 'travel_time',
-                                                                     'contact_name', 'contact_phone_number'])
+        self.create_file_if_not_exists(self.destinations_filename, ['id', 'city', 'airport', 'country', 'distance', 'travel_time',
+                                                                    'contact_name', 'contact_phone_number'])
+
     def create_file_if_not_exists(self, filename, fieldnames):
         if not os.path.exists(filename):
             with open(filename, mode='w', newline='', encoding='utf-8') as file:
@@ -23,7 +24,8 @@ class DestinationData:
     def read_all_destinations(self):
         """
         Read all Destinationss from the Destinations CSV file and return them as a list of Destinations objects.
-        :return: List of Destinations objects.
+
+        Returns, return: List of Destinations objects.
         """
         destinations = []
         try:
@@ -41,6 +43,7 @@ class DestinationData:
     def add_destination(self, destinations):
         """
         Add a new Destinations to the CSV file.
+
         :param Destinations: Destinations object to be added.
         """
 
@@ -63,6 +66,24 @@ class DestinationData:
                 if file.tell() == 0:
                     writer.writeheader()
                 writer.writerow(record.__dict__)
+        except Exception as e:
+            raise Exception(
+                f"An error occurred while writing to the file: {e}")
+
+    def modify_destination_data(self, updated_destinations):
+        """
+        Write the updated list of Destinations to the CSV file.
+
+        :param updated_destinations: List of Destinations objects with updated information.
+        """
+        try:
+            with open(self.destinations_filename, mode='w', newline='', encoding='utf-8') as file:
+                if updated_destinations:
+                    writer = csv.DictWriter(
+                        file, fieldnames=updated_destinations[0].__dict__.keys())
+                    writer.writeheader()
+                    for destinations in updated_destinations:
+                        writer.writerow(destinations.__dict__)
         except Exception as e:
             raise Exception(
                 f"An error occurred while writing to the file: {e}")

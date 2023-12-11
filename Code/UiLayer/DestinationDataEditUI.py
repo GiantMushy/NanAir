@@ -1,5 +1,5 @@
 #from logic_ui_wrapper import wrapper
-from UiLayer.PrintFunctions import PrintFunctions
+from Code.UiLayer.PrintFunctions import PrintFunctions
 
 class DestinationDataEditUI:
     def __init__(self, Destination = []):
@@ -30,7 +30,7 @@ class DestinationDataEditUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(" 0 : Back            q : exit"))
+        print(self.PrintUi.allign_left(" 0 : Back"))
         print(self.PrintUi.end_line())
 
     def edit_data(self, changed_data):
@@ -63,7 +63,7 @@ class DestinationDataEditUI:
         '''Starting function for editing Destination Data'''
         while True:
             self.Destination_data_edit_output()
-            command = input("Enter you command: ")            
+            command = input("Enter you command: ").lower()            
             if command == "0":
                 #-------------Send new Data to Logic-------------
                 break

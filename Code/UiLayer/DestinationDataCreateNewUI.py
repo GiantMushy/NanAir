@@ -1,5 +1,5 @@
-from LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
-from UiLayer.PrintFunctions import PrintFunctions
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
+from Code.UiLayer.PrintFunctions import PrintFunctions
 
 class DestinationDataCreateNewUI:
     def __init__(self):
@@ -224,12 +224,12 @@ class DestinationDataCreateNewUI:
         while n < 8:
             if n == 1:
                 self.input_city()
-                data = input("Enter City: ")
+                data = input("Enter City: ").lower()
                 if data == "q":
                     print("Goodbye")
                     exit()
                 try:
-                    self.Logic.is_destination(data)
+                    self.Logic.is_city(data)
                     input_check = True
                 except ValueError as e:
                     print(f"Error: {e}")

@@ -1,5 +1,5 @@
-from LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
-from UiLayer.PrintFunctions import PrintFunctions
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
+from Code.UiLayer.PrintFunctions import PrintFunctions
 
 class AirplaneDataCreateNewUI:
     def __init__(self):
@@ -168,78 +168,72 @@ class AirplaneDataCreateNewUI:
     def create_new_sequence(self):
         n = 1
         input_check = True
-        value_error = "Value Error string goes here"
         while n < 6:
             if n == 1:
                 self.input_name()
-                if input_check:
-                    data = input("Enter Name: ")
-                    if data == "q":
-                        print("Goodbye")
-                        exit()
-                else:
-                    print(value_error)
-                    data = input("Enter Name:")
-                    if data == "q":
-                        print("Goodbye")
-                        exit()
+                data = input("Enter Name: ").lower()
+                if data == "q":
+                    print("Goodbye")
+                    exit()
+                try:
+                    self.Logic.is_name(data)
+                    input_check = True
+                except ValueError as e:
+                    print(f"Error: {e}")
+                    input_check = False
 
             elif n == 2:
                 self.input_current_location()
-                if input_check:
-                    data = input("Enter Current Location: ")
-                    if data == "q":
-                        print("Goodbye")
-                        exit()
-                else:
-                    print(value_error)
-                    data = input("Enter Current Location:")
-                    if data == "q":
-                        print("Goodbye")
-                        exit()
+                data = input("Enter Current Location: ")
+                if data == "q":
+                    print("Goodbye")
+                    exit()
+                try:
+                    self.Logic.is_current_location(data)
+                    input_check = True
+                except ValueError as e:
+                    print(f"Error: {e}")
+                    input_check = False
 
             elif n == 3:
                 self.input_manufacturer()
-                if input_check:
-                    data = input("Enter Manufacturer: ")
-                    if data == "q":
-                        print("Goodbye")
-                        exit()
-                else:
-                    print(value_error)
-                    data = input("Enter Manufacturer:")
-                    if data == "q":
-                        print("Goodbye")
-                        exit()
+                data = input("Enter Manufacturer: ")
+                if data == "q":
+                    print("Goodbye")
+                    exit()
+                try:
+                    self.Logic.is_manufacturer(data)
+                    input_check = True
+                except ValueError as e:
+                    print(f"Error: {e}")
+                    input_check = False
 
             elif n == 4:
                 self.input_type()
-                if input_check:
-                    data = input("Enter Type: ")
-                    if data == "q":
-                        print("Goodbye")
-                        exit()
-                else:
-                    print(value_error)
-                    data = input("Enter Type:")
-                    if data == "q":
-                        print("Goodbye")
-                        exit()
+                data = input("Enter Airplane Type: ")
+                if data == "q":
+                    print("Goodbye")
+                    exit()
+                try:
+                    self.Logic.is_type(data)
+                    input_check = True
+                except ValueError as e:
+                    print(f"Error: {e}")
+                    input_check = False
 
                 
             elif n == 5:
                 self.input_seats()
-                if input_check:
-                    data = input("Enter Seats: ")
-                    if data == "q":
-                        print("Goodbye")
-                        exit()
-                else:
-                    print(value_error)
-                    data = input("Enter Seats:")
-                    if data == "q":
-                        print("Goodbye")
-                        exit()
+                data = input("Enter Capacity: ")
+                if data == "q":
+                    print("Goodbye")
+                    exit()
+                try:
+                    self.Logic.is_capacity(data)
+                    input_check = True
+                except ValueError as e:
+                    print(f"Error: {e}")
+                    input_check = False
 
             if input_check:
                 self.new_airplane.append(data)

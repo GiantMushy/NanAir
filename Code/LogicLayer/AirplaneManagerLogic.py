@@ -1,10 +1,14 @@
-from DataLayer.DataLayerAPI import DataLayerAPI
-from Models.Airplane import Airplane
+from Code.DataLayer.DataLayerAPI import DataLayerAPI
+from Code.LogicLayer.AirplaneTypeLogic import AirplaneTypeLogic
+from Code.LogicLayer.FlightLogic import FlightLogic
+from Code.Models.Airplane import Airplane
 
 
 class AirplaneManagerLogic:
     def __init__(self):
         self.airplane_data = DataLayerAPI()
+        self.airplane_type_logic = AirplaneTypeLogic()
+        self.flight_logic = FlightLogic()
 
     def generate_unique_airplane_id(self):
         """
@@ -31,14 +35,20 @@ class AirplaneManagerLogic:
         :param kwargs: Attributes of the airplane.
         :raises ValueError: If required fields are missing or empty.
         """
-        required_fields = ['name','current_location','type','manufacturer','capacity']
+        required_fields = ['name', 'type']
         if any(kwargs.get(field) is None or kwargs.get(field) == '' for field in required_fields):
             raise ValueError("Required fields cannot be empty.")
+
+        # type must be a valid airplane type
+        airplane_type = kwargs['type']
+        if not self.airplane_type_logic.find_type_data(airplane_type):
+            raise ValueError(
+                f"Airplane type doesnt exist, make sure to add it: {airplane_type}")
 
         airplane_id = self.generate_unique_airplane_id()
         kwargs['id'] = airplane_id
 
-        # add general employee information
+        # add airplane information
         new_airplane = Airplane(**kwargs)
         self.airplane_data.add_airplane(new_airplane)
 
@@ -46,20 +56,20 @@ class AirplaneManagerLogic:
         """Returns a list of all airplanes."""
         return self.airplane_data.read_all_airplanes()
 
-    def object_list_to_dict_list(self, object_list):
-        dict_list = []
-        for obj in object_list:
-            dict_list.append(obj.__dict__)
-
-        return dict_list
-
     def find_airplane_by_id(self, airplane_id):
         """
         Finds an airplane by their ID.
+
         :param airplane_id: ID of the airplane to find.
         :return: airplane object if found, None otherwise.
         """
-        return next((emp for emp in self.airplane_data.read_all_airplanes() if emp.id == airplane_id), None)
+
+        all_airplanes = self.airplane_data.read_all_airplanes()
+        for plane in all_airplanes:
+            if int(plane.id) == int(airplane_id):
+                return plane
+
+        return None
 
     def modify_airplane(self, airplane_id, **updates):
         """
@@ -92,30 +102,61 @@ class AirplaneManagerLogic:
         # write the updated list back to the data layer
         self.airplane_data.modify_airplane_data(updated_airplanes)
 
-    # specific request, check fields for airplane if valid
-    def field_checker(self, field, input):
+    def is_airplane_created(self, airplane_id):
         '''
-        Checks airplane inputs, and checks if something has letters when not supposed to
-        and if something has numbers when not supposed to.
-        :param field: field to check
-        :param input: user input to check for the given field
-        '''
-        allowed_fields = ['name','current_location','type','manufacturer','capacity']
-        field = field.lower()
-        if field not in allowed_fields:
-            raise ValueError(
-                "Invalid field type, must be 'name','current_location','type','manufacturer','capacity'"
-            )
-        else:
-            if field in ['name','current_location','manufacturer']:
-                if input.isalpha():
-                    return True
-                else:
-                    return False
-            else:
-                if input.isdigit():
-                    return True
-                else:
-                    return False
+        Checks if airplane is created.
 
-    # B-requirements will be implemented  here.
+        :param airplane_id: ID of the airplane to check.
+
+        Returns, return: True if airplane is created, False otherwise.
+        '''
+        if self.find_airplane_by_id(airplane_id) is not None:
+            return True
+        else:
+            return False
+
+    def list_airplanes_detailed(self):
+        '''
+        Returns a list of all airplanes with detailed information.
+        That means, when an airplane is next available, destination and flight number if in use, 
+        and in all cases, name, type and capacity.
+        '''
+        # day and time of airplane when it is next available if in use
+        # name of destination if in use
+        # flight number if in use
+        # name, type and capacity
+        # if destination KEF, then next available is arrival_datetime of that flight
+        # if destination not KEF, then flight_number incremented by one, arrival_datetime of that flight is next available!
+
+        airplanes = self.list_all_airplanes()
+        detailed_airplanes = []
+        for airplane in airplanes:
+            airplane_dict = airplane
+            airplane_type = airplane_dict.type
+            airplane_type_obj = self.airplane_type_logic.find_type_data(
+                airplane_type)
+            airplane_capacity = airplane_type_obj.capacity
+            airplane_dict.capacity = airplane_capacity
+            airplane_dict.next_available = "Not in use"
+            airplane_dict.destination = "Not in use"
+            airplane_dict.flight_number = "Not in use"
+            flight_or_none = self.flight_logic.is_airplane_in_use(
+                airplane.id)
+            if flight_or_none is not None:
+                if flight_or_none.end_at == "RKV":
+                    airplane_dict.next_available = flight_or_none.arrival_datetime
+                    airplane_dict.destination = flight_or_none.end_at
+                    airplane_dict.flight_number = flight_or_none.flight_number
+                else:
+                    # format is NA-XX-numbers, need to increment flight number "numbers" by one
+                    flight_number = flight_or_none.flight_number
+                    last_2_numbers = int(flight_number[4:])
+                    next_flight_number = f"{flight_number[:4]}{last_2_numbers+1}"
+                    next_flight_home = self.flight_logic.get_flight_by_id(
+                        next_flight_number)
+                    airplane_dict.next_available = next_flight_home.arrival_datetime
+                    airplane_dict.destination = flight_or_none.end_at
+                    airplane_dict.flight_number = flight_number
+
+            detailed_airplanes.append(airplane_dict)
+        return detailed_airplanes
