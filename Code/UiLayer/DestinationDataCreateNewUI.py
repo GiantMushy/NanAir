@@ -224,7 +224,7 @@ class DestinationDataCreateNewUI:
         while n < 8:
             if n == 1:
                 self.input_city()
-                data = input("Enter City: ")
+                data = input("Enter City: ").lower()
                 if data == "q":
                     print("Goodbye")
                     exit()

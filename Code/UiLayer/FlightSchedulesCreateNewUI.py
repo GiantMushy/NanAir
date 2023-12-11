@@ -170,7 +170,7 @@ class FlightSchedulesCreateNewUI:
         while n < 6:
             if n == 1:
                 self.input_departure_day()
-                data = input("Enter trip Type: ")
+                data = input("Enter trip Type: ").lower()
                 if data == "q":
                     print("Goodbye")
                     exit()

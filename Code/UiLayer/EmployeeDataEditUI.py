@@ -66,7 +66,7 @@ class EmployeeDataEditUI:
             employee_obj = self.Logic.find_employee_by_id(self.employee_id)
             self.employee = self.Logic.object_to_dict(employee_obj)
             self.employee_data_edit_output()
-            command = input("Enter you command: ")            
+            command = input("Enter you command: ").lower()         
 
             if command == "0":
                 break
