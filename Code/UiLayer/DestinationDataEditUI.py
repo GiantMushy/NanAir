@@ -63,7 +63,7 @@ class DestinationDataEditUI:
         '''Starting function for editing Destination Data'''
         while True:
             self.Destination_data_edit_output()
-            command = input("Enter you command: ")            
+            command = input("Enter you command: ").lower()            
             if command == "0":
                 #-------------Send new Data to Logic-------------
                 break

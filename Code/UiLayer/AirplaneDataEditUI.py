@@ -75,7 +75,7 @@ class AirplaneDataEditUI:
             elif command == "1":
                 self.edit_data("Name")
                 while not input_check:
-                    command = input("Input new Name: ")
+                    command = input("Input new Name: ").lower()
                     if command == "q":
                         print("Goodbye")
                         exit()

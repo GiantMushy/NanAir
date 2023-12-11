@@ -22,7 +22,7 @@ class EmployeeData:
                                                                 'address', 'mobile_phone_number',
                                                                 'email_address', 'home_phone_number'])
         self.create_file_if_not_exists(self.pilot_filename, [
-                                       'id', 'pilot_role'])
+                                       'id', 'pilot_role', 'airplane_type'])
         self.create_file_if_not_exists(self.flight_attendant_filename, [
                                        'id', 'attendant_role'])
 

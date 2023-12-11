@@ -42,6 +42,7 @@ class MainMenuUI:
         while True:
             self.main_menu_output()
             command = input("Enter you command: ")
+            command = command.lower()
 
             if command == "0":
                 break

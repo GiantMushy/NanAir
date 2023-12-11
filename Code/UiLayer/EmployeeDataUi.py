@@ -39,7 +39,7 @@ class EmployeeDataUI:
         while True:
             printed_dicts = self.innitiate_and_switch_lists(employee_type)
             self.employee_data_output(printed_dicts, employee_type_prints[employee_type])
-            command = input("Enter you command: ")            
+            command = input("Enter you command: ").lower()          
 
             if command == "0":
                 break

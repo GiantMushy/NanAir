@@ -16,12 +16,12 @@ class WorkTripData:
         if not os.path.exists(self.work_trip_filename):
             with open(self.work_trip_filename, mode='w', newline='', encoding='utf-8') as file:
                 writer = csv.DictWriter(file, fieldnames=[
-                                        'id', 'destination', 'departure_datetime', 'return_datetime', 'crew_members'])
+                                        'id', 'destination', 'departure_datetime', 'return_datetime', 'airplane', 'flight_number_start', 'flight_number_end', 'crew_members'])
                 writer.writeheader()
 
     def add_work_trip(self, work_trip):
         '''
-        Add a new work tirp to the CSV file.
+        Add a new work trip to the CSV file.
 
         :param work_trip: WorkTrip object to be added.
         '''
@@ -61,7 +61,7 @@ class WorkTripData:
 
                     work_trips.append(WorkTrip(**row))
         except Exception as e:
-            print(f"Error occurred while reading the file: {e}")
+            f"Error occurred while reading the file: {e}"
         return work_trips
 
     def update_work_trip_data(self, updated_work_trips):

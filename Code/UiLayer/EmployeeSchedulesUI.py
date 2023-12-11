@@ -35,7 +35,7 @@ class EmployeeSchedulesUI:
     def input_prompt(self):
         while True:
             self.employee_schedules_output()
-            command = input("Enter you command: ")            
+            command = input("Enter you command: ").lower()          
 
             if command == "q":
                 print("Goodbye")

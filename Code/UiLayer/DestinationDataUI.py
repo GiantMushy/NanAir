@@ -27,7 +27,7 @@ class DestinationDataUI:
             temp_list_data = self.Logic.list_all_destinations()
             all_destination_data = self.Logic.object_list_to_dict_list(temp_list_data)
             self.destination_data_output(all_destination_data)
-            command = input("Enter you command: ")            
+            command = input("Enter you command: ").lower()     
 
             if command == "0":
                 break
