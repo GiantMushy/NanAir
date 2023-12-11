@@ -1,5 +1,5 @@
 #from logic_ui_wrapper import wrapper
-from UiLayer.PrintFunctions import PrintFunctions
+from Code.UiLayer.PrintFunctions import PrintFunctions
 
 class DestinationDataEditUI:
     def __init__(self, Destination = []):

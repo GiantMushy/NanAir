@@ -1,7 +1,7 @@
-from LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
-from UiLayer.PrintFunctions import PrintFunctions  #Print functions for the logo and stuff
-from UiLayer.DestinationDataCreateNewUI import DestinationDataCreateNewUI
-from UiLayer.DestinationDataEditUI import DestinationDataEditUI
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
+from Code.UiLayer.PrintFunctions import PrintFunctions  #Print functions for the logo and stuff
+from Code.UiLayer.DestinationDataCreateNewUI import DestinationDataCreateNewUI
+from Code.UiLayer.DestinationDataEditUI import DestinationDataEditUI
 
 class DestinationDataUI:
     def __init__(self):

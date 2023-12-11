@@ -1,7 +1,7 @@
-from LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
-from UiLayer.PrintFunctions import PrintFunctions
-from UiLayer.AirplaneDataCreateNewUI import AirplaneDataCreateNewUI
-from UiLayer.AirplaneDataEditUI import AirplaneDataEditUI
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
+from Code.UiLayer.PrintFunctions import PrintFunctions
+from Code.UiLayer.AirplaneDataCreateNewUI import AirplaneDataCreateNewUI
+from Code.UiLayer.AirplaneDataEditUI import AirplaneDataEditUI
 
 class AirplaneDataUI:
     def __init__(self):

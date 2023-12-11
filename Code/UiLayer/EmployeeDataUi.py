@@ -1,7 +1,7 @@
-from LogicLayer.LogicLayerAPI import LogicLayerAPI
-from UiLayer.PrintFunctions import PrintFunctions
-from UiLayer.EmployeeDataCreateNewUI import EmployeeDataCreateNewUI
-from UiLayer.EmployeeDataEditUI import EmployeeDataEditUI
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI
+from Code.UiLayer.PrintFunctions import PrintFunctions
+from Code.UiLayer.EmployeeDataCreateNewUI import EmployeeDataCreateNewUI
+from Code.UiLayer.EmployeeDataEditUI import EmployeeDataEditUI
 
 class EmployeeDataUI:
     def __init__(self):

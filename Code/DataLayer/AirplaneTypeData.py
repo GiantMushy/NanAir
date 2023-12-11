@@ -1,10 +1,10 @@
 import csv
 import os
-from Models.AirplaneType import AirplaneType
+from Code.Models.AirplaneType import AirplaneType
 
 
 class AirplaneTypeData:
-    def __init__(self, airplane_type_filename='DataLayer/Repository/AirplaneType.csv'):
+    def __init__(self, airplane_type_filename='Code/DataLayer/Repository/AirplaneType.csv'):
         self.airplane_type_filename = airplane_type_filename
         self.ensure_file_exists()
 

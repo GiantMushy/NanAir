@@ -1,5 +1,5 @@
-from LogicLayer.LogicLayerAPI import LogicLayerAPI
-from UiLayer.PrintFunctions import PrintFunctions
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI
+from Code.UiLayer.PrintFunctions import PrintFunctions
 
 class EmployeeDataCreateNewUI:
     def __init__(self):

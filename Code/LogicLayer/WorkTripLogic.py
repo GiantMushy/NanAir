@@ -1,10 +1,10 @@
-from DataLayer.DataLayerAPI import DataLayerAPI
-from LogicLayer.EmployeeManagerLogic import EmployeeManagerLogic
-from LogicLayer.FlightLogic import FlightLogic
-from LogicLayer.DestinationManagerLogic import DestinationManagerLogic
-from LogicLayer.AirplaneManagerLogic import AirplaneManagerLogic
-from LogicLayer.AirplaneTypeLogic import AirplaneTypeLogic
-from Models.WorkTrip import WorkTrip
+from Code.DataLayer.DataLayerAPI import DataLayerAPI
+from Code.LogicLayer.EmployeeManagerLogic import EmployeeManagerLogic
+from Code.LogicLayer.FlightLogic import FlightLogic
+from Code.LogicLayer.DestinationManagerLogic import DestinationManagerLogic
+from Code.LogicLayer.AirplaneManagerLogic import AirplaneManagerLogic
+from Code.LogicLayer.AirplaneTypeLogic import AirplaneTypeLogic
+from Code.Models.WorkTrip import WorkTrip
 from datetime import datetime, timedelta
 
 import ast

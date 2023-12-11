@@ -1,5 +1,5 @@
-from DataLayer.DataLayerAPI import DataLayerAPI
-from Models.Destination import Destination
+from Code.DataLayer.DataLayerAPI import DataLayerAPI
+from Code.Models.Destination import Destination
 
 
 class DestinationManagerLogic:

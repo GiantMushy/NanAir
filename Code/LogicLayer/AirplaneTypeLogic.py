@@ -1,5 +1,5 @@
-from DataLayer.DataLayerAPI import DataLayerAPI
-from Models.AirplaneType import AirplaneType
+from Code.DataLayer.DataLayerAPI import DataLayerAPI
+from Code.Models.AirplaneType import AirplaneType
 
 
 class AirplaneTypeLogic:
