@@ -30,7 +30,7 @@ class DestinationDataEditUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(" 0 : Back            q : exit"))
+        print(self.PrintUi.allign_left(" 0 : Back"))
         print(self.PrintUi.end_line())
 
     def edit_data(self, changed_data):

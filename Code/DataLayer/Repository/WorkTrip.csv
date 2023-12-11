@@ -16,3 +16,5 @@ id,destination,departure_datetime,return_datetime,crew_members
 015,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-27 14:32,2032-11-27 17:32,
 016,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-28 14:32,2032-11-28 17:32,
 017,"{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}",2032-11-29 14:32,2032-11-29 17:32,
+001,"{'id': '001', 'city': 'Reykjavik', 'airport': 'RKV', 'country': 'Iceland', 'distance': '0', 'travel_time': '0', 'contact_name': 'Löggan', 'contact_phone_number': '911'}",2032-11-14 14:32,2032-11-14 17:32,
+001,"{'id': '002', 'city': 'Keflavik', 'airport': 'KFV', 'country': 'Iceland', 'distance': '20', 'travel_time': '20', 'contact_name': 'Löggan', 'contact_phone_number': '112'}",2032-11-14 14:32,2034-11-14 17:32,003
