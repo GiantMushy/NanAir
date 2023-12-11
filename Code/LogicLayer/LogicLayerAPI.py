@@ -134,7 +134,18 @@ class LogicLayerAPI:
         '''
         return self.employee_logic.list_pilots_sorted_by_airplane_type()
 
+    def find_employee_by_id(self, employee_id):
+        """
+        Finds an employee by their ID.
+
+        :param employee_id: ID of the employee to find.
+
+        Returns, return: Employee object if found, None otherwise.
+        """
+        return self.employee_logic.find_employee_by_id(employee_id)
+
     ############################## WorkTripLogic ###############################
+
     def add_work_trip(self, destination, departure_datetime, return_datetime, crew_members=None):
         '''
         Adds a new work trip.
@@ -184,16 +195,6 @@ class LogicLayerAPI:
         '''
         return self.work_trip_logic.work_trip_validity_period(
             weekly_or_daily, start_date)
-
-    def find_employee_by_id(self, employee_id):
-        """
-        Finds an employee by their ID.
-
-        :param employee_id: ID of the employee to find.
-
-        Returns, return: Employee object if found, None otherwise.
-        """
-        return self.employee_logic.find_employee_by_id(employee_id)
 
     def list_employees_working_and_destinations(self, string_date):
         '''
