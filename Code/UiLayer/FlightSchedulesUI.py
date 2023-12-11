@@ -1,5 +1,6 @@
 from LogicLayer.LogicLayerAPI import LogicLayerAPI
 from UiLayer.PrintFunctions import PrintFunctions
+from UiLayer.FlightSchedulesCreateNewUI import FlightSchedulesCreateNewUI
 import datetime
 
 class FlightSchedulesUI:
@@ -102,9 +103,8 @@ class FlightSchedulesUI:
                     start_date = start_date + day
             elif command == "a":
                 if self.user == 'Trip Manager':
-                    #create_new = FlightSchedulesCreateNewUI()
-                    #create_new.input_prompt()
-                    print("Create New")
+                    create_new = FlightSchedulesCreateNewUI()
+                    create_new.input_prompt()
             elif command == "s":
                 if self.user == 'Trip Manager':
                     #re_create = FlightSchedulesReCreateUI()

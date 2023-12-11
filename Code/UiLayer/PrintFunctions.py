@@ -169,13 +169,6 @@ class PrintFunctions:
             print(self.empty_line()) #fills out UI box to correct size with empty lines
             line_count += 1
 
-#{'id': '001', 
-# 'destination': "{'country': 'Greenland', 'airport': 'Nuuk Airport', 'flight_time': '3h', 'distance_from_iceland': '1500km', 'contact_name': 'John Nuuk', 'emergency_phone': '765467'}", 
-# 'departure_datetime': datetime.datetime(2032, 11, 14, 14, 32), 
-# 'return_datetime': datetime.datetime(2032, 11, 14, 17, 32), 
-# 'crew_members': '001,002'}
-
-
     def print_flight_schedule_table(self, data, date_start, date_end, line_num):
         line_count = 0
         print_format = "%-5s%-20s%-20s%-15s%-15s%-15s%-15s%-0s"
@@ -206,3 +199,10 @@ class PrintFunctions:
 
     def print_employee_schedule_table(self,data,line_num):
         pass
+
+    def print_destinations(self, data, line_num):
+        line_count = 0
+        print_format = "%-5s%-15s%-15s%-15s"
+
+        for dic in data:
+            self.allign_left(print_format % (dic['id'], dic['city'], dic['country'], dic['airport']))
