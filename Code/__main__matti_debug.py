@@ -1,4 +1,5 @@
 from LogicLayer.EmployeeManagerLogic import EmployeeManagerLogic
+from LogicLayer.LogicLayerAPI import LogicLayerAPI
 import random
 
 
@@ -11,19 +12,46 @@ def generate_random_ssn():
 
 
 def add_sample_employees(logic):
-    employee_details = [
-        ('pilot', 'Captain', 'Matti', "Mac street 1"),
-        ('pilot', 'Co-Pilot', 'Sara', "Microsoft street 1"),
+
+    logic.add_airplane_type(
+        type="AKN-77", manufacturer="Boeing", capacity="300")
+    logic.add_airplane(name="Katla", type="AKN-77")
+    logic.add_airplane(name="Sara", type="AKN-77")
+
+    employee_details_pilots = [
+        ('pilot', 'Captain', 'AKN-77', 'Matti', "Mac street 1"),
+        ('pilot', 'Co-Pilot', 'AKN-77', 'Sara', "Microsoft street 1"),
+
+    ]
+
+    employ_details_flight_attendants = [
         ('flight_attendant', 'Senior Flight Attendant', 'Raggi', "AMZN street 1"),
         ('flight_attendant', 'Flight Attendant', 'Banani', "FB street 1"),
         ('flight_attendant', 'Flight attendant', 'Epli', "Apple street 1")
     ]
 
-    for employee_type, employee_role, name, address in employee_details:
+    for employee_type, employee_role, name, address in employ_details_flight_attendants:
         try:
             logic.add_employee(
                 employee_type,
                 employee_role,
+                name=name,
+                social_security_number=generate_random_ssn(),
+                mobile_phone_number=generate_random_phone(),
+                address=address,
+                email_address=f"example{random.randint(1, 100)}@gmail.com"
+            )
+            print(f"Added {employee_type} named {name}")
+        except Exception as e:
+            print(
+                f"Error occurred while adding {employee_type} named {name}: {e}")
+
+    for employee_type, employee_role, airplane_type, name, address in employee_details_pilots:
+        try:
+            logic.add_employee(
+                employee_type,
+                employee_role,
+                airplane_type=airplane_type,
                 name=name,
                 social_security_number=generate_random_ssn(),
                 mobile_phone_number=generate_random_phone(),
@@ -45,7 +73,7 @@ def test_generate_unique_employee_id():
 
 
 def test_add_employee():
-    logic = EmployeeManagerLogic()
+    logic = LogicLayerAPI()
     add_sample_employees(logic)
 
 
@@ -60,6 +88,8 @@ def test_list_all_pilots():
     logic = EmployeeManagerLogic()
     pilots = logic.list_all_pilots()
     print("\nList of All Pilots:")
+    print(pilots)
+    print('testing')
     for pilot in pilots:
         print(pilot)
     assert isinstance(pilots, list), "Should return a list"
@@ -74,12 +104,49 @@ def test_list_all_flight_attendants():
     assert isinstance(flight_attendants, list), "Should return a list"
 
 
+def test_modification_field():
+    logic = LogicLayerAPI()
+    logic.modify_employee('002', mobile_phone_number='696969')
+
+    print("\n list all employees after modification")
+
+    all_employees = logic.list_all_employees()
+
+    for emp in all_employees:
+        print(emp.__dict__)
+
+
+def test_role_role():
+    logic = LogicLayerAPI()
+    print("should be true")
+    print(logic.is_senior_flight_attendant("003"))
+    print("")
+    print("should be false")
+    print(logic.is_senior_flight_attendant("001"))
+    print("should be true")
+    print(logic.is_captain("001"))
+
+    print("testing is pilot")
+    print(logic.is_pilot("001"))
+    print("testing is_flight_attendant")
+    print(logic.is_flight_attendant("001"))
+
+    print("TESTING IS EMPLOYEE")
+    print("should be true")
+    print(logic.is_employee("001"))
+    print("")
+    print("should be false")
+    print(logic.is_employee("069"))
+
+
 def run_tests():
     test_generate_unique_employee_id()
     test_add_employee()
     test_list_all_employees()
     test_list_all_pilots()
     test_list_all_flight_attendants()
+    test_modification_field()
+    test_role_role()
     print("\nSuccessfully ran all tests")
 
 

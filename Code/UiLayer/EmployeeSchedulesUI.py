@@ -1,9 +1,10 @@
-#from logic_ui_wrapper import wrapper
-from UiLayer.PrintFunctions import PrintFunctions
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI
+from Code.UiLayer.PrintFunctions import PrintFunctions
 
 class EmployeeSchedulesUI:
     def __init__(self):
         self.PrintUi = PrintFunctions()
+        self.Logic = LogicLayerAPI()
 
     def employee_schedules_output(self):
         date = "08.01.24"
@@ -34,7 +35,7 @@ class EmployeeSchedulesUI:
     def input_prompt(self):
         while True:
             self.employee_schedules_output()
-            command = input("Enter you command: ")            
+            command = input("Enter you command: ").lower()          
 
             if command == "q":
                 print("Goodbye")
@@ -43,5 +44,8 @@ class EmployeeSchedulesUI:
                 pass
             elif command == "00":
                 pass
+            elif command == "q":
+                print("Goodbye")
+                exit()
             else:
                 print("Invalid input, try again")
