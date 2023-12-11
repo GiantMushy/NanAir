@@ -4,7 +4,7 @@
 # from UiLayer.EmployeeDataUI import EmployeeDataUI
 # from UiLayer.DestinationDataUI import DestinationDataUI
 # from UiLayer.AirplaneDataUI import AirplaneDataUI
-from Code.LogicLayer.ValidationService import ValidationSerivce
+from Code.LogicLayer.ValidationService import ValidationService
 from datetime import date
 
 # login = LoginUI()
@@ -16,7 +16,7 @@ from datetime import date
 
 # login.input_prompt()
 
-v = ValidationSerivce()
+v = ValidationService()
 
 year = int(input())
 month = int(input())

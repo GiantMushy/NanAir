@@ -2,20 +2,25 @@ from Code.DataLayer.DataLayerAPI import DataLayerAPI
 from Code.LogicLayer.EmployeeManagerLogic import EmployeeManagerLogic
 
 
-class ValidationSerivce:
+class ValidationService:
     def __init__(self):
-        self.data = DataLayerAPI()
+        self.data = DataLayerAPI() 
 
     def test(self):
+        '''Reads the information for id's in WorkTrip.csv'''
         all_work_trips = self.data.read_all_work_trips
 
         for trip in all_work_trips:
             print(trip.__dict__.id == work_trip_id)
 
-    def validate_work_trip(self, all_work_trips):
+    def validate_work_trip(self):
         pass
 
-    def check_employee_availability(self, date):
+    def check_employee_availability(self, date): 
+        '''Checks if there are any employees available for a specific workdate. 
+        It takes out the ones that are not available and gives a list of 
+        employee numbers that are available'''
+
         all_work_trips = self.data.read_all_work_trips()
  
         all_work_days = [trip for trip in all_work_trips if trip.departure_datetime.year == date.year and trip.departure_datetime.month == date.month and trip.departure_datetime.day == date.day]
