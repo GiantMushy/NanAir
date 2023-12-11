@@ -407,6 +407,15 @@ class LogicLayerAPI:
     def list_all_airplane_types(self):
         """Returns, return: a list of all airplane types."""
         return self.airplane_type_logic.list_all_airplane_types()
+
+    def find_type_data(self, airplane_type):
+        """
+        Finds an airplane type object by their type.
+
+        :param airplane_type: type of the airplane to find.
+        Returns, return: airplane object if found, None otherwise.
+        """
+        return self.airplane_type_logic.find_type_data(airplane_type)
     ############################## Input Varification ###############################
 
     def is_city(self, City):
