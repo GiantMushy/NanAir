@@ -1,11 +1,11 @@
 import csv
 import os
-from Models.WorkTrip import WorkTrip
+from Code.Models.WorkTrip import WorkTrip
 from datetime import datetime
 
 
 class WorkTripData:
-    def __init__(self, work_trip_filename='DataLayer/Repository/WorkTrip.csv'):
+    def __init__(self, work_trip_filename='Code/DataLayer/Repository/WorkTrip.csv'):
         self.work_trip_filename = work_trip_filename
         self.ensure_file_exists()
 

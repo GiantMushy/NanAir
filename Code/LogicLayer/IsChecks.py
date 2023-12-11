@@ -1,4 +1,4 @@
-from DataLayer.DataLayerAPI import DataLayerAPI
+from Code.DataLayer.DataLayerAPI import DataLayerAPI
 class IsChecks:
     def __init__(self):
         self.destination_data = DataLayerAPI()
@@ -91,7 +91,7 @@ class IsChecks:
             raise ValueError("social_security_number must be a valid date")
         if int(social_security_number[4:6]) > 10 and social_security_number[-1] == "0":
             raise ValueError("Birth dat in social_security_number is too young or not born yet")
-        if int(social_security_number[0:2]) > 30 and int(social_security_number[3]) == 4 or int(social_security_number[3]) == 6 or int(social_security_number[3]) == 9 or int(social_security_number[2:4]) == 11:
+        if int(social_security_number[0:2]) > 30 and int(social_security_number[3]) == 4 or int(social_security_number[0:2]) > 30 and int(social_security_number[3]) == 6 or int(social_security_number[0:2]) > 30 and int(social_security_number[3]) == 9 or int(social_security_number[0:2]) > 30 and int(social_security_number[2:4]) == 11:
             raise ValueError("SSN must be a valid date")
         if int(social_security_number[0:2]) > 29 and int(social_security_number[3]) == 2:
             raise ValueError("SSN must be a valid date")

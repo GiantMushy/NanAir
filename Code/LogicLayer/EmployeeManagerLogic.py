@@ -1,7 +1,7 @@
-from DataLayer.DataLayerAPI import DataLayerAPI
-from Models.Employee import Employee
-from Models.Pilot import Pilot
-from Models.FlightAttendant import FlightAttendant
+from Code.DataLayer.DataLayerAPI import DataLayerAPI
+from Code.Models.Employee import Employee
+from Code.Models.Pilot import Pilot
+from Code.Models.FlightAttendant import FlightAttendant
 
 
 class EmployeeManagerLogic:

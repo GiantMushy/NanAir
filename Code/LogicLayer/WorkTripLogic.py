@@ -1,6 +1,6 @@
-from DataLayer.DataLayerAPI import DataLayerAPI
-from LogicLayer.EmployeeManagerLogic import EmployeeManagerLogic
-from Models.WorkTrip import WorkTrip
+from Code.DataLayer.DataLayerAPI import DataLayerAPI
+from Code.LogicLayer.EmployeeManagerLogic import EmployeeManagerLogic
+from Code.Models.WorkTrip import WorkTrip
 from datetime import datetime, timedelta
 
 # for testing
