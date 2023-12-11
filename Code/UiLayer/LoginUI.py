@@ -1,6 +1,6 @@
 #from logic_ui_wrapper import wrapper
-from UiLayer.PrintFunctions import PrintFunctions
-from UiLayer.MainMenuUI import MainMenuUI
+from Code.UiLayer.PrintFunctions import PrintFunctions
+from Code.UiLayer.MainMenuUI import MainMenuUI
 
 class LoginUI:
     def __init__(self):

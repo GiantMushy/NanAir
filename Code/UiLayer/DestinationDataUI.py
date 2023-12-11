@@ -1,7 +1,7 @@
-from LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
-from UiLayer.PrintFunctions import PrintFunctions  #Print functions for the logo and stuff
-from UiLayer.DestinationDataCreateNewUI import DestinationDataCreateNewUI
-from UiLayer.DestinationDataEditUI import DestinationDataEditUI
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
+from Code.UiLayer.PrintFunctions import PrintFunctions  #Print functions for the logo and stuff
+from Code.UiLayer.DestinationDataCreateNewUI import DestinationDataCreateNewUI
+from Code.UiLayer.DestinationDataEditUI import DestinationDataEditUI
 
 class DestinationDataUI:
     def __init__(self):
@@ -27,7 +27,7 @@ class DestinationDataUI:
             temp_list_data = self.Logic.list_all_destinations()
             all_destination_data = self.Logic.object_list_to_dict_list(temp_list_data)
             self.destination_data_output(all_destination_data)
-            command = input("Enter you command: ")            
+            command = input("Enter you command: ").lower()     
 
             if command == "0":
                 break

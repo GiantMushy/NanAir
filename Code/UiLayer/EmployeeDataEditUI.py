@@ -1,5 +1,5 @@
-from LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
-from UiLayer.PrintFunctions import PrintFunctions
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
+from Code.UiLayer.PrintFunctions import PrintFunctions
 
 class EmployeeDataEditUI:
     def __init__(self, employee_id = ""):
@@ -66,7 +66,7 @@ class EmployeeDataEditUI:
             employee_obj = self.Logic.find_employee_by_id(self.employee_id)
             self.employee = self.Logic.object_to_dict(employee_obj)
             self.employee_data_edit_output()
-            command = input("Enter you command: ")            
+            command = input("Enter you command: ").lower()         
 
             if command == "0":
                 break

@@ -1,6 +1,6 @@
-from LogicLayer.LogicLayerAPI import LogicLayerAPI
-from UiLayer.PrintFunctions import PrintFunctions
-from UiLayer.FlightSchedulesCreateNewUI import FlightSchedulesCreateNewUI
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI
+from Code.UiLayer.PrintFunctions import PrintFunctions
+from Code.UiLayer.FlightSchedulesCreateNewUI import FlightSchedulesCreateNewUI
 import datetime
 
 class FlightSchedulesUI:
@@ -51,7 +51,7 @@ class FlightSchedulesUI:
         while True:
             printed_data = self.innitiate_and_switch_lists(time, start_date)
             self.flight_schedules_output(printed_data, start_date, end_date)
-            command = input("Enter you command: ").lower()
+            command = input("Enter your command: ").lower()
 
             if command == "0":
                 break
@@ -65,7 +65,7 @@ class FlightSchedulesUI:
                             start_date = datetime.datetime(int(year), int(month), int(day), 0,0)
                             end_date = start_date + week
                         except ValueError as e:
-                            print(f"Error: {e}")
+                            print(f"Invalid input, try again")
                             input_check = False
                 else:
                     while not input_check:

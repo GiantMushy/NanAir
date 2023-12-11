@@ -1,8 +1,10 @@
-from LogicLayer.EmployeeManagerLogic import EmployeeManagerLogic
-from LogicLayer.WorkTripLogic import WorkTripLogic
-from LogicLayer.DestinationManagerLogic import DestinationManagerLogic
-from LogicLayer.AirplaneManagerLogic import AirplaneManagerLogic
-from LogicLayer.IsChecks import IsChecks
+from Code.LogicLayer.EmployeeManagerLogic import EmployeeManagerLogic
+from Code.LogicLayer.WorkTripLogic import WorkTripLogic
+from Code.LogicLayer.DestinationManagerLogic import DestinationManagerLogic
+from Code.LogicLayer.AirplaneManagerLogic import AirplaneManagerLogic
+from Code.LogicLayer.FlightLogic import FlightLogic
+from Code.LogicLayer.AirplaneTypeLogic import AirplaneTypeLogic
+from Code.LogicLayer.IsChecks import IsChecks
 
 
 class LogicLayerAPI:
@@ -11,6 +13,8 @@ class LogicLayerAPI:
         self.work_trip_logic = WorkTripLogic()
         self.destination_logic = DestinationManagerLogic()
         self.airplane_logic = AirplaneManagerLogic()
+        self.flight_logic = FlightLogic()
+        self.airplane_type_logic = AirplaneTypeLogic()
         self.check = IsChecks()
 
     ############################## EmployeeManagerLogic ###############################
@@ -112,7 +116,36 @@ class LogicLayerAPI:
         '''
         return self.employee_logic.is_senior_flight_attendant(employee_id)
 
+    def list_pilots_by_airplane_type(self, airplane_type):
+        '''
+        Takes a airplane type string and returns a list of pilots that can fly that airplane type
+
+        :param airplane_type: airplane type string f.x ("AKN-77")
+
+        Returns, return: list of pilots that can fly that airplane type
+        '''
+        return self.employee_logic.list_pilots_by_airplane_type(airplane_type)
+
+    def list_pilots_sorted_by_airplane_type(self):
+        '''
+        Returns a list of pilots sorted by airplane type
+
+        Returns, return: list of pilots sorted by airplane type
+        '''
+        return self.employee_logic.list_pilots_sorted_by_airplane_type()
+
+    def find_employee_by_id(self, employee_id):
+        """
+        Finds an employee by their ID.
+
+        :param employee_id: ID of the employee to find.
+
+        Returns, return: Employee object if found, None otherwise.
+        """
+        return self.employee_logic.find_employee_by_id(employee_id)
+
     ############################## WorkTripLogic ###############################
+
     def add_work_trip(self, destination, departure_datetime, return_datetime, crew_members=None):
         '''
         Adds a new work trip.
@@ -129,7 +162,7 @@ class LogicLayerAPI:
 
     def list_all_work_trips(self):
         '''
-        Returns, return: A list of all WorkTrip Objects.
+        Returns, return: A list of detailed work_trips
         '''
         return self.work_trip_logic.list_all_work_trips()
 
@@ -162,14 +195,6 @@ class LogicLayerAPI:
         '''
         return self.work_trip_logic.work_trip_validity_period(
             weekly_or_daily, start_date)
-
-    def find_employee_by_id(self, employee_id):
-        """
-        Finds an employee by their ID.
-        :param employee_id: ID of the employee to find.
-        :return: Employee object if found, None otherwise.
-        """
-        return self.employee_logic.find_employee_by_id(employee_id)
 
     def list_employees_working_and_destinations(self, string_date):
         '''
@@ -214,6 +239,16 @@ class LogicLayerAPI:
         '''
         return self.work_trip_logic.all_work_trips_of_employee(employee_id, string_date)
 
+    def get_recommended_departure_datetime(self, destination_id, departure_datetime):
+        '''
+        Returns a recommended departure datetime for a work trip based on the destination and departure datetime, basically
+        using the destination trip time and departure time to calculate the recommended departure time.
+
+        :param destination_id: ID of the destination to check.
+        :param departure_datetime: string date start of the week to check. In the format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13"
+        '''
+        return self.work_trip_logic.get_recommended_departure_datetime(destination_id, departure_datetime)
+
     ############################## Destination Manager Logic ###############################
 
     def list_all_destinations(self):
@@ -224,6 +259,7 @@ class LogicLayerAPI:
         """
         Adds a new destination to the system.
         Validates required fields before adding.
+
         :raises ValueError: If required fields are missing or empty.
         """
         self.destination_logic.add_destination(**kwargs)
@@ -231,10 +267,23 @@ class LogicLayerAPI:
     def find_destination_by_id(self, destination_id):
         """
         Finds an destination by their ID.
+
         :param destination_id: ID of the destination to find.
+
         :return: Destination object if found, None otherwise.
         """
         return self.destination_logic.find_destination_by_id(destination_id)
+
+    def update_emergency_contact(self, destination_id, contact_name, contact_phone_number):
+        '''
+        Update emergency contact and phone number of destination.
+
+        :param destination_id: ID of the destination to update
+        :param contact_name: new contact name
+        :param contact_phone_number: new contact phone number
+        '''
+        self.destination_logic.update_emergency_contact(
+            destination_id, contact_name, contact_phone_number)
 
     ############################## Airplane Manager Logic ###############################
 
@@ -246,6 +295,7 @@ class LogicLayerAPI:
         """
         Adds a new airplane to the system.
         Validates required fields before adding.
+
         :raises ValueError: If required fields are missing or empty.
         """
         self.airplane_logic.add_airplane(**kwargs)
@@ -256,6 +306,7 @@ class LogicLayerAPI:
 
         :param airplane_id: ID of the airplane to be modified.
         :param updates: Dictionary of updates to be applied. (modify_airplane(123, tpe="1234567", current_location="New Address")
+
         :raises ValueError: If trying to modify restricted fields or airplane not found.
         """
         return self.airplane_logic.modify_airplane(airplane_id, **updates)
@@ -263,11 +314,99 @@ class LogicLayerAPI:
     def find_airplane_by_id(self, airplane_id):
         """
         Finds an airplane by their ID.
+
         :param airplane_id: ID of the airplane to find.
-        :return: Airplane object if found, None otherwise.
+
+        Returns, return: Airplane object if found, None otherwise.
         """
         return self.airplane_logic.find_airplane_by_id(airplane_id)
 
+    def list_airplanes_detailed(self):
+        '''
+        Returns a list of all airplanes with detailed information.
+        '''
+        return self.airplane_logic.list_airplanes_detailed()
+    ############################## FlightLogic ###############################
+
+    def list_all_flights(self):
+        """Returns, return: a list of all flights."""
+        return self.flight_logic.list_all_flights()
+
+    def add_flight(self, **kwargs):
+        """
+        Adds a new airplane to the system.
+        Validates required fields before adding.
+
+        :raises ValueError: If required fields are missing or empty.
+        """
+        self.flight_logic.add_flight(**kwargs)
+
+    def get_flight_by_id(self, flight_id):
+        '''
+        :param flight_id: ID of the flight to find
+
+        Returns, return: Flight object with the given id.
+        '''
+        return self.flight_logic.get_flight_by_id(flight_id)
+
+    def get_all_flights_by_destination_id(self, destination_id):
+        '''
+        :param destination_id: ID of the destination to find
+
+        Returns, return: List of Flight objects with the given destination id.
+        '''
+        return self.flight_logic.get_all_flights_by_destination_id(destination_id)
+
+    def change_sold_tickets(self, flight_id, tickets_sold):
+        '''
+        :param flight_number: Number of the flight to change
+
+        :param tickets_sold: Number of tickets sold to add to flight
+        '''
+        self.flight_logic.change_sold_tickets(flight_id, tickets_sold)
+
+    def get_sold_tickets(self, flight_id):
+        '''
+        :param flight_number: Number of the flight to get sold tickets from
+
+        Returns, return: string number of sold tickets
+        '''
+        return self.flight_logic.get_sold_tickets(flight_id)
+
+    def get_available_tickets(self, flight_id):
+        '''
+        :param flight_number: Number of the flight to get available tickets from
+
+        Returns, return: string number of available tickets
+        '''
+        return self.flight_logic.get_available_tickets(flight_id)
+
+    def is_airplane_available(self, airplane_id, departure_datetime, return_datetime):
+        '''
+        :param airplane_id: ID of the airplane to check
+        :param departure_datetime: Departure date and time. In string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13"
+        :param return_datetime: Return date and time. In string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13"
+
+        Returns, return: True if airplane is available, False otherwise
+        '''
+        return self.flight_logic.is_airplane_available(airplane_id, departure_datetime, return_datetime)
+
+    ############################## AirplaneTypeLogic ###############################
+
+    def add_airplane_type(self, **kwargs):
+        """
+        Adds a new airplane type to the system.
+        Validates required fields before adding.
+
+        :param kwargs: Attributes of the airplane type.
+
+        :raises ValueError: If required fields are missing or empty.
+        """
+        self.airplane_type_logic.add_airplane_type(**kwargs)
+
+    def list_all_airplane_types(self):
+        """Returns, return: a list of all airplane types."""
+        return self.airplane_type_logic.list_all_airplane_types()
     ############################## Input Varification ###############################
 
     def is_city(self, City):
@@ -290,10 +429,10 @@ class LogicLayerAPI:
 
     def is_contact_phone_number(self, Contact_Phone_Number):
         return self.check.is_contact_phone_number(Contact_Phone_Number)
-    
+
     def is_home_phone(self, home_phone):
         return self.check.is_home_phone(home_phone)
-    
+
     def is_name(self, Name):
         return self.check.is_name(Name)
 

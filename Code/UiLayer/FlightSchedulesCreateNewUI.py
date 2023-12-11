@@ -1,6 +1,7 @@
-from LogicLayer.LogicLayerAPI import LogicLayerAPI
-from UiLayer.PrintFunctions import PrintFunctions
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI
+from Code.UiLayer.PrintFunctions import PrintFunctions
 import datetime
+
 
 class FlightSchedulesCreateNewUI:
     def __init__(self):
@@ -11,7 +12,8 @@ class FlightSchedulesCreateNewUI:
     def input_departure_day(self):
         '''Print sequence for Creating a new trip : Departing Day'''
         self.PrintUi.logo()
-        self.PrintUi.print_header("Flight Schedules > Create New > Input Day of Departure", "left")
+        self.PrintUi.print_header(
+            "Flight Schedules > Create New > Input Day of Departure", "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New trip"))
         print(self.PrintUi.empty_line())
@@ -37,7 +39,8 @@ class FlightSchedulesCreateNewUI:
     def input_departure_time(self,dep_day):
         '''Print sequence for Creating a new trip : Departure Time'''
         self.PrintUi.logo()
-        self.PrintUi.print_header("Flight Schedules > Create New > Departing Time", "left")
+        self.PrintUi.print_header(
+            "Flight Schedules > Create New > Departing Time", "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New trip"))
         print(self.PrintUi.empty_line())
@@ -63,7 +66,8 @@ class FlightSchedulesCreateNewUI:
     def input_return_time(self):
         '''Print sequence for Creating a new trip : Return Time'''
         self.PrintUi.logo()
-        self.PrintUi.print_header("Flight Schedules > Create New > Input Return Time", "left")
+        self.PrintUi.print_header(
+            "Flight Schedules > Create New > Input Return Time", "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New trip"))
         print(self.PrintUi.empty_line())
@@ -89,13 +93,15 @@ class FlightSchedulesCreateNewUI:
     def input_destination(self, printed_data):
         '''Print sequence for Creating a new trip : Destination'''
         self.PrintUi.logo()
-        self.PrintUi.print_header("Flight Schedules > Create New > Select Destination", "left")
+        self.PrintUi.print_header(
+            "Flight Schedules > Create New > Select Destination", "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New trip"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left(f"    {self.new_trip[1]}"))
         print(self.PrintUi.allign_left(f"    {self.new_trip[2]}"))
-        print(self.PrintUi.allign_left("--> Select Destination from the list below:"))
+        print(self.PrintUi.allign_left(
+            "--> Select Destination from the list below:"))
         print(self.PrintUi.allign_left("    Plane"))
         print(self.PrintUi.empty_line())
         self.PrintUi.print_destinations(printed_data,11)
@@ -104,7 +110,8 @@ class FlightSchedulesCreateNewUI:
     def input_plane(self, printed_data):
         '''Print sequence for Creating a new trip : Plane'''
         self.PrintUi.logo()
-        self.PrintUi.print_header("Flight Schedules > Create New > Select Plane", "left")
+        self.PrintUi.print_header(
+            "Flight Schedules > Create New > Select Plane", "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New trip"))
         print(self.PrintUi.empty_line())
@@ -119,7 +126,8 @@ class FlightSchedulesCreateNewUI:
     def new_created(self):
         '''Print sequence when a new trip has been created'''
         self.PrintUi.logo()
-        self.PrintUi.print_header("Flight Schedules > Create New > Input Home Phone", "left")
+        self.PrintUi.print_header(
+            "Flight Schedules > Create New > Input Home Phone", "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("New Trip Created:"))
         print(self.PrintUi.empty_line())
@@ -138,8 +146,10 @@ class FlightSchedulesCreateNewUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left(" 1 : Remake trip (if incorrect data was input)"))
         print(self.PrintUi.allign_left(" 2 : Save and Create Another Trip"))
-        print(self.PrintUi.allign_left(" 3 : Save and Return to the Flight Schedules"))
-        print(self.PrintUi.allign_left(" 4 : Discard and Return to the Flight Schedules"))
+        print(self.PrintUi.allign_left(
+            " 3 : Save and Return to the Flight Schedules"))
+        print(self.PrintUi.allign_left(
+            " 4 : Discard and Return to the Flight Schedules"))
         print(self.PrintUi.end_line())
 
     def create_new_sequence(self):
@@ -200,7 +210,8 @@ class FlightSchedulesCreateNewUI:
 
             elif n == 4:
                 printed_data = self.Logic.list_all_destinations()
-                printed_data = self.Logic.object_list_to_dict_list(printed_data)
+                printed_data = self.Logic.object_list_to_dict_list(
+                    printed_data)
                 self.input_destination(printed_data)
                 input_check_destinations = False
 
@@ -226,7 +237,6 @@ class FlightSchedulesCreateNewUI:
                 printed_data = self.Logic.list_all_airplanes() #################### Breyt í list_available_airplanes() ###############################
                 printed_data = self.Logic.object_list_to_dict_list(printed_data)
                 input_check_planes = False
-
                 if len(printed_data) != 0:
                     self.input_plane(printed_data)
                     data = input("Enter Plane selection: ").lower()
@@ -288,12 +298,13 @@ class FlightSchedulesCreateNewUI:
                     break
             elif command == "3":
                 try:
-                    self.Logic.add_work_trip(destination = self.new_trip[0], departure_datetime = self.new_trip[1], return_datetime = self.new_trip[2])
+                    self.Logic.add_work_trip(
+                        destination=self.new_trip[0], departure_datetime=self.new_trip[1], return_datetime=self.new_trip[2])
                     break
                 except ValueError as e:
                     print(f"Work Trip save was unsuccessfull: {e}")
             elif command == "4":
-                break    
+                break
             elif command == "q":
                 print("Goodbye")
                 exit()

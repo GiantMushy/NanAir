@@ -1,5 +1,5 @@
-from LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
-from UiLayer.PrintFunctions import PrintFunctions
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
+from Code.UiLayer.PrintFunctions import PrintFunctions
 
 class AirplaneDataEditUI:
     def __init__(self, airplane_id = ""):
@@ -75,7 +75,7 @@ class AirplaneDataEditUI:
             elif command == "1":
                 self.edit_data("Name")
                 while not input_check:
-                    command = input("Input new Name: ")
+                    command = input("Input new Name: ").lower()
                     if command == "q":
                         print("Goodbye")
                         exit()
