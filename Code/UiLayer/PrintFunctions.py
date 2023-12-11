@@ -219,4 +219,19 @@ class PrintFunctions:
             line_count += 1
 
     def print_available_planes(self, data, line_num):
-        pass
+        line_count = 0
+        print_format = "%-5s%-20s%-20s%-20s"
+
+        for dic in data:
+            vals = []
+            for value in dic.values():
+                vals.append(value)
+            for n in range(len(vals)):
+                if len(vals[n]) > 18: #shorten names
+                    vals[n] = self.shorten_name(vals[n], 18)
+            print(self.allign_left(print_format % (vals[0], vals[1], vals[3], vals[5]))) #id 0, name 1, type 3, capacity 5
+            line_count += 1
+        
+        while line_count <= line_num:
+            print(self.empty_line()) #fills out UI box to correct size with empty lines
+            line_count += 1

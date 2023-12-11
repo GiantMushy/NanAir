@@ -31,7 +31,7 @@ class FlightSchedulesCreateNewUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(""))
+        print(self.PrintUi.empty_line())
         print(self.PrintUi.end_line())
 
     def input_departure_time(self,dep_day):
@@ -57,7 +57,7 @@ class FlightSchedulesCreateNewUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(""))
+        print(self.PrintUi.empty_line())
         print(self.PrintUi.end_line())
 
     def input_return_time(self):
@@ -83,7 +83,7 @@ class FlightSchedulesCreateNewUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(""))
+        print(self.PrintUi.empty_line())
         print(self.PrintUi.end_line())
 
     def input_destination(self, printed_data):
@@ -98,8 +98,7 @@ class FlightSchedulesCreateNewUI:
         print(self.PrintUi.allign_left("--> Select Destination from the list below:"))
         print(self.PrintUi.allign_left("    Plane"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.print_destinations(printed_data,10))
-        print(self.PrintUi.allign_left(""))
+        self.PrintUi.print_destinations(printed_data,11)
         print(self.PrintUi.end_line())
 
     def input_plane(self, printed_data):
@@ -114,8 +113,7 @@ class FlightSchedulesCreateNewUI:
         print(self.PrintUi.allign_left(f"    {self.new_trip[0]['city']}, {self.new_trip[0]['country']}"))
         print(self.PrintUi.allign_left("--> Select a Plane from the list below"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.print_available_planes(printed_data,10))
-        print(self.PrintUi.allign_left(""))
+        self.PrintUi.print_available_planes(printed_data,11)
         print(self.PrintUi.end_line())
 
     def new_created(self):
@@ -162,6 +160,9 @@ class FlightSchedulesCreateNewUI:
                 except ValueError as e:
                     print(f"Error: {e}")
                     input_check = False
+                except IndexError:
+                    print("ERROR: Date must be input in the correct format (YYYY-MM-DD)")
+                    input_check = False
 
             elif n == 2:
                 self.input_departure_time(dep_day)
@@ -171,10 +172,13 @@ class FlightSchedulesCreateNewUI:
                     exit()
                 try:
                     data = data.split(':')
-                    self.new_trip[1] = datetime.datetime(int(date_data[0]), int(date_data[1]), int(date_data[2]), int(data[0]), int(data[1]))
+                    self.new_trip[1] = str(datetime.datetime(int(date_data[0]), int(date_data[1]), int(date_data[2]), int(data[0]), int(data[1])))[0:-3] 
                     input_check = True
                 except ValueError as e:
                     print(f"Error: {e}")
+                    input_check = False
+                except IndexError:
+                    print("ERROR: Time must be input in the correct format (HH:MM)")
                     input_check = False
 
             elif n == 3:
@@ -185,18 +189,22 @@ class FlightSchedulesCreateNewUI:
                     exit()
                 try:
                     data = data.split(':')
-                    self.new_trip[2] = datetime.datetime(int(date_data[0]), int(date_data[1]), int(date_data[2]), int(data[0]), int(data[1]))
+                    self.new_trip[2] = str(datetime.datetime(int(date_data[0]), int(date_data[1]), int(date_data[2]), int(data[0]), int(data[1])))[0:-3] 
                     input_check = True
                 except ValueError as e:
                     print(f"Error: {e}")
+                    input_check = False
+                except IndexError:
+                    print("ERROR: Time must be input in the correct format (HH:MM)")
                     input_check = False
 
             elif n == 4:
                 printed_data = self.Logic.list_all_destinations()
                 printed_data = self.Logic.object_list_to_dict_list(printed_data)
                 self.input_destination(printed_data)
+                input_check_destinations = False
 
-                data = input("Enter Destination selection: ")
+                data = input("Enter Destination selection: ").lower()
                 if data == "q":
                     print("Goodbye")
                     exit()
@@ -205,15 +213,20 @@ class FlightSchedulesCreateNewUI:
                         if int(data) == int(dic['id']):
                             self.new_trip[0] = self.Logic.find_destination_by_id(dic['id'])
                             self.new_trip[0] = self.Logic.object_to_dict(self.new_trip[0])
-                            print(self.new_trip[0])
                             input_check = True
+                            input_check_destinations = True
                 except ValueError as e:
                     print(f"Error: {e}")
+                    input_check = False
+                if not input_check_destinations:
+                    print("Invalid input, try again")
                     input_check = False
                 
             elif n == 5:
                 printed_data = self.Logic.list_all_airplanes() #################### Breyt í list_available_airplanes()
                 printed_data = self.Logic.object_list_to_dict_list(printed_data)
+                input_check_planes = False
+
                 if len(printed_data) != 0:
                     self.input_plane(printed_data)
                     data = input("Enter Plane selection: ")
@@ -226,8 +239,12 @@ class FlightSchedulesCreateNewUI:
                                 self.new_trip[3] = self.Logic.find_airplane_by_id(dic['id'])
                                 self.new_trip[3] = self.Logic.object_to_dict(self.new_trip[3])
                                 input_check = True
+                                input_check_planes = True
                     except ValueError as e:
                         print(f"Error: {e}")
+                        input_check = False
+                    if not input_check_planes:
+                        print("Invalid input, try again")
                         input_check = False
                 else: # ERROR MESSAGE -----------------------------------------------
                     print("No Planes available during this time period")
@@ -263,10 +280,10 @@ class FlightSchedulesCreateNewUI:
             elif command == "2":
                 try:
                     self.Logic.add_work_trip(destination = self.new_trip[0], departure_datetime = self.new_trip[1], return_datetime = self.new_trip[2])
+                    self.new_trip = []
+                    break_check = self.create_new_sequence()
                 except ValueError as e:
-                    print(f"Error: {e}")
-                self.new_trip = []
-                break_check = self.create_new_sequence()
+                    print(f"Work Trip save was unsuccessfull: {e}")
                 if break_check == 'break':
                     break
             elif command == "3":
@@ -274,7 +291,7 @@ class FlightSchedulesCreateNewUI:
                     self.Logic.add_work_trip(destination = self.new_trip[0], departure_datetime = self.new_trip[1], return_datetime = self.new_trip[2])
                     break
                 except ValueError as e:
-                    print(f"Error: {e}")
+                    print(f"Work Trip save was unsuccessfull: {e}")
             elif command == "4":
                 break    
             elif command == "q":
