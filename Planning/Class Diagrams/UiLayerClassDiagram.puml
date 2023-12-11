@@ -1,0 +1,131 @@
+@startuml
+package "Ui Layer" {
+    left to right direction
+
+    class AirplaneDataCreateNewUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        + input_name()
+        + input_type()
+        + input_prompt()
+    }
+    class AirplaneDataEditUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        + airplane_data_edit_output()
+        + edit_data()
+        + input_prompt()
+    }
+    class AirplaneDataUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        + airplane_data_output()
+        + input_prompt()
+    }
+
+    class DestinationDataCreateNewUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        + input_city()
+        + input_airport()
+        + input_country()
+        + input_distance()
+        + input_travel_time()
+        + input_emerg_contact_name()
+        + input_emerg_contact_phone_number()
+        + new_created()
+        + input_prompt()
+    }
+    class DestinationDataEditUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+
+    }
+    class DestinationDataUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        + destination_data_output()
+        + input_prompt()
+    }
+    class EmployeeDataCreateNewUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        + input_employee_type()
+        + input_employee_role()
+        + input_name()
+        + input_ssn()
+        + input_phone()
+        + input_address()
+        + input_email()
+        + input_home_phone()
+        + new_created()
+        + create_new_sequence()
+        + input_prompt() 
+    }
+    
+    class EmployeeDataEditUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        + employee_data_edit_output()
+        + edit_data()
+        + input_prompt()
+    }
+    class EmployeeDataUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        + employee_data_output()
+        + input_prompt()
+    }
+    class EmployeeSchedulesUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        + employee_schedules_output()
+        + input_prompt()
+    }
+    class FlightSchedulesUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        + input_departure_day()
+        + input_departure_time()
+        + input_return_time()
+        + input_destination()
+        + input_plane()
+        + new_created()
+        + create_new_sequence()
+        + input_prompt()
+    }
+
+    class LoginUI{
+        - PrintUi : PrintFunctions()
+        + login_output()
+        + input_prompt()
+    }
+    class MainMenuUI{
+        - PrintUi : PrintFunctions()
+        - user : user
+        + main_menu_output()
+        + input_prompt()
+    }
+    class PrintFunctions{
+        + empty_line()
+        + end_line()
+        + allign_left()
+        + allign_center()
+        + print_header()
+        + logo1()
+        + logo2()
+        + logo()
+        + shorten_name()
+        + print_employee_table()
+        + print_destination_table()
+        + print_airplane_table()
+        + print_flight_schedule_table()
+        + print_employee_schedule_table()
+    }
+
+    note "The UI layer depends on the LogicLayerAPI" as NoteUILayer
+
+
+}
+@enduml
+

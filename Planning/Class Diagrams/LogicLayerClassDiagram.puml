@@ -1,0 +1,98 @@
+@startuml
+package "Logic Layer" {
+    left to right direction
+
+    class LogicLayerAPI {
+        - employee_logic : EmployeeManagerLogic
+        - work_trip_logic : WorkTripLogic
+        - destination_logic : DestinationManagerLogic
+        - airplane_logic : AirplaneManagerLogic
+        - flight_logic : FlightLogic
+        - airplane_type_logic : AirplaneTypeLogic
+    }
+
+    class EmployeeManagerLogic {
+        - employee_data : DataLayerAPI
+        + add_employee(employee_type, employee_role, **kwargs)
+        + list_all_employees()
+        + list_all_pilots()
+        + list_all_flight_attendants()
+        + is_pilot(employee_id)
+        + is_flight_attendant(employee_id)
+        + modify_employee(employee_id, **updates)
+        + is_employee(employee_id)
+        + is_captain(employee_id)
+        + is_senior_flight_attendant(employee_id)
+        + list_pilots_by_airplane_type(airplane_type)
+        + list_pilots_sorted_by_airplane_type()
+        + find_employee_by_id(employee_id)
+
+    }
+
+    class WorkTripLogic {
+        - work_trip_data : DataLayerAPI
+        - employee_manager : EmployeeManagerLogic
+        - flight_logic : FlightLogic
+        - destination_manager : DestinationManagerLogic
+        - airplane_logic : AirplaneManagerLogic
+        - airplane_type_logic : AirplaneTypeLogic
+        + add_work_trip(destination, departure_datetime, return_datetime, crew_members)
+        + list_all_work_trips()
+        + add_crew_member(work_trip_id, employee_id)
+        + create_recurring_work_trips(work_trip_id, weekly_or_daily, number_of_recurrunces)
+        + work_trip_validity_period(weekly_or_daily, start_date)
+        + list_employees_working_and_destination(string_date)
+        + list_all_busy_employees(string_date)
+        + list_all_available_employees(string_date)
+        + all_work_trips_of_employee(employee_id, string_date)
+        + get_recommended_departure_datetime(destination_id, departure_datetime)
+    }
+
+    class DestinationManagerLogic {
+        - destination_data : DataLayerAPI
+        + list_all_destinations()
+        + add_destination(**kwargs)
+        + find_destination_by_id(destination_id)
+        + update_emergency_contact(destination_id, contact_name, contact_phone_number)
+    }
+
+    class AirplaneManagerLogic {
+        - airplane_data : DataLayerAPI
+        - airplane_type_logic : AirplaneTypeLogic
+        - flight_logic : FlightLogic
+        + list_all_airplanes()
+        + add_airplane(**kwargs)
+        + modify_airplane(airplane_id, **updates)
+        + find_airplane_by_id(airplane_id)
+        + list_airplanes_detailed()
+    }
+
+    class FlightLogic {
+        - data : DataLayerAPI
+        - airplane_type_logic : AirplaneManagerLogic
+        + list_all_flights()
+        + add_flight(**kwargs)
+        + get_flight_by_id(flight_id)
+        + get_all_flights_by_destination_id(destination_id)
+        + change_sold_tickets(flight_id, tickets_sold)
+        + get_sold_tickets(flight_id)
+        + get_available_tickets(flight_id)
+        + is_airplane_available(airplane_id, departure_datetime, return_datetime)
+    }
+
+    class AirplaneTypeLogic {
+        - airplane_type_data : DataLayerAPI
+        + add_airplane_type(**kwargs)
+        + list_all_airplane_types()
+    }
+
+    LogicLayerAPI --> EmployeeManagerLogic
+    LogicLayerAPI --> WorkTripLogic
+    LogicLayerAPI --> DestinationManagerLogic
+    LogicLayerAPI --> AirplaneManagerLogic
+    LogicLayerAPI --> FlightLogic
+    LogicLayerAPI --> AirplaneTypeLogic
+    note "The Logic layer depends on the DataLayerAPI" as NoteLogicLayer
+
+}
+@enduml
