@@ -19,8 +19,8 @@ class AirplaneDataUI:
         print(self.PrintUi.empty_line())
         self.PrintUi.print_airplane_table(printed_dict, 15)
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(
-            " 0 : Back                          00 : Create New Airplane                  <ID> : Edit Airplane Data"))
+        print(self.PrintUi.allign_center(
+            " 0 : Back      00 : Create New Airplane      <ID> : Edit Airplane Data"))
         print(self.PrintUi.end_line())
 
     def input_prompt(self):

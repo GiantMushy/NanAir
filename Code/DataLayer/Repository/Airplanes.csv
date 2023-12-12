@@ -1,8 +1,3 @@
-id,name,current_location,type,manufacturer,capacity
-001,Óli,Nuuk,DHC-8-200,De Havilland,37
-002,Matthías,>Reykjavik,DHC-8-400,DE Havilland,76
-003,Þorvarður,Kulisuuk,DHC-8-200,De Havilland,37
-004,Benjamín,Svalbard,DHC-8-400,DE Havilland,76
-005,Edda,>Nuuk,DHC-8-200,De Havilland,37
-006,Naddie,Reykjavik,Hot Lady,testing,dfd
-007,Ingair,florida,Katrin,dumb blond,54
+id,name,type
+001,matti,AKN-77
+002,masd,ASD
