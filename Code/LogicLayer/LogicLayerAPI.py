@@ -296,6 +296,12 @@ class LogicLayerAPI:
         '''
         return self.work_trip_logic.list_all_available_fa(date)
 
+    def list_all_available_captains_by_type(self, airplane_type, date):
+        return self.work_trip_logic.list_all_available_captains_by_type(airplane_type, date)
+
+    def list_all_available_copilots_by_type(self, airplane_type, date):
+        return self.work_trip_logic.list_all_available_copilots_by_type(airplane_type, date)
+
     ############################## Destination Manager Logic ###############################
 
     def list_all_destinations(self):
@@ -464,6 +470,7 @@ class LogicLayerAPI:
         Returns, return: airplane object if found, None otherwise.
         """
         return self.airplane_type_logic.find_type_data(airplane_type)
+
     ############################## Input Varification ###############################
 
     def is_city(self, City):

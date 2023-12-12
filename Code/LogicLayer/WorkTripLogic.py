@@ -609,3 +609,23 @@ class WorkTripLogic:
                 all_available_flight_attendants.append(emp)
 
         return all_available_flight_attendants
+
+    def list_all_available_captains_by_type(self, airplane_type, date):
+        all_avlb_pilots = self.list_all_available_pilots_by_type(
+            airplane_type, date)
+        all_avlb_captains = []
+        for pilot in all_avlb_pilots:
+            if pilot.pilot_role == 'Captain':
+                all_avlb_captains.append(pilot)
+
+        return all_avlb_captains
+
+    def list_all_available_copilots_by_type(self, airplane_type, date):
+        all_avlb_pilots = self.list_all_available_pilots_by_type(
+            airplane_type, date)
+        all_avlb_copilots = []
+        for pilot in all_avlb_pilots:
+            if pilot.pilot_role == 'Co-Pilot':
+                all_avlb_copilots.append(pilot)
+
+        return all_avlb_copilots

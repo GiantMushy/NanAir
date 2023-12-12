@@ -191,6 +191,12 @@ def print_all_types_of_data():
 
     print("listing all available fa")
     list_object(logic.list_all_available_fa('2023-12-17 19:32'))
+    print("LISTING ALL AVLB CAPTAINS BY TYPE")
+    list_object(logic.list_all_available_captains_by_type(
+        'AKN-77', '2023-12-17 19:32'))
+    print("LISTING ALL AVLB COPILOTS BY TYPE")
+    list_object(logic.list_all_available_copilots_by_type(
+        'BOEING747', '2023-12-17 19:32'))
 
 
 def update_emergency_contact():
@@ -296,9 +302,9 @@ def main():
     # add_extra_airplane()
     # add_extra_employees()
     # test_trying_to_use_airplane_twice()
-    testing_datetime("2023-12-15 14:50")
+    # testing_datetime("2023-12-15 14:50")
     # add_work_trips_recurring()
-    # print_all_types_of_data()
+    print_all_types_of_data()
 
 
 if __name__ == "__main__":
