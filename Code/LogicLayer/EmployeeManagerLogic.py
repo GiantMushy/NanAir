@@ -106,6 +106,9 @@ class EmployeeManagerLogic:
         combined_pilots = []
         for pilot in pilots:
             employee = self.find_employee_by_id(pilot.id)
+            # add airplane type and pilot role to employee object
+            employee.airplane_type = pilot.airplane_type
+            employee.pilot_role = pilot.pilot_role
             # combine the values of two dictionaries having same key
             combined_pilot = {**employee.__dict__, **pilot.__dict__}
             combined_pilots.append(combined_pilot)
@@ -121,6 +124,8 @@ class EmployeeManagerLogic:
         combined_flight_attendants = []
         for flight_attendant in flight_attendants:
             employee = self.find_employee_by_id(flight_attendant.id)
+            # add flight attendant role to employee object
+            employee.attendant_role = flight_attendant.attendant_role
             # combine the values of two dictionaries having same key
             combined_flight_attendant = {
                 **employee.__dict__, **flight_attendant.__dict__}
@@ -326,3 +331,26 @@ class EmployeeManagerLogic:
             for p in pilot_list:
                 pilots.append(p)
         return pilots
+
+    def find_employee_by_id_detailed(self, employee_id):
+        '''
+        Finds an employee by their ID.
+
+        :param employee_id: ID of the employee to find.
+
+        Returns, return: Employee object if found, None if not.
+        '''
+        all_employees = self.list_all_employees()
+        for emp in all_employees:
+            if emp.id == employee_id:
+                if self.is_pilot(emp.id):
+                    self.pilot = self.find_pilot_by_id(emp.id)
+                    emp.airplane_type = pilot.airplane_type
+                    emp.pilot_role = pilot.pilot_rolew
+                elif self.is_flight_attendant(emp.id):
+                    self.flight_attendant = self.find_flight_attendant_by_id(
+                        emp.id)
+                    emp.attendant_role = self.flight_attendant.attendant_role
+                return emp
+
+        return None
