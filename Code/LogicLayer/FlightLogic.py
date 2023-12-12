@@ -36,6 +36,8 @@ class FlightLogic:
 
     def get_flight_by_id(self, flight_number):
         '''
+        Obtain flight using its flight number
+
         :param flight_id: ID of the flight to find
         Returns, return: Flight object with the given id.
         '''
@@ -45,7 +47,10 @@ class FlightLogic:
 
     def get_all_flights_by_destination_id(self, destination_id):
         '''
+        Obtain all flights to a specific destination
+
         :param destination_id: ID of the destination to find
+
         Returns, return: List of Flight objects with the given destination id.
         '''
         # flight number is on this format NAXX where XX is always the destination id
@@ -58,10 +63,16 @@ class FlightLogic:
 
     def change_sold_tickets(self, flight_number, tickets_sold):
         '''
+        This adds tickets_sold to the flight.
+
         :param flight_number: Number of the flight to change
         :param tickets_sold: Number of tickets sold to add to flight
         '''
         upd_flight = self.get_flight_by_id(flight_number)
+        if upd_flight is None:
+            raise ValueError("Flight not found")
+        if int(upd_flight.tickets_sold)+int(tickets_sold) > int(upd_flight.capacity):
+            raise ValueError("Too many tickets sold")
         upd_flight.tickets_sold = int(
             upd_flight.tickets_sold)+int(tickets_sold)
         all_flights = self.list_all_flights()
@@ -74,10 +85,10 @@ class FlightLogic:
 
         self.data.modify_flight_data(new_flight_objects)
 
-        # TODO: make airplane types, and stop adding more sold seats then airplane type has
-
     def get_sold_tickets(self, flight_number):
         '''
+        Get total amount of sold tickets of a flight number.
+
         :param flight_number: Number of the flight to get sold tickets from
 
         Returns, return: string number of sold tickets
@@ -87,6 +98,8 @@ class FlightLogic:
 
     def get_available_tickets(self, flight_number):
         '''
+        Get total amount of tickets yet to be sold.
+
         :param flight_number: Number of the flight to get available tickets from
 
         Returns, return: string number of available tickets
@@ -96,6 +109,8 @@ class FlightLogic:
 
     def is_airplane_available(self, airplane_id, departure_datetime, return_datetime):
         '''
+        Checks if airplane is available between departure and return datetime.
+
         :param airplane_id: ID of the airplane to check
         :param departure_datetime: datetime of departure
         :param return_datetime: datetime of return
@@ -115,6 +130,8 @@ class FlightLogic:
 
     def date_string_to_datetime(self, date_string):
         '''
+        Converts a string of date to a datetime object
+
         :param date_string: string of date in format %Y-%m-%d %H:%M
 
         Returns, return: datetime object of the string
@@ -123,6 +140,8 @@ class FlightLogic:
 
     def is_airplane_in_use(self, airplane_id):
         '''
+        Checks if airplane is in use right now.
+
         :param airplane_id: ID of the airplane to check
 
         Returns, return: flight object if airplane is in use, None otherwise
@@ -144,6 +163,9 @@ class FlightLogic:
                         next_flight_start = self.date_string_to_datetime(
                             next_flight.start_datetime)
                         # we know next flight is always the first flight after this one when ending abroad
+                        # we know the first flight with higher start_datetime than prev flight for same
+                        # airplane ID is the next flight, since it's sorted and a plane can't fly
+                        # in two places at the same time
                         if next_flight_start > flight_end:
                             return next_flight
 
