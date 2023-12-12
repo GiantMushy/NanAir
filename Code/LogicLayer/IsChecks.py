@@ -18,7 +18,7 @@ class IsChecks:
         if not Airport or not Airport.replace(" ", "").isalpha():
             raise ValueError(
                 "Airport must be a non-empty string of alphabetic characters")
-        if len(Airport) > 3:
+        if not len(Airport) == 3:
             raise ValueError(
                 "Airport name must be input as the 3 letter abbreviation (ex. LAX, KEF)")
         if "  " in Airport:
