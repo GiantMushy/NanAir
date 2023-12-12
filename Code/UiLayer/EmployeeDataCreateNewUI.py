@@ -390,7 +390,7 @@ class EmployeeDataCreateNewUI:
                 if self.new_employee[0] == 'pilot':
                     self.input_airplane_type()
                     data = input("Enter Airplane Type: ").upper()
-                    data_compare_temp = data.upper()
+                    data_compare_temp = data
                     if data == "q":
                         print("Goodbye")
                         exit()
