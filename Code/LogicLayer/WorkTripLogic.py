@@ -91,7 +91,7 @@ class WorkTripLogic:
                 raise ValueError(
                     "Departure time cannot be the same as another departure time in worktrips.")
 
-        # if destination exists
+        # if destination exists first of all
         destination = self.destination_logic.find_destination_by_id(
             destination_id)
 
@@ -100,12 +100,12 @@ class WorkTripLogic:
 
         # minimum required time between departure and return
         minimum_required_time = timedelta(
-            hours=0.99) + timedelta(minutes=int(destination.travel_time) * 2)
+            hours=0.99) + timedelta(minutes=int(destination.travel_time))
 
-        # Check if the time between departure and return is at least the minimum required time
+        # Check if the time between departure and return is at least the minimum required time to fly to the destination
         if (formatting_return_datetime - formatting_departure_datetime) < minimum_required_time:
             raise ValueError(
-                "Time between departure and return must be at least 2 times the travel time of the destination object plus ~1 hours for overhead.")
+                "Time between departure and return must be at least 1 times the travel time of the destination object plus ~1 hours for overhead.")
 
         # TODO: also check if employees being added are indeed employees, and if they are available when validationservice added
 
@@ -113,10 +113,9 @@ class WorkTripLogic:
             raise ValueError("Airplane does not exist.")
 
         # passed all checks, now need to create 2 seperate flights, with seperate flight numbers
-        # this needs to be somehow stored in the worktrip object, to find flights?
-        # or a flight can have a work trip id?
+
         # its better for a worktrip to point to the two flight numbers, so need to create a function
-        # in the format "NA<destinationid with padded zeroes><even numbers from iceland>/<odd numbers to iceland>"
+        # to make these flight numbers first of all
 
         # create flight numbers
         flight_number_start, flight_number_end = self.flight_logic.create_flight_numbers(
