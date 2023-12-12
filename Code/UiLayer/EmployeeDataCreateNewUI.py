@@ -274,6 +274,7 @@ class EmployeeDataCreateNewUI:
         print(self.PrintUi.allign_left(f"    {self.new_employee[6]}"))
         print(self.PrintUi.allign_left(f"    {self.new_employee[7]}"))
         print(self.PrintUi.allign_left("--> Input Home Phone (optional)"))
+
         print(self.PrintUi.empty_line())
         if not self.new_employee[0] == "pilot":
             print(self.PrintUi.empty_line())

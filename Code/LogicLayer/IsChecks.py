@@ -5,6 +5,7 @@ class IsChecks:
     def __init__(self):
         self.destination_data = DataLayerAPI()
         self.punc = '-_'
+        self.all_punc = '''!"#$%&\'(')*+,-./:;<=>?@[\\]^_`{|}~¨°'''
 
     def is_city(self, City):
         if not City or not City.replace(" ", "").isalpha():
@@ -62,6 +63,9 @@ class IsChecks:
         # checks if the number has 10 digits maximum
         if not int(Contact_Phone_Number) <= 9999999999:
             raise ValueError("Phone Number must be 10 digits maximum")
+        if not int(Contact_Phone_Number) >= 100:
+            raise ValueError("Phone Number must be 3 digits minimum")
+
         try:
             Contact_Phone_Number = int(Contact_Phone_Number.replace(" ", ""))
         except:
@@ -103,7 +107,7 @@ class IsChecks:
         if int(social_security_number[4:6]) > 10 and social_security_number[-1] == "0":
             raise ValueError(
                 "Birth dat in social_security_number is too young or not born yet")
-        if int(social_security_number[0:2]) > 30 and int(social_security_number[3]) == 4 or int(social_security_number[3]) == 6 or int(social_security_number[3]) == 9 or int(social_security_number[2:4]) == 11:
+        if int(social_security_number[0:2]) > 30 and int(social_security_number[3]) == 4 or int(social_security_number[0:2]) > 30 and int(social_security_number[3]) == 6 or int(social_security_number[0:2]) > 30 and int(social_security_number[3]) == 9 or int(social_security_number[0:2]) > 30 and int(social_security_number[2:4]) == 11:
             raise ValueError("SSN must be a valid date")
         if int(social_security_number[0:2]) > 29 and int(social_security_number[3]) == 2:
             raise ValueError("SSN must be a valid date")
@@ -117,6 +121,8 @@ class IsChecks:
     def is_manufacturer(self, Manufacturer):
         if not Manufacturer:
             raise ValueError("Manufacturer must be a non-empty string")
+        if not Manufacturer.strip(self.punc):
+            raise ValueError("Manufacturer cannot be only punctuation")
         if len(Manufacturer) > 20:
             raise ValueError(
                 "Manufacturer name cannot be longer than 20 characters")
@@ -129,8 +135,7 @@ class IsChecks:
         except ValueError:
             raise ValueError("Capacity must be numeric")
         if Capacity > 853:
-            raise ValueError(
-                "No plane in the world has a seat capacity of more than 853")
+            raise ValueError("No plane in the world has a seat capacity of more than 853")
 
     def is_address(self, address):
         if not address:
