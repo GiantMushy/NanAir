@@ -1,9 +1,9 @@
-from DataLayer.EmployeeData import EmployeeData
-from DataLayer.WorkTripData import WorkTripData
-from DataLayer.DestinationData import DestinationData
-from DataLayer.AirplaneData import AirplaneData
-from DataLayer.FlightData import FlightData
-from DataLayer.AirplaneTypeData import AirplaneTypeData
+from Code.DataLayer.EmployeeData import EmployeeData
+from Code.DataLayer.WorkTripData import WorkTripData
+from Code.DataLayer.DestinationData import DestinationData
+from Code.DataLayer.AirplaneData import AirplaneData
+from Code.DataLayer.FlightData import FlightData
+from Code.DataLayer.AirplaneTypeData import AirplaneTypeData
 
 
 class DataLayerAPI:
