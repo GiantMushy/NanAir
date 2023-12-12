@@ -142,7 +142,7 @@ def add_crew_member_wt():
     When adding crew members to a work trip, the following changes have been done, a pilot flies a certain airplane type, which can't be None if employee 
     type is pilot. A flight attendant has no airplane type, and can and should be None.
     '''
-    logic.add_crew_member("001", "001")
+    logic.add_crew_member("001", "004")
     logic.add_crew_member("001", "002")
 
 
@@ -172,31 +172,11 @@ def print_all_types_of_data():
     for id in all_avlb_emp:
         print(id)
     print("listing info on employee")
-    print((logic.find_employee_by_id_detailed("002")).__dict__)
+    print((logic.find_employee_by_id("001")).__dict__)
     print("All pilots with licences on type AKN-77")
     list_object(logic.list_pilots_by_airplane_type("AKN-77"))
     print("Listing pilots after airplane types they're allowed to fly.")
     list_object(logic.list_pilots_sorted_by_airplane_type())
-    print("Listing all flight attendants detailed")
-    list_object(logic.list_all_flight_attendants())
-    print("Listing all pilots detailed")
-    list_object(logic.list_all_pilots())
-    print("Listing all employees detailed")
-    list_object(logic.list_all_employees_detailed())
-    print("listing all available pilots by type")
-    list_object(logic.list_all_available_pilots_by_type(
-        'AKN-77', '2023-12-17 19:32'))
-    print("listing all avaiable senior fa")
-    list_object(logic.list_all_available_senior_fa('2023-12-17 19:32'))
-
-    print("listing all available fa")
-    list_object(logic.list_all_available_fa('2023-12-17 19:32'))
-    print("LISTING ALL AVLB CAPTAINS BY TYPE")
-    list_object(logic.list_all_available_captains_by_type(
-        'AKN-77', '2023-12-17 19:32'))
-    print("LISTING ALL AVLB COPILOTS BY TYPE")
-    list_object(logic.list_all_available_copilots_by_type(
-        'BOEING747', '2023-12-17 19:32'))
 
 
 def update_emergency_contact():
@@ -288,22 +268,17 @@ def testing_datetime(departure_string):
     print(f"right now {today}")
 
 
-def add_work_trips_recurring():
-    logic.create_recurring_work_trips("001", 7, 15)
-
-
 def main():
-    # add_airplanes()
-    # add_sample_employees()
-    # add_destinations()
-    # add_work_trips()
-    # add_crew_member_wt()
+    add_sample_employees()
+    add_airplanes()
+    add_destinations()
+    add_work_trips()
+    add_crew_member_wt()
     # update_emergency_contact()
     # add_extra_airplane()
     # add_extra_employees()
     # test_trying_to_use_airplane_twice()
     # testing_datetime("2023-12-15 14:50")
-    # add_work_trips_recurring()
     print_all_types_of_data()
 
 

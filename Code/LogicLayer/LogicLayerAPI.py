@@ -144,6 +144,22 @@ class LogicLayerAPI:
         """
         return self.employee_logic.find_employee_by_id(employee_id)
 
+    def find_employee_by_id_detailed(self, employee_id):
+        """
+        Finds an employee by their ID with more detail
+
+        :param employee_id: ID of the employee to find.
+
+        Returns, return: Employee object if found, None otherwise.
+        """
+        return self.employee_logic.find_employee_by_id_detailed(employee_id)
+
+    def list_all_employees_detailed(self):
+        '''
+        Returns a list of all employees with more detail
+        '''
+        return self.employee_logic.list_all_employees_detailed()
+
     ############################## WorkTripLogic ###############################
 
     def add_work_trip(self, destination, departure_datetime, return_datetime, crew_members=None):
@@ -249,6 +265,43 @@ class LogicLayerAPI:
         '''
         return self.work_trip_logic.get_recommended_departure_datetime(destination_id, departure_datetime)
 
+    def list_all_available_pilots_by_type(self, airplane_type, date):
+        '''
+        Lists all available pilots dor a certain date with licence on airplane type
+
+        :param airplane_type: airplane type string
+        :param date: date to check if employees available
+
+        Returns, return: list of pilots that can fly airplane type and are available on date
+        '''
+        return self.work_trip_logic.list_all_available_pilots_by_type(airplane_type, date)
+
+    def list_all_available_senior_fa(self, date):
+        '''
+        Lists all available senior fa for a certain date
+
+        :param date: date to check if employees available
+
+        Returns, return: list of pilots that can fly airplane type and are available on date
+        '''
+        return self.work_trip_logic.list_all_available_senior_fa(date)
+
+    def list_all_available_fa(self, date):
+        '''
+        Lists all available fa for a certain date
+
+        :param date: date to check if employees available
+
+        Returns, return: list of pilots that can fly airplane type and are available on date
+        '''
+        return self.work_trip_logic.list_all_available_fa(date)
+
+    def list_all_available_captains_by_type(self, airplane_type, date):
+        return self.work_trip_logic.list_all_available_captains_by_type(airplane_type, date)
+
+    def list_all_available_copilots_by_type(self, airplane_type, date):
+        return self.work_trip_logic.list_all_available_copilots_by_type(airplane_type, date)
+
     ############################## Destination Manager Logic ###############################
 
     def list_all_destinations(self):
@@ -326,6 +379,7 @@ class LogicLayerAPI:
         Returns a list of all airplanes with detailed information.
         '''
         return self.airplane_logic.list_airplanes_detailed()
+
     ############################## FlightLogic ###############################
 
     def list_all_flights(self):
@@ -407,6 +461,16 @@ class LogicLayerAPI:
     def list_all_airplane_types(self):
         """Returns, return: a list of all airplane types."""
         return self.airplane_type_logic.list_all_airplane_types()
+
+    def find_type_data(self, airplane_type):
+        """
+        Finds an airplane type object by their type.
+
+        :param airplane_type: type of the airplane to find.
+        Returns, return: airplane object if found, None otherwise.
+        """
+        return self.airplane_type_logic.find_type_data(airplane_type)
+
     ############################## Input Varification ###############################
 
     def is_city(self, City):
