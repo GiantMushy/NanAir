@@ -21,7 +21,7 @@ class DestinationDataUI:
         self.PrintUi.print_destination_table(printed_dict, 15)
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_center(
-            " 0 : Back      00 : Create New Destination"))
+            " 0 : Back      00 : Create New Destination      <ID>: View/Edit Destination"))
         print(self.PrintUi.end_line())
 
     def input_prompt(self):
@@ -38,6 +38,14 @@ class DestinationDataUI:
             elif command == "00":
                 create_new = DestinationDataCreateNewUI()
                 create_new.input_prompt()
+            elif command.isdigit():
+                if int(command) != 1:
+                    for dict in self.Logic.object_list_to_dict_list(self.Logic.list_all_destinations()):
+                        if int(command) == int(dict['id']):
+                            edit = DestinationDataEditUI(dict['id'])
+                            edit.input_prompt()
+                else:
+                    print("Invalid input, try again, can't edit HQ")
             elif command == "q":
                 print("Goodbye")
                 exit()
