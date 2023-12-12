@@ -308,7 +308,10 @@ class EmployeeManagerLogic:
         pilots = []
         for pilot in all_pilots:
             if pilot.airplane_type == airplane_type:
-                pilots.append(pilot)
+                employee = self.find_employee_by_id(pilot.id)
+                employee.airplane_type = pilot.airplane_type
+                employee.pilot_role = pilot.pilot_role
+                pilots.append(employee)
         return pilots
 
     def list_pilots_sorted_by_airplane_type(self):
@@ -329,7 +332,11 @@ class EmployeeManagerLogic:
         for airplane_type in airplane_types:
             pilot_list = self.list_pilots_by_airplane_type(airplane_type)
             for p in pilot_list:
-                pilots.append(p)
+                # find employee using find_employee_by_id and append all attributes except ID
+                employee = self.find_employee_by_id(p.id)
+                employee.airplane_type = p.airplane_type
+                employee.pilot_role = p.pilot_role
+                pilots.append(employee)
         return pilots
 
     def find_employee_by_id_detailed(self, employee_id):
@@ -344,13 +351,56 @@ class EmployeeManagerLogic:
         for emp in all_employees:
             if emp.id == employee_id:
                 if self.is_pilot(emp.id):
-                    self.pilot = self.find_pilot_by_id(emp.id)
+                    pilot = self.find_pilot_by_id(emp.id)
                     emp.airplane_type = pilot.airplane_type
-                    emp.pilot_role = pilot.pilot_rolew
+                    emp.role = pilot.pilot_role
                 elif self.is_flight_attendant(emp.id):
-                    self.flight_attendant = self.find_flight_attendant_by_id(
+                    flight_attendant = self.find_flight_attendant_by_id(
                         emp.id)
-                    emp.attendant_role = self.flight_attendant.attendant_role
+                    emp.role = flight_attendant.attendant_role
                 return emp
 
         return None
+
+    def find_flight_attendant_by_id(self, flight_attendant_id):
+        '''
+        Finds a flight attendant by their ID.
+
+        :param flight_attendant_id: ID of the flight attendant.
+
+        Returns, return: FlightAttendant object if found, None if not.
+        '''
+        all_flight_attendants = self.employee_data.read_all_flight_attendants()
+        for flight_attendant in all_flight_attendants:
+            if flight_attendant.id == flight_attendant_id:
+                return flight_attendant
+
+        return None
+
+    def find_pilot_by_id(self, pilot_id):
+        '''
+        Finds a pilot by their ID.
+
+        :param pilot_id: ID of the pilot.
+
+        Returns, return: Pilot object if found, None if not.
+        '''
+        all_pilots = self.employee_data.read_all_pilots()
+        for pilot in all_pilots:
+            if pilot.id == pilot_id:
+                return pilot
+
+        return None
+
+    def list_all_employees_detailed(self):
+        '''
+        List of all employees.
+
+        Returns, return: List of Employee objects.
+        '''
+        employees = self.list_all_employees()
+        employees_detailed = []
+        for emp in employees:
+            employees_detailed.append(
+                self.find_employee_by_id_detailed(emp.id))
+        return employees_detailed

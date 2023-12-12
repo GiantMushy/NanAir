@@ -172,11 +172,17 @@ def print_all_types_of_data():
     for id in all_avlb_emp:
         print(id)
     print("listing info on employee")
-    print((logic.find_employee_by_id("001")).__dict__)
+    print((logic.find_employee_by_id_detailed("002")).__dict__)
     print("All pilots with licences on type AKN-77")
     list_object(logic.list_pilots_by_airplane_type("AKN-77"))
     print("Listing pilots after airplane types they're allowed to fly.")
     list_object(logic.list_pilots_sorted_by_airplane_type())
+    print("Listing all flight attendants detailed")
+    list_object(logic.list_all_flight_attendants())
+    print("Listing all pilots detailed")
+    list_object(logic.list_all_pilots())
+    print("Listing all employees detailed")
+    list_object(logic.list_all_employees_detailed())
 
 
 def update_emergency_contact():

@@ -144,6 +144,22 @@ class LogicLayerAPI:
         """
         return self.employee_logic.find_employee_by_id(employee_id)
 
+    def find_employee_by_id_detailed(self, employee_id):
+        """
+        Finds an employee by their ID with more detail
+
+        :param employee_id: ID of the employee to find.
+
+        Returns, return: Employee object if found, None otherwise.
+        """
+        return self.employee_logic.find_employee_by_id_detailed(employee_id)
+
+    def list_all_employees_detailed(self):
+        '''
+        Returns a list of all employees with more detail
+        '''
+        return self.employee_logic.list_all_employees_detailed()
+
     ############################## WorkTripLogic ###############################
 
     def add_work_trip(self, destination, departure_datetime, return_datetime, crew_members=None):
