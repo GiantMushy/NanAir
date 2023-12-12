@@ -2,15 +2,6 @@ from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI
 from Code.UiLayer.PrintFunctions import PrintFunctions
 import ast
 import datetime
-#id,destination,departure_datetime,return_datetime,airplane,flight_number_start,flight_number_end,crew_member
-#id = 001,
-# destination = "{'id': '02', 'city': 'Matta city', 'airport': 'Matti airport', 'country': 'Mattaland', 'distance': '6', 'travel_time': '40', 'contact_name': 'Helgi', 'contact_phone_number': '9876543'}",
-# dep_datetime = 2023-12-11 21:53,
-# ret_datetime = 2023-12-12 03:53,
-# airplane = "{'id': '001', 'name': 'Katla', 'type': 'AKN-77'}",
-# flight_number_start = NA020,
-# flight_number_end =   NA021,
-# crew_member = ''
 
 #{'id': '007', 
 # 'destination': "{'id': '02', 'city': 'Matta city', 'airport': 'Matti airport', 'country': 'Mattaland', 'distance': '6', 'travel_time': '40', 'contact_name': 'Helgi', 'contact_phone_number': '9876543'}", 
@@ -72,7 +63,7 @@ class FlightSchedulesStaffTripsUI:
             line_count += 1
         
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(f"A : Assign Captain to Trip             S : Assign Co-Pilot to Trip")) 
+        print(self.PrintUi.allign_left(f"A : Assign Captain to Trip                  S : Assign Co-Pilot to Trip")) 
         print(self.PrintUi.allign_left(f"D : Assign Head flight_attendat to Trip     F : Assign flight_attendat to Trip           0 : Back to Flight Schedules")) 
         print(self.PrintUi.end_line())
 
@@ -210,8 +201,8 @@ class FlightSchedulesStaffTripsUI:
 
                         elif command.isdigit() and int(command) <= len(self.available_captains): #Checks if command is a valid int in range of the given list
                             try:
-                                self.Logic.add_crew_member(self.trip['id'], self.available_captains[int(command)-1]['id'])
-                                print(f"{self.available_captains[int(command)-1]['id']}:{self.available_captains[int(command)-1]['id']} has been added to the trip")
+                                self.Logic.add_crew_member(self.trip['id'], self.available_captains[int(command)-1]['name'])
+                                print(f"{self.available_captains[int(command)-1]['id']}:{self.available_captains[int(command)-1]['name']} has been added to the trip")
                                 input_check = True
                             except ValueError as e:
                                 print(f"Error occured when adding employee to the Trip: {e}")
@@ -223,21 +214,72 @@ class FlightSchedulesStaffTripsUI:
             elif command == "s": #assign CoPilot
                 if len(self.avaialble_copilots) != 0:
                     self.assign_copilot()
-                    command = input("Input selection: ")
+                    input_check = False
+                    while not input_check:
+                        command = input("Input selection: ")
+                        if command == "q":
+                            print("Goodbye")
+                            exit()
+                        elif command == "0":
+                            input_check = True
+
+                        elif command.isdigit() and int(command) <= len(self.available_copilot): #Checks if command is a valid int in range of the given list
+                            try:
+                                self.Logic.add_crew_member(self.trip['id'], self.available_copilot[int(command)-1]['name'])
+                                print(f"{self.available_copilot[int(command)-1]['id']}:{self.available_copilot[int(command)-1]['name']} has been added to the trip")
+                                input_check = True
+                            except ValueError as e:
+                                print(f"Error occured when adding employee to the Trip: {e}")
+                        else:
+                            print("Incorrect input, try again")
                 else:
                     print("No available CoPilots during this time period")
 
-            elif command == "d": #assign Sen. Flight Attendants
+            elif command == "d": #assign Sr. Flight Attendants
                 if len(self.avaialble_senior_flight_attendants) != 0:
                     self.assign_senior_flight_attendant()
-                    command = input("Input selection: ")
+                    input_check = False
+                    while not input_check:
+                        command = input("Input selection: ")
+                        if command == "q":
+                            print("Goodbye")
+                            exit()
+                        elif command == "0":
+                            input_check = True
+
+                        elif command.isdigit() and int(command) <= len(self.avaialble_senior_flight_attendants): #Checks if command is a valid int in range of the given list
+                            try:
+                                self.Logic.add_crew_member(self.trip['id'], self.avaialble_senior_flight_attendants[int(command)-1]['name'])
+                                print(f"{self.avaialble_senior_flight_attendants[int(command)-1]['id']}:{self.avaialble_senior_flight_attendants[int(command)-1]['name']} has been added to the trip")
+                                input_check = True
+                            except ValueError as e:
+                                print(f"Error occured when adding employee to the Trip: {e}")
+                        else:
+                            print("Incorrect input, try again")
                 else:
-                    print("No available Sen. Flight Attendants during this time period")
+                    print("No available Sr. Flight Attendants during this time period")
 
             elif command == "f": #assign Flight Attendants
                 if len(self.avaialble_flight_attendants) != 0:
                     self.assign_flight_attendant()
-                    command = input("Input selection: ")
+                    input_check = False
+                    while not input_check:
+                        command = input("Input selection: ")
+                        if command == "q":
+                            print("Goodbye")
+                            exit()
+                        elif command == "0":
+                            input_check = True
+
+                        elif command.isdigit() and int(command) <= len(self.avaialble_flight_attendants): #Checks if command is a valid int in range of the given list
+                            try:
+                                self.Logic.add_crew_member(self.trip['id'], self.avaialble_flight_attendants[int(command)-1]['name'])
+                                print(f"{self.avaialble_flight_attendants[int(command)-1]['id']}:{self.avaialble_flight_attendants[int(command)-1]['name']} has been added to the trip")
+                                input_check = True
+                            except ValueError as e:
+                                print(f"Error occured when adding employee to the Trip: {e}")
+                        else:
+                            print("Incorrect input, try again")
                 else:
                     print("No available Flight Attendants during this time period")
 
