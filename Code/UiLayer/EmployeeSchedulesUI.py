@@ -1,5 +1,6 @@
 from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI #Wrapper
 from Code.UiLayer.PrintFunctions import PrintFunctions
+from Code.UiLayer.EmployeeScheduleSpecificUI import EmployeeScheduleSpecificUI
 import datetime
 import ast
 
@@ -11,64 +12,84 @@ class EmployeeSchedulesUI:
     def employee_schedules_output(self, start_date, working_notworking_all):
         self.PrintUi.logo()
         self.PrintUi.print_header("Employee Schedules", "left")
+        print_format = "%-6s%-20s%-30s%-20s"
         print(self.PrintUi.empty_line())
         if working_notworking_all == "all":
             print(self.PrintUi.allign_left(f"List of Employees Work Status on {start_date.date()}:"))
             print(self.PrintUi.empty_line())
-            print(self.PrintUi.allign_left("%-6s%-20s%-20s" % ('Id', 'Name', 'Flying to')))
+            print(self.PrintUi.allign_left(print_format % ('Id', 'Name', 'Position', 'Flying to')))
             print(self.PrintUi.empty_line())
-            self.print_employees_all(13)
+            self.print_employees_all(print_format, 13)
             print(self.PrintUi.empty_line())
             print(self.PrintUi.allign_left("<Id> : See Employee's weekly schedule          A : Show Only Working Employees      S : Show Only Non-Working Employees"))
         elif working_notworking_all == "working":
             print(self.PrintUi.allign_left(f"List of Employees Working on {start_date.date()}:"))
             print(self.PrintUi.empty_line())
-            print(self.PrintUi.allign_left("%-6s%-20s%-20s" % ('Id', 'Name', 'Flying to')))
+            print(self.PrintUi.allign_left(print_format % ('Id', 'Name', 'Position', 'Flying to')))
             print(self.PrintUi.empty_line())
-            self.print_employees_working(13)
+            self.print_employees_working(print_format, 13)
             print(self.PrintUi.empty_line())
-            print(self.PrintUi.allign_left("<Id> : See Employee's weekly schedule          D : Show All Employees      S : Show Only Non-Working Employees"))
+            print(self.PrintUi.allign_left(" <Id> : See Employee's weekly schedule          D : Show All Employees      S : Show Only Non-Working Employees"))
         else:
             print(self.PrintUi.allign_left(f"List of Employees Not Working on {start_date.date()}:"))
             print(self.PrintUi.empty_line())
-            print(self.PrintUi.allign_left("%-6s%-20s%-20s" % ('Id', 'Name', 'Work Status')))
+            print(self.PrintUi.allign_left(print_format % ('Id', 'Name', 'Position', 'Work Status')))
             print(self.PrintUi.empty_line())
-            self.print_employees_not_working(13)
+            self.print_employees_not_working(print_format, 13)
             print(self.PrintUi.empty_line())
-            print(self.PrintUi.allign_left("<Id> : See Employee's weekly schedule          A : Show Only Working Employees      D : Show All Employees"))
+            print(self.PrintUi.allign_left("  <Id> : See Employee's weekly schedule          A : Show Only Working Employees      D : Show All Employees"))
         print(self.PrintUi.allign_left("         0 : Back              00 : Change Day                n : See Yesterday             m : See Tomorrow"))
         print(self.PrintUi.end_line())
 
-    def print_employees_all(self, line_num):
+    def print_employees_all(self, print_format, line_num):
         line_count = 0
-        print(self.working)
-        print(self.not_working)
-        while line_count != line_num:
-            print(self.PrintUi.empty_line())
-            line_count += 1
-            
-    def print_employees_working(self, line_num):
-        line_count = 0
-        print_format = "%-6s%-20s%-20s"
 
         for dic in self.working:
             destination = ast.literal_eval(dic['destination'])
-            employee = self.Logic.object_to_dict(self.Logic.find_employee_by_id(dic['employee_id']))
-            print(self.PrintUi.allign_left(print_format % (f"{dic['employee_id']} : ", employee['name'], f"{destination['city']}, {destination['country']}")))
+            employee = self.Logic.object_to_dict(self.Logic.find_employee_by_id_detailed(dic['employee_id']))
+            name = employee['name']
+            if len(name) > 19:
+                name = self.PrintUi.shorten_name(name)
+            print(self.PrintUi.allign_left(print_format % (f"{dic['employee_id']} :", name, employee['role'], f"{destination['city']}, {destination['country']}")))
+            line_count += 1
+
+        for id in self.not_working:
+            employee = self.Logic.object_to_dict(self.Logic.find_employee_by_id_detailed(id))
+            name = employee['name']
+            if len(name) > 19:
+                name = self.PrintUi.shorten_name(name)
+            print(self.PrintUi.allign_left(print_format % (f"{id} : ", name, employee['role'], "Not Working")))
             line_count += 1
 
         while line_count != line_num:
             print(self.PrintUi.empty_line())
             line_count += 1
             
-    def print_employees_not_working(self, line_num):
+    def print_employees_working(self, print_format, line_num):
         line_count = 0
-        print_format = "%-6s%-20s%-20s"
+
+        for dic in self.working:
+            destination = ast.literal_eval(dic['destination'])
+            employee = self.Logic.object_to_dict(self.Logic.find_employee_by_id_detailed(dic['employee_id']))
+            name = employee['name']
+            if len(name) > 19:
+                name = self.PrintUi.shorten_name(name)
+            print(self.PrintUi.allign_left(print_format % (f"{dic['employee_id']} :", name, employee['role'], f"{destination['city']}, {destination['country']}")))
+            line_count += 1
+
+        while line_count != line_num:
+            print(self.PrintUi.empty_line())
+            line_count += 1
+            
+    def print_employees_not_working(self, print_format, line_num):
+        line_count = 0
         
-        for dic in self.working:
-            destination = ast.literal_eval(dic['destination'])
-            employee = self.Logic.object_to_dict(self.Logic.find_employee_by_id(dic['employee_id']))
-            print(self.PrintUi.allign_left(print_format % (f"{dic['employee_id']} : ", employee['name'], f"{destination['city']}, {destination['country']}")))
+        for id in self.not_working:
+            employee = self.Logic.object_to_dict(self.Logic.find_employee_by_id_detailed(id))
+            name = employee['name']
+            if len(name) > 19:
+                name = self.PrintUi.shorten_name(name)
+            print(self.PrintUi.allign_left(print_format % (f"{id} :", name, employee['role'], "Not Working")))
             line_count += 1
 
         while line_count != line_num:
@@ -83,7 +104,7 @@ class EmployeeSchedulesUI:
         #return self.Logic.object_list_to_dict_list(printed_data)
 
     def input_prompt(self):
-        '''Starting function for AirplaneDataUI'''
+        '''Starting function for EmployeeSchedulesUI'''
         day_timedelta = datetime.timedelta(1)
         start_date = datetime.datetime(2023,12,12,0,0)
         working_notworking_all = "working"
@@ -109,7 +130,35 @@ class EmployeeSchedulesUI:
                         print(f"Error: {e}")
                         input_check = False
             elif command.isdigit(): #see employees weekly schedule
-                pass
+                if working_notworking_all == 'all':
+                    for dic in self.working:
+                        if int(command) == int(dic['employee_id']):
+                            specific = EmployeeScheduleSpecificUI(dic['employee_id'], start_date)
+                            specific.input_prompt()
+                        else:
+                            print("Invalid input, try again")
+                    for id in self.not_working:
+                        if int(command) == int(id):
+                            specific = EmployeeScheduleSpecificUI(id, start_date)
+                            specific.input_prompt()
+                        else:
+                            print("Invalid input, try again")
+                elif working_notworking_all == "working":
+                    for dic in self.working:
+                        if int(command) == int(dic['employee_id']):
+                            specific = EmployeeScheduleSpecificUI(dic['employee_id'], start_date)
+                            specific.input_prompt()
+                        else:
+                            print("Invalid input, try again")
+                elif working_notworking_all == "not working":
+                    for id in self.not_working:
+                        if int(command) == int(id):
+                            specific = EmployeeScheduleSpecificUI(id, start_date)
+                            specific.input_prompt()
+                        else:
+                            print("Invalid input, try again")
+                else:
+                    print("Invalid input, try again")
             elif command == "a": #show working employees
                 working_notworking_all = "working"
             elif command == "s": #show non-working employees
