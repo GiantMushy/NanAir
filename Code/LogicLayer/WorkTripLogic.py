@@ -557,3 +557,55 @@ class WorkTripLogic:
                 return trip
 
         return None
+
+    def list_all_available_pilots_by_type(self, airplane_type, date):
+        '''
+        Lists all available pilots dor a certain date with licence on airplane type
+
+        :param airplane_type: airplane type string
+        :param date: date to check if employees available
+
+        Returns, return: list of pilots that can fly airplane type and are available on date
+        '''
+        all_available_employees = self.list_all_available_employees(date)
+        all_pilots_type = self.employee_manager.list_pilots_by_airplane_type(
+            airplane_type)
+        available_pilots_by_type = []
+        for pilot in all_pilots_type:
+            if pilot.id in all_available_employees:
+                available_pilots_by_type.append(pilot)
+        return available_pilots_by_type
+
+    def list_all_available_senior_fa(self, date):
+        '''
+        Lists all available senior fa for a certain date
+
+        :param date: date to check if employees available
+
+        Returns, return: list of pilots that can fly airplane type and are available on date
+        '''
+        all_available_employees = self.list_all_available_employees(date)
+        all_flight_attendants = self.employee_manager.list_all_flight_attendants()
+        available_senior_fa = []
+        for fa in all_flight_attendants:
+            if fa['id'] in all_available_employees and self.employee_manager.is_senior_flight_attendant(fa['id']):
+                available_senior_fa.append(fa)
+
+        return available_senior_fa
+
+    def list_all_available_fa(self, date):
+        '''
+        Lists all available fa for a certain date
+
+        :param date: date to check if employees available
+
+        Returns, return: list of pilots that can fly airplane type and are available on date
+        '''
+        all_available_employees = self.list_all_available_employees(date)
+        all_employees = self.employee_manager.list_all_employees_detailed()
+        all_available_flight_attendants = []
+        for emp in all_employees:
+            if emp.role == "Flight Attendant":
+                all_available_flight_attendants.append(emp)
+
+        return all_available_flight_attendants

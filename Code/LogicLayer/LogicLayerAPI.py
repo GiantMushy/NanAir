@@ -265,6 +265,37 @@ class LogicLayerAPI:
         '''
         return self.work_trip_logic.get_recommended_departure_datetime(destination_id, departure_datetime)
 
+    def list_all_available_pilots_by_type(self, airplane_type, date):
+        '''
+        Lists all available pilots dor a certain date with licence on airplane type
+
+        :param airplane_type: airplane type string
+        :param date: date to check if employees available
+
+        Returns, return: list of pilots that can fly airplane type and are available on date
+        '''
+        return self.work_trip_logic.list_all_available_pilots_by_type(airplane_type, date)
+
+    def list_all_available_senior_fa(self, date):
+        '''
+        Lists all available senior fa for a certain date
+
+        :param date: date to check if employees available
+
+        Returns, return: list of pilots that can fly airplane type and are available on date
+        '''
+        return self.work_trip_logic.list_all_available_senior_fa(date)
+
+    def list_all_available_fa(self, date):
+        '''
+        Lists all available fa for a certain date
+
+        :param date: date to check if employees available
+
+        Returns, return: list of pilots that can fly airplane type and are available on date
+        '''
+        return self.work_trip_logic.list_all_available_fa(date)
+
     ############################## Destination Manager Logic ###############################
 
     def list_all_destinations(self):
@@ -342,6 +373,7 @@ class LogicLayerAPI:
         Returns a list of all airplanes with detailed information.
         '''
         return self.airplane_logic.list_airplanes_detailed()
+
     ############################## FlightLogic ###############################
 
     def list_all_flights(self):
