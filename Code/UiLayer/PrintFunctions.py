@@ -184,10 +184,10 @@ class PrintFunctions:
 
     def print_airplane_table(self, data, line_num):
         line_count = 0
-        print_format = "%-5s%-20s%-20s%-15s%-20s%-0s"
+        print_format = "%-5s%-20s%-15s%-10s%-20s%-20s%-0s"
 
-        print(self.allign_left(print_format % ("ID", "City",
-              "Current Location", "Type", "Manufacturer", "Capacity")))
+        print(self.allign_left(print_format % ("ID", "Name",
+              "Type", "Capacity", "Available Next", "Destination", "Flight Number")))
         print(self.empty_line())
         for dic in data:
             vals = []
@@ -197,7 +197,7 @@ class PrintFunctions:
                 if len(vals[n]) > 18:  # shorten names
                     vals[n] = self.shorten_name(vals[n], 18)
             print(self.allign_left(print_format %
-                  (vals[0], vals[1], vals[2], vals[3], vals[4], vals[5])))
+                  (vals[0], vals[1], vals[2], vals[3], vals[4], vals[5], vals[6])))
             line_count += 1
         while line_count <= line_num:
             # fills out UI box to correct size with empty lines
@@ -274,6 +274,84 @@ class PrintFunctions:
             # id 0, name 1, type 3, capacity 5
             print(self.allign_left(print_format %
                   (vals[0], vals[1], vals[3], vals[5])))
+            line_count += 1
+
+        while line_count <= line_num:
+            # fills out UI box to correct size with empty lines
+            print(self.empty_line())
+            line_count += 1
+
+    def print_employee_table_detailed(self, data, line_num):
+        line_count = 0
+        print_format = "%-5s%-25s%-15s%-25s%-20s%-0s"
+
+        keys_to_print = ['id', 'name', 'social_security_number',
+                         'address', 'mobile_phone_number', 'role']
+
+        print(self.allign_left(print_format %
+              ("ID", "Name", "SSN", "Address", "Phone Number", "Role")))
+        print(self.empty_line())
+        for dic in data:
+            vals = []
+            for key in keys_to_print:
+                vals.append(dic[key])
+            for n in range(len(vals)):
+                if len(vals[n]) > 25:
+                    vals[n] = self.shorten_name(vals[n], 18)
+            print(self.allign_left(print_format % (
+                vals[0], vals[1], vals[2], vals[3], vals[4], vals[5])))
+            line_count += 1
+
+        while line_count <= line_num:
+            # fills out UI box to correct size with empty lines
+            print(self.empty_line())
+            line_count += 1
+
+    def print_pilots_table_detailed(self, data, line_num):
+        line_count = 0
+        print_format = "%-5s%-25s%-15s%-25s%-15s%-15s%-0s"
+
+        keys_to_print = ['id', 'name', 'social_security_number',
+                         'address', 'mobile_phone_number', 'pilot_role', 'airplane_type']
+
+        print(self.allign_left(print_format %
+              ("ID", "Name", "SSN", "Address", "Phone Number", "Role", "Pilot License")))
+        print(self.empty_line())
+        for dic in data:
+            vals = []
+            for key in keys_to_print:
+                vals.append(dic[key])
+            for n in range(len(vals)):
+                if len(vals[n]) > 25:
+                    vals[n] = self.shorten_name(vals[n], 18)
+            print(self.allign_left(print_format % (
+                vals[0], vals[1], vals[2], vals[3], vals[4], vals[5], vals[6])))
+            line_count += 1
+
+        while line_count <= line_num:
+            # fills out UI box to correct size with empty lines
+            print(self.empty_line())
+            line_count += 1
+
+    def print_flight_attendants_table_detailed(self, data, line_num):
+        line_count = 0
+        print_format = "%-5s%-25s%-15s%-25s%-15s%-0s"
+
+        keys_to_print = ['id', 'name', 'social_security_number',
+                         'address', 'mobile_phone_number', 'attendant_role']
+
+        print(self.allign_left(print_format %
+                               ("ID", "Name", "SSN", "Address", "Phone Number", "Role")))
+        print(self.empty_line())
+        for dic in data:
+            vals = []
+            for key in keys_to_print:
+                vals.append(dic[key])
+            for n in range(len(vals)):
+                if len(vals[n]) > 25:
+                    vals[n] = self.shorten_name(vals[n], 18)
+            print(self.allign_left(print_format % (
+                vals[0], vals[1], vals[2], vals[3], vals[4], vals[5])))
             line_count += 1
 
         while line_count <= line_num:

@@ -1,3 +1,1 @@
 id,destination,departure_datetime,return_datetime,airplane,flight_number_start,flight_number_end,crew_members
-001,"{'id': '02', 'city': 'Matta city', 'airport': 'Matti airport', 'country': 'Mattaland', 'distance': '6', 'travel_time': '40', 'contact_name': 'Helgi', 'contact_phone_number': '9876543'}",2023-12-11 16:08,2023-12-11 22:08,"{'id': '001', 'name': 'Katla', 'type': 'AKN-77'}",NA020,NA021,"004,002"
-002,"{'id': '03', 'city': 'London', 'airport': 'Heathrow', 'country': 'England', 'distance': '6', 'travel_time': '40', 'contact_name': 'Helgi', 'contact_phone_number': '9876543'}",2023-12-11 16:10,2023-12-11 22:10,"{'id': '002', 'name': 'Sara', 'type': 'AKN-77'}",NA030,NA031,
