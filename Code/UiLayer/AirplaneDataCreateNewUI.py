@@ -248,10 +248,9 @@ class AirplaneDataCreateNewUI:
                     self.Logic.add_airplane(name=self.new_airplane[0],
                                             type=self.new_airplane[2],
                                             )
+                    break
                 except ValueError as e:
                     print(f"Error: {e}")
-
-                break
 
             elif command == "4":  # discard and exit
                 break
