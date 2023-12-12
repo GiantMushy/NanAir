@@ -42,6 +42,8 @@ class DestinationDataEditUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left(
             " 0 : Back      6 : Edit Emergency Contact and Phone"))
         print(self.PrintUi.end_line())
@@ -78,6 +80,8 @@ class DestinationDataEditUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left(
             " 0 : Back "))
         print(self.PrintUi.end_line())
@@ -107,6 +111,8 @@ class DestinationDataEditUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left(f"    Input new Emergency Phone Number: "))
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
