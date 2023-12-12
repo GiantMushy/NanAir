@@ -1,4 +1,4 @@
-from LogicLayer.LogicLayerAPI import LogicLayerAPI
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI
 from datetime import datetime, timedelta
 import random
 
@@ -144,6 +144,7 @@ def add_crew_member_wt():
     '''
     logic.add_crew_member("001", "004")
     logic.add_crew_member("001", "002")
+    logic.add_crew_member("001", "004")
 
 
 def print_all_types_of_data():

@@ -1,1 +1,5 @@
 flight_number,start_from,start_datetime,end_at,arrival_datetime,airplane_id,capacity,tickets_sold
+NA020,RKV,2023-12-12 14:54,Matti airport,2023-12-12 15:34,001,300,0
+NA021,Matti airport,2023-12-12 20:54,RKV,2023-12-12 21:34,001,300,0
+NA030,RKV,2023-12-12 14:56,Heathrow,2023-12-12 15:36,002,300,0
+NA031,Heathrow,2023-12-12 20:56,RKV,2023-12-12 21:36,002,300,0

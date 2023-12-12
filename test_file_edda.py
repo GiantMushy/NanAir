@@ -18,10 +18,13 @@ from datetime import date
 
 v = ValidationService()
 
-year = int(input())
-month = int(input())
-day = int(input())
-date = date(year, month, day)
+# 2032-11-14
+#year = int(2032)
+#month = int(11)
+#day = int(14)
+#date = date(year, month, day)
 
-lst = v.check_employee_availability(20)
+lst = v.check_employee_availability('2023-12-12 14:00')
 print(lst)
+
+#v.validate_work_trip("002", "005", ["001", "004"])
