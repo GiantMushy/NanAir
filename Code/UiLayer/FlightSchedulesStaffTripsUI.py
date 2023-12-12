@@ -1,7 +1,6 @@
 from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI
 from Code.UiLayer.PrintFunctions import PrintFunctions
 import ast
-import datetime
 
 #{'id': '007', 
 # 'destination': "{'id': '02', 'city': 'Matta city', 'airport': 'Matti airport', 'country': 'Mattaland', 'distance': '6', 'travel_time': '40', 'contact_name': 'Helgi', 'contact_phone_number': '9876543'}", 
@@ -224,7 +223,7 @@ class FlightSchedulesStaffTripsUI:
                         elif command == "0":
                             input_check = True
 
-                        elif command.isdigit() and int(command) <= len(self.available_copilots): #Checks if command is a valid int in range of the given list
+                        elif command.isdigit() and int(command) <= len(self.available_copilots): #Checks if command is a valid int and in range of the given list
                             try:
                                 self.Logic.add_crew_member(self.trip['id'], self.available_copilots[int(command)-1]['id'])
                                 print(f"{self.available_copilots[int(command)-1]['id']}:{self.available_copilots[int(command)-1]['name']} has been added to the trip")
