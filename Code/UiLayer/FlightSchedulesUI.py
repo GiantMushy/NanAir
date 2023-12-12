@@ -41,7 +41,7 @@ class FlightSchedulesUI:
         return self.Logic.object_list_to_dict_list(printed_data)
 
     def input_prompt(self):
-        '''Starting function for EmployeeDataUI'''
+        '''Starting function for FlightSchedulesUI'''
         time = 'weekly'
         day_timedelta = datetime.timedelta(1)        
         week = datetime.timedelta(7)
