@@ -1,4 +1,5 @@
 from Code.DataLayer.DataLayerAPI import DataLayerAPI
+from datetime import datetime, timedelta
 
 class IsChecks:
     def __init__(self):
@@ -177,3 +178,16 @@ class IsChecks:
         if self.all_punc in Email.strip("@."):
             if len(Email) > 20:
                 raise ValueError("Email is too long")
+        
+    def is_right_day_of_departure(self, input_departure_day):
+        given_datetime = datetime.strptime(input_departure_day, "%Y-%m-%d %H:%M")
+        now = datetime.now()
+        if not now <= given_datetime:
+            raise ValueError("Date cannot be in the past")
+         
+    def is_return_time_dd_rd(self, input_departure_day, input_return_day):
+        given_datetime = datetime.strptime(input_departure_day, "%Y-%m-%d %H:%M")
+        given_returntime = datetime.strptime(input_return_day, "%Y-%m-%d %H:%M")
+        if not given_datetime < given_returntime:
+            raise ValueError("Return time has to be after departure time")
+
