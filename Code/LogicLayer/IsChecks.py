@@ -1,6 +1,5 @@
 from Code.DataLayer.DataLayerAPI import DataLayerAPI
 
-
 class IsChecks:
     def __init__(self):
         self.destination_data = DataLayerAPI()
@@ -11,6 +10,9 @@ class IsChecks:
         if not City or not City.replace(" ", "").isalpha():
             raise ValueError(
                 "City must be a non-empty string of alphabetic characters")
+        if "  " in City:
+            raise ValueError("City cannot contain two or more spaces")
+        
 
     def is_airport(self, Airport):
         if not Airport or not Airport.replace(" ", "").isalpha():
@@ -19,11 +21,15 @@ class IsChecks:
         if len(Airport) > 3:
             raise ValueError(
                 "Airport name must be input as the 3 letter abbreviation (ex. LAX, KEF)")
+        if "  " in Airport:
+            raise ValueError("Airport cannot contain two or more spaces")
 
     def is_country(self, Country):
         if not Country or not Country.replace(" ", "").isalpha():
             raise ValueError(
                 "Country must be a non-empty string of alphabetic characters")
+        if "  " in Country:
+            raise ValueError("Country cannot contain two or more spaces")
 
     def is_distance(self, Distance):
         if not Distance.isdigit():
@@ -52,6 +58,8 @@ class IsChecks:
         if not Contact_Name or not Contact_Name.replace(" ", "").isalpha():
             raise ValueError(
                 "Contact Name must be a non-empty string of alphabetic characters")
+        if "  " in Contact_Name:
+            raise ValueError("Contact Name cannot contain two or more spaces")
 
     def is_contact_phone_number(self, Contact_Phone_Number):
         # strip "+"" only from the first character if that is the case
@@ -65,6 +73,8 @@ class IsChecks:
             raise ValueError("Phone Number must be 10 digits maximum")
         if not int(Contact_Phone_Number) >= 100:
             raise ValueError("Phone Number must be 3 digits minimum")
+        if "  " in Contact_Phone_Number:
+            raise ValueError("Contact Phone Number cannot contain two or more spaces")
 
         try:
             Contact_Phone_Number = int(Contact_Phone_Number.replace(" ", ""))
@@ -83,6 +93,8 @@ class IsChecks:
         if not Name.replace(" ", "").isalpha():
             raise ValueError(
                 "Get out of here 'X Æ A-12' We dont allow numbers or symbols in our names")
+        if "  " in Name:
+            raise ValueError("Name cannot contain two or more spaces")
 
     def is_current_location(self, Current_Location):
         if not Current_Location or not Current_Location.replace(" ", "").isalpha():
@@ -90,11 +102,15 @@ class IsChecks:
                 "Current Location must be a non-empty string of alphabetic characters")
         if not len(Current_Location) < 20:
             raise ValueError("Manufacturer must be less than 20 characters")
+        if "  " in Current_Location:
+            raise ValueError("Current location cannot contain two or more spaces")
 
     def is_social_security_number(self, social_security_number):
         if not social_security_number.replace(" ", "").isdigit():
             raise ValueError(
                 "social_security_number must be a positive integer")
+        if "  " in social_security_number:
+            raise ValueError("Social security number cannot contain two or more spaces")
         social_security_number = social_security_number.replace(" ", "")
         try:
             social_security_number_int = int(social_security_number)
@@ -115,12 +131,16 @@ class IsChecks:
     def is_type(self, Type):
         if not Type:
             raise ValueError("Type must be a non-empty string")
+        if "  " in Type:
+            raise ValueError("Type cannot contain two or more spaces")
         if len(Type) > 15:
             raise ValueError("Type_str cannot be longer than 15 characters")
 
     def is_manufacturer(self, Manufacturer):
         if not Manufacturer:
             raise ValueError("Manufacturer must be a non-empty string")
+        if "  " in Manufacturer:
+            raise ValueError("Manufacturer cannot contain two or more spaces")
         if not Manufacturer.strip(self.punc):
             raise ValueError("Manufacturer cannot be only punctuation")
         if len(Manufacturer) > 20:
@@ -140,27 +160,15 @@ class IsChecks:
     def is_address(self, address):
         if not address:
             raise ValueError("Address must be a non-empty string")
+        if "  " in address:
+            raise ValueError("Address cannot contain two or more spaces")
         if len(address) > 20:
             raise ValueError("Address too long")
 
     def is_email(self, Email):
         if not Email:
             raise ValueError("Email must be a non-empty string")
+        if "  " in Email:
+            raise ValueError("Email cannot contain two or more spaces")
         if len(Email) > 20:
             raise ValueError("Email is too long")
-
-    def is_employee_type(self, employee_type):
-        if not employee_type:
-            raise ValueError("Employee Type field cannot be empty")
-        input_str = employee_type.replace(" ", "").strip(self.punc).lower()
-        if input_str != "pilot" and input_str != "flightattendant":
-            raise ValueError(
-                "Employee Type must be either 'Pilot' or 'Flight Attendant'")
-
-    def is_employee_role(self, employee_role):
-        if not employee_role:
-            raise ValueError("Employee Role field cannot be empty")
-        input_str = employee_role.replace(" ", "").strip(self.punc).lower()
-        if input_str != "captain" and input_str != "copilot" and input_str != "seniorflightattendant" and input_str != "flightattendant":
-            raise ValueError(
-                "Employee Role must be either 'Captain','Co-Pilot','Senior Flight Attendant' or 'Flight Attendant'")
