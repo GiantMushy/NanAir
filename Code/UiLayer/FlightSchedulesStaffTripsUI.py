@@ -24,18 +24,22 @@ class FlightSchedulesStaffTripsUI:
         self.destination = ast.literal_eval(trip['destination']) #translates the stringed dictionary to a literal dictionary
         self.airplane = ast.literal_eval(trip['airplane'])
 
-        self.crew_member_id = trip['crew_members'].split(',') #createing list of already assigned crew members
-        if self.crew_member_id[0] == '':
-            self.crew_member_id[0] = "Not Staffed"
-        while len(self.crew_member_id) < 3:
-            self.crew_member_id.append("Not Staffed")
-
-        self.crew_dicts = []
-        for employee_id in self.crew_member_id:
-            if len(employee_id) < 4:
-                self.crew_dicts.append(self.Logic.object_to_dict(self.Logic.find_employee_by_id(employee_id)))
-            else:
-                self.crew_dicts.append({'id' : 'Not Staffed', 'name' : '', 'social_security_number' : ''})
+        self.crew_dicts = [{'id' : 'Not Staffed', 'name' : '', 'social_security_number' : ''},
+                           {'id' : 'Not Staffed', 'name' : '', 'social_security_number' : ''},
+                           {'id' : 'Not Staffed', 'name' : '', 'social_security_number' : ''}]
+        if self.trip['crew_members'].split(',') == ['']: #createing list of already assigned crew members
+            pass
+        else:
+            for employee_id in self.trip['crew_members'].split(','):
+                if self.Logic.is_captain(employee_id):
+                    self.crew_dicts[0] = self.Logic.object_to_dict(self.Logic.find_employee_by_id(employee_id))
+                elif self.Logic.is_pilot(employee_id):
+                    self.crew_dicts[1] = self.Logic.object_to_dict(self.Logic.find_employee_by_id(employee_id))
+                elif self.Logic.is_senior_flight_attendant(employee_id):
+                    self.crew_dicts[2] = self.Logic.object_to_dict(self.Logic.find_employee_by_id(employee_id))
+                elif self.Logic.is_flight_attendant(employee_id):
+                    self.crew_dicts.append(self.Logic.object_to_dict(self.Logic.find_employee_by_id(employee_id)))
+                
 
     def show_staff_status(self):
         '''Print sequence for showing staff status'''
