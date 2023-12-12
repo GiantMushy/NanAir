@@ -183,6 +183,20 @@ def print_all_types_of_data():
     list_object(logic.list_all_pilots())
     print("Listing all employees detailed")
     list_object(logic.list_all_employees_detailed())
+    print("listing all available pilots by type")
+    list_object(logic.list_all_available_pilots_by_type(
+        'AKN-77', '2023-12-17 19:32'))
+    print("listing all avaiable senior fa")
+    list_object(logic.list_all_available_senior_fa('2023-12-17 19:32'))
+
+    print("listing all available fa")
+    list_object(logic.list_all_available_fa('2023-12-17 19:32'))
+    print("LISTING ALL AVLB CAPTAINS BY TYPE")
+    list_object(logic.list_all_available_captains_by_type(
+        'AKN-77', '2023-12-17 19:32'))
+    print("LISTING ALL AVLB COPILOTS BY TYPE")
+    list_object(logic.list_all_available_copilots_by_type(
+        'BOEING747', '2023-12-17 19:32'))
 
 
 def update_emergency_contact():
