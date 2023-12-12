@@ -184,10 +184,10 @@ class PrintFunctions:
 
     def print_airplane_table(self, data, line_num):
         line_count = 0
-        print_format = "%-5s%-20s%-20s%-15s%-20s%-0s"
+        print_format = "%-5s%-20s%-15s%-10s%-20s%-20s%-0s"
 
-        print(self.allign_left(print_format % ("ID", "City",
-              "Current Location", "Type", "Manufacturer", "Capacity")))
+        print(self.allign_left(print_format % ("ID", "Name",
+              "Type", "Capacity", "Available Next", "Destination", "Flight Number")))
         print(self.empty_line())
         for dic in data:
             vals = []
@@ -197,7 +197,7 @@ class PrintFunctions:
                 if len(vals[n]) > 18:  # shorten names
                     vals[n] = self.shorten_name(vals[n], 18)
             print(self.allign_left(print_format %
-                  (vals[0], vals[1], vals[2], vals[3], vals[4], vals[5])))
+                  (vals[0], vals[1], vals[2], vals[3], vals[4], vals[5], vals[6])))
             line_count += 1
         while line_count <= line_num:
             # fills out UI box to correct size with empty lines

@@ -142,7 +142,7 @@ def add_crew_member_wt():
     When adding crew members to a work trip, the following changes have been done, a pilot flies a certain airplane type, which can't be None if employee 
     type is pilot. A flight attendant has no airplane type, and can and should be None.
     '''
-    logic.add_crew_member("001", "004")
+    logic.add_crew_member("001", "001")
     logic.add_crew_member("001", "002")
 
 
@@ -273,11 +273,11 @@ def add_work_trips_recurring():
 
 
 def main():
-    add_sample_employees()
-    add_airplanes()
-    add_destinations()
-    add_work_trips()
-    add_crew_member_wt()
+    # add_airplanes()
+    # add_sample_employees()
+    # add_destinations()
+    # add_work_trips()
+    # add_crew_member_wt()
     # update_emergency_contact()
     # add_extra_airplane()
     # add_extra_employees()
