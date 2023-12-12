@@ -1,6 +1,7 @@
 import datetime
 import ast
 
+
 class PrintFunctions:
     def __init__(self):
         pass
@@ -8,7 +9,7 @@ class PrintFunctions:
     def empty_line(self):
         '''Returns the printable string of an empty line'''
         return "║                                                                                                                           ║"
-    
+
     def end_line(self):
         '''Returns the printable string of the end line ui'''
         return "╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
@@ -20,7 +21,7 @@ class PrintFunctions:
             return "║" + "   " + text + (" " * (120 - text_len)) + "║"
         else:
             return "║" + "   " + text
-    
+
     def allign_center(self, text):
         '''returns a printable string where the input text has been alligned in the center of the line'''
         str_length = len(text)
@@ -30,11 +31,11 @@ class PrintFunctions:
         left_spaces = int(left_spaces)
         right_spaces = (spaces + odd_even) * 0.5
         right_spaces = int(right_spaces)
-        return "║" + (" " * left_spaces) + text + (" " * right_spaces) + "║"   
+        return "║" + (" " * left_spaces) + text + (" " * right_spaces) + "║"
 
     def print_header(self, text, allignment):
         '''Prints the header of the interface'''
-        print("█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█")#123
+        print("█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█")  # 123
         str_length = len(text)
         if allignment == "center":
             spaces = (123 - str_length)
@@ -43,7 +44,8 @@ class PrintFunctions:
             left_spaces = int(left_spaces)
             right_spaces = (spaces + odd_even) * 0.5
             right_spaces = int(right_spaces)
-            print_str = "█" + (" " * left_spaces) + text + (" " * right_spaces) + "█"
+            print_str = "█" + (" " * left_spaces) + text + \
+                (" " * right_spaces) + "█"
         elif allignment == "left":
             right_space = 120 - str_length
             print_str = "█" + "   " + text + (" " * right_space) + "█"
@@ -89,7 +91,8 @@ class PrintFunctions:
         '''Prints the Company Logo'''
         print("                                                                              ______ ")
         print(" ____  _____      __      ____  _____          __      _____ _______          _\ _~-\___")
-        print("|_   \|_   _|    /  \    |_   \|_   _|        /  \    |_   _|_   __ \     = =(____AA____D")
+        print(
+            "|_   \|_   _|    /  \    |_   \|_   _|        /  \    |_   _|_   __ \     = =(____AA____D")
         print("  |   \ | |     / /\ \     |   \ | |         / /\ \     | |   | |__) |            \_____\______________________,-~~~~~-.._")
         print("  | |\ \| |    / ____ \    | |\ \| |        / ____ \    | |   |  __ /             /     o O o o o o O O o o o o o o O o  |\_")
         print(" _| |_\   |_ _/ /    \ \_ _| |_\   |_     _/ /    \ \_ _| |_ _| |  \ \_           `~-.__        ___..----..                  )")
@@ -112,71 +115,105 @@ class PrintFunctions:
     def print_employee_table(self, data, line_num):
         line_count = 0
         print_format = "%-5s%-20s%-15s%-20s%-15s%-25s%-0s"
-        
-        print(self.allign_left(print_format % ("ID", "Name", "SSN", "Address", "Mobile Phone", "Email", "Home Phone")))
+
+        print(self.allign_left(print_format % ("ID", "Name", "SSN",
+              "Address", "Mobile Phone", "Email", "Home Phone")))
         print(self.empty_line())
         for dic in data:
             vals = []
             for value in dic.values():
                 vals.append(value)
             for n in range(len(vals)):
-                if len(vals[n]) > 20: #shorten names
+                if len(vals[n]) > 20:  # shorten names
                     vals[n] = self.shorten_name(vals[n], 19)
             if vals[6] == '':
-                vals[6] = "--Not Given--" #Empty Home Phone input prints "--Not Given--"
-            print(self.allign_left(print_format % (vals[0], vals[1], vals[2], vals[3], vals[4], vals[5], vals[6])))
+                # Empty Home Phone input prints "--Not Given--"
+                vals[6] = "--Not Given--"
+            print(self.allign_left(print_format % (
+                vals[0], vals[1], vals[2], vals[3], vals[4], vals[5], vals[6])))
             line_count += 1
         while line_count <= line_num:
-            print(self.empty_line()) #fills out UI box to correct size with empty lines
+            # fills out UI box to correct size with empty lines
+            print(self.empty_line())
+            line_count += 1
+
+    def print_airplane_type_table(self, data, line_num):
+        line_count = 0
+        print_format = "%-10s%-15s%-10s"
+
+        print(self.allign_left(print_format %
+              ("Type", "Manufacturer", "Capacity",)))
+        print(self.empty_line())
+        for dic in data:
+            vals = []
+            for value in dic.values():
+                vals.append(value)
+            for n in range(len(vals)):
+                if len(vals[n]) > 20:  # shorten names
+                    vals[n] = self.shorten_name(vals[n], 19)
+            print(self.allign_left(print_format % (
+                vals[0], vals[1], vals[2])))
+            line_count += 1
+        while line_count <= line_num:
+            # fills out UI box to correct size with empty lines
+            print(self.empty_line())
             line_count += 1
 
     def print_destination_table(self, data, line_num):
         line_count = 0
         print_format = "%-5s%-20s%-20s%-20s%-12s%-15s%-15s%-0s"
-        
-        print(self.allign_left(print_format % ("ID", "City", "Airport", "Country", "Distance", "Travel Time", "Emerg. Name", "Emerg. Phone")))
+
+        print(self.allign_left(print_format % ("ID", "City", "Airport",
+              "Country", "Distance", "Travel Time", "Emerg. Name", "Emerg. Phone")))
         print(self.empty_line())
         for dic in data:
             vals = []
             for value in dic.values():
                 vals.append(value)
             for n in range(len(vals)):
-                if len(vals[n]) > 18: #shorten names
+                if len(vals[n]) > 18:  # shorten names
                     vals[n] = self.shorten_name(vals[n], 18)
             time = f'{int(vals[5])//60}hrs {int(vals[5])%60}min'
-            print(self.allign_left(print_format % (vals[0], vals[1], vals[2], vals[3], vals[4] + "km", time, vals[6], vals[7])))
+            print(self.allign_left(print_format % (
+                vals[0], vals[1], vals[2], vals[3], vals[4] + "km", time, vals[6], vals[7])))
             line_count += 1
         while line_count <= line_num:
-            print(self.empty_line()) #fills out UI box to correct size with empty lines
+            # fills out UI box to correct size with empty lines
+            print(self.empty_line())
             line_count += 1
 
     def print_airplane_table(self, data, line_num):
         line_count = 0
         print_format = "%-5s%-20s%-20s%-15s%-20s%-0s"
-        
-        print(self.allign_left(print_format % ("ID", "City", "Current Location", "Type", "Manufacturer", "Capacity")))
+
+        print(self.allign_left(print_format % ("ID", "City",
+              "Current Location", "Type", "Manufacturer", "Capacity")))
         print(self.empty_line())
         for dic in data:
             vals = []
             for value in dic.values():
                 vals.append(value)
             for n in range(len(vals)):
-                if len(vals[n]) > 18: #shorten names
+                if len(vals[n]) > 18:  # shorten names
                     vals[n] = self.shorten_name(vals[n], 18)
-            print(self.allign_left(print_format % (vals[0], vals[1], vals[2], vals[3], vals[4], vals[5])))
+            print(self.allign_left(print_format %
+                  (vals[0], vals[1], vals[2], vals[3], vals[4], vals[5])))
             line_count += 1
         while line_count <= line_num:
-            print(self.empty_line()) #fills out UI box to correct size with empty lines
+            # fills out UI box to correct size with empty lines
+            print(self.empty_line())
             line_count += 1
 
     def print_flight_schedule_table(self, data, date_start, date_end, line_num):
         line_count = 0
         print_format = "%-5s%-20s%-20s%-15s%-15s%-15s%-15s%-0s"
-        
-        print(self.allign_left(print_format % ('Id','Departing','Destination','Date','Time','Plane','Flight Nr.','Staff Status')))
+
+        print(self.allign_left(print_format % ('Id', 'Departing', 'Destination',
+              'Date', 'Time', 'Plane', 'Flight Nr.', 'Staff Status')))
         print(self.empty_line())
         for dic in data:
-            destination = ast.literal_eval(dic['destination']) #translates the stringed dictionary to a literal dictionary
+            # translates the stringed dictionary to a literal dictionary
+            destination = ast.literal_eval(dic['destination'])
             vals = []
             for value in dic.values():
                 vals.append(value)
@@ -186,23 +223,60 @@ class PrintFunctions:
                 staff_status = 'Not Staffed'
             else:
                 staff_status = 'Staffed'
-            print(self.allign_left(print_format % (dic['id'], 'Reykjavik', destination['country'], 
-                                                   dic['departure_datetime'].date(), dic['departure_datetime'].time(),
-                                                   "plane", 'NA040', staff_status)))
-            print(self.allign_left(print_format % ( '', destination['country'], 'Reykjavik', 
-                                                   dic['return_datetime'].date(), dic['return_datetime'].time(),
-                                                   "plane", 'NA041', staff_status)))
+            print(self.allign_left(print_format % (dic['id'], 'Reykjavik', destination['country'],
+                                                   dic['departure_datetime'].date(
+            ), dic['departure_datetime'].time(),
+                "plane", 'NA040', staff_status)))
+            print(self.allign_left(print_format % ('', destination['country'], 'Reykjavik',
+                                                   dic['return_datetime'].date(
+            ), dic['return_datetime'].time(),
+                "plane", 'NA041', staff_status)))
             line_count += 1
         while line_count <= line_num:
-            print(self.empty_line()) #fills out UI box to correct size with empty lines
+            # fills out UI box to correct size with empty lines
+            print(self.empty_line())
             line_count += 1
 
-    def print_employee_schedule_table(self,data,line_num):
+    def print_employee_schedule_table(self, data, line_num):
         pass
 
     def print_destinations(self, data, line_num):
         line_count = 0
-        print_format = "%-5s%-15s%-15s%-15s"
+        print_format = "%-5s%-20s%-20s%-20s"
 
         for dic in data:
-            self.allign_left(print_format % (dic['id'], dic['city'], dic['country'], dic['airport']))
+            vals = []
+            for value in dic.values():
+                vals.append(value)
+            for n in range(len(vals)):
+                if len(vals[n]) > 18:  # shorten names
+                    vals[n] = self.shorten_name(vals[n], 18)
+            print(self.allign_left(print_format %
+                  (vals[0], vals[1], vals[3], vals[2])))
+            line_count += 1
+
+        while line_count <= line_num:
+            # fills out UI box to correct size with empty lines
+            print(self.empty_line())
+            line_count += 1
+
+    def print_available_planes(self, data, line_num):
+        line_count = 0
+        print_format = "%-5s%-20s%-20s%-20s"
+
+        for dic in data:
+            vals = []
+            for value in dic.values():
+                vals.append(value)
+            for n in range(len(vals)):
+                if len(vals[n]) > 18:  # shorten names
+                    vals[n] = self.shorten_name(vals[n], 18)
+            # id 0, name 1, type 3, capacity 5
+            print(self.allign_left(print_format %
+                  (vals[0], vals[1], vals[3], vals[5])))
+            line_count += 1
+
+        while line_count <= line_num:
+            # fills out UI box to correct size with empty lines
+            print(self.empty_line())
+            line_count += 1

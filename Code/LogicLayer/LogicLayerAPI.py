@@ -1,10 +1,10 @@
-from LogicLayer.EmployeeManagerLogic import EmployeeManagerLogic
-from LogicLayer.WorkTripLogic import WorkTripLogic
-from LogicLayer.DestinationManagerLogic import DestinationManagerLogic
-from LogicLayer.AirplaneManagerLogic import AirplaneManagerLogic
-from LogicLayer.FlightLogic import FlightLogic
-from LogicLayer.AirplaneTypeLogic import AirplaneTypeLogic
-from LogicLayer.IsChecks import IsChecks
+from Code.LogicLayer.EmployeeManagerLogic import EmployeeManagerLogic
+from Code.LogicLayer.WorkTripLogic import WorkTripLogic
+from Code.LogicLayer.DestinationManagerLogic import DestinationManagerLogic
+from Code.LogicLayer.AirplaneManagerLogic import AirplaneManagerLogic
+from Code.LogicLayer.FlightLogic import FlightLogic
+from Code.LogicLayer.AirplaneTypeLogic import AirplaneTypeLogic
+from Code.LogicLayer.IsChecks import IsChecks
 
 
 class LogicLayerAPI:
@@ -407,6 +407,15 @@ class LogicLayerAPI:
     def list_all_airplane_types(self):
         """Returns, return: a list of all airplane types."""
         return self.airplane_type_logic.list_all_airplane_types()
+
+    def find_type_data(self, airplane_type):
+        """
+        Finds an airplane type object by their type.
+
+        :param airplane_type: type of the airplane to find.
+        Returns, return: airplane object if found, None otherwise.
+        """
+        return self.airplane_type_logic.find_type_data(airplane_type)
     ############################## Input Varification ###############################
 
     def is_city(self, City):

@@ -36,7 +36,7 @@ class LoginUI:
         '''Starting function for Login (And the whole program)'''
         while True:
             self.login_output()
-            command = input("Enter you command: ")
+            command = input("Enter your command: ")
             command = command.lower()
 
             if command == "q":

@@ -1,0 +1,304 @@
+@startuml
+
+
+package "UiLayer" {
+    left to right direction
+
+    class AirplaneDataCreateNewUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        + input_name()
+        + input_type()
+        + input_prompt()
+    }
+    class AirplaneDataEditUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        + airplane_data_edit_output()
+        + edit_data()
+        + input_prompt()
+    }
+    class AirplaneDataUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        + airplane_data_output()
+        + input_prompt()
+    }
+
+    class DestinationDataCreateNewUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        + input_city()
+        + input_airport()
+        + input_country()
+        + input_distance()
+        + input_travel_time()
+        + input_emerg_contact_name()
+        + input_emerg_contact_phone_number()
+        + new_created()
+        + input_prompt()
+    }
+    class DestinationDataEditUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+
+    }
+    class DestinationDataUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        + destination_data_output()
+        + input_prompt()
+    }
+    class EmployeeDataCreateNewUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        + input_employee_type()
+        + input_employee_role()
+        + input_name()
+        + input_ssn()
+        + input_phone()
+        + input_address()
+        + input_email()
+        + input_home_phone()
+        + new_created()
+        + create_new_sequence()
+        + input_prompt() 
+    }
+    
+    class EmployeeDataEditUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        + employee_data_edit_output()
+        + edit_data()
+        + input_prompt()
+    }
+    class EmployeeDataUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        + employee_data_output()
+        + input_prompt()
+    }
+    class EmployeeSchedulesUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        + employee_schedules_output()
+        + input_prompt()
+    }
+    class FlightSchedulesUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        + input_departure_day()
+        + input_departure_time()
+        + input_return_time()
+        + input_destination()
+        + input_plane()
+        + new_created()
+        + create_new_sequence()
+        + input_prompt()
+    }
+
+    class LoginUI{
+        - PrintUi : PrintFunctions()
+        + login_output()
+        + input_prompt()
+    }
+    class MainMenuUI{
+        - PrintUi : PrintFunctions()
+        - user : user
+        + main_menu_output()
+        + input_prompt()
+    }
+    class PrintFunctions{
+        + empty_line()
+        + end_line()
+        + allign_left()
+        + allign_center()
+        + print_header()
+        + logo1()
+        + logo2()
+        + logo()
+        + shorten_name()
+        + print_employee_table()
+        + print_destination_table()
+        + print_airplane_table()
+        + print_flight_schedule_table()
+        + print_employee_schedule_table()
+    }
+
+    note "The UI layer depends on the LogicLayerAPI" as NoteUILayer
+
+    MainMenuUI --> PrintFunctions
+    MainMenuUI --> FlightSchedulesUI
+    MainMenuUI --> EmployeeSchedulesUI
+    MainMenuUI --> EmployeeDataUI
+    MainMenuUI --> DestinationDataUI
+    MainMenuUI --> AirplaneDataUI
+    MainMenuUI --> LoginUI
+    MainMenuUI --> EmployeeDataCreateNewUI
+    MainMenuUI --> DestinationDataCreateNewUI
+    MainMenuUI --> AirplaneDataCreateNewUI
+    MainMenuUI --> EmployeeDataEditUI
+    MainMenuUI --> DestinationDataEditUI
+    MainMenuUI --> AirplaneDataEditUI
+}
+
+package "Logic Layer" {
+    left to right direction
+
+    class LogicLayerAPI {
+        - employee_logic : EmployeeManagerLogic
+        - work_trip_logic : WorkTripLogic
+        - destination_logic : DestinationManagerLogic
+        - airplane_logic : AirplaneManagerLogic
+        - flight_logic : FlightLogic
+        - airplane_type_logic : AirplaneTypeLogic
+    }
+
+    class EmployeeManagerLogic {
+        - employee_data : DataLayerAPI
+        + add_employee(employee_type, employee_role, **kwargs)
+        + list_all_employees()
+        + list_all_pilots()
+        + list_all_flight_attendants()
+        + is_pilot(employee_id)
+        + is_flight_attendant(employee_id)
+        + modify_employee(employee_id, **updates)
+        + is_employee(employee_id)
+        + is_captain(employee_id)
+        + is_senior_flight_attendant(employee_id)
+        + list_pilots_by_airplane_type(airplane_type)
+        + list_pilots_sorted_by_airplane_type()
+        + find_employee_by_id(employee_id)
+    }
+
+    class WorkTripLogic {
+        - work_trip_data : DataLayerAPI
+        - employee_manager : EmployeeManagerLogic
+        - flight_logic : FlightLogic
+        - destination_manager : DestinationManagerLogic
+        - airplane_logic : AirplaneManagerLogic
+        - airplane_type_logic : AirplaneTypeLogic
+        + add_work_trip(destination, departure_datetime, return_datetime, crew_members)
+        + list_all_work_trips()
+        + add_crew_member(work_trip_id, employee_id)
+        + create_recurring_work_trips(work_trip_id, weekly_or_daily, number_of_recurrunces)
+        + work_trip_validity_period(weekly_or_daily, start_date)
+        + list_employees_working_and_destination(string_date)
+        + list_all_busy_employees(string_date)
+        + list_all_available_employees(string_date)
+        + all_work_trips_of_employee(employee_id, string_date)
+        + get_recommended_departure_datetime(destination_id, departure_datetime)
+    }
+
+    class DestinationManagerLogic {
+        - destination_data : DataLayerAPI
+        + list_all_destinations()
+        + add_destination(**kwargs)
+        + find_destination_by_id(destination_id)
+        + update_emergency_contact(destination_id, contact_name, contact_phone_number)
+    }
+
+    class AirplaneManagerLogic {
+        - airplane_data : DataLayerAPI
+        - airplane_type_logic : AirplaneTypeLogic
+        - flight_logic : FlightLogic
+        + list_all_airplanes()
+        + add_airplane(**kwargs)
+        + modify_airplane(airplane_id, **updates)
+        + find_airplane_by_id(airplane_id)
+        + list_airplanes_detailed()
+    }
+
+    class FlightLogic {
+        - data : DataLayerAPI
+        - airplane_type_logic : AirplaneManagerLogic
+        + list_all_flights()
+        + add_flight(**kwargs)
+        + get_flight_by_id(flight_id)
+        + get_all_flights_by_destination_id(destination_id)
+        + change_sold_tickets(flight_id, tickets_sold)
+        + get_sold_tickets(flight_id)
+        + get_available_tickets(flight_id)
+        + is_airplane_available(airplane_id, departure_datetime, return_datetime)
+    }
+
+    class AirplaneTypeLogic {
+        - airplane_type_data : DataLayerAPI
+        + add_airplane_type(**kwargs)
+        + list_all_airplane_types()
+    }
+
+    LogicLayerAPI --> EmployeeManagerLogic
+    LogicLayerAPI --> WorkTripLogic
+    LogicLayerAPI --> DestinationManagerLogic
+    LogicLayerAPI --> AirplaneManagerLogic
+    LogicLayerAPI --> FlightLogic
+    LogicLayerAPI --> AirplaneTypeLogic
+    note "The Logic layer depends on the DataLayerAPI" as NoteLogicLayer
+
+}
+
+
+
+package "Data Layer" {
+    left to right direction
+
+    class DataLayerAPI {
+        - employee_data: EmployeeData
+        - work_trip_data: WorkTripData
+        - destination_data: DestinationData
+        - airplane_data: AirplaneData
+        - flight_data: FlightData
+        - airplane_type_data: AirplaneTypeData
+    }
+
+    class EmployeeData {
+        + read_all_employees()
+        + read_all_pilots()
+        + read_all_flight_attendants()
+        + add_employee(employee: Employee)
+        + modify_employee_data(updated_employees: List<Employee>)
+        + add_pilot(pilot: Pilot)
+        + add_flight_attendant(flight_attendant: FlightAttendant)
+    }
+
+    class WorkTripData {
+        + read_all_work_trips()
+        + add_work_trip(work_trip: WorkTrip)
+        + update_work_trip_data(updated_work_trips: List<WorkTrip>)
+    }
+
+    class DestinationData {
+        + read_all_destinations()
+        + add_destination(destination: Destination)
+        + modify_destination_data(updated_destinations: List<Destination>)
+    }
+
+    class AirplaneData {
+        + read_all_airplanes()
+        + add_airplane(airplane: Airplane)
+        + modify_airplane_data(updated_airplanes: List<Airplane>)
+    }
+
+    class FlightData {
+        + read_all_flights()
+        + add_flight(flight: Flight)
+        + modify_flight_data(updated_flights: List<Flight>)
+    }
+
+    class AirplaneTypeData {
+        + read_all_airplane_types()
+        + add_airplane_type(airplane_type: AirplaneType)
+        + modify_airplane_type_data(updated_airplane_types: List<AirplaneType>)
+    }
+
+    DataLayerAPI --> EmployeeData
+    DataLayerAPI --> WorkTripData
+    DataLayerAPI --> DestinationData
+    DataLayerAPI --> AirplaneData
+    DataLayerAPI --> FlightData
+    DataLayerAPI --> AirplaneTypeData
+}
+
+
+@enduml

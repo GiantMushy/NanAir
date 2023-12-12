@@ -1,4 +1,5 @@
 from Code.DataLayer.DataLayerAPI import DataLayerAPI
+from Code.LogicLayer.AirplaneTypeLogic import AirplaneTypeLogic
 from Code.Models.Employee import Employee
 from Code.Models.Pilot import Pilot
 from Code.Models.FlightAttendant import FlightAttendant
@@ -7,6 +8,7 @@ from Code.Models.FlightAttendant import FlightAttendant
 class EmployeeManagerLogic:
     def __init__(self):
         self.employee_data = DataLayerAPI()
+        self.airplane_type_logic = AirplaneTypeLogic()
 
     def generate_unique_employee_id(self):
         '''
@@ -47,6 +49,12 @@ class EmployeeManagerLogic:
 
         # add specific role information
         if employee_type.lower() == 'pilot':
+
+            # checking if airplane type is valid
+            if self.airplane_type_logic.find_type_data(airplane_type) == None:
+                raise ValueError(
+                    "Invalid airplane type."
+                )
             # checking role of pilot, if either captain or co-pilot
             if employee_role.lower() == 'captain':
                 employee_role = 'Captain'

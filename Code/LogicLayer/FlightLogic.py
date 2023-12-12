@@ -1,7 +1,7 @@
-from DataLayer.DataLayerAPI import DataLayerAPI
-from LogicLayer.AirplaneTypeLogic import AirplaneTypeLogic
+from Code.DataLayer.DataLayerAPI import DataLayerAPI
+from Code.LogicLayer.AirplaneTypeLogic import AirplaneTypeLogic
 import ast
-from Models.Flight import Flight
+from Code.Models.Flight import Flight
 from datetime import datetime
 
 
