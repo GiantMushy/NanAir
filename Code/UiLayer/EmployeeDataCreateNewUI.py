@@ -362,7 +362,7 @@ class EmployeeDataCreateNewUI:
 
             elif n == 2:
                 self.input_employee_role()
-                data = input("Enter Employee Role (1 or 2: ")
+                data = input("Enter Employee Role (1 or 2): ")
                 if data == "q":
                     print("Goodbye")
                     exit()
