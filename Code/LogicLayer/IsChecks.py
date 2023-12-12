@@ -63,6 +63,8 @@ class IsChecks:
 
     def is_contact_phone_number(self, Contact_Phone_Number):
         # strip "+"" only from the first character if that is the case
+        if "  " in Contact_Phone_Number:
+            raise ValueError("Contact Phone Number cannot contain two or more spaces")
         Contact_Phone_Number = Contact_Phone_Number.replace(" ", "")
         if Contact_Phone_Number[0:1] == "+":
             Contact_Phone_Number = Contact_Phone_Number[1:]
@@ -73,8 +75,6 @@ class IsChecks:
             raise ValueError("Phone Number must be 10 digits maximum")
         if not int(Contact_Phone_Number) >= 100:
             raise ValueError("Phone Number must be 3 digits minimum")
-        if "  " in Contact_Phone_Number:
-            raise ValueError("Contact Phone Number cannot contain two or more spaces")
 
         try:
             Contact_Phone_Number = int(Contact_Phone_Number.replace(" ", ""))
@@ -168,7 +168,12 @@ class IsChecks:
     def is_email(self, Email):
         if not Email:
             raise ValueError("Email must be a non-empty string")
-        if "  " in Email:
-            raise ValueError("Email cannot contain two or more spaces")
-        if len(Email) > 20:
-            raise ValueError("Email is too long")
+        if " " in Email:
+            raise ValueError("Email cannot contain spaces")
+        if not "@" in Email:
+            raise ValueError('Email must contain "@"')
+        if not "." in Email:
+            raise ValueError('Email must contain "."') 
+        if self.all_punc in Email.strip("@."):
+            if len(Email) > 20:
+                raise ValueError("Email is too long")

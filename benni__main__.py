@@ -7,7 +7,7 @@ def test_is_checks():
     is_checks = IsChecks()
 
     try:
-        is_checks.is_capacity("15")
+        is_checks.is_email("@shjji.")
         print("")
         print(" ------")
         print("|passed|")

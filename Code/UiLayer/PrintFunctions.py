@@ -139,7 +139,7 @@ class PrintFunctions:
 
     def print_airplane_type_table(self, data, line_num):
         line_count = 0
-        print_format = "%-10s%-15s%-10s"
+        print_format = "%-20s%-15s%-10s"
 
         print(self.allign_left(print_format %
               ("Type", "Manufacturer", "Capacity",)))
@@ -184,7 +184,7 @@ class PrintFunctions:
 
     def print_airplane_table(self, data, line_num):
         line_count = 0
-        print_format = "%-5s%-20s%-15s%-10s%-20s%-20s%-0s"
+        print_format = "%-5s%-20s%-20s%-10s%-20s%-20s%-0s"
 
         print(self.allign_left(print_format % ("ID", "Name",
               "Type", "Capacity", "Available Next", "Destination", "Flight Number")))

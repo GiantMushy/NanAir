@@ -103,3 +103,23 @@ Edda: Validation Service
 Matthías: buggtesting worktrips og ...
 
 Það gekk ágætlega vel í dag en verið að vinna í flights schedule og worktrips, Debugging var lagfærað smá og fleiri bugs ödduð inn á discordið.
+
+11.12.23
+
+Þorvarður: UI layer og laga debugs
+Benjamín: Laga Debugs og lagaði kóðann inni í VSCode þannig að það er hægt að prenta þar út.
+Oliver: Debugging 
+Edda: Validation Service
+Matthías: Laga requests frá UI layer í LogicLayer
+
+Hópurinn vann áfram í að laga kóðann og bæta fleiru inn ásamt B-kröfum sem eru að detta inn í kóðann.
+
+12.12.23
+
+Markmiðið í dag er að reyna að klára schedules og önnur functions fyrir UI layer. Síðan þarf að finna öll bugs og laga þau
+
+Þorvarður: Er að klára schedules
+Edda: Er að reyna validate x margir flugmenn og flugfreyjur
+Matthías: functions fyrir UI Layer
+Oliver: Finna Bugs
+Benjamín: finna og Laga Bugs
