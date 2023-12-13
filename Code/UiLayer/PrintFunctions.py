@@ -223,7 +223,7 @@ class PrintFunctions:
         print_format = "%-7s%-7s%-5s%-15s%-12s%-12s%-15s%-17s%-15s%-0s"
 
         # Print the header with new fields
-        print(self.allign_left(print_format % ('Id', 'From', 'To', 'Date', 'Time',
+        print(self.allign_left(print_format % ('Id', 'From', 'To', 'Date', 'Dep. Time',
               'Flight Nr.', 'Staff Status', 'Sold Tickets', 'Avail. Tickets', 'Situation')))
         print(self.empty_line())
 

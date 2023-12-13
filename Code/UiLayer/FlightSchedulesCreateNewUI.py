@@ -72,7 +72,8 @@ class FlightSchedulesCreateNewUI:
         print(self.PrintUi.allign_left("Creating New trip"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left(f"    {self.new_trip[1]}"))
-        print(self.PrintUi.allign_left("--> Input Return Time (HH:MM)"))
+        print(self.PrintUi.allign_left(
+            "--> Input Return Time, the time plane takes off abroad (HH:MM)"))
         print(self.PrintUi.allign_left("    Destination"))
         print(self.PrintUi.allign_left("    Plane"))
         print(self.PrintUi.empty_line())
@@ -249,12 +250,14 @@ class FlightSchedulesCreateNewUI:
                 except ValueError as e:
                     print(f"Error: {e}")
                     input_check = False
+                    # might break
+                    n -= 1
                 if not input_check_destinations:
                     print("Invalid input, try again")
                     input_check = False
 
             elif n == 5:
-                # Breyt í list_available_airplanes() ###############################
+                # change to list_available_airplanes() ###############################
                 printed_data = self.Logic.list_all_airplanes()
                 printed_data = self.Logic.object_list_to_dict_list(
                     printed_data)

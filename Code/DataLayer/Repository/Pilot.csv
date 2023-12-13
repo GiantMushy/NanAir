@@ -1,5 +1,4 @@
 id,pilot_role,airplane_type
-004,Captain,AKN-77
-005,Co-Pilot,AKN-77
-006,Captain,BOEING747
-007,Co-Pilot,BOEING747
+002,Captain,MAX357
+003,Co-Pilot,MAX357
+006,Captain,MAX357

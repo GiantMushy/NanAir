@@ -31,15 +31,15 @@ class FlightSchedulesUI:
                 "<ID> : Create Recurring Trip from ID       D : Change between Day/Week       <Flight Nr.-X> : Add X tickets to flight "))
         else:
             print(self.PrintUi.empty_line())
-            print(self.PrintUi.allign_left(
-                "<ID> : Examine Staff Status of Trip           D : Change between Day/Week"))
+            print(self.PrintUi.allign_center(
+                "<ID> : Staff Trip           D : Change between Day/Week"))
         print(self.PrintUi.empty_line())
 
         if not end_date:
-            print(self.PrintUi.allign_left(
+            print(self.PrintUi.allign_center(
                 "0 : Back              00 : Change Day                n : See Yesterday             m : See Tomorrow"))
         else:
-            print(self.PrintUi.allign_left(
+            print(self.PrintUi.allign_center(
                 "0 : Back              00 : Change Week               n : Previous Week             m : Next Week"))
         print(self.PrintUi.end_line())
 

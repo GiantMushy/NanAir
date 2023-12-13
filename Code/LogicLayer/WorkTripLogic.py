@@ -88,7 +88,7 @@ class WorkTripLogic:
 
         # minimum required time between departure and return
         minimum_required_time = timedelta(
-            hours=0.99) + timedelta(minutes=int(destination.travel_time) * 2)
+            hours=0.99) + timedelta(minutes=int(destination.travel_time) * 1)
 
         # Check if the time between departure and return is at least the minimum required time
         if (formatting_return_datetime - formatting_departure_datetime) < minimum_required_time:

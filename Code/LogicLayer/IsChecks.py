@@ -217,5 +217,6 @@ class IsChecks:
         difference = datetime.strptime(
             return_datetime, "%Y-%m-%d %H:%M") - datetime.strptime(departure_datetime, "%Y-%m-%d %H:%M")
         destination_travel_time = destination_obj.travel_time
-        if difference < (timedelta(minutes=int(destination_travel_time)*2) + timedelta(hours=0.99)):
-            raise ValueError("Time between flights is too short")
+        if difference < (timedelta(minutes=int(destination_travel_time)*1) + timedelta(hours=0.99)):
+            raise ValueError(
+                "Time between flights is too short, allow 1 hr overhead to refuel plane abroad.")
