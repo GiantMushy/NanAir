@@ -47,6 +47,7 @@ class WorkTripLogic:
 
         :raises ValueError: If required fields are missing or empty.
         '''
+
         # if datetimes are indeed in the correct format
         try:
             formatting_departure_datetime = datetime.strptime(
@@ -66,10 +67,6 @@ class WorkTripLogic:
 
         if datetime.strptime(return_datetime, '%Y-%m-%d %H:%M') < datetime.strptime(departure_datetime, '%Y-%m-%d %H:%M'):
             raise ValueError("Return date cannot be before departure date.")
-
-        # if datetime.strptime(departure_datetime, '%Y-%m-%d %H:%M') < datetime.now() + timedelta(days=7):
-            # raise ValueError(
-            # "Worktrips cannot be created less than a week from today.")
 
         # destination can't be headquarters
         if int(destination_id) == int("01"):
@@ -107,7 +104,7 @@ class WorkTripLogic:
         # this needs to be somehow stored in the worktrip object, to find flights?
         # or a flight can have a work trip id?
         # its better for a worktrip to point to the two flight numbers, so need to create a function
-        # in the format "NA<destinationid with padded zeroes><even numbers from iceland>/<odd numbers to iceland>"
+        # which creates them
 
         # create flight numbers
         flight_number_start, flight_number_end = self.flight_logic.create_flight_numbers(
@@ -272,8 +269,10 @@ class WorkTripLogic:
             raise ValueError(
                 f"Employee with ID {employee_id} is not an employee.")
 
+        work_trip_object = self.get_work_trip_by_id(work_trip_id)
+
         # check if employee is available
-        if not self.validate_employee_availability():
+        if not self.validate_employee_availability(employee_id, work_trip_object.departure_datetime):
             raise ValueError(
                 f"Employee with ID {employee_id} is not available for this date.")
 
@@ -326,33 +325,44 @@ class WorkTripLogic:
 
         return False
 
-    def validate_employee_availability(self):
-        '''wait for ValidationService to be implemented
-        should be one for loop i think, read all work trips
-        for each work trip, check if the employee_id given to check 
-        is in the crew of any trips happening at a certain day/interval
-        which is given. 
+    def validate_employee_availability(self, employee_id, date):
         '''
-        return True
+        Checks if there are any employees available for a specific workdate. 
+        It takes out the ones that are not available and gives a list of 
+        employee numbers that are available
+        '''
+        date_str = date.strftime("%Y-%m-%d %H:%M")
+        all_busy_employees = self.list_all_busy_employees(date_str)
+        busy_emp_int = []
+        for busy_emp in all_busy_employees:
+            busy_emp_int.append(int(busy_emp))
 
-    def validate_trip_validity(self, work_trip):
-        '''wait for ValidationService to be implemented
-        A simple way to do this would be to obtain the members_crew of the work_trip and splitting
-        the employee id's into a list, by splitting at the comma (split(,)). 
-        Then iterating through the employee id's and gather all the pilots and flight attendants
-        into seperate lists, using the is_pilot and is_flight_attendant which can be fetched
-        in the LogicLayerAPI.
-        and then using the is_captain and is senior flight attendant
-        of LogicLayerAPI. ()'''
-        # implement with import random 50 50 chance of returning true or false
-        # each work trip should have at least two pilots (one being a captain)
-        # and at least one flight attendant (one being a senior attendant).
-
-        zero_to_one = randint(0, 1)
-        if zero_to_one == 0:
+        if int(employee_id) in busy_emp_int:
             return False
         else:
             return True
+
+    def validate_trip_validity(self, work_trip):
+        '''Here the function makes a requirement of at least 2 pilots (at least 1 captain) 
+        and at least one senior flight attendant. There can be more than one flight attendants 
+        on each flight but not without a senior flight attendant'''
+        work_trip_obj = self.get_work_trip_by_id(work_trip)
+        crew_members_list = work_trip_obj.crew_members.split(',')
+        is_captain = False
+        is_senior_fa = False
+        nr_of_crew_members = 0
+
+        for member in crew_members_list:
+            if self.employee_manager.is_captain(member):
+                is_captain = True
+            elif self.employee_manager.is_senior_flight_attendant(member):
+                is_senior_fa = True
+            nr_of_crew_members += 1
+
+        if is_captain == True and is_senior_fa == True and nr_of_crew_members >= 3:
+            return True
+        else:
+            return False
 
     def work_trip_validity_period(self, weekly_or_daily, start_date):
         '''
@@ -371,13 +381,13 @@ class WorkTripLogic:
             end_date = start_date + timedelta(days=7)
             for trip in all_work_trips:
                 if start_date <= trip.departure_datetime.date() <= end_date:
-                    trip.validity = self.validate_trip_validity(trip)
+                    trip.validity = self.validate_trip_validity(trip.id)
                     work_trips_in_period.append(trip)
 
         elif weekly_or_daily.lower() == "daily":
             for trip in all_work_trips:
                 if trip.departure_datetime.date() == start_date:
-                    trip.validity = self.validate_trip_validity(trip)
+                    trip.validity = self.validate_trip_validity(trip.id)
                     work_trips_in_period.append(trip)
         else:
             raise ValueError("Invalid input for weekly_or_daily")
@@ -604,7 +614,6 @@ class WorkTripLogic:
     def list_all_available_captains_by_type(self, airplane_type, date):
         '''
         Listing all available Captains for a certain date with licence on airplane type
-
         :param airplane_type: airplane type string
         :param date: date to check if employees available
         '''
@@ -620,7 +629,6 @@ class WorkTripLogic:
     def list_all_available_copilots_by_type(self, airplane_type, date):
         '''
         Listing all available Co-Pilots for a certain date with licence on airplane type
-
         :param airplane_type: airplane type string
         :param date: date to check if employees available
         '''
