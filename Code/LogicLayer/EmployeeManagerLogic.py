@@ -133,6 +133,9 @@ class EmployeeManagerLogic:
         return combined_flight_attendants
 
     def object_list_to_dict_list(self, object_list):
+        '''
+        Takes a list of objects and returns a list of dictionaries.
+        '''
         dict_list = []
         for obj in object_list:
             dict_list.append(obj.__dict__)
@@ -140,6 +143,9 @@ class EmployeeManagerLogic:
         return dict_list
 
     def object_to_dict(self, object):
+        '''
+        Returns object dictionary.
+        '''
         return object.__dict__
 
     def is_pilot(self, employee_id):
@@ -219,35 +225,6 @@ class EmployeeManagerLogic:
 
         # write updated list back to data layer
         self.employee_data.modify_employee_data(updated_employees)
-
-    # TODO: update, put in seperate Class? not specific to Employees
-    def field_checker(self, field, input):
-        '''
-        Checks employee inputs, and checks if something has letters when not supposed to
-        and if something has numbers when not supposed to.
-
-        :param field: field to check
-
-        :param input: user input to check for the given field
-        '''
-        allowed_fields = ['name', 'ssn',
-                          'mobile', 'address', 'email_address']
-        field = field.lower()
-        if field not in allowed_fields:
-            raise ValueError(
-                "Invalid field type, must be name, ssn, mobile, address or email_address"
-            )
-        else:
-            if field in ['name', 'email_address, address']:
-                if input.isalpha():
-                    return True
-                else:
-                    return False
-            else:
-                if input.isdigit():
-                    return True
-                else:
-                    return False
 
     def is_employee(self, employee_id):
         '''Checks if an employee exists in the system.

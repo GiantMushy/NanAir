@@ -16,6 +16,9 @@ class AirplaneData:
                                        'id', 'name', 'type'])
 
     def create_file_if_not_exists(self, filename, fieldnames):
+        '''
+        Creates file with given fieldnames if it doesnt exist.
+        '''
         if not os.path.exists(filename):
             with open(filename, mode='w', newline='', encoding='utf-8') as file:
                 writer = csv.DictWriter(file, fieldnames=fieldnames)
@@ -61,7 +64,7 @@ class AirplaneData:
     def modify_airplane_data(self, updated_airplaness):
         """
         Write the updated list of airplaness to the CSV file.
-        
+
         :param updated_airplaness: List of airplanes objects with updated information.
         """
         try:
@@ -77,6 +80,9 @@ class AirplaneData:
                 f"An error occurred while writing to the file: {e}")
 
     def add_record(self, filename, record):
+        '''
+        Adds a new record to the CSV file.
+        '''
         try:
             with open(filename, mode='a', newline='', encoding='utf-8') as file:
                 writer = csv.DictWriter(
@@ -87,4 +93,3 @@ class AirplaneData:
         except Exception as e:
             raise Exception(
                 f"An error occurred while writing to the file: {e}")
-

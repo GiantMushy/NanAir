@@ -74,7 +74,6 @@ class AirplaneManagerLogic:
     def modify_airplane(self, airplane_id, **updates):
         """
         Modifies the attributes of an existing airplane.
-        Restrictions apply to modifying ID, name, and social security number.
 
         :param airplane_id: ID of the airplane to be modified.
         :param updates: Dictionary of updates to be applied. (modify_airplane(123, current_location= "Reykjavik", name="Squiggle")
