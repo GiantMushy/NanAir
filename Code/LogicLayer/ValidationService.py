@@ -18,11 +18,10 @@ class ValidationService:
         '''Checks if there are any employees available for a specific workdate. 
         It takes out the ones that are not available and gives a list of 
         employee numbers that are available'''
+
         date_compare = datetime.strptime(date,"%Y-%m-%d %H:%M")
         date_compare = date_compare.date()
-
         all_work_trips = self.data.read_all_work_trips()
-
         busy_employees = []
 
         #Reads all work days and sees which employees working on those days and edits them out of the day
