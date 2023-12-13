@@ -91,8 +91,7 @@ class PrintFunctions:
         '''Prints the Company Logo'''
         print("                                                                              ______ ")
         print(" ____  _____      __      ____  _____          __      _____ _______          _\ _~-\___")
-        print(
-            "|_   \|_   _|    /  \    |_   \|_   _|        /  \    |_   _|_   __ \     = =(____AA____D")
+        print("|_   \|_   _|    /  \    |_   \|_   _|        /  \    |_   _|_   __ \     = =(____AA____D")
         print("  |   \ | |     / /\ \     |   \ | |         / /\ \     | |   | |__) |            \_____\______________________,-~~~~~-.._")
         print("  | |\ \| |    / ____ \    | |\ \| |        / ____ \    | |   |  __ /             /     o O o o o o O O o o o o o o O o  |\_")
         print(" _| |_\   |_ _/ /    \ \_ _| |_\   |_     _/ /    \ \_ _| |_ _| |  \ \_           `~-.__        ___..----..                  )")
@@ -110,6 +109,19 @@ class PrintFunctions:
 
         if len(name) > min_length:
             name = "(Item Too Long)"
+        return name
+    
+    def auto_shorten_name(self, name, min_length):
+        '''Abbreviates input name'''
+        if len(name) > min_length:
+            names = name.split()
+            if len(names) > 1:
+                for n in range(len(names)-1):
+                    names[n+1] = names[n+1][0] + "."
+            name = "".join(names)
+
+            if len(name) > min_length:
+                name = "(Item Too Long)"
         return name
 
     def print_employee_table(self, data, line_num):
@@ -204,7 +216,7 @@ class PrintFunctions:
             print(self.empty_line())
             line_count += 1
 
-    def print_flight_schedule_table(self, data, date_start, date_end, line_num):
+    def print_flight_schedule_table(self, data, line_num):
         line_count = 0
         print_format = "%-5s%-20s%-20s%-15s%-15s%-15s%-15s%-0s"
 
@@ -260,7 +272,7 @@ class PrintFunctions:
             print(self.empty_line())
             line_count += 1
 
-    def print_available_planes(self, data, line_num):
+    def print_available_planes_bugged(self, data, line_num):
         line_count = 0
         print_format = "%-5s%-20s%-20s%-20s"
 
@@ -272,8 +284,25 @@ class PrintFunctions:
                 if len(vals[n]) > 18:  # shorten names
                     vals[n] = self.shorten_name(vals[n], 18)
             # id 0, name 1, type 3, capacity 5
+            print(vals)
             print(self.allign_left(print_format %
                   (vals[0], vals[1], vals[3], vals[5])))
+            line_count += 1
+
+    def print_available_planes(self, data, line_num):
+        line_count = 0
+        print_format = "%-5s%-20s%-20s"
+
+        for dic in data:
+            vals = []
+            for value in dic.values():
+                vals.append(value)
+            for n in range(len(vals)):
+                if len(vals[n]) > 18:  # shorten names
+                    vals[n] = self.shorten_name(vals[n], 18)
+            # id 0, name 1, type 2
+            print(self.allign_left(print_format %
+                  (vals[0], vals[1], vals[2])))
             line_count += 1
 
         while line_count <= line_num:

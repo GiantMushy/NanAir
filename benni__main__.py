@@ -7,7 +7,7 @@ def test_is_checks():
     is_checks = IsChecks()
 
     try:
-        is_checks.is_return_time_dd_rd("2023-12-12 19:00", "2023-12-12 21:00")
+        is_checks.is_date("2023 12 312")
         print("")
         print(" ------")
         print("|passed|")

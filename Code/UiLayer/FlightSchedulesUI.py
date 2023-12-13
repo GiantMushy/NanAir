@@ -1,6 +1,7 @@
 from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI
 from Code.UiLayer.PrintFunctions import PrintFunctions
 from Code.UiLayer.FlightSchedulesCreateNewUI import FlightSchedulesCreateNewUI
+from Code.UiLayer.FlightSchedulesStaffTripsUI import FlightSchedulesStaffTripsUI
 import datetime
 
 class FlightSchedulesUI:
@@ -18,14 +19,14 @@ class FlightSchedulesUI:
         else:
             print(self.PrintUi.allign_left(f"Flights Departing between {start_date.date()} - {end_date.date()}:"))
         print(self.PrintUi.empty_line())
-        self.PrintUi.print_flight_schedule_table(printed_data, start_date, end_date, 12)
+        self.PrintUi.print_flight_schedule_table(printed_data, 12)
         print(self.PrintUi.empty_line())
 
         if self.user == "Trip Manager":
             print(self.PrintUi.allign_left("   A : Create New Trip"))
             print(self.PrintUi.allign_left("<ID> : Create Recurring Trip from ID          D : Change between Day/Week"))
         else:
-            print(self.PrintUi.allign_left("   A : Create New Trip"))
+            print(self.PrintUi.empty_line())
             print(self.PrintUi.allign_left("<ID> : Examine Staff Status of Trip           D : Change between Day/Week"))
         print(self.PrintUi.empty_line())
 
@@ -36,17 +37,14 @@ class FlightSchedulesUI:
         print(self.PrintUi.end_line())
 
     def innitiate_and_switch_lists(self, time, start_date,):
-        temp_list_data = self.Logic.work_trip_validity_period(time, start_date.strftime('%Y-%m-%d %H:%M'))
-        printed_data = self.Logic.object_list_to_dict_list(temp_list_data)
-        return printed_data
+        printed_data = self.Logic.work_trip_validity_period(time, start_date.strftime('%Y-%m-%d %H:%M'))
+        return self.Logic.object_list_to_dict_list(printed_data)
 
     def input_prompt(self):
-        '''Starting function for EmployeeDataUI'''
-        time = 'weekly'
-        #start_date = '2032-11-14 00:00'
-        day_timedelta = datetime.timedelta(1)        
-        week = datetime.timedelta(7)
-        start_date = datetime.datetime(2032,11,14,0,0)
+        '''Starting function for FlightSchedulesUI'''
+        time = 'weekly'      
+        week = datetime.timedelta(6)
+        start_date = datetime.datetime(2024,1,15,0,0)
         end_date = start_date + week
         while True:
             printed_data = self.innitiate_and_switch_lists(time, start_date)
@@ -60,17 +58,26 @@ class FlightSchedulesUI:
                 if time == 'weekly':
                     while not input_check:
                         try:
-                            year, month, day = input("Enter the first day of the new week (YYYY-MM-DD): ").split('-')
+                            command = input("Enter the first day of the new week (YYYY-MM-DD): ")
+                            if command == "q":
+                                print("Goodbye")
+                                exit()
+                            year, month, day = command.split('-')
                             input_check = True
                             start_date = datetime.datetime(int(year), int(month), int(day), 0,0)
                             end_date = start_date + week
                         except ValueError as e:
-                            print(f"Invalid input, try again")
+                            print(f"Error in input: {e}")
                             input_check = False
                 else:
                     while not input_check:
                         try:
-                            year, month, day = input("Enter a day (YYYY-MM-DD): ").split('-')
+                            command = input("Enter a day (YYYY-MM-DD): ")
+                            if command == "q":
+                                print("Goodbye")
+                                exit()
+                            self.Logic.is_date(command)
+                            year, month, day = command.split('-')
                             input_check = True
                             start_date = datetime.datetime(int(year), int(month), int(day), 0,0)
                         except ValueError as e:
@@ -104,13 +111,11 @@ class FlightSchedulesUI:
                                 except ValueError as e:
                                     print(f"Error: {e}")
                                     input_check_recurring = False
-                            self.Logic.create_recurring_work_trips()
+                            self.Logic.create_recurring_work_trips( dict['id'], recurrence_days, recurrence_count)
 
                         else:                        ############# Staff Trips #############
-                            print("Staff Trips") 
-                        self.Logic.create_recurring_work_trips(recurrence_days, recurrence_count, dict['id'])
-                        #edit = FlightSchedulesStaffStatusUI(dict["id"])
-                        #edit.input_prompt()
+                            staff_trips = FlightSchedulesStaffTripsUI(dict['id'])
+                            staff_trips.input_prompt()
 
             elif command == "d": #change between week and day
                 if time == 'weekly':
@@ -121,25 +126,20 @@ class FlightSchedulesUI:
                     end_date = start_date + week 
             elif command == "n": #see yesterday/last week
                 if time == 'weekly':
-                    start_date = start_date - week 
-                    end_date = start_date - week 
-                else:
-                    start_date = start_date - day_timedelta 
-            elif command == "m": #see tomorrow/next week
-                if time == 'weekly':
-                    start_date = start_date + week 
+                    start_date -= datetime.timedelta(7) 
                     end_date = start_date + week 
                 else:
-                    start_date = start_date + day_timedelta
+                    start_date -= datetime.timedelta(1) 
+            elif command == "m": #see tomorrow/next week
+                if time == 'weekly':
+                    start_date += datetime.timedelta(7) 
+                    end_date = start_date + week 
+                else:
+                    start_date += datetime.timedelta(1) 
             elif command == "a":
                 if self.user == 'Trip Manager':
                     create_new = FlightSchedulesCreateNewUI()
                     create_new.input_prompt()
-            elif command == "s":
-                if self.user == 'Trip Manager':
-                    #re_create = FlightSchedulesReCreateUI()
-                    #re_create.input_prompt()
-                    print("Create existing trip")
             elif command == "q":
                 print("Goodbye")
                 exit()
