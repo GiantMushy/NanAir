@@ -95,7 +95,6 @@ class EmployeeScheduleSpecificUI:
             # 'airplane': "{'id': '001', 'name': 'Katla', 'type': 'AKN-77'}", 
             # 'flight_number_start': 'NA020', 'flight_number_end': 'NA021', 'crew_members': '001,002', 'sold_tickets_start': '0', 'sold_tickets_end': '0', 
             # 'available_tickets_start': '300', 'available_tickets_end': '300', 'current_situation': 'Landed abroad'}]
-            print(destinations_list)
             self.specific_employee_weekly_schedule(destinations_list)
             command = input("Enter you command: ").lower()
 
