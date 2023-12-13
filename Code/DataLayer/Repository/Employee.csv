@@ -1,11 +1,8 @@
 id,name,social_security_number,address,mobile_phone_number,email_address,home_phone_number
-001,Raggi,329343-7123,AMZN street 1,7448343277,example49@gmail.com,
-002,Banani,455951-8719,FB street 1,7407483108,example45@gmail.com,
-003,Epli,227279-7479,Apple street 1,4256965420,example94@gmail.com,
-004,Matti,204993-9842,Mac street 1,9730685038,example13@gmail.com,
-005,Sara,400760-4030,Microsoft street 1,4361039214,example62@gmail.com,
-006,Mikael,344495-6248,Mikael street 1,3749662515,example77@gmail.com,
-007,Karl,847645-1969,Karl street 1,7119662250,example61@gmail.com,
-008,Raggi,664482-6954,Raggi street 1,5665939354,example83@gmail.com,
-009,Banani,486533-3727,Banani street 1,3729352859,example25@gmail.com,
-010,Epli,573093-5620,Epli street 1,8984667877,example37@gmail.com,
+001,aron,1412982839,asdasdasd,234234,asdasdasd@gmail.com,21331231
+002,Matthís,1412013010,mkasdasd,345678876,m@gmail.com,
+003,siggi aron,1412952939,sdfsdkfj,234234234,m@gmail.com,
+004,Kristinn,3101013010,Kjallaravegur 1,234234,kjallaripunkturis@gmail.com,
+005,Kristínarson,1412013010,Oldugrandi 15,234234,super@gmail.com,345345
+006,asdasd,1412013010,sdfdsf,12343214,ma@gmail.com,
+007,matthías,1412013010,234234234,1234245,mat@gmail.com,

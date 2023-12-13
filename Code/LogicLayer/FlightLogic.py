@@ -72,7 +72,8 @@ class FlightLogic:
         if upd_flight is None:
             raise ValueError("Flight not found")
         if int(upd_flight.tickets_sold)+int(tickets_sold) > int(upd_flight.capacity):
-            raise ValueError("Too many tickets sold")
+            raise ValueError(
+                "Too many tickets sold, Chuck Norris is not happy at all!")
         upd_flight.tickets_sold = int(
             upd_flight.tickets_sold)+int(tickets_sold)
         all_flights = self.list_all_flights()
