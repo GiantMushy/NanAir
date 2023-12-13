@@ -45,13 +45,13 @@ class DestinationManagerLogic:
         if any(kwargs.get(field) is None or kwargs.get(field) == '' for field in required_fields):
             raise ValueError("Required fields cannot be empty.")
 
+        destination_id = self.generate_unique_destination_id()
+        kwargs['id'] = destination_id
+
         # if airport equal to RKV, raise error
         if kwargs['id'] != "01":
             if kwargs['airport'] == "RKV":
                 raise ValueError("Airport cannot be Headquarters")
-
-        destination_id = self.generate_unique_destination_id()
-        kwargs['id'] = destination_id
 
         new_destination = Destination(**kwargs)
         self.destination_data.add_destination(new_destination)
