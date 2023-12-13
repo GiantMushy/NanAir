@@ -7,7 +7,7 @@ class AirplaneDataCreateNewUI:
         self.PrintUi = PrintFunctions()
         self.Logic = LogicLayerAPI()
         self.new_airplane = []
-        type_already_created = False
+        self.type_already_created = False
 
     def input_name(self):
         '''Print sequence for Creating a new Airplane : Name'''
