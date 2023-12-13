@@ -107,6 +107,7 @@ package "Ui Layer" {
     class EmployeeScheduleSpecificUI{
         - PrintUi : PrintFunctions()
         - Logic : LogicLayerAPI()
+        - id : id
         + specific_employee_weekly_schedule(destination_list)
         + input_prompt()
 
