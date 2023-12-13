@@ -127,16 +127,16 @@ class FlightSchedulesUI:
                     end_date = start_date + week 
             elif command == "n": #see yesterday/last week
                 if time == 'weekly':
-                    start_date = start_date - week 
+                    start_date -= datetime.timedelta(8) 
                     end_date = start_date - week 
                 else:
-                    start_date = start_date - day_timedelta 
+                    start_date -= datetime.timedelta(1) 
             elif command == "m": #see tomorrow/next week
                 if time == 'weekly':
-                    start_date = start_date + week 
+                    start_date += datetime.timedelta(8) 
                     end_date = start_date + week 
                 else:
-                    start_date = start_date + day_timedelta
+                    start_date += datetime.timedelta(1) 
             elif command == "a":
                 if self.user == 'Trip Manager':
                     create_new = FlightSchedulesCreateNewUI()
