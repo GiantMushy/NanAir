@@ -27,6 +27,9 @@ class EmployeeData:
                                        'id', 'attendant_role'])
 
     def create_file_if_not_exists(self, filename, fieldnames):
+        '''
+        Creates file with given fieldnames if it doesnt exist.
+        '''
         if not os.path.exists(filename):
             with open(filename, mode='w', newline='', encoding='utf-8') as file:
                 writer = csv.DictWriter(file, fieldnames=fieldnames)
@@ -144,6 +147,9 @@ class EmployeeData:
         self.add_record(self.flight_attendant_filename, flight_attendant)
 
     def add_record(self, filename, record):
+        '''
+        Adds a new record to the CSV file.
+        '''
         try:
             with open(filename, mode='a', newline='', encoding='utf-8') as file:
                 writer = csv.DictWriter(

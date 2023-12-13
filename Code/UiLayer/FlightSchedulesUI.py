@@ -114,7 +114,7 @@ class FlightSchedulesUI:
                             self.Logic.create_recurring_work_trips( dict['id'], recurrence_days, recurrence_count)
 
                         else:                        ############# Staff Trips #############
-                            staff_trips = FlightSchedulesStaffTripsUI(dict)
+                            staff_trips = FlightSchedulesStaffTripsUI(dict['id'])
                             staff_trips.input_prompt()
 
             elif command == "d": #change between week and day

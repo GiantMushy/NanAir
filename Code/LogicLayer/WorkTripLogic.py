@@ -12,12 +12,6 @@ import ast
 # for testing
 from random import randint
 
-# TODO: Since worktrips are at most two days, since a 12 hour flight
-# is impossible, (12 for flying and for going back) it means that each employee
-# can be busy for a maximum of 2 days, so can simply compare the
-# takeoff in iceland and takeoff abroad dates, if different employee busy
-# both days?
-
 
 class WorkTripLogic:
     def __init__(self):
@@ -53,9 +47,6 @@ class WorkTripLogic:
 
         :raises ValueError: If required fields are missing or empty.
         '''
-        # TODO: add capacity into flights, assume airplane capacity given in worktrip is always correct
-        # to make sure of that later on add airplane type in DB and use that when creating airplanes
-
         # if datetimes are indeed in the correct format
         try:
             formatting_departure_datetime = datetime.strptime(
@@ -611,6 +602,12 @@ class WorkTripLogic:
         return all_available_flight_attendants
 
     def list_all_available_captains_by_type(self, airplane_type, date):
+        '''
+        Listing all available Captains for a certain date with licence on airplane type
+
+        :param airplane_type: airplane type string
+        :param date: date to check if employees available
+        '''
         all_avlb_pilots = self.list_all_available_pilots_by_type(
             airplane_type, date)
         all_avlb_captains = []
@@ -621,6 +618,12 @@ class WorkTripLogic:
         return all_avlb_captains
 
     def list_all_available_copilots_by_type(self, airplane_type, date):
+        '''
+        Listing all available Co-Pilots for a certain date with licence on airplane type
+
+        :param airplane_type: airplane type string
+        :param date: date to check if employees available
+        '''
         all_avlb_pilots = self.list_all_available_pilots_by_type(
             airplane_type, date)
         all_avlb_copilots = []

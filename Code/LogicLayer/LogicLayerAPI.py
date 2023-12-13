@@ -156,7 +156,7 @@ class LogicLayerAPI:
 
     def list_all_employees_detailed(self):
         '''
-        Returns a list of all employees with more detail
+        Returns a list of all employees with more detail.
         '''
         return self.employee_logic.list_all_employees_detailed()
 
@@ -297,10 +297,31 @@ class LogicLayerAPI:
         return self.work_trip_logic.list_all_available_fa(date)
 
     def list_all_available_captains_by_type(self, airplane_type, date):
+        '''
+        Listing all available Captains for a certain date with licence on airplane type
+
+        :param airplane_type: airplane type string
+        :param date: date to check if employees available
+        '''
         return self.work_trip_logic.list_all_available_captains_by_type(airplane_type, date)
 
     def list_all_available_copilots_by_type(self, airplane_type, date):
+        '''
+        Listing all available Co-Pilots for a certain date with licence on airplane type
+
+        :param airplane_type: airplane type string
+        :param date: date to check if employees available
+        '''
         return self.work_trip_logic.list_all_available_copilots_by_type(airplane_type, date)
+    
+    def find_work_trip_by_id(self, work_trip_id):
+        '''
+        Gets work trip by ID.
+
+        :param work_trip_id: ID of the work trip to get.
+        '''
+        return self.work_trip_logic.get_work_trip_by_id(work_trip_id)
+
 
     ############################## Destination Manager Logic ###############################
 
@@ -397,6 +418,8 @@ class LogicLayerAPI:
 
     def get_flight_by_id(self, flight_id):
         '''
+        Find flight object using its flight id
+
         :param flight_id: ID of the flight to find
 
         Returns, return: Flight object with the given id.
@@ -405,6 +428,8 @@ class LogicLayerAPI:
 
     def get_all_flights_by_destination_id(self, destination_id):
         '''
+        All flights flying to a specific destination
+
         :param destination_id: ID of the destination to find
 
         Returns, return: List of Flight objects with the given destination id.
@@ -413,6 +438,8 @@ class LogicLayerAPI:
 
     def change_sold_tickets(self, flight_id, tickets_sold):
         '''
+        Add sold tickets to flight
+
         :param flight_number: Number of the flight to change
 
         :param tickets_sold: Number of tickets sold to add to flight
@@ -421,6 +448,8 @@ class LogicLayerAPI:
 
     def get_sold_tickets(self, flight_id):
         '''
+        Sold tickets of flight
+
         :param flight_number: Number of the flight to get sold tickets from
 
         Returns, return: string number of sold tickets
@@ -429,6 +458,8 @@ class LogicLayerAPI:
 
     def get_available_tickets(self, flight_id):
         '''
+        Capacity minus the sold tickets
+
         :param flight_number: Number of the flight to get available tickets from
 
         Returns, return: string number of available tickets
@@ -437,6 +468,8 @@ class LogicLayerAPI:
 
     def is_airplane_available(self, airplane_id, departure_datetime, return_datetime):
         '''
+        Checks if airplane is available for a given time period
+
         :param airplane_id: ID of the airplane to check
         :param departure_datetime: Departure date and time. In string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13"
         :param return_datetime: Return date and time. In string format %Y-%m-%d %H:%M f.x. "2022-12-14 14:13"
