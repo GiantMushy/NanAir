@@ -99,15 +99,15 @@ class EmployeeScheduleSpecificUI:
                 input_check = False
                 while not input_check:
                     try:
-                        command = input("Enter the first day of the new week (YYYY-MM-DD): ").lower()
-                        if command == "q":
+                        command = input("Enter the first day of the new week (YYYY-MM-DD): ")
+                        if command.lower() == "q":
                             print("Goodbye")
                             exit()
                         year, month, day = command.split('-')
                         input_check = True
                         self.start_date = datetime.datetime(int(year), int(month), int(day), 0,0)
                     except ValueError as e:
-                        print(f"Invalid input, try again")
+                        print(f"Error in input: {e}")
                         input_check = False
             elif command == "n": #see last week
                 self.start_date -= datetime.timedelta(7)
