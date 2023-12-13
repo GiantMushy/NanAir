@@ -42,5 +42,3 @@ class AirplaneTypeLogic:
             if airplane.type == airplane_type:
                 return airplane
         return None
-
-    # B-requirements will be implemented  here.
