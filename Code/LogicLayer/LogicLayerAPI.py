@@ -313,6 +313,15 @@ class LogicLayerAPI:
         :param date: date to check if employees available
         '''
         return self.work_trip_logic.list_all_available_copilots_by_type(airplane_type, date)
+    
+    def find_work_trip_by_id(self, work_trip_id):
+        '''
+        Gets work trip by ID.
+
+        :param work_trip_id: ID of the work trip to get.
+        '''
+        return self.work_trip_logic.get_work_trip_by_id(work_trip_id)
+
 
     ############################## Destination Manager Logic ###############################
 

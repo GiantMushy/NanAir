@@ -290,9 +290,13 @@ class FlightSchedulesCreateNewUI:
                     break
             elif command == "2":
                 try:
+                    destination=self.new_trip[0]['id']
+                    departure_datetime=self.new_trip[1]
+                    return_datetime=self.new_trip[2]
+                    airplane = self.new_trip[3]['id']
                     self.Logic.add_work_trip(
-                        destination=self.new_trip[0]['id'], departure_datetime=self.new_trip[1], 
-                        return_datetime=self.new_trip[2], airplane = self.new_trip[3]['id'])
+                        destination, departure_datetime, 
+                        return_datetime, airplane)
                     self.new_trip = []
                     break_check = self.create_new_sequence()
                 except ValueError as e:
@@ -301,9 +305,13 @@ class FlightSchedulesCreateNewUI:
                     break
             elif command == "3":
                 try:
+                    destination=self.new_trip[0]['id']
+                    departure_datetime=self.new_trip[1]
+                    return_datetime=self.new_trip[2]
+                    airplane = self.new_trip[3]['id']
                     self.Logic.add_work_trip(
-                        destination=self.new_trip[0]['id'], departure_datetime=self.new_trip[1], 
-                        return_datetime=self.new_trip[2], airplane = self.new_trip[3]['id'])
+                        destination, departure_datetime, 
+                        return_datetime, airplane)
                     break
                 except ValueError as e:
                     print(f"Work Trip save was unsuccessfull: {e}")
