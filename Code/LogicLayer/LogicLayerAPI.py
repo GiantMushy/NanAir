@@ -520,13 +520,17 @@ class LogicLayerAPI:
 
     def is_email(self, Email):
         return self.check.is_email(Email)
+    
+    def is_right_day_of_departure(self, input_departure_day):
+        return self.check.is_right_day_of_departure(input_departure_day)
 
-    def is_employee_type(self, Employee_Type):
-        return self.check.is_employee_type(Employee_Type)
 
-    def is_employee_role(self, Employee_Role):
-        return self.check.is_employee_role(Employee_Role)
+    def is_return_time_dd_rd(self, input_departure_day, input_return_day):
+        return self.check.is_return_time_dd_rd(input_departure_day, input_return_day)
 
+    def is_date(self, date):
+        return self.check.is_date(date)
+    
     ############################## GeneralUseLogic ###############################
 
     def object_list_to_dict_list(self, object_list):
