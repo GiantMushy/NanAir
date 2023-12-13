@@ -190,4 +190,8 @@ class IsChecks:
         given_returntime = datetime.strptime(input_return_day, "%Y-%m-%d %H:%M")
         if not given_datetime < given_returntime:
             raise ValueError("Return time has to be after departure time")
+    
+    def is_date(self, date):
+        if not date[0:4].isdigit or not date[4] == "-" or not date[5:7].isdigit or not date[7] == "-" or not date[8:10].isdigit:
+            raise ValueError('Date has to be (YYYY-MM-DD) with "-" in between')
 
