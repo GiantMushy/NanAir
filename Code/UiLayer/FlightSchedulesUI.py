@@ -42,9 +42,8 @@ class FlightSchedulesUI:
 
     def input_prompt(self):
         '''Starting function for FlightSchedulesUI'''
-        time = 'weekly'
-        day_timedelta = datetime.timedelta(1)        
-        week = datetime.timedelta(7)
+        time = 'weekly'      
+        week = datetime.timedelta(6)
         start_date = datetime.datetime(2024,1,15,0,0)
         end_date = start_date + week
         while True:
@@ -127,13 +126,13 @@ class FlightSchedulesUI:
                     end_date = start_date + week 
             elif command == "n": #see yesterday/last week
                 if time == 'weekly':
-                    start_date -= datetime.timedelta(8) 
-                    end_date = start_date - week 
+                    start_date -= datetime.timedelta(7) 
+                    end_date = start_date + week 
                 else:
                     start_date -= datetime.timedelta(1) 
             elif command == "m": #see tomorrow/next week
                 if time == 'weekly':
-                    start_date += datetime.timedelta(8) 
+                    start_date += datetime.timedelta(7) 
                     end_date = start_date + week 
                 else:
                     start_date += datetime.timedelta(1) 
