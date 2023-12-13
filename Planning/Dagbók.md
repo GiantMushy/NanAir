@@ -123,3 +123,21 @@ Edda: Er að reyna validate x margir flugmenn og flugfreyjur
 Matthías: functions fyrir UI Layer
 Oliver: Finna Bugs
 Benjamín: finna og Laga Bugs
+
+Það gekk mjög vel í dag, Þorvarður: enþá forveikur heima með ælupest og hvef, en kláraði:
+FlightSchedules > CreateRecurringUi
+FlightSchedules > StaffTripsUi
+& EmployeeSchedules
+
+Benjamín kláraði:
+öll bugs í is_functions og bætti við return og departure time checker
+flerir bugs sem voru í bug_channelinu
+
+Oliver:
+Fann fleiri bugs og lagaði sum
+
+Edda: 
+Byrjaði á því að laga validations
+
+Matthías:
+Er kominn langt í vinnu á functions í UI
