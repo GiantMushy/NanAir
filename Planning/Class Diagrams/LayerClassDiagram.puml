@@ -1,14 +1,17 @@
 @startuml
 
-
-package "UiLayer" {
+package "Ui Layer" {
     left to right direction
 
     class AirplaneDataCreateNewUI{
         - PrintUi : PrintFunctions()
         - Logic : LogicLayerAPI()
         + input_name()
+        + input_manufacturer()
         + input_type()
+        + input_seats()
+        + new_created()
+        + create_new_sequence()
         + input_prompt()
     }
     class AirplaneDataEditUI{
@@ -41,6 +44,10 @@ package "UiLayer" {
     class DestinationDataEditUI{
         - PrintUi : PrintFunctions()
         - Logic : LogicLayerAPI()
+        + destination_data_edit_output()
+        + edit_data_emergency_name()
+        + edit_data_emergency_phone()
+        + input_prompt()
 
     }
     class DestinationDataUI{
@@ -54,6 +61,7 @@ package "UiLayer" {
         - Logic : LogicLayerAPI()
         + input_employee_type()
         + input_employee_role()
+        + input_airplane_type()
         + input_name()
         + input_ssn()
         + input_phone()
@@ -68,14 +76,21 @@ package "UiLayer" {
     class EmployeeDataEditUI{
         - PrintUi : PrintFunctions()
         - Logic : LogicLayerAPI()
-        + employee_data_edit_output()
-        + edit_data()
+        + employee_data_edit_output():
+        + edit_data(changed_data)
         + input_prompt()
+
+
     }
     class EmployeeDataUI{
         - PrintUi : PrintFunctions()
         - Logic : LogicLayerAPI()
-        + employee_data_output()
+        + all_employees_detailed()
+        + pilots_detailed()
+        + flight_attendants_detailed()
+        + pilot_sorted_by_type()
+        + pilot_specific_type()
+        + input_airplane_type()
         + input_prompt()
     }
     class EmployeeSchedulesUI{
@@ -83,8 +98,33 @@ package "UiLayer" {
         - Logic : LogicLayerAPI()
         + employee_schedules_output()
         + input_prompt()
+        + print_employees_all(print_format, line_num)
+        + print_employees_working(print_format, line_num)
+        + print_employees_not_working(print_format, line_num)
+        + innitiate_and_switch_lists(date)
+        + input_prompt()
     }
+
+    class EmployeeScheduleSpecificUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        - id : id
+        + specific_employee_weekly_schedule(destination_list)
+        + input_prompt()
+
+    }
+
+
     class FlightSchedulesUI{
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        - user : user
+        + flight_schedules_output(printed_data, start_date, end_date)
+        + innitiate_and_switch_lists(time, start_date)
+        + input_prompt()
+    }
+
+    class FlightSchedulesCreateNewUI{
         - PrintUi : PrintFunctions()
         - Logic : LogicLayerAPI()
         + input_departure_day()
@@ -94,6 +134,19 @@ package "UiLayer" {
         + input_plane()
         + new_created()
         + create_new_sequence()
+    }
+
+    class FlightSchedulesStaffTripsUI {
+        - PrintUi : PrintFunctions()
+        - Logic : LogicLayerAPI()
+        - trip_id : trip_id
+        + show_staff_status()
+        + assign_captain()
+        + assign_copilot()
+        + assign_sr_flight_attendant()
+        + assign_flight_attendant()
+        + innitiate_dict_lists()
+        + innitiate_crew_dicts()
         + input_prompt()
     }
 
@@ -117,29 +170,38 @@ package "UiLayer" {
         + logo1()
         + logo2()
         + logo()
-        + shorten_name()
-        + print_employee_table()
+        + auto_shorten_name()
+        + print_airplane_type_table()
         + print_destination_table()
         + print_airplane_table()
+        + print_available_planes()
         + print_flight_schedule_table()
         + print_employee_schedule_table()
+        + print_employee_table_detailed()
+        + print_pilots_table_detailed()
+        + print_flight_attendants_table_detailed()
     }
+
+    LoginUI --> MainMenuUI
+    MainMenuUI --> AirplaneDataUI
+    MainMenuUI --> DestinationDataUI
+    MainMenuUI --> EmployeeDataUI
+    MainMenuUI --> EmployeeSchedulesUI
+    MainMenuUI --> FlightSchedulesUI
+    AirplaneDataUI --> AirplaneDataCreateNewUI
+    AirplaneDataUI --> AirplaneDataEditUI
+    DestinationDataUI --> DestinationDataCreateNewUI
+    DestinationDataUI --> DestinationDataEditUI
+    EmployeeDataUI --> EmployeeDataCreateNewUI
+    EmployeeDataUI --> EmployeeDataEditUI
+    EmployeeSchedulesUI --> EmployeeScheduleSpecificUI
+    FlightSchedulesUI --> FlightSchedulesCreateNewUI
+    FlightSchedulesUI --> FlightSchedulesStaffTripsUI
+
 
     note "The UI layer depends on the LogicLayerAPI" as NoteUILayer
 
-    MainMenuUI --> PrintFunctions
-    MainMenuUI --> FlightSchedulesUI
-    MainMenuUI --> EmployeeSchedulesUI
-    MainMenuUI --> EmployeeDataUI
-    MainMenuUI --> DestinationDataUI
-    MainMenuUI --> AirplaneDataUI
-    MainMenuUI --> LoginUI
-    MainMenuUI --> EmployeeDataCreateNewUI
-    MainMenuUI --> DestinationDataCreateNewUI
-    MainMenuUI --> AirplaneDataCreateNewUI
-    MainMenuUI --> EmployeeDataEditUI
-    MainMenuUI --> DestinationDataEditUI
-    MainMenuUI --> AirplaneDataEditUI
+
 }
 
 package "Logic Layer" {
@@ -169,6 +231,9 @@ package "Logic Layer" {
         + list_pilots_by_airplane_type(airplane_type)
         + list_pilots_sorted_by_airplane_type()
         + find_employee_by_id(employee_id)
+        + find_employee_by_id_detailed(employee_id)
+        + list_all_employees_detailed()
+
     }
 
     class WorkTripLogic {
@@ -188,6 +253,12 @@ package "Logic Layer" {
         + list_all_available_employees(string_date)
         + all_work_trips_of_employee(employee_id, string_date)
         + get_recommended_departure_datetime(destination_id, departure_datetime)
+        + list_all_available_pilots_by_type(airplane_type, date)
+        + list_all_available_senior_fa(date)
+        + list_all_available_fa(date)
+        + list_all_available_captains_by_type(airplane_type, date)
+        + list_all_available_copilots_by_type(airplane_type, date)
+        + find_work_trip_by_id(work_trip_id)
     }
 
     class DestinationManagerLogic {
@@ -226,6 +297,10 @@ package "Logic Layer" {
         - airplane_type_data : DataLayerAPI
         + add_airplane_type(**kwargs)
         + list_all_airplane_types()
+        + find_type_data(airplane_type)
+    }
+
+    class IsChecks {
     }
 
     LogicLayerAPI --> EmployeeManagerLogic
@@ -234,15 +309,17 @@ package "Logic Layer" {
     LogicLayerAPI --> AirplaneManagerLogic
     LogicLayerAPI --> FlightLogic
     LogicLayerAPI --> AirplaneTypeLogic
+    LogicLayerAPI --> IsChecks
     note "The Logic layer depends on the DataLayerAPI" as NoteLogicLayer
 
 }
 
 
 
-package "Data Layer" {
-    left to right direction
+left to right direction
 
+
+package "Data Layer" {
     class DataLayerAPI {
         - employee_data: EmployeeData
         - work_trip_data: WorkTripData
