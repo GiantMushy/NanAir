@@ -91,8 +91,7 @@ class PrintFunctions:
         '''Prints the Company Logo'''
         print("                                                                              ______ ")
         print(" ____  _____      __      ____  _____          __      _____ _______          _\ _~-\___")
-        print(
-            "|_   \|_   _|    /  \    |_   \|_   _|        /  \    |_   _|_   __ \     = =(____AA____D")
+        print("|_   \|_   _|    /  \    |_   \|_   _|        /  \    |_   _|_   __ \     = =(____AA____D")
         print("  |   \ | |     / /\ \     |   \ | |         / /\ \     | |   | |__) |            \_____\______________________,-~~~~~-.._")
         print("  | |\ \| |    / ____ \    | |\ \| |        / ____ \    | |   |  __ /             /     o O o o o o O O o o o o o o O o  |\_")
         print(" _| |_\   |_ _/ /    \ \_ _| |_\   |_     _/ /    \ \_ _| |_ _| |  \ \_           `~-.__        ___..----..                  )")
@@ -273,7 +272,7 @@ class PrintFunctions:
             print(self.empty_line())
             line_count += 1
 
-    def print_available_planes(self, data, line_num):
+    def print_available_planes_bugged(self, data, line_num):
         line_count = 0
         print_format = "%-5s%-20s%-20s%-20s"
 
@@ -285,8 +284,25 @@ class PrintFunctions:
                 if len(vals[n]) > 18:  # shorten names
                     vals[n] = self.shorten_name(vals[n], 18)
             # id 0, name 1, type 3, capacity 5
+            print(vals)
             print(self.allign_left(print_format %
                   (vals[0], vals[1], vals[3], vals[5])))
+            line_count += 1
+
+    def print_available_planes(self, data, line_num):
+        line_count = 0
+        print_format = "%-5s%-20s%-20s"
+
+        for dic in data:
+            vals = []
+            for value in dic.values():
+                vals.append(value)
+            for n in range(len(vals)):
+                if len(vals[n]) > 18:  # shorten names
+                    vals[n] = self.shorten_name(vals[n], 18)
+            # id 0, name 1, type 2
+            print(self.allign_left(print_format %
+                  (vals[0], vals[1], vals[2])))
             line_count += 1
 
         while line_count <= line_num:
