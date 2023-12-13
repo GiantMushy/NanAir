@@ -2,20 +2,6 @@ from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI
 from Code.UiLayer.PrintFunctions import PrintFunctions
 import ast
 
-#{'id': '007', 
-# 'destination': "{'id': '02', 'city': 'Matta city', 'airport': 'Matti airport', 'country': 'Mattaland', 'distance': '6', 'travel_time': '40', 'contact_name': 'Helgi', 'contact_phone_number': '9876543'}", 
-# 'departure_datetime': datetime.datetime(2024, 1, 15, 21, 53), 
-# 'return_datetime': datetime.datetime(2024, 1, 16, 3, 53), 
-# 'airplane': "{'id': '001', 'name': 'Katla', 'type': 'AKN-77'}", 
-# 'flight_number_start': 'NA0210', 'flight_number_end': 'NA0211', 
-# 'crew_members': "004,002"
-# 'sold_tickets_start': '0', 
-# 'sold_tickets_end': '0', 
-# 'available_tickets_start': '300', 
-# 'available_tickets_end': '300', 
-# 'current_situation': 'Not started', 
-# 'validity': True}
-
 class FlightSchedulesStaffTripsUI:
     def __init__(self, trip = {}):
         self.PrintUi = PrintFunctions()
@@ -163,7 +149,6 @@ class FlightSchedulesStaffTripsUI:
         print(self.PrintUi.end_line())
 
     def innitiate_dict_lists(self):
-        #self.trip = self.Logic.find_trip_by_id(self.trip['id'])
         available_employees = self.Logic.list_all_available_employees(self.trip['departure_datetime'].strftime('%Y-%m-%d %H:%M'))
         self.available_captains = []
         self.available_copilots = []

@@ -68,7 +68,7 @@ class FlightSchedulesUI:
                             start_date = datetime.datetime(int(year), int(month), int(day), 0,0)
                             end_date = start_date + week
                         except ValueError as e:
-                            print(f"Invalid input, try again")
+                            print(f"Error in input: {e}")
                             input_check = False
                 else:
                     while not input_check:
@@ -77,6 +77,7 @@ class FlightSchedulesUI:
                             if command == "q":
                                 print("Goodbye")
                                 exit()
+                            self.Logic.is_date(command)
                             year, month, day = command.split('-')
                             input_check = True
                             start_date = datetime.datetime(int(year), int(month), int(day), 0,0)

@@ -103,6 +103,7 @@ class EmployeeScheduleSpecificUI:
                         if command.lower() == "q":
                             print("Goodbye")
                             exit()
+                        self.Logic.is_date(command)
                         year, month, day = command.split('-')
                         input_check = True
                         self.start_date = datetime.datetime(int(year), int(month), int(day), 0,0)
