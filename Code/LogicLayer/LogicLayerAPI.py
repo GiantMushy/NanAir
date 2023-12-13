@@ -313,7 +313,7 @@ class LogicLayerAPI:
         :param date: date to check if employees available
         '''
         return self.work_trip_logic.list_all_available_copilots_by_type(airplane_type, date)
-    
+
     def find_work_trip_by_id(self, work_trip_id):
         '''
         Gets work trip by ID.
@@ -321,7 +321,6 @@ class LogicLayerAPI:
         :param work_trip_id: ID of the work trip to get.
         '''
         return self.work_trip_logic.get_work_trip_by_id(work_trip_id)
-
 
     ############################## Destination Manager Logic ###############################
 
@@ -553,17 +552,25 @@ class LogicLayerAPI:
 
     def is_email(self, Email):
         return self.check.is_email(Email)
-    
+
     def is_right_day_of_departure(self, input_departure_day):
         return self.check.is_right_day_of_departure(input_departure_day)
-
 
     def is_return_time_dd_rd(self, input_departure_day, input_return_day):
         return self.check.is_return_time_dd_rd(input_departure_day, input_return_day)
 
     def is_date(self, date):
         return self.check.is_date(date)
-    
+
+    def departure_date_past(self, departure_date):
+        return self.check.departure_date_past(departure_date)
+
+    def departure_datetime_past(self, departure_datetime):
+        return self.check.departure_datetime_past(departure_datetime)
+
+    def flight_sched_destination_validation(self, departure_datetime, return_datetime, destination_obj):
+        return self.check.flight_sched_destination_validation(departure_datetime, return_datetime, destination_obj)
+
     ############################## GeneralUseLogic ###############################
 
     def object_list_to_dict_list(self, object_list):
