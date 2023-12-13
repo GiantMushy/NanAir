@@ -42,6 +42,8 @@ class IsChecks:
         if Distance > 20000:
             raise ValueError(
                 "Distance must be less than 20,000km (half the circumference of the Earth)")
+        if Distance[0] == 0:
+            raise ValueError("Distance cannot start with 0")
 
     def is_travel_time(self, Travel_Time):
         if not Travel_Time.isdigit():
@@ -54,6 +56,8 @@ class IsChecks:
         if travel_time > 1120:
             raise ValueError(
                 "Longest Commercial Flight in the world is/was 1120min, be realistic")
+        if travel_time[0] == 0:
+            raise ValueError("Travel time cannot start with 0")
 
     def is_contact_name(self, Contact_Name):
         if not Contact_Name or not Contact_Name.replace(" ", "").isalpha():
@@ -68,7 +72,7 @@ class IsChecks:
             raise ValueError("Contact Phone Number cannot contain two or more spaces")
         Contact_Phone_Number = Contact_Phone_Number.replace(" ", "")
         if Contact_Phone_Number[0:1] == "+":
-            Contact_Phone_Number = Contact_Phone_Number[1:]
+            Contact_Phone_Number = Contact_Phone_Number[1:] # strips away "+" only from the first character if that is the case
         if not Contact_Phone_Number.replace(" ", "").isdigit():
             raise ValueError("Phone Number must be a positive integer")
         # checks if the number has 10 digits maximum
@@ -107,12 +111,12 @@ class IsChecks:
             raise ValueError("Current location cannot contain two or more spaces")
 
     def is_social_security_number(self, social_security_number):
-        if not social_security_number.replace(" ", "").isdigit():
+        if not social_security_number.replace("-", "").replace(" ", "").isdigit():
             raise ValueError(
                 "social_security_number must be a positive integer")
         if "  " in social_security_number:
             raise ValueError("Social security number cannot contain two or more spaces")
-        social_security_number = social_security_number.replace(" ", "")
+        social_security_number = social_security_number.replace(" ", "").replace("-", "")
         try:
             social_security_number_int = int(social_security_number)
         except:
@@ -157,6 +161,8 @@ class IsChecks:
             raise ValueError("Capacity must be numeric")
         if Capacity > 853:
             raise ValueError("No plane in the world has a seat capacity of more than 853")
+        if Capacity[0] == 0:
+            raise ValueError("Capacity cannot start with 0")
 
     def is_address(self, address):
         if not address:
