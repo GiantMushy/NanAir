@@ -42,7 +42,7 @@ class IsChecks:
         if Distance > 20000:
             raise ValueError(
                 "Distance must be less than 20,000km (half the circumference of the Earth)")
-        if Distance[0] == 0:
+        if (str(Distance))[0] == "0":
             raise ValueError("Distance cannot start with 0")
 
     def is_travel_time(self, Travel_Time):
@@ -56,7 +56,7 @@ class IsChecks:
         if travel_time > 1120:
             raise ValueError(
                 "Longest Commercial Flight in the world is/was 1120min, be realistic")
-        if travel_time[0] == 0:
+        if (str(travel_time))[0] == 0:
             raise ValueError("Travel time cannot start with 0")
 
     def is_contact_name(self, Contact_Name):
@@ -161,7 +161,7 @@ class IsChecks:
             raise ValueError("Capacity must be numeric")
         if Capacity > 853:
             raise ValueError("No plane in the world has a seat capacity of more than 853")
-        if Capacity[0] == 0:
+        if (str(Capacity))[0] == "0": # checks if the number starts with 0
             raise ValueError("Capacity cannot start with 0")
 
     def is_address(self, address):
