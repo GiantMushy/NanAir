@@ -81,20 +81,12 @@ class EmployeeScheduleSpecificUI:
                 destinations_list.append('Not Working')
         return destinations_list
 
-
     def input_prompt(self):
         '''Starting function for EmployeeScheduleSpecificUI''' 
         while True:
             print_data = self.Logic.all_work_trips_of_employee(self.id, self.start_date.strftime('%Y-%m-%d %H:%M'))
             print_data = self.Logic.object_list_to_dict_list(print_data)
             destinations_list = self.get_destination_list(print_data, self.start_date)
-            #[{'id': '001', 
-            # 'destination': "{'id': '02', 'city': 'Matta city', 'airport': 'Matti airport', 'country': 'Mattaland', 'distance': '6', 'travel_time': '40', 'contact_name': 'Helgi', 'contact_phone_number': '9876543'}", 
-            # 'departure_datetime': datetime.datetime(2023, 12, 12, 16, 27), 
-            # 'return_datetime': datetime.datetime(2023, 12, 12, 22, 27), 
-            # 'airplane': "{'id': '001', 'name': 'Katla', 'type': 'AKN-77'}", 
-            # 'flight_number_start': 'NA020', 'flight_number_end': 'NA021', 'crew_members': '001,002', 'sold_tickets_start': '0', 'sold_tickets_end': '0', 
-            # 'available_tickets_start': '300', 'available_tickets_end': '300', 'current_situation': 'Landed abroad'}]
             self.specific_employee_weekly_schedule(destinations_list)
             command = input("Enter you command: ").lower()
 

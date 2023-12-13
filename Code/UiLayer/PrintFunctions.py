@@ -111,6 +111,19 @@ class PrintFunctions:
         if len(name) > min_length:
             name = "(Item Too Long)"
         return name
+    
+    def auto_shorten_name(self, name, min_length):
+        '''Abbreviates input name'''
+        if len(name) > min_length:
+            names = name.split()
+            if len(names) > 1:
+                for n in range(len(names)-1):
+                    names[n+1] = names[n+1][0] + "."
+            name = "".join(names)
+
+            if len(name) > min_length:
+                name = "(Item Too Long)"
+        return name
 
     def print_employee_table(self, data, line_num):
         line_count = 0

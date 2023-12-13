@@ -53,7 +53,7 @@ class EmployeeDataEditUI:
         print(self.PrintUi.allign_left(
             f"    Role                  {self.employee['role']}"))
         print(self.PrintUi.allign_left(
-            f"    Name                  {self.employee['name']}"))
+            f"    Name                  {self.PrintUi.auto_shorten_name(self.employee['name'])}"))
         print(self.PrintUi.allign_left(
             f"    SSN                   {self.employee['social_security_number']}"))
         print(self.PrintUi.allign_left(
@@ -61,7 +61,7 @@ class EmployeeDataEditUI:
         print(self.PrintUi.allign_left(
             f"    Address               {self.employee['address']}"))
         print(self.PrintUi.allign_left(
-            f"    Email                 {self.employee['email_address']}"))
+            f"    Email                 {self.PrintUi.auto_shorten_name(self.employee['email_address'])}"))
         print(self.PrintUi.allign_left(
             f"    Home Phone            {self.employee['home_phone_number']}"))
         print(self.PrintUi.empty_line())
