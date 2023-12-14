@@ -152,36 +152,41 @@ class EmployeeSchedulesUI:
                 start_date = self.PrintUi.change_date()
             elif command.isdigit():  # see employees weekly schedule
                 if working_notworking_all == 'all':
+                    invalid = True
                     for dic in self.working:
                         if int(command) == int(dic['employee_id']):
+                            invalid = False
                             specific = EmployeeScheduleSpecificUI(
                                 dic['employee_id'], start_date)
                             specific.input_prompt()
-                        else:
-                            print("Invalid input, try again")
                     for id in self.not_working:
                         if int(command) == int(id):
+                            invalid = False
                             specific = EmployeeScheduleSpecificUI(
                                 id, start_date)
                             specific.input_prompt()
-                        else:
-                            print("Invalid input, try again")
+                    if invalid:
+                        print("Invalid input, try again")
                 elif working_notworking_all == "working":
+                    invalid = True
                     for dic in self.working:
                         if int(command) == int(dic['employee_id']):
+                            invalid = False
                             specific = EmployeeScheduleSpecificUI(
                                 dic['employee_id'], start_date)
                             specific.input_prompt()
-                        else:
-                            print("Invalid input, try again")
+                    if invalid:
+                        print("Invalid input, try again")
                 elif working_notworking_all == "not working":
+                    invalid = True
                     for id in self.not_working:
                         if int(command) == int(id):
+                            invalid = False
                             specific = EmployeeScheduleSpecificUI(
                                 id, start_date)
                             specific.input_prompt()
-                        else:
-                            print("Invalid input, try again")
+                    if invalid:
+                        print("Invalid input, try again")
                 else:
                     print("Invalid input, try again")
             elif command == "a":  # show working employees

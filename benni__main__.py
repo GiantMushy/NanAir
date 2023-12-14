@@ -7,7 +7,7 @@ def test_is_checks():
     is_checks = IsChecks()
 
     try:
-        is_checks.is_distance("933")
+        is_checks.is_type(input("Enter distance: "))
         print("")
         print(" ------")
         print("|passed|")
