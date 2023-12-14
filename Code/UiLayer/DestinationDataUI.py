@@ -40,10 +40,14 @@ class DestinationDataUI:
                 create_new.input_prompt()
             elif command.isdigit():
                 if int(command) != 1:
+                    is_destination_id = False
                     for dict in self.Logic.object_list_to_dict_list(self.Logic.list_all_destinations()):
                         if int(command) == int(dict['id']):
+                            is_destination_id = True
                             edit = DestinationDataEditUI(dict['id'])
                             edit.input_prompt()
+                    if not is_destination_id:
+                        print("Please input an existing number ID")
                 else:
                     print("Invalid input, try again, can't edit HQ")
             elif command == "q":

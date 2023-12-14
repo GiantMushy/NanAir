@@ -190,8 +190,6 @@ class IsChecks:
             raise ValueError("Address must be a non-empty string")
         if "  " in address:
             raise ValueError("Address cannot contain two or more spaces")
-        if any(arrow_key in address for arrow_key in ascii_lowercase):
-            raise ValueError("Address cannot contain arrow keys")
         if len(address) > 20:
             raise ValueError("Address too long")
 
