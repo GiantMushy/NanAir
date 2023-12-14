@@ -1,5 +1,0 @@
-flight_number,start_from,start_datetime,end_at,arrival_datetime,airplane_id,capacity,tickets_sold
-NA020,RKV,2023-12-13 20:06,MER,2023-12-13 21:01,001,283,283
-NA021,MER,2023-12-13 23:00,RKV,2023-12-13 23:55,001,283,253
-NA030,RKV,2023-12-14 20:00,HTR,2023-12-14 20:03,002,430,0
-NA031,HTR,2023-12-14 23:50,RKV,2023-12-14 23:53,002,430,0

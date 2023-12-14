@@ -37,8 +37,8 @@ class IsChecks:
     def is_distance(self, Distance):
         if not Distance.isdigit():
             raise ValueError("Distance must be a positive integer")
-        if Distance[0] == "0": # checks if the number starts with 0
-            raise ValueError("Distance cannot start with 0")
+        if not len(Distance) < 6: 
+            raise ValueError("Distance cannot be longer than 6 digits")
         try:
             Distance = int(Distance)
         except ValueError:
@@ -50,8 +50,8 @@ class IsChecks:
     def is_travel_time(self, Travel_Time):
         if not Travel_Time.isdigit():
             raise ValueError("Travel Time must be a positive integer")
-        if Travel_Time[0] == "0":
-            raise ValueError("Travel time cannot start with 0")
+        if not len(Travel_Time) < 5:
+            raise ValueError("Travel time cannot be longer than 4 digits")
         try:
             Travel_Time = int(Travel_Time)
         except:
@@ -164,8 +164,8 @@ class IsChecks:
     def is_capacity(self, Capacity):
         if not Capacity.isdigit():
             raise ValueError("Capacity must be a positive integer")
-        if Capacity[0] == "0": 
-            raise ValueError("Capacity cannot start with 0")
+        if len(Capacity) > 4: 
+            raise ValueError("Capacity cannot be longer than 4 digits")
         try:
             Capacity = int(Capacity)
         except ValueError:

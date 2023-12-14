@@ -1,3 +1,0 @@
-id,destination,departure_datetime,return_datetime,airplane,flight_number_start,flight_number_end,crew_members
-001,"{'id': '02', 'city': 'Meirut city', 'airport': 'MER', 'country': 'Venezuela', 'distance': '500', 'travel_time': '55', 'contact_name': 'stína', 'contact_phone_number': '754723'}",2023-12-13 20:06,2023-12-13 23:00,"{'id': '001', 'name': 'Eyjafjallajökull', 'type': 'MAX357'}",NA020,NA021,"002,001,003,004,006"
-002,"{'id': '03', 'city': 'London', 'airport': 'HTR', 'country': 'England', 'distance': '500', 'travel_time': '3', 'contact_name': 'Chucky Cheese', 'contact_phone_number': '6969699'}",2023-12-14 20:00,2023-12-14 23:50,"{'id': '002', 'name': 'Katla', 'type': 'AKN-77'}",NA030,NA031,
