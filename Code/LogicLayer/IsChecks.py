@@ -12,6 +12,8 @@ class IsChecks:
                 "City must be a non-empty string of alphabetic characters")
         if "  " in City:
             raise ValueError("City cannot contain two or more spaces")
+        if not len(City) <= 70:
+            raise ValueError("City name cannot be longer than 70 characters")
 
     def is_airport(self, Airport):
         if not Airport or not Airport.replace(" ", "").isalpha():
@@ -29,10 +31,14 @@ class IsChecks:
                 "Country must be a non-empty string of alphabetic characters")
         if "  " in Country:
             raise ValueError("Country cannot contain two or more spaces")
+        if not len(Country) <= 70:
+            raise ValueError("Country name cannot be longer than 70 characters")
 
     def is_distance(self, Distance):
         if not Distance.isdigit():
             raise ValueError("Distance must be a positive integer")
+        if Distance[0] == "0": # checks if the number starts with 0
+            raise ValueError("Distance cannot start with 0")
         try:
             Distance = int(Distance)
         except ValueError:
@@ -40,12 +46,12 @@ class IsChecks:
         if Distance > 20000:
             raise ValueError(
                 "Distance must be less than 20,000km (half the circumference of the Earth)")
-        if (str(Distance))[0] == "0":
-            raise ValueError("Distance cannot start with 0")
 
     def is_travel_time(self, Travel_Time):
         if not Travel_Time.isdigit():
             raise ValueError("Travel Time must be a positive integer")
+        if Travel_Time[0] == "0":
+            raise ValueError("Travel time cannot start with 0")
         try:
             Travel_Time = int(Travel_Time)
         except:
@@ -54,8 +60,6 @@ class IsChecks:
         if travel_time > 1120:
             raise ValueError(
                 "Longest Commercial Flight in the world is/was 1120min, be realistic")
-        if (str(travel_time))[0] == 0:
-            raise ValueError("Travel time cannot start with 0")
 
     def is_contact_name(self, Contact_Name):
         if not Contact_Name or not Contact_Name.replace(" ", "").isalpha():
@@ -63,6 +67,8 @@ class IsChecks:
                 "Contact Name must be a non-empty string of alphabetic characters")
         if "  " in Contact_Name:
             raise ValueError("Contact Name cannot contain two or more spaces")
+        if not len(Contact_Name) <= 70:
+            raise ValueError("Contact Name cannot be longer than 70 characters")
 
     def is_contact_phone_number(self, Contact_Phone_Number):
         # strip "+"" only from the first character if that is the case
@@ -99,6 +105,8 @@ class IsChecks:
                 "Get out of here 'X Æ A-12' We dont allow numbers or symbols in our names")
         if "  " in Name:
             raise ValueError("Name cannot contain two or more spaces")
+        if not len(Name) <= 70:
+            raise ValueError("Name cannot be longer than 70 characters")
 
     def is_current_location(self, Current_Location):
         if not Current_Location or not Current_Location.replace(" ", "").isalpha():
@@ -156,14 +164,14 @@ class IsChecks:
     def is_capacity(self, Capacity):
         if not Capacity.isdigit():
             raise ValueError("Capacity must be a positive integer")
+        if Capacity[0] == "0": 
+            raise ValueError("Capacity cannot start with 0")
         try:
             Capacity = int(Capacity)
         except ValueError:
             raise ValueError("Capacity must be numeric")
         if Capacity > 853:
             raise ValueError("No plane in the world has a seat capacity of more than 853")
-        if (str(Capacity))[0] == "0": # checks if the number starts with 0
-            raise ValueError("Capacity cannot start with 0")
 
 
     def is_address(self, address):
