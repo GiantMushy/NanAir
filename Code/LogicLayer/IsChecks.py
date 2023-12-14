@@ -125,22 +125,33 @@ class IsChecks:
         if "  " in social_security_number:
             raise ValueError("Social security number cannot contain two or more spaces")
         social_security_number = social_security_number.replace(" ", "").replace("-", "")
-
         try:
             social_security_number_int = int(social_security_number)
         except:
-            raise ValueError("social_security_number must be numeric")
+            raise ValueError("Social security number must be numeric")
         if len(social_security_number) != 10:
-            raise ValueError("social_security_number must be 10 digits")
-        if int(social_security_number[0:2]) > 31 or int(social_security_number[2:4]) > 12 or (social_security_number[-1] != "0" and social_security_number[-1] != "9"):
-            raise ValueError("social_security_number must be a valid date")
-        if int(social_security_number[4:6]) > 10 and social_security_number[-1] == "0":
-            raise ValueError(
-                "Birth dat in social_security_number is too young or not born yet")
-        if int(social_security_number[0:2]) > 30 and int(social_security_number[3]) == 4 or int(social_security_number[0:2]) > 30 and int(social_security_number[3]) == 6 or int(social_security_number[0:2]) > 30 and int(social_security_number[3]) == 9 or int(social_security_number[0:2]) > 30 and int(social_security_number[2:4]) == 11:
-            raise ValueError("SSN must be a valid date")
-        if int(social_security_number[0:2]) > 29 and int(social_security_number[3]) == 2:
-            raise ValueError("SSN must be a valid date")
+            raise ValueError("Social security number must be 10 digits")
+        
+        day = social_security_number[0:2]
+        month = social_security_number[2:4]
+        year = social_security_number[4:6]
+        last_digit = social_security_number[-1]
+        if last_digit == '0':
+            year = f"20{year}"
+        elif last_digit == '9':
+            year = f"19{year}"
+        else:
+            raise ValueError("Social security number must end in either '0' or '9'")
+        datetime_ssn = datetime(int(year), int(month), int(day), 0,0)
+        now = datetime.now()
+        now_date = now.date()
+        datetime_ssn = datetime_ssn.date()
+        if datetime_ssn > now_date:
+            raise ValueError("Birth date in social_security_number is in the future")
+        if datetime_ssn + timedelta(4749) > now_date:
+            raise ValueError("Birth date in social_security_number is too young")
+        if datetime_ssn + timedelta(36525) < now_date:
+            raise ValueError("Birth date in social_security_number is way too old. ")
 
     def is_type(self, Type):
         if not Type:
