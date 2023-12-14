@@ -152,6 +152,10 @@ class EmployeeSchedulesUI:
                     except ValueError as e:
                         print(f"Error in input: {e}")
                         input_check = False
+                    except IndexError as e:
+                        print(f"Error in input: {e}")
+                        print(f"Input the date in the correct format (YYYY-MM-DD)")
+                        input_check = False
             elif command.isdigit():  # see employees weekly schedule
                 if working_notworking_all == 'all':
                     for dic in self.working:
