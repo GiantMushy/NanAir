@@ -63,38 +63,9 @@ class FlightSchedulesUI:
             if command == "0":
                 break
             elif command == "00":  # change day/week
-                input_check = False
+                start_date = self.PrintUi.change_date()
                 if time == 'weekly':
-                    while not input_check:
-                        try:
-                            command = input(
-                                "Enter the first day of the new week (YYYY-MM-DD): ")
-                            if command == "q":
-                                print("Goodbye")
-                                exit()
-                            year, month, day = command.split('-')
-                            input_check = True
-                            start_date = datetime.datetime(
-                                int(year), int(month), int(day), 0, 0)
-                            end_date = start_date + week
-                        except ValueError as e:
-                            print(f"Error in input: {e}")
-                            input_check = False
-                else:
-                    while not input_check:
-                        try:
-                            command = input("Enter a day (YYYY-MM-DD): ")
-                            if command == "q":
-                                print("Goodbye")
-                                exit()
-                            self.Logic.is_date(command)
-                            year, month, day = command.split('-')
-                            input_check = True
-                            start_date = datetime.datetime(
-                                int(year), int(month), int(day), 0, 0)
-                        except ValueError as e:
-                            print(f"Error: {e}")
-                            input_check = False
+                    end_date = start_date + week
             elif command.isdigit():
                 for dict in printed_data:
                     if int(command) == int(dict["id"]):

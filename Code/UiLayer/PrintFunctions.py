@@ -1,10 +1,11 @@
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI
 import datetime
 import ast
 
 
 class PrintFunctions:
     def __init__(self):
-        pass
+        self.Logic = LogicLayerAPI()
 
     def empty_line(self):
         '''Returns the printable string of an empty line'''
@@ -124,6 +125,28 @@ class PrintFunctions:
             if len(name) > min_length:
                 name = "(Item Too Long)"
         return name
+    
+    def change_date(self):
+        input_check = False
+        while not input_check:
+            try:
+                command = input("Enter a day (YYYY-MM-DD): ")
+                if command.lower() == "q":
+                    print("Goodbye")
+                    exit()
+                self.Logic.is_date(command)
+                year, month, day = command.split('-')
+                start_date = datetime.datetime(
+                    int(year), int(month), int(day), 0, 0)
+                input_check = True
+            except ValueError as e:
+                print(f"Error in input: {e}")
+                input_check = False
+            except IndexError as e:
+                print(f"Error in input: {e}")
+                print(f"Input the date in the correct format (YYYY-MM-DD)")
+                input_check = False
+        return start_date
 
     def print_employee_table(self, data, line_num):
         line_count = 0
@@ -137,8 +160,7 @@ class PrintFunctions:
             for value in dic.values():
                 vals.append(value)
             for n in range(len(vals)):
-                if len(vals[n]) > 20:  # shorten names
-                    vals[n] = self.shorten_name(vals[n], 19)
+                vals[n] = self.auto_shorten_name(vals[n], 19)
             if vals[6] == '':
                 # Empty Home Phone input prints "--Not Given--"
                 vals[6] = "--Not Given--"
@@ -162,8 +184,8 @@ class PrintFunctions:
             for value in dic.values():
                 vals.append(value)
             for n in range(len(vals)):
-                if len(vals[n]) > 20:  # shorten names
-                    vals[n] = self.shorten_name(vals[n], 19)
+                if len(vals[n]) > 20:  
+                    vals[n] = self.shorten_name(vals[n], 19)# abbreviates names
             print(self.allign_left(print_format % (
                 vals[0], vals[1], vals[2])))
             line_count += 1
