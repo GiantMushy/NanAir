@@ -26,6 +26,8 @@ package "Logic Layer" {
         + list_pilots_by_airplane_type(airplane_type)
         + list_pilots_sorted_by_airplane_type()
         + find_employee_by_id(employee_id)
+        + find_employee_by_id_detailed(employee_id)
+        + list_all_employees_detailed()
 
     }
 
@@ -46,6 +48,12 @@ package "Logic Layer" {
         + list_all_available_employees(string_date)
         + all_work_trips_of_employee(employee_id, string_date)
         + get_recommended_departure_datetime(destination_id, departure_datetime)
+        + list_all_available_pilots_by_type(airplane_type, date)
+        + list_all_available_senior_fa(date)
+        + list_all_available_fa(date)
+        + list_all_available_captains_by_type(airplane_type, date)
+        + list_all_available_copilots_by_type(airplane_type, date)
+        + find_work_trip_by_id(work_trip_id)
     }
 
     class DestinationManagerLogic {
@@ -84,6 +92,10 @@ package "Logic Layer" {
         - airplane_type_data : DataLayerAPI
         + add_airplane_type(**kwargs)
         + list_all_airplane_types()
+        + find_type_data(airplane_type)
+    }
+
+    class IsChecks {
     }
 
     LogicLayerAPI --> EmployeeManagerLogic
@@ -92,6 +104,7 @@ package "Logic Layer" {
     LogicLayerAPI --> AirplaneManagerLogic
     LogicLayerAPI --> FlightLogic
     LogicLayerAPI --> AirplaneTypeLogic
+    LogicLayerAPI --> IsChecks
     note "The Logic layer depends on the DataLayerAPI" as NoteLogicLayer
 
 }

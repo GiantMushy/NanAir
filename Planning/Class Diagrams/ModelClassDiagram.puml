@@ -1,4 +1,5 @@
 @startuml
+title Model Classes
 
 class Employee {
     - id : string
@@ -33,8 +34,6 @@ class AirplaneType {
     - manufacturer : string
     - capacity : int
 }
-
-
 
 
 class Flight {
