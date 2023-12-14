@@ -136,22 +136,8 @@ class EmployeeSchedulesUI:
 
             if command == "0":
                 break
-            elif command == "00":  # change day
-                input_check = False
-                while not input_check:
-                    try:
-                        command = input("Enter a day (YYYY-MM-DD): ")
-                        if command.lower() == "q":
-                            print("Goodbye")
-                            exit()
-                        self.Logic.is_date(command)
-                        year, month, day = command.split('- ')
-                        start_date = datetime.datetime(
-                            int(year), int(month), int(day), 0, 0)
-                        input_check = True
-                    except ValueError as e:
-                        print(f"Error in input: {e}")
-                        input_check = False
+            elif command == "00":  # change days
+                start_date = self.PrintUi.change_date()
             elif command.isdigit():  # see employees weekly schedule
                 if working_notworking_all == 'all':
                     for dic in self.working:

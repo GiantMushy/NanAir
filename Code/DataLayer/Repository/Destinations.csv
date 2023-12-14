@@ -1,0 +1,4 @@
+id,city,airport,country,distance,travel_time,contact_name,contact_phone_number
+01,Reykjavík,RKV,Iceland,0,0,N/A,N/A
+02,Matta city,Matti airport,Mattaland,6,40,Matti,1234567
+03,London,Heathrow,England,6,40,Helgi,9876543

@@ -219,8 +219,11 @@ class IsChecks:
             raise ValueError("Return time has to be after departure time")
 
     def is_date(self, date):
-        if not date[0:4].isdigit or not date[4] == "-" or not date[5:7].isdigit or not date[7] == "-" or not date[8:10].isdigit:
-            raise ValueError('Date has to be (YYYY-MM-DD) with "-" in between')
+        date = date.split('-')
+        if not len(date) == 3:
+            raise ValueError('Date has to be writen in the correct format (YYYY-MM-DD)')
+        if not date[0].isdigit or not date[1].isdigit or not date[2].isdigit:
+            raise ValueError('Date has to be (YYYY-MM-DD) with valid integers between the dashes ("-")')
 
     def flight_sched_destination_validation(self, departure_datetime, return_datetime, destination_obj):
         if int(destination_obj.id) == 1:

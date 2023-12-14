@@ -96,20 +96,7 @@ class EmployeeScheduleSpecificUI:
                 print("Goodbye")
                 exit()
             elif command == "00": #change week
-                input_check = False
-                while not input_check:
-                    try:
-                        command = input("Enter the first day of the new week (YYYY-MM-DD): ")
-                        if command.lower() == "q":
-                            print("Goodbye")
-                            exit()
-                        self.Logic.is_date(command)
-                        year, month, day = command.split('-')
-                        input_check = True
-                        self.start_date = datetime.datetime(int(year), int(month), int(day), 0,0)
-                    except ValueError as e:
-                        print(f"Error in input: {e}")
-                        input_check = False
+                self.start_date = self.PrintUi.change_date()
             elif command == "n": #see last week
                 self.start_date -= datetime.timedelta(7)
             elif command == "m": #see next week
