@@ -7,6 +7,10 @@ class IsChecks:
         self.all_punc = '''!"#$%&\'(')*+,-./:;<=>?@[\\]^_`{|}~¨°'''
 
     def is_city(self, City):
+        '''
+        Checks if the city is valid, raises ValueError if not.
+        The city must be a non-empty string of alphabetic characters and no longher than 70 characters.
+        '''
         if not City or not City.replace(" ", "").isalpha():
             raise ValueError(
                 "City must be a non-empty string of alphabetic characters")
@@ -16,6 +20,10 @@ class IsChecks:
             raise ValueError("City name cannot be longer than 70 characters")
 
     def is_airport(self, Airport):
+        '''
+        Checks if the airport is valid, raises ValueError if not.
+        The airport must be a non-empty string of 3 alphabetic characters.
+        '''
         if not Airport or not Airport.replace(" ", "").isalpha():
             raise ValueError(
                 "Airport must be a non-empty string of alphabetic characters")
@@ -26,6 +34,10 @@ class IsChecks:
             raise ValueError("Airport cannot contain two or more spaces")
 
     def is_country(self, Country):
+        '''
+        Checks if the country is valid, raises ValueError if not.
+        The country must be a non-empty string of alphabetic characters and no longher than 70 characters.
+        '''
         if not Country or not Country.replace(" ", "").isalpha():
             raise ValueError(
                 "Country must be a non-empty string of alphabetic characters")
@@ -35,6 +47,10 @@ class IsChecks:
             raise ValueError("Country name cannot be longer than 70 characters")
 
     def is_distance(self, Distance):
+        '''
+        Checks if the distance is valid, raises ValueError if not.
+        The distance must be a positive integer, less than 20000 and no longer than 6 digits.
+        '''
         if not Distance.isdigit():
             raise ValueError("Distance must be a positive integer")
         if not len(Distance) < 6: 
@@ -48,6 +64,10 @@ class IsChecks:
                 "Distance must be less than 20,000km (half the circumference of the Earth)")
 
     def is_travel_time(self, Travel_Time):
+        '''
+        Checks if the travel time is valid, raises ValueError if not.
+        The travel time must be a positive integer, less than 1120 and no longer than 4 digits.
+        '''
         if not Travel_Time.isdigit():
             raise ValueError("Travel Time must be a positive integer")
         if not len(Travel_Time) < 5:
@@ -62,6 +82,10 @@ class IsChecks:
                 "Longest Commercial Flight in the world is/was 1120min, be realistic")
 
     def is_contact_name(self, Contact_Name):
+        '''
+        Checks if the contact name is valid, raises ValueError if not.
+        The contact name must be a non-empty string of alphabetic characters and no longher than 70 characters.
+        '''
         if not Contact_Name or not Contact_Name.replace(" ", "").isalpha():
             raise ValueError(
                 "Contact Name must be a non-empty string of alphabetic characters")
@@ -71,6 +95,11 @@ class IsChecks:
             raise ValueError("Contact Name cannot be longer than 70 characters")
 
     def is_contact_phone_number(self, Contact_Phone_Number):
+        '''
+        Checks if the contact phone number is valid, raises ValueError if not.
+        strips away "+" only from the first character if that is the case.
+        The contact phone number must be a positive integer, 10 digits maximum and 3 digits minimum.
+        '''
         # strip "+"" only from the first character if that is the case
         if "  " in Contact_Phone_Number:
             raise ValueError(
@@ -92,12 +121,20 @@ class IsChecks:
             raise ValueError("Phone Number must be numeric")
 
     def is_home_phone(self, home_phone):
+        '''
+        Checks if the home phone number is valid, raises ValueError if not.
+        calls is_contact_phone_number() function, to check if the number is valid.
+        '''
         if not home_phone:
             pass
         else:
             home_phone = self.is_contact_phone_number(home_phone)
 
     def is_name(self, Name):
+        '''
+        Checks if the name is valid, raises ValueError if not.
+        The name must be a non-empty string of alphabetic characters and no longher than 70 characters.
+        '''
         if not Name:
             raise ValueError("Name must be a non-empty string")
         if not Name.replace(" ", "").isalpha():
@@ -109,6 +146,10 @@ class IsChecks:
             raise ValueError("Name cannot be longer than 70 characters")
 
     def is_current_location(self, Current_Location):
+        '''
+        Checks if the current location is valid, raises ValueError if not.
+        The current location must be a non-empty string of alphabetic characters and less than 20 characters.
+        '''
         if not Current_Location or not Current_Location.replace(" ", "").isalpha():
             raise ValueError(
                 "Current Location must be a non-empty string of alphabetic characters")
@@ -119,6 +160,13 @@ class IsChecks:
                 "Current location cannot contain two or more spaces")
 
     def is_social_security_number(self, social_security_number):
+        '''
+        Checks if the social security number is valid, raises ValueError if not.
+        The social security number must be a positive integer, 10 digits long and end in either '0' or '9'.
+        The social security number must also be a valid date, not in the future and not too old, 
+        this function checks for example if the person is older than 130 years old or younger than 13 years old.
+        The function uses datetime to check if the date is valid.
+        '''
         if not social_security_number.replace("-", "").replace(" ", "").isdigit():
             raise ValueError(
                 "social_security_number must be a positive integer")
@@ -154,6 +202,10 @@ class IsChecks:
             raise ValueError("Birth date in social_security_number is way too old. ")
 
     def is_type(self, Type):
+        '''
+        Checks if the type is valid, raises ValueError if not.
+        The type must be a non-empty string of alphabetic characters and less than 15 characters.
+        '''
         if not Type:
             raise ValueError("Type must be a non-empty string")
         if "  " in Type:
@@ -162,6 +214,11 @@ class IsChecks:
             raise ValueError("Type_str cannot be longer than 15 characters")
 
     def is_manufacturer(self, Manufacturer):
+        '''
+        Checks if the manufacturer is valid, raises ValueError if not.
+        The manufacturer must be a non-empty string of alphabetic characters and less than 20 characters.
+        This function also checks if the manufacturer is only punctuation.
+        '''
         if not Manufacturer:
             raise ValueError("Manufacturer must be a non-empty string")
         if "  " in Manufacturer:
@@ -173,10 +230,14 @@ class IsChecks:
                 "Manufacturer name cannot be longer than 20 characters")
 
     def is_capacity(self, Capacity):
+        '''
+        Checks if the capacity is valid, raises ValueError if not.
+        The capacity must be a positive integer, less than 853 and less than 4 digits.
+        '''
         if not Capacity.isdigit():
             raise ValueError("Capacity must be a positive integer")
         if len(Capacity) > 4: 
-            raise ValueError("Capacity cannot be longer than 4 digits")
+            raise ValueError("Capacity must be maximum 3 digits")
         try:
             Capacity = int(Capacity)
         except ValueError:
@@ -186,6 +247,10 @@ class IsChecks:
 
 
     def is_address(self, address):
+        '''
+        Checks if the address is valid, raises ValueError if not.
+        The address must be a non-empty string and less than 20 characters.
+        '''
         if not address:
             raise ValueError("Address must be a non-empty string")
         if "  " in address:
@@ -194,6 +259,11 @@ class IsChecks:
             raise ValueError("Address too long")
 
     def is_email(self, Email):
+        '''
+        Checks if the email is valid, raises ValueError if not.
+        The email must be a non-empty string and less than 20 characters.
+        The email must also contain "." and "@".
+        '''
         if not Email:
             raise ValueError("Email must be a non-empty string")
         if " " in Email:
@@ -207,6 +277,11 @@ class IsChecks:
                 raise ValueError("Email is too long")
 
     def departure_date_past(self, departure_date):
+        '''
+        Checks if the departure date is valid, raises ValueError if not.
+        The departure date must be a valid date, not in the past.
+        The function uses datetime to check if the date is valid.
+        '''
         given_datetime = datetime.strptime(departure_date, "%Y-%m-%d")
         now = datetime.now()
         now_date = now.date()
@@ -215,6 +290,11 @@ class IsChecks:
             raise ValueError("Date cannot be in the past")
 
     def departure_datetime_past(self, departure_datetime):
+        '''
+        Checks if the departure datetime is valid, raises ValueError if not.
+        The departure datetime must be a valid datetime, not in the past.
+        The function uses datetime to check if the datetime is valid.
+        '''
         given_datetime = datetime.strptime(
             departure_datetime, "%Y-%m-%d %H:%M")
         now = datetime.now()
@@ -222,6 +302,12 @@ class IsChecks:
             raise ValueError("Date cannot be in the past")
 
     def is_return_time_dd_rd(self, input_departure_day, input_return_day):
+        '''
+        Checks if the return datetime is valid, raises ValueError if not.
+        The return datetime must be a valid datetime, not in the past.
+        The return datetime must also be after the departure datetime.
+        The function uses the datetime function to check if the datetime is valid.
+        '''
         given_datetime = datetime.strptime(
             input_departure_day, "%Y-%m-%d %H:%M")
         given_returntime = datetime.strptime(
@@ -230,6 +316,11 @@ class IsChecks:
             raise ValueError("Return time has to be after departure time")
 
     def is_date(self, date):
+        '''
+        Checks if the date is valid, raises ValueError if not.
+        The date must be a valid date.
+        The function uses datetime to check if the date is valid.
+        '''
         date = date.split('-')
         if not len(date) == 3:
             raise ValueError('Date has to be writen in the correct format (YYYY-MM-DD)')
@@ -237,6 +328,11 @@ class IsChecks:
             raise ValueError('Date has to be (YYYY-MM-DD) with valid integers between the dashes ("-")')
 
     def flight_sched_destination_validation(self, departure_datetime, return_datetime, destination_obj):
+        '''
+        Checks if the destination is valid, raises ValueError if not.
+        The function uses datetime to check if the destination is valid.
+        The function also checks if the time between flights is too short and checks if the destination is the HQ.
+        '''
         if int(destination_obj.id) == 1:
             raise ValueError("Cannot fly to HQ")
 
