@@ -11,12 +11,12 @@ class AirplaneDataEditUI:
         '''Print sequence for editing Airplane Data (initial)'''
         self.PrintUi.logo()
         self.PrintUi.print_header(
-            "Airplane Database Menu > Edit > " + self.PrintUi.auto_shorten_name(self.airplane['name'], 70), "left")
+            "Airplane Database Menu > Edit > " + self.airplane['name'], "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Airplane Data:"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left(
-            f"1 : Name                  {self.PrintUi.auto_shorten_name(self.airplane['name'], 70)}"))
+            f"1 : Name                  {self.airplane['name']}"))
         print(self.PrintUi.allign_left(
             f"    Type                  {self.airplane['type']}"))
         print(self.PrintUi.empty_line())
@@ -37,12 +37,12 @@ class AirplaneDataEditUI:
         '''Print sequence for editing Airplane Data'''
         self.PrintUi.logo()
         self.PrintUi.print_header(
-            f"Airplane Database Menu > Edit > {self.PrintUi.auto_shorten_name(self.airplane['name'], 65)} > {changed_data}", "left")
+            f"Airplane Database Menu > Edit > {self.airplane['name']} > {changed_data}", "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Airplane Data:"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left(
-            f"    Name                  {self.PrintUi.auto_shorten_name(self.airplane['name'], 70)}"))
+            f"    Name                  {self.airplane['name']}"))
 
         print(self.PrintUi.allign_left(
             f"    Type                  {self.airplane['type']}"))

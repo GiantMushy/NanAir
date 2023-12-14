@@ -44,7 +44,7 @@ class AirplaneDataCreateNewUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New Airplane"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(f"    {self.PrintUi.auto_shorten_name(self.new_airplane[0], 60)}"))
+        print(self.PrintUi.allign_left(f"    {self.new_airplane[0]}"))
 
         print(self.PrintUi.allign_left("--> Manufacturer"))
         print(self.PrintUi.allign_left("    Type"))
@@ -72,7 +72,7 @@ class AirplaneDataCreateNewUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New Airplane"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(f"    {self.PrintUi.auto_shorten_name(self.new_airplane[0], 60)}"))
+        print(self.PrintUi.allign_left(f"    {self.new_airplane[0]}"))
 
         print(self.PrintUi.allign_left(f"    {self.new_airplane[1]}"))
         print(self.PrintUi.allign_left("--> Type"))
@@ -100,7 +100,7 @@ class AirplaneDataCreateNewUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New Airplane"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(f"    {self.PrintUi.auto_shorten_name(self.new_airplane[0], 60)}"))
+        print(self.PrintUi.allign_left(f"    {self.new_airplane[0]}"))
 
         print(self.PrintUi.allign_left(f"    {self.new_airplane[1]}"))
         print(self.PrintUi.allign_left(f"    {self.new_airplane[2]}"))
@@ -128,7 +128,7 @@ class AirplaneDataCreateNewUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("New Airplane Created:"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(f"    {self.PrintUi.auto_shorten_name(self.new_airplane[0], 60)}"))
+        print(self.PrintUi.allign_left(f"    {self.new_airplane[0]}"))
 
         print(self.PrintUi.allign_left(f"    {self.new_airplane[1]}"))
         print(self.PrintUi.allign_left(f"    {self.new_airplane[2]}"))
