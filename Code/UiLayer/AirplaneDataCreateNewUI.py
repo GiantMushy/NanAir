@@ -44,8 +44,8 @@ class AirplaneDataCreateNewUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New Airplane"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(
-            f"    {self.PrintUi.auto_shorten_name(self.new_airplane[0], 20)}"))
+        print(self.PrintUi.allign_left(f"    {self.new_airplane[0]}"))
+
         print(self.PrintUi.allign_left("--> Manufacturer"))
         print(self.PrintUi.allign_left("    Type"))
         print(self.PrintUi.allign_left("    Capacity (seats)"))
@@ -72,8 +72,8 @@ class AirplaneDataCreateNewUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New Airplane"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(
-            f"    {self.PrintUi.auto_shorten_name(self.new_airplane[0], 20)}"))
+        print(self.PrintUi.allign_left(f"    {self.new_airplane[0]}"))
+
         print(self.PrintUi.allign_left(f"    {self.new_airplane[1]}"))
         print(self.PrintUi.allign_left("--> Type"))
         print(self.PrintUi.allign_left("    Capacity (seats)"))
@@ -100,8 +100,8 @@ class AirplaneDataCreateNewUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New Airplane"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(
-            f"    {self.PrintUi.auto_shorten_name(self.new_airplane[0], 20)}"))
+        print(self.PrintUi.allign_left(f"    {self.new_airplane[0]}"))
+
         print(self.PrintUi.allign_left(f"    {self.new_airplane[1]}"))
         print(self.PrintUi.allign_left(f"    {self.new_airplane[2]}"))
         print(self.PrintUi.allign_left("--> Capacity (seats)"))
@@ -128,8 +128,8 @@ class AirplaneDataCreateNewUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("New Airplane Created:"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(
-            f"    {self.PrintUi.auto_shorten_name(self.new_airplane[0], 20)}"))
+        print(self.PrintUi.allign_left(f"    {self.new_airplane[0]}"))
+
         print(self.PrintUi.allign_left(f"    {self.new_airplane[1]}"))
         print(self.PrintUi.allign_left(f"    {self.new_airplane[2]}"))
         print(self.PrintUi.allign_left(f"    {self.new_airplane[3]}"))
@@ -152,6 +152,11 @@ class AirplaneDataCreateNewUI:
         print(self.PrintUi.end_line())
 
     def create_new_sequence(self):
+        '''
+        While loop that runs every input screen for Airplane Data > Create New
+        Checks each individual input and only prints the next screen once a 
+        correct input has bee entered 
+        '''
         n = 1
         input_check = True
         while n < 5:
@@ -246,6 +251,7 @@ class AirplaneDataCreateNewUI:
                 print("Invalid input, try again")
 
     def create_airplane_logic(self):
+        '''Sends the entered data to the Logic wrapper (Saves the data)'''
         if self.type_already_created:
             try:
                 self.Logic.add_airplane(name=self.new_airplane[0],

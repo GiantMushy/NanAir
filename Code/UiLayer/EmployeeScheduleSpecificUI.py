@@ -47,6 +47,9 @@ class EmployeeScheduleSpecificUI:
         print(self.PrintUi.end_line())
 
     def get_days_list(self, start_date):
+        '''
+        Gets a list of 7 datetime days for the week
+        '''
         days = []
         for n in range(7):
             days.append(str(start_date)[8:10])
@@ -54,6 +57,11 @@ class EmployeeScheduleSpecificUI:
         return days
     
     def get_weekday_list(self, start_date):
+        '''
+        Gets a list of all weekdays (str) in the correct order for the given week
+        f.e. input = 2023-12-14 --> output = ['Thursday','Friday','Saturday','Sunday','Monday','Tuesday','Wednesday']
+        since 2023-12-14 is a Thursday
+        '''
         weekday = []
         for n in range(7):
             weekday_num = date.weekday(start_date) #Returns 0 for monday, 1 for tuesday .... 6 for sunday
@@ -62,6 +70,11 @@ class EmployeeScheduleSpecificUI:
         return weekday
 
     def get_destination_list(self, print_data, start_date):
+        '''
+        Gets a list of length 7 (1 slot for each day in the week)
+        depicting whether or not an employee is working on a given day
+        if the employee is working, then the slot has the destination of the given work day
+        '''
         destinations_list = []
         days = []
         for n in range(7):
@@ -96,20 +109,7 @@ class EmployeeScheduleSpecificUI:
                 print("Goodbye")
                 exit()
             elif command == "00": #change week
-                input_check = False
-                while not input_check:
-                    try:
-                        command = input("Enter the first day of the new week (YYYY-MM-DD): ")
-                        if command.lower() == "q":
-                            print("Goodbye")
-                            exit()
-                        self.Logic.is_date(command)
-                        year, month, day = command.split('-')
-                        input_check = True
-                        self.start_date = datetime.datetime(int(year), int(month), int(day), 0,0)
-                    except ValueError as e:
-                        print(f"Error in input: {e}")
-                        input_check = False
+                self.start_date = self.PrintUi.change_date()
             elif command == "n": #see last week
                 self.start_date -= datetime.timedelta(7)
             elif command == "m": #see next week

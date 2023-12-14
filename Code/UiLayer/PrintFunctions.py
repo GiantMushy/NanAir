@@ -1,10 +1,11 @@
+from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI
 import datetime
 import ast
 
 
 class PrintFunctions:
     def __init__(self):
-        pass
+        self.Logic = LogicLayerAPI()
 
     def empty_line(self):
         '''Returns the printable string of an empty line'''
@@ -91,8 +92,7 @@ class PrintFunctions:
         '''Prints the Company Logo'''
         print("                                                                              ______ ")
         print(" ____  _____      __      ____  _____          __      _____ _______          _\ _~-\___")
-        print(
-            "|_   \|_   _|    /  \    |_   \|_   _|        /  \    |_   _|_   __ \     = =(____AA____D")
+        print("|_   \|_   _|    /  \    |_   \|_   _|        /  \    |_   _|_   __ \     = =(____AA____D")
         print("  |   \ | |     / /\ \     |   \ | |         / /\ \     | |   | |__) |            \_____\______________________,-~~~~~-.._")
         print("  | |\ \| |    / ____ \    | |\ \| |        / ____ \    | |   |  __ /             /     o O o o o o O O o o o o o o O o  |\_")
         print(" _| |_\   |_ _/ /    \ \_ _| |_\   |_     _/ /    \ \_ _| |_ _| |  \ \_           `~-.__        ___..----..                  )")
@@ -113,7 +113,7 @@ class PrintFunctions:
         return name
 
     def auto_shorten_name(self, name, min_length):
-        '''Abbreviates input name'''
+        '''Checks if the name is too long and abbreviates it if it is'''
         if len(name) > min_length:
             names = name.split()
             if len(names) > 1:
@@ -124,8 +124,37 @@ class PrintFunctions:
             if len(name) > min_length:
                 name = "(Item Too Long)"
         return name
+    
+    def change_date(self):
+        '''
+        Function for giving the user an option to input a date
+        Keeps asking for input until a valid date has been input
+        '''
+        input_check = False
+        while not input_check:
+            try:
+                command = input("Enter a day (YYYY-MM-DD): ")
+                if command.lower() == "q":
+                    print("Goodbye")
+                    exit()
+                self.Logic.is_date(command)
+                year, month, day = command.split('-')
+                start_date = datetime.datetime(
+                    int(year), int(month), int(day), 0, 0)
+                input_check = True
+            except ValueError as e:
+                print(f"Error in input: {e}")
+                input_check = False
+            except IndexError as e:
+                print(f"Error in input: {e}")
+                print(f"Input the date in the correct format (YYYY-MM-DD)")
+                input_check = False
+        return start_date
 
     def print_employee_table(self, data, line_num):
+        '''
+        Print function for the table that shows employee data
+        '''
         line_count = 0
         print_format = "%-5s%-20s%-15s%-20s%-15s%-25s%-0s"
 
@@ -137,8 +166,7 @@ class PrintFunctions:
             for value in dic.values():
                 vals.append(value)
             for n in range(len(vals)):
-                if len(vals[n]) > 20:  # shorten names
-                    vals[n] = self.shorten_name(vals[n], 19)
+                vals[n] = self.auto_shorten_name(vals[n], 19)
             if vals[6] == '':
                 # Empty Home Phone input prints "--Not Given--"
                 vals[6] = "--Not Given--"
@@ -151,6 +179,9 @@ class PrintFunctions:
             line_count += 1
 
     def print_airplane_type_table(self, data, line_num):
+        '''
+        Print function for the table that shows airplane type data
+        '''
         line_count = 0
         print_format = "%-20s%-15s%-10s"
 
@@ -162,8 +193,8 @@ class PrintFunctions:
             for value in dic.values():
                 vals.append(value)
             for n in range(len(vals)):
-                if len(vals[n]) > 20:  # shorten names
-                    vals[n] = self.shorten_name(vals[n], 19)
+                if len(vals[n]) > 20:  
+                    vals[n] = self.shorten_name(vals[n], 19)# abbreviates names
             print(self.allign_left(print_format % (
                 vals[0], vals[1], vals[2])))
             line_count += 1
@@ -173,6 +204,9 @@ class PrintFunctions:
             line_count += 1
 
     def print_destination_table(self, data, line_num):
+        '''
+        Print function for the table that shows destination data
+        '''
         line_count = 0
         print_format = "%-5s%-20s%-20s%-20s%-12s%-15s%-15s%-0s"
 
@@ -196,6 +230,9 @@ class PrintFunctions:
             line_count += 1
 
     def print_airplane_table(self, data, line_num):
+        '''
+        Print function for the table that shows airplane data
+        '''
         line_count = 0
         print_format = "%-5s%-20s%-20s%-10s%-20s%-20s%-0s"
 
@@ -218,6 +255,9 @@ class PrintFunctions:
             line_count += 1
 
     def print_flight_schedule_table(self, data, line_num):
+        '''
+        Print function for the table that shows all Flight Schedule data
+        '''
         line_count = 0
         # Adjusted print format to include new fields
         print_format = "%-7s%-7s%-5s%-15s%-12s%-12s%-15s%-17s%-15s%-0s"
@@ -272,10 +312,11 @@ class PrintFunctions:
             print(self.empty_line())
             line_count += 1
 
-    def print_employee_schedule_table(self, data, line_num):
-        pass
-
     def print_destinations(self, data, line_num):
+        '''
+        Print function for the table that shows destination data
+        Used when selecting a destination for trips
+        '''
         line_count = 0
         print_format = "%-5s%-20s%-20s%-20s"
 
@@ -295,24 +336,11 @@ class PrintFunctions:
             print(self.empty_line())
             line_count += 1
 
-    def print_available_planes_bugged(self, data, line_num):
-        line_count = 0
-        print_format = "%-5s%-20s%-20s%-20s"
-
-        for dic in data:
-            vals = []
-            for value in dic.values():
-                vals.append(value)
-            for n in range(len(vals)):
-                if len(vals[n]) > 18:  # shorten names
-                    vals[n] = self.shorten_name(vals[n], 18)
-            # id 0, name 1, type 3, capacity 5
-            print(vals)
-            print(self.allign_left(print_format %
-                  (vals[0], vals[1], vals[3], vals[5])))
-            line_count += 1
-
     def print_available_planes(self, data, line_num):
+        '''
+        Print function for listing all available planes during 
+        plane selection in Trip creation
+        '''
         line_count = 0
         print_format = "%-5s%-20s%-20s"
 
@@ -334,6 +362,9 @@ class PrintFunctions:
             line_count += 1
 
     def print_employee_table_detailed(self, data, line_num):
+        '''
+        Prints a detailed table of employee data
+        '''
         line_count = 0
         print_format = "%-5s%-25s%-15s%-25s%-20s%-0s"
 
@@ -360,6 +391,9 @@ class PrintFunctions:
             line_count += 1
 
     def print_pilots_table_detailed(self, data, line_num):
+        '''
+        Prints a detailed table of pilot data
+        '''
         line_count = 0
         print_format = "%-5s%-25s%-15s%-25s%-15s%-15s%-0s"
 
@@ -386,6 +420,9 @@ class PrintFunctions:
             line_count += 1
 
     def print_flight_attendants_table_detailed(self, data, line_num):
+        '''
+        Prints a detailed table of flight attendant data
+        '''
         line_count = 0
         print_format = "%-5s%-25s%-15s%-25s%-15s%-0s"
 

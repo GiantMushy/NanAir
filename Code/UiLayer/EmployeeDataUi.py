@@ -143,6 +143,10 @@ class EmployeeDataUI:
                 print("Invalid input, try again")
 
     def display_flight_attendants_menu(self):
+        '''
+        Function that calls the printing function for flight attendants
+        Also gives the possibility to create a new or edit an employee
+        '''
         while True:
             self.flight_attendants_detailed()
             command = input("Enter you command: ").lower()
@@ -161,6 +165,10 @@ class EmployeeDataUI:
                 print("Invalid input, try again")
 
     def isdigit_edit_emp(self, command):
+        '''
+        Checks if the recieved command is an id from the list of employees
+        Initiates EmployeeDataEditUI for the employee that the id matches
+        '''
         if command.isdigit():
             for dict in self.Logic.object_list_to_dict_list(self.Logic.list_all_employees_detailed()):
                 if int(command) == int(dict['id']):
@@ -168,6 +176,12 @@ class EmployeeDataUI:
                     edit.input_prompt()
 
     def display_pilot_menu(self):
+        '''
+        Function that calls the printing function for pilots
+        Also gives the possibility to create a new or edit an employee
+        User can also chose to sort pilots by type of airplane or only show
+        Pilots of a certain airplane type
+        '''
         while True:
             self.pilots_detailed()
             command = input("Enter you command: ").lower()
@@ -191,6 +205,10 @@ class EmployeeDataUI:
                 print("Invalid input, try again")
 
     def display_choose_airplane_type(self):
+        '''
+        Function that calls the printing function for airplane types
+        Also gives the possibility to create a new or edit an employee
+        '''
         while True:
 
             self.input_airplane_type()
@@ -209,6 +227,10 @@ class EmployeeDataUI:
                 print("Invalid input, try again")
 
     def display_pilot_specific_type(self, type):
+        '''
+        Function that calls the printing function for specific Pilot types
+        Also gives the possibility to create a new or edit an employee
+        '''
         while True:
             self.pilot_specific_type(type)
             command = input("Enter you command: ").lower()
@@ -228,6 +250,10 @@ class EmployeeDataUI:
                 print("Invalid input, try again")
 
     def display_pilot_sorted_by_type(self):
+        '''
+        Function that calls the printing function for sorted Pilots by airplane types
+        Also gives the possibility to create a new or edit an employee
+        '''
         while True:
             self.pilot_sorted_by_type()
             command = input("Enter you command: ").lower()
@@ -242,10 +268,6 @@ class EmployeeDataUI:
 
             elif command == "q":
                 print("Goodbye")
-                exit()
-            elif command == "a":
-                self.display_pilot_menu()
-            elif command == "s":
-                self.display_pilot_specific_type()
+                exit()         ################ CRASH REPORT ##############
             else:
                 print("Invalid input, try again")

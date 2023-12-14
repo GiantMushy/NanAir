@@ -293,17 +293,17 @@ def add_work_trips_recurring():
 
 
 def main():
-    # add_airplanes()
-    # add_sample_employees()
-    # add_destinations()
-    # add_work_trips()
-    # add_crew_member_wt()
-    # update_emergency_contact()
-    # add_extra_airplane()
-    # add_extra_employees()
+    add_airplanes()
+    add_sample_employees()
+    add_destinations()
+    add_work_trips()
+    add_crew_member_wt()
+    update_emergency_contact()
+    add_extra_airplane()
+    add_extra_employees()
     # test_trying_to_use_airplane_twice()
     # testing_datetime("2023-12-15 14:50")
-    # add_work_trips_recurring()
+    add_work_trips_recurring()
     print_all_types_of_data()
 
 

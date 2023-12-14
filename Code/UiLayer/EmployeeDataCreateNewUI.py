@@ -342,6 +342,11 @@ class EmployeeDataCreateNewUI:
         print(self.PrintUi.end_line())
 
     def create_new_sequence(self):
+        '''
+        While loop that runs every input screen for Employee Data > Create New
+        Checks each individual input and only prints the next screen once a 
+        correct input has bee entered 
+        '''
         n = 1
         while n < 10:
             input_check = True
@@ -394,8 +399,6 @@ class EmployeeDataCreateNewUI:
                     if data == "q":
                         print("Goodbye")
                         exit()
-                    elif data == "0":
-                        data = ""
                     elif self.Logic.find_type_data(data_compare_temp) == None:
                         print(
                             "Invalid airplane type input, please choose type from provided list.")
