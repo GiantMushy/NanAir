@@ -145,7 +145,11 @@ class EmployeeSchedulesUI:
                             print("Goodbye")
                             exit()
                         self.Logic.is_date(command)
-                        year, month, day = command.split('- ')
+                        try:
+                            year, month, day = command.split('-')
+                        except:
+                            print("Invalid input, try again")
+                            continue
                         start_date = datetime.datetime(
                             int(year), int(month), int(day), 0, 0)
                         input_check = True
