@@ -1,5 +1,4 @@
 from datetime import datetime, timedelta
-from string import ascii_lowercase
 
 
 class IsChecks:
@@ -148,16 +147,12 @@ class IsChecks:
             raise ValueError("Type must be a non-empty string")
         if "  " in Type:
             raise ValueError("Type cannot contain two or more spaces")
-        if any(arrow_key in Type for arrow_key in ascii_lowercase):
-            raise ValueError("Type cannot contain arrow keys")
         if len(Type) > 15:
             raise ValueError("Type_str cannot be longer than 15 characters")
 
     def is_manufacturer(self, Manufacturer):
         if not Manufacturer:
             raise ValueError("Manufacturer must be a non-empty string")
-        if any(arrow_key in Manufacturer for arrow_key in ascii_lowercase):
-            raise ValueError("Manufacturer cannot contain arrow keys")
         if "  " in Manufacturer:
             raise ValueError("Manufacturer cannot contain two or more spaces")
         if not Manufacturer.strip(self.punc):
