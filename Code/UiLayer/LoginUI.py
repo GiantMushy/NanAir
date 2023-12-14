@@ -1,6 +1,7 @@
-#from logic_ui_wrapper import wrapper
+# from logic_ui_wrapper import wrapper
 from Code.UiLayer.PrintFunctions import PrintFunctions
 from Code.UiLayer.MainMenuUI import MainMenuUI
+
 
 class LoginUI:
     def __init__(self):
@@ -28,7 +29,8 @@ class LoginUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left("Input 'q' at any time to exit the program"))
+        print(self.PrintUi.allign_left(
+            "Input 'q' at any time to exit the program"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.end_line())
 

@@ -7,7 +7,7 @@ def test_is_checks():
     is_checks = IsChecks()
 
     try:
-        is_checks.is_date("2023 12 312")
+        is_checks.is_social_security_number("070901-2410")
         print("")
         print(" ------")
         print("|passed|")

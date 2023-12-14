@@ -1,11 +1,13 @@
 from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI  # Wrapper
 from Code.UiLayer.PrintFunctions import PrintFunctions
 
+
 class AirplaneDataCreateNewUI:
     def __init__(self):
         self.PrintUi = PrintFunctions()
         self.Logic = LogicLayerAPI()
         self.new_airplane = []
+        self.type_already_created = False
 
     def input_name(self):
         '''Print sequence for Creating a new Airplane : Name'''
@@ -42,7 +44,8 @@ class AirplaneDataCreateNewUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New Airplane"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(f"    {self.PrintUi.auto_shorten_name(self.new_airplane[0], 20)}"))
+        print(self.PrintUi.allign_left(f"    {self.PrintUi.auto_shorten_name(self.new_airplane[0], 60)}"))
+
         print(self.PrintUi.allign_left("--> Manufacturer"))
         print(self.PrintUi.allign_left("    Type"))
         print(self.PrintUi.allign_left("    Capacity (seats)"))
@@ -69,7 +72,8 @@ class AirplaneDataCreateNewUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New Airplane"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(f"    {self.PrintUi.auto_shorten_name(self.new_airplane[0], 20)}"))
+        print(self.PrintUi.allign_left(f"    {self.PrintUi.auto_shorten_name(self.new_airplane[0], 60)}"))
+
         print(self.PrintUi.allign_left(f"    {self.new_airplane[1]}"))
         print(self.PrintUi.allign_left("--> Type"))
         print(self.PrintUi.allign_left("    Capacity (seats)"))
@@ -96,7 +100,8 @@ class AirplaneDataCreateNewUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Creating New Airplane"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(f"    {self.PrintUi.auto_shorten_name(self.new_airplane[0], 20)}"))
+        print(self.PrintUi.allign_left(f"    {self.PrintUi.auto_shorten_name(self.new_airplane[0], 60)}"))
+
         print(self.PrintUi.allign_left(f"    {self.new_airplane[1]}"))
         print(self.PrintUi.allign_left(f"    {self.new_airplane[2]}"))
         print(self.PrintUi.allign_left("--> Capacity (seats)"))
@@ -123,7 +128,8 @@ class AirplaneDataCreateNewUI:
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("New Airplane Created:"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(f"    {self.PrintUi.auto_shorten_name(self.new_airplane[0], 20)}"))
+        print(self.PrintUi.allign_left(f"    {self.PrintUi.auto_shorten_name(self.new_airplane[0], 60)}"))
+
         print(self.PrintUi.allign_left(f"    {self.new_airplane[1]}"))
         print(self.PrintUi.allign_left(f"    {self.new_airplane[2]}"))
         print(self.PrintUi.allign_left(f"    {self.new_airplane[3]}"))
@@ -191,17 +197,24 @@ class AirplaneDataCreateNewUI:
                     input_check = False
 
             elif n == 4:
-                self.input_seats()
-                data = input("Enter Capacity: ")
-                if data == "q":
-                    print("Goodbye")
-                    exit()
-                try:
-                    self.Logic.is_capacity(data)
+
+                airplane_type = self.Logic.find_type_data(self.new_airplane[2])
+                if airplane_type:
+                    data = airplane_type.capacity
+                    self.type_already_created = True
                     input_check = True
-                except ValueError as e:
-                    print(f"Error: {e}")
-                    input_check = False
+                else:
+                    self.input_seats()
+                    data = input("Enter Capacity: ")
+                    if data == "q":
+                        print("Goodbye")
+                        exit()
+                    try:
+                        self.Logic.is_capacity(data)
+                        input_check = True
+                    except ValueError as e:
+                        print(f"Error: {e}")
+                        input_check = False
 
             if input_check:
                 self.new_airplane.append(data)
@@ -217,40 +230,13 @@ class AirplaneDataCreateNewUI:
                 self.new_airplane = []
                 self.create_new_sequence()
             elif command == "2":  # save and create new
-                # need to first add airplane type
-                try:
-                    self.Logic.add_airplane_type(
-                        type=self.new_airplane[2], manufacturer=self.new_airplane[1], capacity=self.new_airplane[3])
-                except ValueError as e:
-                    continue
-
-                try:
-                    self.Logic.add_airplane(name=self.new_airplane[0],
-                                            type=self.new_airplane[2],
-                                            )
-                except ValueError as e:
-                    print(f"Error: {e}")
-
+                self.create_airplane_logic()
                 self.new_airplane = []
                 self.create_new_sequence()
 
             elif command == "3":  # save and exit
-
-                # need to first add airplane type
-                try:
-                    self.Logic.add_airplane_type(
-                        type=self.new_airplane[2], manufacturer=self.new_airplane[1], capacity=self.new_airplane[3])
-                except ValueError as e:
-                    continue
-
-                try:
-                    self.Logic.add_airplane(name=self.new_airplane[0],
-                                            type=self.new_airplane[2],
-                                            )
-                    break
-                except ValueError as e:
-                    print(f"Error: {e}")
-
+                self.create_airplane_logic()
+                break
             elif command == "4":  # discard and exit
                 break
             elif command == "q":
@@ -258,3 +244,25 @@ class AirplaneDataCreateNewUI:
                 exit()
             else:
                 print("Invalid input, try again")
+
+    def create_airplane_logic(self):
+        if self.type_already_created:
+            try:
+                self.Logic.add_airplane(name=self.new_airplane[0],
+                                        type=self.new_airplane[2],
+                                        )
+            except ValueError as e:
+                print(f"Error: {e}")
+        else:
+            try:
+                self.Logic.add_airplane_type(
+                    type=self.new_airplane[2], manufacturer=self.new_airplane[1], capacity=self.new_airplane[3])
+            except ValueError as e:
+                print(f"Error: {e}")
+
+            try:
+                self.Logic.add_airplane(name=self.new_airplane[0],
+                                        type=self.new_airplane[2],
+                                        )
+            except ValueError as e:
+                print(f"Error: {e}")
