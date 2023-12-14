@@ -242,10 +242,6 @@ class EmployeeDataUI:
 
             elif command == "q":
                 print("Goodbye")
-                exit()
-            elif command == "a":
-                self.display_pilot_menu()
-            elif command == "s":
-                self.display_pilot_specific_type()
+                exit()         ################ CRASH REPORT ##############
             else:
                 print("Invalid input, try again")
