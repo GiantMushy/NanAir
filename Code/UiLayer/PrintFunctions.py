@@ -91,7 +91,8 @@ class PrintFunctions:
         '''Prints the Company Logo'''
         print("                                                                              ______ ")
         print(" ____  _____      __      ____  _____          __      _____ _______          _\ _~-\___")
-        print("|_   \|_   _|    /  \    |_   \|_   _|        /  \    |_   _|_   __ \     = =(____AA____D")
+        print(
+            "|_   \|_   _|    /  \    |_   \|_   _|        /  \    |_   _|_   __ \     = =(____AA____D")
         print("  |   \ | |     / /\ \     |   \ | |         / /\ \     | |   | |__) |            \_____\______________________,-~~~~~-.._")
         print("  | |\ \| |    / ____ \    | |\ \| |        / ____ \    | |   |  __ /             /     o O o o o o O O o o o o o o O o  |\_")
         print(" _| |_\   |_ _/ /    \ \_ _| |_\   |_     _/ /    \ \_ _| |_ _| |  \ \_           `~-.__        ___..----..                  )")
@@ -110,7 +111,7 @@ class PrintFunctions:
         if len(name) > min_length:
             name = "(Item Too Long)"
         return name
-    
+
     def auto_shorten_name(self, name, min_length):
         '''Abbreviates input name'''
         if len(name) > min_length:
@@ -218,34 +219,56 @@ class PrintFunctions:
 
     def print_flight_schedule_table(self, data, line_num):
         line_count = 0
-        print_format = "%-5s%-20s%-20s%-15s%-15s%-15s%-15s%-0s"
+        # Adjusted print format to include new fields
+        print_format = "%-7s%-7s%-5s%-15s%-12s%-12s%-15s%-17s%-15s%-0s"
 
-        print(self.allign_left(print_format % ('Id', 'Departing', 'Destination',
-              'Date', 'Time', 'Plane', 'Flight Nr.', 'Staff Status')))
+        # Print the header with new fields
+        print(self.allign_left(print_format % ('Id', 'From', 'To', 'Date', 'Dep. Time',
+              'Flight Nr.', 'Staff Status', 'Sold Tickets', 'Avail. Tickets', 'Situation')))
         print(self.empty_line())
+
         for dic in data:
-            # translates the stringed dictionary to a literal dictionary
+            # Translates the stringed dictionary to a literal dictionary
             destination = ast.literal_eval(dic['destination'])
-            vals = []
-            for value in dic.values():
-                vals.append(value)
-            if not dic['crew_members']:
-                staff_status = 'Not Staffed'
-            elif len(dic['crew_members']) < 8:
-                staff_status = 'Not Staffed'
-            else:
+
+            # Determine staff status
+            if dic['validity'] is True:
                 staff_status = 'Staffed'
-            print(self.allign_left(print_format % (dic['id'], 'Reykjavik', destination['country'],
-                                                   dic['departure_datetime'].date(
-            ), dic['departure_datetime'].time(),
-                "plane", 'NA040', staff_status)))
-            print(self.allign_left(print_format % ('', destination['country'], 'Reykjavik',
-                                                   dic['return_datetime'].date(
-            ), dic['return_datetime'].time(),
-                "plane", 'NA041', staff_status)))
+            else:
+                staff_status = 'Not Staffed'
+
+            # Print the flight details for start flight
+            print(self.allign_left(print_format % (
+                dic['id'],
+                'RKV',
+                destination['airport'],
+                dic['departure_datetime'].date(),
+                dic['departure_datetime'].time(),
+                dic['flight_number_start'],
+                staff_status,
+                dic['sold_tickets_start'],
+                dic['available_tickets_start'],
+                dic['current_situation']
+            )))
+
+            # Print the flight details for return flight
+            print(self.allign_left(print_format % (
+                '',
+                destination['airport'],
+                'RKV',
+                dic['return_datetime'].date(),
+                dic['return_datetime'].time(),
+                dic['flight_number_end'],
+                staff_status,
+                dic['sold_tickets_end'],
+                dic['available_tickets_end'],
+                "-*-"
+            )))
+
             line_count += 1
+
         while line_count <= line_num:
-            # fills out UI box to correct size with empty lines
+            # Fills out UI box to correct size with empty lines
             print(self.empty_line())
             line_count += 1
 

@@ -7,7 +7,7 @@ class Employee {
     - address : string
     - mobile_phone_number : string
     - email_address : string
-    - home_phone_number : string?
+    - home_phone_number : string (optional)
 }
 
 class FlightAttendant {

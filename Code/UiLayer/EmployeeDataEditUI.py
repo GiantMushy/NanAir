@@ -12,22 +12,22 @@ class EmployeeDataEditUI:
         '''Print sequence for editing Employee Data (initial)'''
         self.PrintUi.logo()
         self.PrintUi.print_header(
-            "Employee Database Menu > View/Edit > " + self.PrintUi.auto_shorten_name(self.employee['name']), "left")
+            "Employee Database Menu > View/Edit > " + self.PrintUi.auto_shorten_name(self.employee['name'], 25), "left")
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left("Employee Data:"))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_left(
-            f"  : Role                  {self.employee['role']}"))
+            f"    Role                  {self.employee['role']}"))
         print(self.PrintUi.allign_left(
-            f"    Name                  {self.PrintUi.auto_shorten_name(self.employee['name'])}"))
+            f"    Name                  {self.PrintUi.auto_shorten_name(self.employee['name'],25)}"))
         print(self.PrintUi.allign_left(
-            f"  : SSN                   {self.employee['social_security_number']}"))
+            f"    SSN                   {self.employee['social_security_number']}"))
         print(self.PrintUi.allign_left(
             f"1 : Phone                 {self.employee['mobile_phone_number']}"))
         print(self.PrintUi.allign_left(
             f"2 : Address               {self.employee['address']}"))
         print(self.PrintUi.allign_left(
-            f"    Email                 {self.PrintUi.auto_shorten_name(self.employee['email_address'])}"))
+            f"3 : Email                 {self.PrintUi.auto_shorten_name(self.employee['email_address'],25)}"))
         print(self.PrintUi.allign_left(
             f"4 : Home Phone            {self.employee['home_phone_number']}"))
         print(self.PrintUi.empty_line())
@@ -53,7 +53,7 @@ class EmployeeDataEditUI:
         print(self.PrintUi.allign_left(
             f"    Role                  {self.employee['role']}"))
         print(self.PrintUi.allign_left(
-            f"    Name                  {self.PrintUi.auto_shorten_name(self.employee['name'])}"))
+            f"    Name                  {self.PrintUi.auto_shorten_name(self.employee['name'],25)}"))
         print(self.PrintUi.allign_left(
             f"    SSN                   {self.employee['social_security_number']}"))
         print(self.PrintUi.allign_left(
@@ -61,7 +61,7 @@ class EmployeeDataEditUI:
         print(self.PrintUi.allign_left(
             f"    Address               {self.employee['address']}"))
         print(self.PrintUi.allign_left(
-            f"    Email                 {self.PrintUi.auto_shorten_name(self.employee['email_address'])}"))
+            f"    Email                 {self.PrintUi.auto_shorten_name(self.employee['email_address'],25)}"))
         print(self.PrintUi.allign_left(
             f"    Home Phone            {self.employee['home_phone_number']}"))
         print(self.PrintUi.empty_line())
