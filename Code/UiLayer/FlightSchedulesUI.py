@@ -28,7 +28,7 @@ class FlightSchedulesUI:
         if self.user == "Trip Manager":
             print(self.PrintUi.allign_left("   A : Create New Trip"))
             print(self.PrintUi.allign_left(
-                "<Id> : Create Recurring Trip from ID     D : Change between Day/Week      Flight Nr.-X : Add X tickets to flight "))
+                "<Id> : Create Recurring Trip from ID     D : Change between Day/Week      <Flight Nr.-X> : Add X tickets to flight "))
         else:
             print(self.PrintUi.empty_line())
             print(self.PrintUi.allign_center(
