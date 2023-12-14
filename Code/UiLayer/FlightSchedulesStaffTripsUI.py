@@ -147,6 +147,7 @@ class FlightSchedulesStaffTripsUI:
         print(self.PrintUi.end_line())
 
     def innitiate_dict_lists(self):
+        '''Updates the data for each type of employee and their availability'''
         self.trip = self.Logic.object_to_dict(
             self.Logic.find_work_trip_by_id(self.trip_id))
         airplane = ast.literal_eval(self.trip['airplane'])
@@ -158,22 +159,27 @@ class FlightSchedulesStaffTripsUI:
         self.innitiate_crew_dicts()
 
     def innitiate_available_captains(self, airplane):
+        '''Updates the data for Captain availablity'''
         self.available_captains = self.Logic.object_list_to_dict_list(self.Logic.list_all_available_captains_by_type(
             airplane['type'], self.trip['departure_datetime'].strftime('%Y-%m-%d %H:%M')))
 
     def innitiate_available_copilots(self, airplane):
+        '''Updates the data for Co-Pilot availablity'''
         self.available_copilots = self.Logic.object_list_to_dict_list(self.Logic.list_all_available_copilots_by_type(
             airplane['type'], self.trip['departure_datetime'].strftime('%Y-%m-%d %H:%M')))
 
     def innitiate_available_sr_fa(self):
+        '''Updates the data for Senior Flight Attendant availablity'''
         self.available_senior_flight_attendants = self.Logic.list_all_available_senior_fa(
             self.trip['departure_datetime'].strftime('%Y-%m-%d %H:%M'))
 
     def innitiate_available_fa(self):
+        '''Updates the data for Flight Attendant availablity'''
         self.available_flight_attendants = self.Logic.object_list_to_dict_list(self.Logic.list_all_available_fa(
             self.trip['departure_datetime'].strftime('%Y-%m-%d %H:%M')))
 
     def innitiate_crew_dicts(self):
+        '''Updates the data for assigned staff for the given trip'''
         # translates the stringed dictionary to a literal dictionary
         self.destination = ast.literal_eval(self.trip['destination'])
         self.airplane = ast.literal_eval(self.trip['airplane'])

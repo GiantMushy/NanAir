@@ -12,6 +12,7 @@ class FlightSchedulesUI:
         self.user = user
 
     def flight_schedules_output(self, printed_data, start_date, end_date):
+        '''Prints the Flight Schedule Table'''
         self.PrintUi.logo()
         self.PrintUi.print_header(self.user + " > Flight Schedules", "left")
         print(self.PrintUi.empty_line())
@@ -44,6 +45,7 @@ class FlightSchedulesUI:
         print(self.PrintUi.end_line())
 
     def innitiate_and_switch_lists(self, time, start_date,):
+        '''Updates the data for given start date and time period (time == 'week' or time == 'day')'''
         printed_data = self.Logic.work_trip_validity_period(
             time, start_date.strftime('%Y-%m-%d %H:%M'))
         return self.Logic.object_list_to_dict_list(printed_data)

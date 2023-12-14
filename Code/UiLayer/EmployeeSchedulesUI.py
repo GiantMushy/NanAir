@@ -11,6 +11,7 @@ class EmployeeSchedulesUI:
         self.Logic = LogicLayerAPI()
 
     def employee_schedules_output(self, start_date, working_notworking_all):
+        '''Print sequence for EmployeeSchedulesUI'''
         self.PrintUi.logo()
         self.PrintUi.print_header("Employee Schedules", "left")
         print_format = "%-6s%-20s%-30s%-20s"
@@ -53,6 +54,9 @@ class EmployeeSchedulesUI:
         print(self.PrintUi.end_line())
 
     def print_employees_all(self, print_format, line_num):
+        '''
+        Print function for the table of all employees, both working and not working
+        '''
         line_count = 0
 
         for dic in self.working:
@@ -81,6 +85,9 @@ class EmployeeSchedulesUI:
             line_count += 1
 
     def print_employees_working(self, print_format, line_num):
+        '''
+        Print function for the table of employees that are working
+        '''
         line_count = 0
 
         for dic in self.working:
@@ -99,6 +106,9 @@ class EmployeeSchedulesUI:
             line_count += 1
 
     def print_employees_not_working(self, print_format, line_num):
+        '''
+        Print function for the table of employees that are not working
+        '''
         line_count = 0
 
         for id in self.not_working:
@@ -116,16 +126,18 @@ class EmployeeSchedulesUI:
             line_count += 1
 
     def innitiate_and_switch_lists(self, start_date):
+        '''
+        Updates the data of working/not-working employees for given date
+        '''
         self.working = self.Logic.list_employees_working_and_destinations(
             start_date.strftime('%Y-%m-%d %H:%M'))  # list of dictionaries
-        # [{'employee_id': '001', 'destination': "{'id': '02', 'city': 'Matta city', 'airport': 'Matti airport', 'country': 'Mattaland', 'distance': '6', 'travel_time': '40', 'contact_name': 'Helgi', 'contact_phone_number': '9876543'}"},
-        # {'employee_id': '002', 'destination': "{'id': '02', 'city': 'Matta city', 'airport': 'Matti airport', 'country': 'Mattaland', 'distance': '6', 'travel_time': '40', 'contact_name': 'Helgi', 'contact_phone_number': '9876543'}"}]
-        self.not_working = self.Logic.list_all_available_employees(start_date.strftime(
-            '%Y-%m-%d %H:%M'))  # list of id's ['003', '004', '005', '006', '007', '008', '009', '010']
-        # return self.Logic.object_list_to_dict_list(printed_data)
+        self.not_working = self.Logic.list_all_available_employees(
+            start_date.strftime('%Y-%m-%d %H:%M'))
 
     def input_prompt(self):
-        '''Starting function for EmployeeSchedulesUI'''
+        '''
+        Starting function for EmployeeSchedulesUI
+        '''
         day_timedelta = datetime.timedelta(1)
         start_date = datetime.datetime.now()
         working_notworking_all = "working"
