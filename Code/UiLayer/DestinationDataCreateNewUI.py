@@ -219,6 +219,11 @@ class DestinationDataCreateNewUI:
         print(self.PrintUi.end_line())
 
     def create_new_sequence(self):
+        '''
+        While loop that runs every input screen for Destinations Database > Create New
+        Checks each individual input and only prints the next screen once a 
+        correct input has bee entered 
+        '''
         n = 1
         input_check = True
         while n < 8:

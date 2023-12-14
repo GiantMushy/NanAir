@@ -152,6 +152,11 @@ class AirplaneDataCreateNewUI:
         print(self.PrintUi.end_line())
 
     def create_new_sequence(self):
+        '''
+        While loop that runs every input screen for Airplane Data > Create New
+        Checks each individual input and only prints the next screen once a 
+        correct input has bee entered 
+        '''
         n = 1
         input_check = True
         while n < 5:
@@ -246,6 +251,7 @@ class AirplaneDataCreateNewUI:
                 print("Invalid input, try again")
 
     def create_airplane_logic(self):
+        '''Sends the entered data to the Logic wrapper (Saves the data)'''
         if self.type_already_created:
             try:
                 self.Logic.add_airplane(name=self.new_airplane[0],

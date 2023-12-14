@@ -160,6 +160,11 @@ class FlightSchedulesCreateNewUI:
         print(self.PrintUi.end_line())
 
     def create_new_sequence(self):
+        '''
+        While loop that runs every input screen for Flight Schedules > Create New
+        Checks each individual input and only prints the next screen once a 
+        correct input has bee entered 
+        '''
         n = 1
         input_check = True
         self.new_trip = ['error0', 'error1', 'error2', 'error3']
