@@ -38,10 +38,14 @@ class AirplaneDataUI:
                 create_new = AirplaneDataCreateNewUI()
                 create_new.input_prompt()
             elif command.isdigit():
+                is_airplane_id = False
                 for dict in all_airplane_data:
                     if int(command) == int(dict['id']):
+                        is_airplane_id = True
                         edit = AirplaneDataEditUI(dict['id'])
                         edit.input_prompt()
+                if not is_airplane_id:
+                    print("Please input an existing number ID")
             elif command == "q":
                 print("Goodbye")
                 exit()
