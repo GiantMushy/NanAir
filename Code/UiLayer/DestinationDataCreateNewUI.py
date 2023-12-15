@@ -97,7 +97,7 @@ class DestinationDataCreateNewUI:
         print(self.PrintUi.allign_left(f"    {self.new_destination[0]}"))
         print(self.PrintUi.allign_left(f"    {self.new_destination[1]}"))
         print(self.PrintUi.allign_left(f"    {self.new_destination[2]}"))
-        print(self.PrintUi.allign_left("--> Input Distance (km)"))
+        print(self.PrintUi.allign_left("--> Input Distance (in [km] from Reykjavik Airport)"))
         print(self.PrintUi.allign_left("    Travel Time"))
         print(self.PrintUi.allign_left("    Emergency Contact Name"))
         print(self.PrintUi.allign_left("    Emergency Contact Phone Number"))
