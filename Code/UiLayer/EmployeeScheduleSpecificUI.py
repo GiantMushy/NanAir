@@ -13,7 +13,7 @@ class EmployeeScheduleSpecificUI:
         self.start_date = start_date
 
     def specific_employee_weekly_schedule(self, destinations_list):
-        '''Print sequence for the Airplane Data Menu'''
+        '''Print sequence for a spcific employees weekly work calander'''
         print_format = "%-17s%-16s%-16s%-16s%-16s%-16s%-16s%-0s"
         days = self.get_days_list(self.start_date)
         weekday = self.get_weekday_list(self.start_date)
@@ -42,13 +42,25 @@ class EmployeeScheduleSpecificUI:
                                                        "|")))
         print(self.PrintUi.allign_left('|________________________________________________________________________________________________________________|'))
         print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
+        print(self.PrintUi.empty_line())
         print(self.PrintUi.allign_center(
             "0 : Back To Employee Schedules         00 : Change Week          n : Previous Week            m : Next Week"))
         print(self.PrintUi.end_line())
 
     def get_days_list(self, start_date):
         '''
-        Gets a list of 7 datetime days for the week
+        Gets a list of 7 datetime days for the week 
+        i.e. [start_day, start_day + 1day, start_day + 2days, ... , start_day + 6_days]
         '''
         days = []
         for n in range(7):
@@ -74,6 +86,7 @@ class EmployeeScheduleSpecificUI:
         Gets a list of length 7 (1 slot for each day in the week)
         depicting whether or not an employee is working on a given day
         if the employee is working, then the slot has the destination of the given work day
+        else: N/A
         '''
         destinations_list = []
         days = []
@@ -91,7 +104,7 @@ class EmployeeScheduleSpecificUI:
                     destinations_list.append('Reykjavik')
                     append_check = True
             if not append_check:
-                destinations_list.append('Not Working')
+                destinations_list.append('N/A')
         return destinations_list
 
     def input_prompt(self):
