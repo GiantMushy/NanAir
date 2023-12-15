@@ -60,8 +60,7 @@ class FlightSchedulesUI:
             printed_data = self.innitiate_and_switch_lists(time, start_date)
             self.flight_schedules_output(printed_data, start_date, end_date)
             command = input("Enter your command: ").lower()
-
-            print(f"Command: {command}")
+            
             if command == "0":
                 break
             elif command == "00":  # change day/week
@@ -72,34 +71,48 @@ class FlightSchedulesUI:
                 for dict in printed_data:
                     if int(command) == int(dict["id"]):
                         if self.user == "Trip Manager":  # Create Recurring Work Trip ############
-                            input_check_recurring = False
-                            while not input_check_recurring:
-                                recurrence_count = input(
-                                    "Input number of recurring flights to be scheduled: ").lower()
-                                if recurrence_count == "q":
-                                    print("Goodbye")
-                                    exit()
+                            input_check = False
+                            while not input_check:
+                                input_check_secondary = False
+                                while not input_check_secondary:
+                                    recurrence_count = input(
+                                        "Input number of recurring flights to be scheduled ( [0] : back ): ").lower()
+                                    if recurrence_count == "q":
+                                        print("Goodbye")
+                                        exit()
+                                    elif recurrence_count == "0":
+                                        input_check = True
+                                        break
+                                    try:
+                                        recurrence_count = int(recurrence_count)
+                                        input_check_secondary = True
+                                    except ValueError as e:
+                                        print(f"Error: {e}")
+                                if input_check:
+                                    break
+                                input_check_secondary = False
+                                while not input_check_secondary:
+                                    recurrence_days = input(
+                                        "Input the amount of days between recurring trips (daily = 1, weekly = 7, etc.)...( [0] : back ): ").lower()
+                                    if recurrence_days == "q":
+                                        print("Goodbye")
+                                        exit()
+                                    elif recurrence_count == "0":
+                                        input_check = True
+                                        break
+                                    try:
+                                        recurrence_days = int(recurrence_days)
+                                        input_check_secondary = True
+                                    except ValueError as e:
+                                        print(f"Error: {e}")
+                                if input_check:
+                                    break
                                 try:
-                                    recurrence_count = int(recurrence_count)
-                                    input_check_recurring = True
+                                    self.Logic.create_recurring_work_trips(
+                                        dict['id'], recurrence_days, recurrence_count)
+                                    input_check = True
                                 except ValueError as e:
                                     print(f"Error: {e}")
-                                    input_check_recurring = False
-                            input_check_recurring = False
-                            while not input_check_recurring:
-                                recurrence_days = input(
-                                    "Input the amount of days between recurring trips (daily = 1, weekly = 7, etc.): ").lower()
-                                if recurrence_days == "q":
-                                    print("Goodbye")
-                                    exit()
-                                try:
-                                    recurrence_days = int(recurrence_days)
-                                    input_check_recurring = True
-                                except ValueError as e:
-                                    print(f"Error: {e}")
-                                    input_check_recurring = False
-                            self.Logic.create_recurring_work_trips(
-                                dict['id'], recurrence_days, recurrence_count)
 
                         else:  # Staff Trips #############
                             staff_trips = FlightSchedulesStaffTripsUI(
