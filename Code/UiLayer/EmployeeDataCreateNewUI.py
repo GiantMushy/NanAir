@@ -399,12 +399,12 @@ class EmployeeDataCreateNewUI:
                     if data == "q":
                         print("Goodbye")
                         exit()
+                    elif data == "0":
+                        data = "No Airplane Type"
                     elif self.Logic.find_type_data(data_compare_temp) == None:
                         print(
                             "Invalid airplane type input, please choose type from provided list.")
                         input_check = False
-                else:
-                    data = ""
 
             elif n == 4:
                 self.input_name()
