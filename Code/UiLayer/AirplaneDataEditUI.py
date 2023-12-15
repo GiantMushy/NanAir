@@ -1,6 +1,7 @@
 from Code.LogicLayer.LogicLayerAPI import LogicLayerAPI  # Wrapper
 from Code.UiLayer.PrintFunctions import PrintFunctions
 
+
 class AirplaneDataEditUI:
     def __init__(self, airplane_id=""):
         self.PrintUi = PrintFunctions()

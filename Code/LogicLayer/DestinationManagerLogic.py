@@ -13,7 +13,17 @@ class DestinationManagerLogic:
         '''
         if not self.find_destination_by_id("01"):
             self.add_destination(
-                city="Reykjavík", airport="RKV", country="Iceland", distance="0", travel_time="0", contact_name="N/A", contact_phone_number="N/A")
+                city="Reykjavík", airport="RKV", country="Ísland", distance="0", travel_time="0", contact_name="N/A", contact_phone_number="N/A")
+            self.add_destination(
+                city="Kulusuk", airport="KUL", country="Grænland", distance="330", travel_time="80", contact_name="Nagli", contact_phone_number="6753457")
+            self.add_destination(
+                city="Þórshöfn", airport="TOR", country="Færeyjar", distance="280", travel_time="55", contact_name="Anna", contact_phone_number="6753647")
+            self.add_destination(
+                city="Tingwall", airport="HJE", country="Hjaltalandseyjar", distance="230", travel_time="42", contact_name="Sigurður", contact_phone_number="8763647")
+            self.add_destination(
+                city="Longyearbyen", airport="LYB", country="Svalbarðir", distance="335", travel_time="58", contact_name="Nordling", contact_phone_number="3451374")
+            self.add_destination(
+                city="Nuuk", airport="NUK", country="Grænland", distance="345", travel_time="85", contact_name="Nagli Sr.", contact_phone_number="5634678")
 
     def generate_unique_destination_id(self):
         """
