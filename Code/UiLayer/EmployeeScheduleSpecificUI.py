@@ -4,12 +4,14 @@ import datetime
 from datetime import date
 import ast
 
+
 class EmployeeScheduleSpecificUI:
-    def __init__(self, id = "", start_date = ""):
+    def __init__(self, id="", start_date=""):
         self.PrintUi = PrintFunctions()
         self.Logic = LogicLayerAPI()
         self.id = id
-        self.weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+        self.weekdays = ['Monday', 'Tuesday', 'Wednesday',
+                         'Thursday', 'Friday', 'Saturday', 'Sunday']
         self.start_date = start_date
 
     def specific_employee_weekly_schedule(self, destinations_list):
@@ -21,10 +23,12 @@ class EmployeeScheduleSpecificUI:
         self.PrintUi.logo()
         self.PrintUi.print_header(f"Employee Schedules > {self.id}", "left")
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(f"Employee {self.id}'s weekly schedule, starting from {str(self.start_date)[0:10]}:"))
+        print(self.PrintUi.allign_left(
+            f"Employee {self.id}'s weekly schedule, starting from {str(self.start_date)[0:10]}:"))
         print(self.PrintUi.empty_line())
-        print(self.PrintUi.allign_left(' ________________________________________________________________________________________________________________'))
-        print(self.PrintUi.allign_left(print_format % (f"|{weekday[0]} {days[0]}", 
+        print(self.PrintUi.allign_left(
+            ' ________________________________________________________________________________________________________________'))
+        print(self.PrintUi.allign_left(print_format % (f"|{weekday[0]} {days[0]}",
                                                        f"{weekday[1]} {days[1]}",
                                                        f"{weekday[2]} {days[2]}",
                                                        f"{weekday[3]} {days[3]}",
@@ -32,7 +36,7 @@ class EmployeeScheduleSpecificUI:
                                                        f"{weekday[5]} {days[5]}",
                                                        f"{weekday[6]} {days[6]}",
                                                        "|")))
-        print(self.PrintUi.allign_left(print_format % (f"|{destinations_list[0]}", 
+        print(self.PrintUi.allign_left(print_format % (f"|{destinations_list[0]}",
                                                        f"{destinations_list[1]}",
                                                        f"{destinations_list[2]}",
                                                        f"{destinations_list[3]}",
@@ -40,7 +44,8 @@ class EmployeeScheduleSpecificUI:
                                                        f"{destinations_list[5]}",
                                                        f"{destinations_list[6]}",
                                                        "|")))
-        print(self.PrintUi.allign_left('|________________________________________________________________________________________________________________|'))
+        print(self.PrintUi.allign_left(
+            '|________________________________________________________________________________________________________________|'))
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
         print(self.PrintUi.empty_line())
@@ -67,7 +72,7 @@ class EmployeeScheduleSpecificUI:
             days.append(str(start_date)[8:10])
             start_date += datetime.timedelta(1)
         return days
-    
+
     def get_weekday_list(self, start_date):
         '''
         Gets a list of all weekdays (str) in the correct order for the given week
@@ -76,7 +81,8 @@ class EmployeeScheduleSpecificUI:
         '''
         weekday = []
         for n in range(7):
-            weekday_num = date.weekday(start_date) #Returns 0 for monday, 1 for tuesday .... 6 for sunday
+            # Returns 0 for monday, 1 for tuesday .... 6 for sunday
+            weekday_num = date.weekday(start_date)
             weekday.append(self.weekdays[weekday_num])
             start_date += datetime.timedelta(1)
         return weekday
@@ -108,11 +114,13 @@ class EmployeeScheduleSpecificUI:
         return destinations_list
 
     def input_prompt(self):
-        '''Starting function for EmployeeScheduleSpecificUI''' 
+        '''Starting function for EmployeeScheduleSpecificUI'''
         while True:
-            print_data = self.Logic.all_work_trips_of_employee(self.id, self.start_date.strftime('%Y-%m-%d %H:%M'))
+            print_data = self.Logic.all_work_trips_of_employee(
+                self.id, self.start_date.strftime('%Y-%m-%d %H:%M'))
             print_data = self.Logic.object_list_to_dict_list(print_data)
-            destinations_list = self.get_destination_list(print_data, self.start_date)
+            destinations_list = self.get_destination_list(
+                print_data, self.start_date)
             self.specific_employee_weekly_schedule(destinations_list)
             command = input("Enter you command: ").lower()
 
@@ -121,11 +129,11 @@ class EmployeeScheduleSpecificUI:
             elif command == "q":
                 print("Goodbye")
                 exit()
-            elif command == "00": #change week
+            elif command == "00":  # change week
                 self.start_date = self.PrintUi.change_date()
-            elif command == "n": #see last week
+            elif command == "n":  # see last week
                 self.start_date -= datetime.timedelta(7)
-            elif command == "m": #see next week
+            elif command == "m":  # see next week
                 self.start_date += datetime.timedelta(7)
             else:
                 print("Invalid input, try again")

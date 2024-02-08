@@ -92,7 +92,8 @@ class PrintFunctions:
         '''Prints the Company Logo'''
         print("                                                                              ______ ")
         print(" ____  _____      __      ____  _____          __      _____ _______          _\ _~-\___")
-        print("|_   \|_   _|    /  \    |_   \|_   _|        /  \    |_   _|_   __ \     = =(____AA____D")
+        print(
+            "|_   \|_   _|    /  \    |_   \|_   _|        /  \    |_   _|_   __ \     = =(____AA____D")
         print("  |   \ | |     / /\ \     |   \ | |         / /\ \     | |   | |__) |            \_____\______________________,-~~~~~-.._")
         print("  | |\ \| |    / ____ \    | |\ \| |        / ____ \    | |   |  __ /             /     o O o o o o O O o o o o o o O o  |\_")
         print(" _| |_\   |_ _/ /    \ \_ _| |_\   |_     _/ /    \ \_ _| |_ _| |  \ \_           `~-.__        ___..----..                  )")
@@ -124,7 +125,7 @@ class PrintFunctions:
             if len(name) > min_length:
                 name = "(Item Too Long)"
         return name
-    
+
     def change_date(self):
         '''
         Function for giving the user an option to input a date
@@ -193,8 +194,9 @@ class PrintFunctions:
             for value in dic.values():
                 vals.append(value)
             for n in range(len(vals)):
-                if len(vals[n]) > 20:  
-                    vals[n] = self.shorten_name(vals[n], 19)# abbreviates names
+                if len(vals[n]) > 20:
+                    vals[n] = self.shorten_name(
+                        vals[n], 19)  # abbreviates names
             print(self.allign_left(print_format % (
                 vals[0], vals[1], vals[2])))
             line_count += 1

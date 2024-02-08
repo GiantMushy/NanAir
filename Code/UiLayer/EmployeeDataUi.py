@@ -268,6 +268,6 @@ class EmployeeDataUI:
 
             elif command == "q":
                 print("Goodbye")
-                exit()         ################ CRASH REPORT ##############
+                exit()  # CRASH REPORT ##############
             else:
                 print("Invalid input, try again")

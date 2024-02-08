@@ -60,7 +60,7 @@ class FlightSchedulesUI:
             printed_data = self.innitiate_and_switch_lists(time, start_date)
             self.flight_schedules_output(printed_data, start_date, end_date)
             command = input("Enter your command: ").lower()
-            
+
             if command == "0":
                 break
             elif command == "00":  # change day/week
@@ -84,7 +84,8 @@ class FlightSchedulesUI:
                                         input_check = True
                                         break
                                     try:
-                                        recurrence_count = int(recurrence_count)
+                                        recurrence_count = int(
+                                            recurrence_count)
                                         input_check_secondary = True
                                     except ValueError as e:
                                         print(f"Error: {e}")

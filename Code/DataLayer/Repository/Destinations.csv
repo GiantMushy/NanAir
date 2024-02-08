@@ -1,4 +1,7 @@
 id,city,airport,country,distance,travel_time,contact_name,contact_phone_number
-01,Reykjavík,RKV,Iceland,0,0,N/A,N/A
-02,Matta city,Matti airport,Mattaland,6,40,Matti,1234567
-03,London,Heathrow,England,6,40,Helgi,9876543
+01,Reykjavík,RKV,Ísland,0,0,N/A,N/A
+02,Kulusuk,KUL,Grænland,330,80,Nagli,6753457
+03,Þórshöfn,TOR,Færeyjar,280,55,Anna,6753647
+04,Tingwall,HJE,Hjaltalandseyjar,230,42,Sigurður,8763647
+05,Longyearbyen,LYB,Svalbarðir,335,58,Nordling,3451374
+06,Nuuk,NUK,Grænland,345,85,Nagli Sr.,5634678
